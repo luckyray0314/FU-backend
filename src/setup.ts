@@ -16,22 +16,22 @@ export function setup(app: INestApplication): INestApplication {
     }),
   );
 
-  app.use(cookieParser(process.env.VALLENTUNA_SURVEY_APP_SECRET));
+  app.use(cookieParser(process.env.VALLENTUNA_SURVEY_BACKEND_APP_SECRET));
 
   app.use(
     session({
-      secret: process.env.VALLENTUNA_SURVEY_APP_SECRET as string,
+      secret: process.env.VALLENTUNA_SURVEY_BACKEND_APP_SECRET as string,
       resave: false,
       saveUninitialized: false,
       store:
-        process.env.VALLENTUNA_SURVEY_NODE_ENV === 'production'
+        process.env.VALLENTUNA_SURVEY_BACKEND_NODE_ENV === 'production'
           ? new (connectPgSimple(session))()
           : new session.MemoryStore(),
       cookie: {
         httpOnly: true,
         signed: true,
         sameSite: 'strict',
-        secure: process.env.VALLENTUNA_SURVEY_NODE_ENV === 'production',
+        secure: process.env.VALLENTUNA_SURVEY_BACKEND_NODE_ENV === 'production',
       },
     }),
   );
@@ -40,7 +40,7 @@ export function setup(app: INestApplication): INestApplication {
   app.use(passport.session());
 
   app.enableCors({
-    origin: process.env.VALLENTUNA_SURVEY_ALLOWED_ORIGINS?.split(/\s*,\s*/) ?? '*',
+    origin: process.env.VALLENTUNA_SURVEY_BACKEND_ALLOWED_ORIGINS?.split(/\s*,\s*/) ?? '*',
     credentials: true,
     exposedHeaders: ['Authorization'],
   });

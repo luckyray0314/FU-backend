@@ -29,7 +29,7 @@ export class TokenInterceptor implements NestInterceptor {
           httpOnly: true,
           signed: true,
           sameSite: 'strict',
-          secure: process.env.VALLENTUNA_SURVEY_NODE_ENV === 'production',
+          secure: process.env.VALLENTUNA_SURVEY_BACKEND_NODE_ENV === 'production',
         });
 
         return user;

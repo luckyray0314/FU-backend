@@ -10,7 +10,7 @@ import { User } from './user/user.entity';
 
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
-  url: process.env.VALLENTUNA_SURVEY_DATABASE_URL,
+  url: process.env.VALLENTUNA_SURVEY_BACKEND_DATABASE_URL,
   entities: [User, Profile, Todo],
   migrations: [
     CreateUser1557166726050,
@@ -21,7 +21,7 @@ export const dataSourceOptions: DataSourceOptions = {
   synchronize: false,
   extra: {
     ssl:
-      process.env.VALLENTUNA_SURVEY_SSL_MODE === 'require'
+      process.env.VALLENTUNA_SURVEY_BACKEND_SSL_MODE === 'require'
         ? {
             rejectUnauthorized: false,
           }
