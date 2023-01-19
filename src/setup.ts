@@ -1,9 +1,10 @@
-import { ValidationPipe, HttpStatus, INestApplication } from '@nestjs/common';
+import { HttpStatus, INestApplication, ValidationPipe } from '@nestjs/common';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { useContainer } from 'class-validator';
+import * as connectPgSimple from 'connect-pg-simple';
 import * as cookieParser from 'cookie-parser';
 import * as session from 'express-session';
 import * as passport from 'passport';
-import * as connectPgSimple from 'connect-pg-simple';
 
 import { AppModule } from './app.module';
 
@@ -44,6 +45,15 @@ export function setup(app: INestApplication): INestApplication {
     credentials: true,
     exposedHeaders: ['Authorization'],
   });
+
+  const options = new DocumentBuilder()
+    .setTitle('Vallentuna Survey Tool API Documentation')
+    .setDescription('This documentation is for Vallentuna Survey Tool')
+    .setVersion('1.0')
+    .addBearerAuth()
+    .build();
+  const document = SwaggerModule.createDocument(app, options);
+  SwaggerModule.setup('doc', app, document);
 
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
 

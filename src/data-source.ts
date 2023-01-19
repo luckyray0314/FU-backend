@@ -9,16 +9,24 @@ import { Profile } from './user/profile.entity';
 import { User } from './user/user.entity';
 
 export const dataSourceOptions: DataSourceOptions = {
+  // type: 'postgres',
+  // url: process.env.VALLENTUNA_SURVEY_BACKEND_DATABASE_URL,
+  // entities: [User, Profile, Todo],
   type: 'postgres',
-  url: process.env.VALLENTUNA_SURVEY_BACKEND_DATABASE_URL,
-  entities: [User, Profile, Todo],
-  migrations: [
-    CreateUser1557166726050,
-    CreateProfile1570141220019,
-    CreateSessionStorage1584985637890,
-    CreateTodo1597106889894,
-  ],
-  synchronize: false,
+  host: 'localhost',
+  port: 5432,
+  username: 'postgres',
+  password: 'postgres',
+  database: 'survey',
+  entities: [__dirname + '/**/*.entity{.ts,.js}'],
+  // migrations: [
+  //   CreateUser1557166726050,
+  //   CreateProfile1570141220019,
+  //   CreateSessionStorage1584985637890,
+  //   CreateTodo1597106889894,
+  // ],
+  migrationsRun: false,
+  synchronize: true,
   extra: {
     ssl:
       process.env.VALLENTUNA_SURVEY_BACKEND_SSL_MODE === 'require'

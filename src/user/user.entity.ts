@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import * as bcrypt from 'bcryptjs';
 import { Exclude } from 'class-transformer';
 import {
@@ -12,22 +13,28 @@ import {
 
 @Entity()
 export class User {
+  @ApiProperty()
   @PrimaryGeneratedColumn()
   id: number;
 
+  @ApiProperty()
   @Column()
   name: string;
 
+  @ApiProperty()
   @Column({ unique: true })
   email: string;
 
+  @ApiProperty()
   @Column()
   @Exclude()
   password: string;
 
+  @ApiProperty()
   @CreateDateColumn()
   createdAt: Date;
 
+  @ApiProperty()
   @UpdateDateColumn()
   updatedAt: Date;
 

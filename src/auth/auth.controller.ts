@@ -8,6 +8,7 @@ import {
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
+import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
 
 import { AuthUser } from '../user/user.decorator';
 import { User } from '../user/user.entity';
@@ -18,6 +19,7 @@ import { LocalAuthGuard } from './guards/local-auth.guard';
 import { SessionAuthGuard } from './guards/session-auth.guard';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 
+@ApiTags('Auth Management')
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
@@ -25,14 +27,17 @@ export class AuthController {
   @Post('register')
   @HttpCode(HttpStatus.CREATED)
   @UseInterceptors(TokenInterceptor)
+  @ApiOkResponse({ type: () => User })
   register(@Body() signUp: SignUp): Promise<User> {
     return this.authService.register(signUp);
   }
+
 
   @Post('login')
   @UseGuards(LocalAuthGuard)
   @HttpCode(HttpStatus.OK)
   @UseInterceptors(TokenInterceptor)
+  @ApiOkResponse({ type: () => User })
   async login(@AuthUser() user: User): Promise<User> {
     return user;
   }
