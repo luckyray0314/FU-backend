@@ -14,7 +14,7 @@ import { LocalStrategy } from './strategies/local.strategy';
     UserModule,
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
-      secret: process.env.APP_SECRET,
+      secret: process.env.VALLENTUNA_SURVEY_APP_SECRET,
       signOptions: {
         expiresIn: '1d',
         algorithm: 'HS384',

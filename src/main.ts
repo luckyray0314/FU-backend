@@ -8,6 +8,6 @@ async function bootstrap() {
 
   setup(app);
 
-  await app.listen(process.env.PORT || 5000);
+  await app.listen(process.env.VALLENTUNA_SURVEY_PORT || 5000);
 }
 bootstrap();
