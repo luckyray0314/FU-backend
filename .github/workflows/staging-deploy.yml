@@ -36,7 +36,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          password: ${{ secrets.PASSWORD }}
+          password: ${{ secrets.PASSWORD }} 
           port: ${{ secrets.PORT }}
           script: |
             cd ~/vallentuna-survey-backend
