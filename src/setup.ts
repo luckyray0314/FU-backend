@@ -41,7 +41,7 @@ export function setup(app: INestApplication): INestApplication {
   app.use(passport.session());
 
   app.enableCors({
-    origin: process.env.VALLENTUNA_SURVEY_BACKEND_ALLOWED_ORIGINS?.split(/\s*,\s*/) ?? '*',
+    origin: '*',
     credentials: true,
     exposedHeaders: ['Authorization'],
   });
