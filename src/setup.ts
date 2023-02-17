@@ -42,6 +42,7 @@ export function setup(app: INestApplication): INestApplication {
 
   app.enableCors({
     origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     // exposedHeaders: ['Authorization'],
   });
 
