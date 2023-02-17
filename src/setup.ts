@@ -42,7 +42,7 @@ export function setup(app: INestApplication): INestApplication {
 
   app.enableCors({
     origin: "*",
-    exposedHeaders: ['Authorization'],
+    // exposedHeaders: ['Authorization'],
   });
 
   const options = new DocumentBuilder()
