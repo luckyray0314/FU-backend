@@ -40,6 +40,11 @@ export function setup(app: INestApplication): INestApplication {
   app.use(passport.initialize());
   app.use(passport.session());
 
+  app.enableCors({
+    origin: "*",
+    exposedHeaders: ['Authorization'],
+  });
+
   const options = new DocumentBuilder()
     .setTitle('Vallentuna Survey Tool API Documentation')
     .setDescription('This documentation is for Vallentuna Survey Tool')
