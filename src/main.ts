@@ -44,7 +44,7 @@ async function bootstrap() {
   // app.use(passport.initialize());
   // app.use(passport.session());
 
-  // app.enableCors({origin: true});
+  app.enableCors({origin: "*", methods:"GET, PUT, POST, DELETE"});
 
   // const options = new DocumentBuilder()
   //   .setTitle('Vallentuna Survey Tool API Documentation')
