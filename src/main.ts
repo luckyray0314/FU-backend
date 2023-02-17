@@ -44,6 +44,8 @@ async function bootstrap() {
   app.use(passport.initialize());
   app.use(passport.session());
 
+  app.enableCors({origin: true});
+
   const options = new DocumentBuilder()
     .setTitle('Vallentuna Survey Tool API Documentation')
     .setDescription('This documentation is for Vallentuna Survey Tool')
