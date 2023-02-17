@@ -23,10 +23,10 @@ import { UserModule } from './user/user.module';
   controllers: [AppController, HealthController],
   providers: [
     AppService,
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: CorsInterceptor
-    }
+    // {
+    //   provide: APP_INTERCEPTOR,
+    //   useClass: CorsInterceptor
+    // }
   ],
 })
 export class AppModule {}

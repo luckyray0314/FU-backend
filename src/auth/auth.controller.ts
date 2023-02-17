@@ -2,7 +2,6 @@ import {
   Body,
   Controller,
   Get,
-  Header,
   HttpCode,
   HttpStatus,
   Post,
@@ -30,6 +29,7 @@ export class AuthController {
   @UseInterceptors(TokenInterceptor)
   @ApiOkResponse({ type: () => User })
   register(@Body() signUp: SignUp): Promise<User> {
+    console.log("🚀 ~ file: auth.controller.ts:33 ~ AuthController ~ register ~ signUp", signUp);
     return this.authService.register(signUp);
   }
 
