@@ -9,8 +9,8 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', // Allow all HTTP methods
   }});
 
-  setup(app);
+  let appSetuped = setup(app);
 
-  await app.listen(process.env.VALLENTUNA_SURVEY_BACKEND_PORT || 5000);
+  await appSetuped.listen(process.env.VALLENTUNA_SURVEY_BACKEND_PORT || 5000);
 }
 bootstrap();
