@@ -4,7 +4,10 @@ import { AppModule } from './app.module';
 import { setup } from './setup';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {cors: true});
+  const app = await NestFactory.create(AppModule, {cors: {
+    origin: '*', // Allow all origins
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS', // Allow all HTTP methods
+  }});
 
   setup(app);
 
