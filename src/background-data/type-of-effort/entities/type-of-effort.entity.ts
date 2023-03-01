@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('type_of_effort')
-export class TypeOfEffort {
+export class TypeOfEffortEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

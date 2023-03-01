@@ -4,14 +4,14 @@ import {
   JoinColumn,
   PrimaryColumn,
 } from "typeorm";
-import { EmploymentVh2 } from "./employment-vh2.entity";
+import { EmploymentVh2Entity } from "./employment-vh2.entity";
 
 @Entity("selected_employment_vh2")
-export class SelectedEmploymentVh2 {
+export class SelectedEmploymentVh2Entity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => EmploymentVh2)
+  @OneToOne(() => EmploymentVh2Entity)
   @JoinColumn()
-  employmentVh2: EmploymentVh2;
+  employmentVh2: EmploymentVh2Entity;
 }

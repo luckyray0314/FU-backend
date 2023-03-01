@@ -4,14 +4,14 @@ import {
   JoinColumn,
   PrimaryColumn,
 } from "typeorm";
-import { TypeOfEffort } from "./type-of-effort.entity";
+import { TypeOfEffortEntity } from "./type-of-effort.entity";
 
 @Entity("selected_type_of_effort")
-export class SelectedTypeOfEffort {
+export class SelectedTypeOfEffortEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => TypeOfEffort)
+  @OneToOne(() => TypeOfEffortEntity)
   @JoinColumn()
-  typeOfEffort: TypeOfEffort;
+  typeOfEffort: TypeOfEffortEntity;
 }

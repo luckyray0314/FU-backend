@@ -4,14 +4,14 @@ import {
   JoinColumn,
   PrimaryColumn,
 } from "typeorm";
-import { Gender } from "./gender.entity";
+import { GenderEntity } from "./gender.entity";
 
 @Entity("selected_gender")
-export class SelectedGender {
+export class SelectedGenderEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => Gender)
+  @OneToOne(() => GenderEntity)
   @JoinColumn()
-  gender: Gender;
+  gender: GenderEntity;
 }

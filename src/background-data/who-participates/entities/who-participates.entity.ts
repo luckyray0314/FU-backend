@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('who_participates')
-export class WhoParticipates {
+export class WhoParticipatesEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

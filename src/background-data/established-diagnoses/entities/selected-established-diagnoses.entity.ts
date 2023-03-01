@@ -4,14 +4,14 @@ import {
   JoinColumn,
   PrimaryColumn,
 } from "typeorm";
-import { EstablishedDiagnoses } from "./established-diagnoses.entity";
+import { EstablishedDiagnosesEntity } from "./established-diagnoses.entity";
 
 @Entity("selected_established_diagnoses")
-export class SelectedEstablishedDiagnoses {
+export class SelectedEstablishedDiagnosesEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => EstablishedDiagnoses)
+  @OneToOne(() => EstablishedDiagnosesEntity)
   @JoinColumn()
-  establishedDiagnoses: EstablishedDiagnoses;
+  establishedDiagnoses: EstablishedDiagnosesEntity;
 }

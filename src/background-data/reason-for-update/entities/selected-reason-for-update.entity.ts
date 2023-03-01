@@ -4,14 +4,14 @@ import {
   JoinColumn,
   PrimaryColumn,
 } from "typeorm";
-import { ReasonForUpdate } from "./reason-for-update.entity";
+import { ReasonForUpdateEntity } from "./reason-for-update.entity";
 
 @Entity("selected_reason_for_update")
-export class SelectedReasonForUpdate {
+export class SelectedReasonForUpdateEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => ReasonForUpdate)
+  @OneToOne(() => ReasonForUpdateEntity)
   @JoinColumn()
-  reasonForUpdate: ReasonForUpdate;
+  reasonForUpdate: ReasonForUpdateEntity;
 }

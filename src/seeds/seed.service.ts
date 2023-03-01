@@ -1,18 +1,19 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { GenderEntity } from 'src/background-data/gender/entities/gender.entity';
+import { Repository } from 'typeorm';
 
 import { genderSeedData } from '../core/constants/seed.constant';
 
 @Injectable()
 export class SeedService {
-  /* constructor(private favService: FavService) {}
+  constructor(@InjectRepository(GenderEntity) private readonly genderRepository: Repository<GenderEntity>) {}
 
   async seedGenders(): Promise<void> {
-    const favCount = await this.favService.count();
-    if (favCount > 0) {
+    const genderCount = await this.genderRepository.count();
+    if (genderCount > 0) {
       return;
     }
-    for await (const data of genderSeedData) {
-      await this.favService.create({ data });
-    }
-  } */
+    this.genderRepository.save(genderSeedData);
+  }
 }

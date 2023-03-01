@@ -4,14 +4,14 @@ import {
   JoinColumn,
   PrimaryColumn,
 } from "typeorm";
-import { WhoParticipates } from "./who-participates.entity";
+import { WhoParticipatesEntity } from "./who-participates.entity";
 
 @Entity("selected_who_participates")
-export class SelectedWhoParticipates {
+export class SelectedWhoParticipatesEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => WhoParticipates)
+  @OneToOne(() => WhoParticipatesEntity)
   @JoinColumn()
-  whoParticipates: WhoParticipates;
+  whoParticipates: WhoParticipatesEntity;
 }

@@ -4,14 +4,14 @@ import {
   JoinColumn,
   PrimaryColumn,
 } from "typeorm";
-import { InterpreterRequired } from "./interpreter-required.entity";
+import { InterpreterRequiredEntity } from "./interpreter-required.entity";
 
 @Entity("selected_interpreter_required")
-export class SelectedInterpreterRequired {
+export class SelectedInterpreterRequiredEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => InterpreterRequired)
+  @OneToOne(() => InterpreterRequiredEntity)
   @JoinColumn()
-  interpreterRequired: InterpreterRequired;
+  interpreterRequired: InterpreterRequiredEntity;
 }

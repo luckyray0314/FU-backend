@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('family_constellation')
-export class FamilyConstellation {
+export class FamilyConstellationEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

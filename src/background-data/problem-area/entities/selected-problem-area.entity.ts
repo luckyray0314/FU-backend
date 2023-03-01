@@ -5,16 +5,16 @@ import {
   PrimaryColumn,
   Column,
 } from "typeorm";
-import { ProblemArea } from "./problem-area.entity";
+import { ProblemAreaEntity } from "./problem-area.entity";
 
 @Entity("selected_problem_area")
-export class SelectedProblemArea {
+export class SelectedProblemAreaEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => ProblemArea, { nullable: true })
+  @OneToOne(() => ProblemAreaEntity, { nullable: true })
   @JoinColumn()
-  problemArea: ProblemArea;
+  problemArea: ProblemAreaEntity;
 
   @Column({ nullable: true })
   other: string;

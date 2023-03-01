@@ -4,14 +4,14 @@ import {
   JoinColumn,
   PrimaryColumn,
 } from "typeorm";
-import { FamilyConstellation } from "./family-constellation.entity";
+import { FamilyConstellationEntity } from "./family-constellation.entity";
 
 @Entity("selected_family_constellation")
-export class SelectedFamilyConstellation {
+export class SelectedFamilyConstellationEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => FamilyConstellation)
+  @OneToOne(() => FamilyConstellationEntity)
   @JoinColumn()
-  familyConstellation: FamilyConstellation;
+  familyConstellation: FamilyConstellationEntity;
 }

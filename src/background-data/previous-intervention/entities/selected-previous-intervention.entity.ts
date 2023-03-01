@@ -5,16 +5,16 @@ import {
   PrimaryColumn,
   Column,
 } from "typeorm";
-import { PreviousIntervention } from "./previous-intervention.entity";
+import { PreviousInterventionEntity } from "./previous-intervention.entity";
 
 @Entity("selected_previous_intervention")
-export class SelectedPreviousIntervention {
+export class SelectedPreviousInterventionEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => PreviousIntervention, { nullable: true })
+  @OneToOne(() => PreviousInterventionEntity, { nullable: true })
   @JoinColumn()
-  previousIntervention: PreviousIntervention;
+  previousIntervention: PreviousInterventionEntity;
 
   @Column({ nullable: true })
   other: string;

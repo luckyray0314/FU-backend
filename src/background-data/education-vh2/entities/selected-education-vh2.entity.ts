@@ -4,14 +4,14 @@ import {
   JoinColumn,
   PrimaryColumn,
 } from "typeorm";
-import { EducationVh2 } from "./education-vh2.entity";
+import { EducationVh2Entity } from "./education-vh2.entity";
 
 @Entity("selected_education_vh2")
-export class SelectedEducationVh2 {
+export class SelectedEducationVh2Entity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => EducationVh2)
+  @OneToOne(() => EducationVh2Entity)
   @JoinColumn()
-  educationVh2: EducationVh2;
+  educationVh2: EducationVh2Entity;
 }
