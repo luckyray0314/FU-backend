@@ -1,7 +1,14 @@
 import { Controller } from '@nestjs/common';
+import { Crud } from '@nestjsx/crud';
+import { WhoParticipatesEntity } from './entities/who-participates.entity';
 import { WhoParticipatesService } from './who-participates.service';
 
+@Crud({
+  model: {
+    type: WhoParticipatesEntity
+  }
+})
 @Controller('who-participates')
 export class WhoParticipatesController {
-  constructor(private readonly whoParticipatesService: WhoParticipatesService) {}
+  constructor(public whoParticipatesService: WhoParticipatesService) {}
 }
