@@ -1,9 +1,14 @@
 import { Module } from '@nestjs/common';
-import { EducationVh1Service } from './education-vh1.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
 import { EducationVh1Controller } from './education-vh1.controller';
+import { EducationVh1Repository } from './education-vh1.repository';
+import { EducationVh1Service } from './education-vh1.service';
+import { EducationVh1Entity } from './entities/education-vh1.entity';
 
 @Module({
+  imports: [TypeOrmModule.forFeature([ EducationVh1Entity ])],
+  providers: [EducationVh1Service, EducationVh1Repository],
   controllers: [EducationVh1Controller],
-  providers: [EducationVh1Service]
+  exports: [EducationVh1Service, EducationVh1Repository]
 })
 export class EducationVh1Module {}

@@ -1,9 +1,14 @@
 import { Module } from '@nestjs/common';
-import { SchoolUniformService } from './school-uniform.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { SchoolUniformEntity } from './entities/school-uniform.entity';
 import { SchoolUniformController } from './school-uniform.controller';
+import { SchoolUniformRepository } from './school-uniform.repository';
+import { SchoolUniformService } from './school-uniform.service';
 
 @Module({
+  imports: [TypeOrmModule.forFeature([ SchoolUniformEntity ])],
+  providers: [SchoolUniformService, SchoolUniformRepository],
   controllers: [SchoolUniformController],
-  providers: [SchoolUniformService]
+  exports: [SchoolUniformService, SchoolUniformRepository]
 })
 export class SchoolUniformModule {}

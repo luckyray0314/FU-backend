@@ -1,9 +1,14 @@
 import { Module } from '@nestjs/common';
-import { TypeOfEffortService } from './type-of-effort.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { TypeOfEffortEntity } from './entities/type-of-effort.entity';
 import { TypeOfEffortController } from './type-of-effort.controller';
+import { TypeOfEffortRepository } from './type-of-effort.repository';
+import { TypeOfEffortService } from './type-of-effort.service';
 
 @Module({
+  imports: [TypeOrmModule.forFeature([ TypeOfEffortEntity ])],
+  providers: [TypeOfEffortService, TypeOfEffortRepository],
   controllers: [TypeOfEffortController],
-  providers: [TypeOfEffortService]
+  exports: [TypeOfEffortService, TypeOfEffortRepository]
 })
 export class TypeOfEffortModule {}
