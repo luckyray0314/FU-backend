@@ -6,9 +6,12 @@ import { PreviousInterventionService } from './previous-intervention.service';
 @Crud({
   model: {
     type: PreviousInterventionEntity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('previous-intervention')
 export class PreviousInterventionController {
-  constructor(public previousInterventionService: PreviousInterventionService) {}
+  constructor(public service: PreviousInterventionService) {}
 }

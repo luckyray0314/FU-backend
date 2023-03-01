@@ -10,5 +10,5 @@ import { EducationVh1Entity } from './entities/education-vh1.entity';
 })
 @Controller('education-vh1')
 export class EducationVh1Controller {
-  constructor(public educationVh1Service: EducationVh1Service) {}
+  constructor(public service: EducationVh1Service) {}
 }

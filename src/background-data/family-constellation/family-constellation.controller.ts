@@ -6,9 +6,12 @@ import { FamilyConstellationService } from './family-constellation.service';
 @Crud({
   model: {
     type: FamilyConstellationEntity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('family-constellation')
 export class FamilyConstellationController {
-  constructor(public familyConstellationService: FamilyConstellationService) {}
+  constructor(public service: FamilyConstellationService) {}
 }

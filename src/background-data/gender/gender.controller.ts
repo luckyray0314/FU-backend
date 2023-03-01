@@ -10,5 +10,5 @@ import { GenderService } from './gender.service';
 })
 @Controller('gender')
 export class GenderController {
-  constructor(public genderService: GenderService) {}
+  constructor(public service: GenderService) { }
 }

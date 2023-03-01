@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
+import { BackgroundDataModule } from './background-data/background-data.module';
 import { EducationVh1Module } from './background-data/education-vh1/education-vh1.module';
 import { EducationVh2Module } from './background-data/education-vh2/education-vh2.module';
 import { EmploymentVh1Module } from './background-data/employment-vh1/employment-vh1.module';
@@ -47,6 +48,8 @@ import { UserModule } from './user/user.module';
     SchoolUniformModule,
     TypeOfEffortModule,
     WhoParticipatesModule,
+
+    BackgroundDataModule
   ],
   controllers: [AppController, HealthController],
   providers: [

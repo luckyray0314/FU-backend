@@ -6,9 +6,12 @@ import { SchoolUniformService } from './school-uniform.service';
 @Crud({
   model: {
     type: SchoolUniformEntity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('school-uniform')
 export class SchoolUniformController {
-  constructor(public schoolUniformService: SchoolUniformService) {}
+  constructor(public service: SchoolUniformService) {}
 }

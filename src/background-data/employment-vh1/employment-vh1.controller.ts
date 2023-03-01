@@ -6,9 +6,12 @@ import { EmploymentVh1Entity } from './entities/employment-vh1.entity';
 @Crud({
   model: {
     type: EmploymentVh1Entity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('employment-vh1')
 export class EmploymentVh1Controller {
-  constructor(public employmentVh1Service: EmploymentVh1Service) {}
+  constructor(public service: EmploymentVh1Service) {}
 }

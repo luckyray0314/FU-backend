@@ -6,9 +6,12 @@ import { OtherInterventionsService } from './other-interventions.service';
 @Crud({
   model: {
     type: OtherInterventionsEntity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('other-interventions')
 export class OtherInterventionsController {
-  constructor(public otherInterventionsService: OtherInterventionsService) {}
+  constructor(public service: OtherInterventionsService) {}
 }

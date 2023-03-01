@@ -6,9 +6,12 @@ import { EstablishedDiagnosesService } from './established-diagnoses.service';
 @Crud({
   model: {
     type: EstablishedDiagnosesEntity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('established-diagnoses')
 export class EstablishedDiagnosesController {
-  constructor(public establishedDiagnosesService: EstablishedDiagnosesService) {}
+  constructor(public service: EstablishedDiagnosesService) {}
 }

@@ -6,9 +6,12 @@ import { InterpreterRequiredService } from './interpreter-required.service';
 @Crud({
   model: {
     type: InterpreterRequiredEntity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('interpreter-required')
 export class InterpreterRequiredController {
-  constructor(public interpreterRequiredService: InterpreterRequiredService) {}
+  constructor(public service: InterpreterRequiredService) {}
 }

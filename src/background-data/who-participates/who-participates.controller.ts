@@ -6,9 +6,12 @@ import { WhoParticipatesService } from './who-participates.service';
 @Crud({
   model: {
     type: WhoParticipatesEntity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('who-participates')
 export class WhoParticipatesController {
-  constructor(public whoParticipatesService: WhoParticipatesService) {}
+  constructor(public service: WhoParticipatesService) {}
 }

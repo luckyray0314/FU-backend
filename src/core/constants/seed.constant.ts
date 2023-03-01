@@ -3,12 +3,12 @@ export const genderSeedData = [
   'Boy',
 ].map(data => { return { description: data }; });
 
-export const reasonForUpdateData = [
+export const reasonForUpdateSeedData = [
   'Own application',
   'Report of concern',
 ].map(data => { return { description: data }; });
 
-export const problemAreaData = [
+export const problemAreaSeedData = [
   'School problems',
   'Abuse',
   'Mental illness',
@@ -19,14 +19,14 @@ export const problemAreaData = [
   'Crime',
 ].map(data => { return { description: data }; });
 
-export const previousInterventionData = [
+export const previousInterventionSeedData = [
   'No',
   'Yes - outpatient care',
   'Yes - other social services contribution (LSS, placement, LUL)',
   'Yes - other health and medical services (e.g. BUP, Habilitation, student health)',
 ].map(data => { return { description: data }; });
 
-export const otherInterventionsData = [
+export const otherInterventionsSeedData = [
   'No',
   'Yes - BUP',
   'Yes - first line psychiatry',
@@ -36,7 +36,7 @@ export const otherInterventionsData = [
   'Yes - group activities within social services',
 ].map(data => { return { description: data }; });
 
-export const familyConstellationData = [
+export const familyConstellationSeedData = [
   'Live with both VH',
   'Living with a VH',
   'Living alternately/getting together',
@@ -44,7 +44,7 @@ export const familyConstellationData = [
   'Lives in another family',
 ].map(data => { return { description: data }; });
 
-export const whoParticipatesData = [
+export const whoParticipatesSeedData = [
   'The child',
   'Siblings',
   'A parent',
@@ -53,7 +53,7 @@ export const whoParticipatesData = [
   'Other important people',
 ].map(data => { return { description: data }; });
 
-export const educationVh1Data = [
+export const educationVh1SeedData = [
   'Elementary school',
   'Gymnasium',
   'Post-secondary education',
@@ -61,7 +61,7 @@ export const educationVh1Data = [
   'Education from another country',
 ].map(data => { return { description: data }; });
 
-export const educationVh2Data = [
+export const educationVh2SeedData = [
   'Elementary school',
   'Gymnasium',
   'Post-secondary education',
@@ -69,7 +69,7 @@ export const educationVh2Data = [
   'Education from another country',
 ].map(data => { return { description: data }; });
 
-export const employmentVh1Data = [
+export const employmentVh1SeedData = [
   'Full-time employment (job/study)',
   'Employment part-time',
   'Job seeker',
@@ -77,7 +77,7 @@ export const employmentVh1Data = [
   'Parental leave',
 ].map(data => { return { description: data }; });
 
-export const employmentVh2Data = [
+export const employmentVh2SeedData = [
   'Full-time employment (job/study)',
   'Employment part-time',
   'Job seeker',
@@ -85,12 +85,12 @@ export const employmentVh2Data = [
   'Parental leave',
 ].map(data => { return { description: data }; });
 
-export const interpreterRequiredData = [
+export const interpreterRequiredSeedData = [
   'Yes',
   'No',
 ].map(data => { return { description: data }; });
 
-export const typeOfEffortData = [
+export const typeOfEffortSeedData = [
   'Family treatment ( not manual)',
   'Repulse',
   'Enhanced Comet',
@@ -100,7 +100,7 @@ export const typeOfEffortData = [
   'ONE',
 ].map(data => { return { description: data }; });
 
-export const establishedDiagnosesData = [
+export const establishedDiagnosesSeedData = [
   'No diagnosis',
   'ADHD',
   'ADD',
@@ -113,7 +113,7 @@ export const establishedDiagnosesData = [
   'Defiance syndrome',
 ].map(data => { return { description: data }; });
 
-export const schoolUniformData = [
+export const schoolUniformSeedData = [
   'Ordinary school form',
   'Resource school',
   'Special teaching group',

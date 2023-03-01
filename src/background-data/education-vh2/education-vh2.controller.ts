@@ -6,9 +6,12 @@ import { EducationVh2Entity } from './entities/education-vh2.entity';
 @Crud({
   model: {
     type: EducationVh2Entity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('education-vh2')
 export class EducationVh2Controller {
-  constructor(public educationVh2Service: EducationVh2Service) {}
+  constructor(public service: EducationVh2Service) {}
 }

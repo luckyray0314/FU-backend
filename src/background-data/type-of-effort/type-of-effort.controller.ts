@@ -6,9 +6,12 @@ import { TypeOfEffortService } from './type-of-effort.service';
 @Crud({
   model: {
     type: TypeOfEffortEntity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('type-of-effort')
 export class TypeOfEffortController {
-  constructor(public typeOfEffortService: TypeOfEffortService) {}
+  constructor(public service: TypeOfEffortService) {}
 }

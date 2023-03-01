@@ -6,9 +6,12 @@ import { ReasonForUpdateService } from './reason-for-update.service';
 @Crud({
   model: {
     type: ReasonForUpdateEntity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('reason-for-update')
 export class ReasonForUpdateController {
-  constructor(public reasonForUpdateService: ReasonForUpdateService) {}
+  constructor(public service: ReasonForUpdateService) {}
 }

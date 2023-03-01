@@ -6,9 +6,12 @@ import { ProblemAreaService } from './problem-area.service';
 @Crud({
   model: {
     type: ProblemAreaEntity
+  },
+  routes: {
+    only: ["getManyBase"]
   }
 })
 @Controller('problem-area')
 export class ProblemAreaController {
-  constructor(public problemAreaService: ProblemAreaService) {}
+  constructor(public service: ProblemAreaService) {}
 }
