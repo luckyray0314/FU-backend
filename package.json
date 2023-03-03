@@ -6,7 +6,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "prebuild": "rimraf dist",
+    "prebuild": "rm -rf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "fixtures": "fixtures-ts-node-commonjs load --require=dotenv/config --require=tsconfig-paths/register --dataSource=./src/data-source.ts --ignoreDecorators test/fixtures",
