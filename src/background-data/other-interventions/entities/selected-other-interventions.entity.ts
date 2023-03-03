@@ -3,6 +3,7 @@ import {
   OneToOne,
   JoinColumn,
   PrimaryColumn,
+  Column,
 } from "typeorm";
 import { OtherInterventionsEntity } from "./other-interventions.entity";
 
@@ -11,7 +12,10 @@ export class SelectedOtherInterventionsEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => OtherInterventionsEntity)
+  @OneToOne(() => OtherInterventionsEntity, { nullable: true })
   @JoinColumn()
   otherIntervention: OtherInterventionsEntity;
+
+  @Column({ nullable: true })
+  other: string;
 }

@@ -3,6 +3,7 @@ import {
   OneToOne,
   JoinColumn,
   PrimaryColumn,
+  Column,
 } from "typeorm";
 import { WhoParticipatesEntity } from "./who-participates.entity";
 
@@ -11,7 +12,10 @@ export class SelectedWhoParticipatesEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => WhoParticipatesEntity)
+  @OneToOne(() => WhoParticipatesEntity, { nullable: true })
   @JoinColumn()
   whoParticipates: WhoParticipatesEntity;
+
+  @Column({ nullable: true })
+  other: string;
 }

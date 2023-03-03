@@ -17,6 +17,7 @@ export const problemAreaSeedData = [
   'Problematic relationships',
   'Violence in the family',
   'Crime',
+  'Other'
 ].map(data => { return { description: data }; });
 
 export const previousInterventionSeedData = [
@@ -24,6 +25,7 @@ export const previousInterventionSeedData = [
   'Yes - outpatient care',
   'Yes - other social services contribution (LSS, placement, LUL)',
   'Yes - other health and medical services (e.g. BUP, Habilitation, student health)',
+  'Other'
 ].map(data => { return { description: data }; });
 
 export const otherInterventionsSeedData = [
@@ -34,6 +36,7 @@ export const otherInterventionsSeedData = [
   'Yes - Student health',
   'Yes - Maria Ungdom',
   'Yes - group activities within social services',
+  'Other'
 ].map(data => { return { description: data }; });
 
 export const familyConstellationSeedData = [
@@ -42,6 +45,7 @@ export const familyConstellationSeedData = [
   'Living alternately/getting together',
   'Lives with VH + bonus parent',
   'Lives in another family',
+  'Other'
 ].map(data => { return { description: data }; });
 
 export const whoParticipatesSeedData = [
@@ -50,7 +54,7 @@ export const whoParticipatesSeedData = [
   'A parent',
   'Both parents',
   'Parent + bonus parent',
-  'Other important people',
+  'Other',
 ].map(data => { return { description: data }; });
 
 export const educationVh1SeedData = [
@@ -111,6 +115,7 @@ export const establishedDiagnosesSeedData = [
   'Self-injurious behavior',
   'Language disorder',
   'Defiance syndrome',
+  'Other'
 ].map(data => { return { description: data }; });
 
 export const schoolUniformSeedData = [

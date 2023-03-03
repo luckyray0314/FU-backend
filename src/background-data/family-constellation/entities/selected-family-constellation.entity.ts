@@ -3,6 +3,7 @@ import {
   OneToOne,
   JoinColumn,
   PrimaryColumn,
+  Column,
 } from "typeorm";
 import { FamilyConstellationEntity } from "./family-constellation.entity";
 
@@ -11,7 +12,10 @@ export class SelectedFamilyConstellationEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @OneToOne(() => FamilyConstellationEntity)
+  @OneToOne(() => FamilyConstellationEntity, { nullable: true })
   @JoinColumn()
   familyConstellation: FamilyConstellationEntity;
+
+  @Column({ nullable: true })
+  other: string;
 }
