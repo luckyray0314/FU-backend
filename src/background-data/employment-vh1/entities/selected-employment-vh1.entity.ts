@@ -1,17 +1,17 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { EmploymentVh1Entity } from "./employment-vh1.entity";
 
 @Entity("selected_employment_vh1")
 export class SelectedEmploymentVh1Entity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => EmploymentVh1Entity)
+  @ManyToOne(() => EmploymentVh1Entity)
   @JoinColumn()
   employmentVh1: EmploymentVh1Entity;
 }

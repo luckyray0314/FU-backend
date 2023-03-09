@@ -1,21 +1,20 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
-  Column,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { EstablishedDiagnosesEntity } from "./established-diagnoses.entity";
 
 @Entity("selected_established_diagnoses")
 export class SelectedEstablishedDiagnosesEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => EstablishedDiagnosesEntity, { nullable: true })
+  @ManyToOne(() => EstablishedDiagnosesEntity, { nullable: true })
   @JoinColumn()
-  establishedDiagnoses: EstablishedDiagnosesEntity;
+  establishedDiagnoses?: EstablishedDiagnosesEntity;
 
   @Column({ nullable: true })
-  other: string;
+  other?: string;
 }

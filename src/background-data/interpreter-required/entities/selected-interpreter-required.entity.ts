@@ -1,17 +1,17 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { InterpreterRequiredEntity } from "./interpreter-required.entity";
 
 @Entity("selected_interpreter_required")
 export class SelectedInterpreterRequiredEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => InterpreterRequiredEntity)
+  @ManyToOne(() => InterpreterRequiredEntity)
   @JoinColumn()
   interpreterRequired: InterpreterRequiredEntity;
 }

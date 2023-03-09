@@ -1,21 +1,20 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
-  Column,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { FamilyConstellationEntity } from "./family-constellation.entity";
 
 @Entity("selected_family_constellation")
 export class SelectedFamilyConstellationEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => FamilyConstellationEntity, { nullable: true })
+  @ManyToOne(() => FamilyConstellationEntity, { nullable: true })
   @JoinColumn()
-  familyConstellation: FamilyConstellationEntity;
+  familyConstellation?: FamilyConstellationEntity;
 
   @Column({ nullable: true })
-  other: string;
+  other?: string;
 }

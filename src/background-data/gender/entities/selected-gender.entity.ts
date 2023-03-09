@@ -1,17 +1,18 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
+  Column,
+  Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { GenderEntity } from "./gender.entity";
 
 @Entity("selected_gender")
 export class SelectedGenderEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => GenderEntity)
+  @ManyToOne(() => GenderEntity)
   @JoinColumn()
   gender: GenderEntity;
 }

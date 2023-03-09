@@ -13,6 +13,8 @@ export function setup(app: INestApplication): INestApplication {
     new ValidationPipe({
       transform: true,
       whitelist: true,
+      enableDebugMessages: true,
+      disableErrorMessages: false,
       errorHttpStatusCode: HttpStatus.UNPROCESSABLE_ENTITY,
     }),
   );

@@ -1,17 +1,17 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { SchoolUniformEntity } from "./school-uniform.entity";
 
 @Entity("selected_school_uniform")
 export class SelectedSchoolUniformEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => SchoolUniformEntity)
+  @ManyToOne(() => SchoolUniformEntity)
   @JoinColumn()
   schoolUniform: SchoolUniformEntity;
 }

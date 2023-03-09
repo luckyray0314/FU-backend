@@ -1,21 +1,20 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
-  Column,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { PreviousInterventionEntity } from "./previous-intervention.entity";
 
 @Entity("selected_previous_intervention")
 export class SelectedPreviousInterventionEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => PreviousInterventionEntity, { nullable: true })
+  @ManyToOne(() => PreviousInterventionEntity, { nullable: true })
   @JoinColumn()
-  previousIntervention: PreviousInterventionEntity;
+  previousIntervention?: PreviousInterventionEntity;
 
   @Column({ nullable: true })
-  other: string;
+  other?: string;
 }

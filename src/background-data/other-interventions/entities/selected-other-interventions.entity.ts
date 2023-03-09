@@ -1,21 +1,20 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
-  Column,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { OtherInterventionsEntity } from "./other-interventions.entity";
 
-@Entity("selected_other_intervention")
+@Entity("selected_other_interventions")
 export class SelectedOtherInterventionsEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => OtherInterventionsEntity, { nullable: true })
+  @ManyToOne(() => OtherInterventionsEntity, { nullable: true })
   @JoinColumn()
-  otherIntervention: OtherInterventionsEntity;
+  otherInterventions?: OtherInterventionsEntity;
 
   @Column({ nullable: true })
-  other: string;
+  other?: string;
 }

@@ -41,6 +41,6 @@ jobs:
           script: |
             cd ~/vallentuna-survey-backend
             git pull
-            sudo npm install
-            sudo npm run build
+            npm install
+            npm run build
             pm2 restart vallentuna-survey-backend

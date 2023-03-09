@@ -1,21 +1,20 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
-  Column,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { ProblemAreaEntity } from "./problem-area.entity";
 
 @Entity("selected_problem_area")
 export class SelectedProblemAreaEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => ProblemAreaEntity, { nullable: true })
+  @ManyToOne(() => ProblemAreaEntity, { nullable: true })
   @JoinColumn()
-  problemArea: ProblemAreaEntity;
+  problemArea?: ProblemAreaEntity;
 
   @Column({ nullable: true })
-  other: string;
+  other?: string;
 }

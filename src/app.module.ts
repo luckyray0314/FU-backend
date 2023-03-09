@@ -49,7 +49,7 @@ import { UserModule } from './user/user.module';
     TypeOfEffortModule,
     WhoParticipatesModule,
 
-    BackgroundDataModule
+    BackgroundDataModule,
   ],
   controllers: [AppController, HealthController],
   providers: [

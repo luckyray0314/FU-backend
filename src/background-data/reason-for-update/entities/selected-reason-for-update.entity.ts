@@ -1,17 +1,17 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { ReasonForUpdateEntity } from "./reason-for-update.entity";
 
 @Entity("selected_reason_for_update")
 export class SelectedReasonForUpdateEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => ReasonForUpdateEntity)
+  @ManyToOne(() => ReasonForUpdateEntity)
   @JoinColumn()
   reasonForUpdate: ReasonForUpdateEntity;
 }

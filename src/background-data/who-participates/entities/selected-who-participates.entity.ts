@@ -1,21 +1,20 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
-  Column,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { WhoParticipatesEntity } from "./who-participates.entity";
 
 @Entity("selected_who_participates")
 export class SelectedWhoParticipatesEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => WhoParticipatesEntity, { nullable: true })
+  @ManyToOne(() => WhoParticipatesEntity, { nullable: true })
   @JoinColumn()
-  whoParticipates: WhoParticipatesEntity;
+  whoParticipates?: WhoParticipatesEntity;
 
   @Column({ nullable: true })
-  other: string;
+  other?: string;
 }

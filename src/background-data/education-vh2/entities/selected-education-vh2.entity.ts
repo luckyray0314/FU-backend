@@ -1,17 +1,17 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { EducationVh2Entity } from "./education-vh2.entity";
 
 @Entity("selected_education_vh2")
 export class SelectedEducationVh2Entity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => EducationVh2Entity)
+  @ManyToOne(() => EducationVh2Entity)
   @JoinColumn()
   educationVh2: EducationVh2Entity;
 }

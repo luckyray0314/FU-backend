@@ -1,17 +1,17 @@
 import {
-  Entity,
-  OneToOne,
-  JoinColumn,
-  PrimaryColumn,
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { TypeOfEffortEntity } from "./type-of-effort.entity";
 
 @Entity("selected_type_of_effort")
 export class SelectedTypeOfEffortEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  id?: string;
+  
+  @Column()
   codeNumber: string;
 
-  @OneToOne(() => TypeOfEffortEntity)
+  @ManyToOne(() => TypeOfEffortEntity)
   @JoinColumn()
   typeOfEffort: TypeOfEffortEntity;
 }

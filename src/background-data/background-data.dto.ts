@@ -1,3 +1,5 @@
+import { ApiProperty } from '@nestjs/swagger';
+import { IsNumber, IsObject, IsString } from 'class-validator';
 import { EducationVh1Entity } from './education-vh1/entities/education-vh1.entity';
 import { EducationVh2Entity } from './education-vh2/entities/education-vh2.entity';
 import { EmploymentVh1Entity } from './employment-vh1/entities/employment-vh1.entity';
@@ -14,20 +16,71 @@ import { SchoolUniformEntity } from './school-uniform/entities/school-uniform.en
 import { TypeOfEffortEntity } from './type-of-effort/entities/type-of-effort.entity';
 import { WhoParticipatesEntity } from './who-participates/entities/who-participates.entity';
 
-export class BackgroundDataDto {
+export class BackgroundSurveyBasicDataDto {
+  @ApiProperty()
   genderEntities: GenderEntity[];
+  
+  @ApiProperty()
   educationVh1Entities: EducationVh1Entity[];
+  
+  @ApiProperty()
   educationVh2Entities: EducationVh2Entity[];
+  
+  @ApiProperty()
   employmentVh1Entities: EmploymentVh1Entity[];
+  
+  @ApiProperty()
   employmentVh2Entities: EmploymentVh2Entity[];
+  
+  @ApiProperty()
   establishedDiagnosesEntities: EstablishedDiagnosesEntity[];
+  
+  @ApiProperty()
   familyConstellationEntities: FamilyConstellationEntity[];
+  
+  @ApiProperty()
   interpreterRequiredEntities: InterpreterRequiredEntity[];
+  
+  @ApiProperty()
   otherInterventionsEntities: OtherInterventionsEntity[];
+  
+  @ApiProperty()
   previousInterventionEntities: PreviousInterventionEntity[];
+  
+  @ApiProperty()
   problemAreaEntities: ProblemAreaEntity[];
+  
+  @ApiProperty()
   reasonForUpdateEntities: ReasonForUpdateEntity[];
+  
+  @ApiProperty()
   schoolUniformEntities: SchoolUniformEntity[];
+  
+  @ApiProperty()
   typeOfEffortEntities: TypeOfEffortEntity[];
+  
+  @ApiProperty()
   whoParticipatesEntities: WhoParticipatesEntity[];
+}
+
+export type FormDataByEntityName = {
+  [entityName: string]: (number | string)[];
+};
+
+export class BackgroundDataDto {
+  @ApiProperty()
+  @IsString()
+  codeNumber: string;
+  
+  @ApiProperty()
+  @IsString()
+  date: string;
+  
+  @ApiProperty()
+  @IsNumber()
+  yearOfBirth: number;
+  
+  @ApiProperty({ type: () => ({} as FormDataByEntityName) })
+  @IsObject()
+  formDataByEntityName: FormDataByEntityName;
 }
