@@ -23,6 +23,7 @@ import { TypeOfEffortModule } from './background-data/type-of-effort/type-of-eff
 import { WhoParticipatesModule } from './background-data/who-participates/who-participates.module';
 import { dataSourceOptions } from './data-source';
 import { HealthController } from './health.controller';
+import { ScoreModule } from './score/score.module';
 import { SeedModule } from './seeds/seed.module';
 import { UserModule } from './user/user.module';
 
@@ -50,6 +51,7 @@ import { UserModule } from './user/user.module';
     WhoParticipatesModule,
 
     BackgroundDataModule,
+    ScoreModule
   ],
   controllers: [AppController, HealthController],
   providers: [

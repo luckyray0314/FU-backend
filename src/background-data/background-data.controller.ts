@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Param, Post, Request } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { BackgroundDataDto, BackgroundSurveyBasicDataDto } from './background-data.dto';
+import { BackgroundDataDto, BackgroundMetadataDto, BackgroundSurveyBasicDataDto } from './background-data.dto';
 import { BackgroundMetadataService } from './background-metadata.service';
 import { EducationVh1Service } from './education-vh1/education-vh1.service';
 import { SelectedEducationVh1Service } from './education-vh1/selected-education-vh1.service';
@@ -108,6 +108,13 @@ export class BackgroundDataController {
       typeOfEffortEntities,
       whoParticipatesEntities
     };
+  }
+
+  @Get('/metadata')
+  @ApiOkResponse({ type: Array<BackgroundMetadataDto> })
+  async metadata(
+  ): Promise<BackgroundMetadataDto[]> {
+    return await this.backgroundMetadataService.find();
   }
 
   @Post('create')
