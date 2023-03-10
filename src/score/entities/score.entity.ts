@@ -19,9 +19,13 @@ export class ScoreEntity {
   @Column()
   date: string;
 
-  @Column()
+  @Column({
+    type: "decimal"
+  })
   score15: number;
 
-  @Column()
+  @Column({
+    type: "decimal"
+  })
   ors: number;
 }
