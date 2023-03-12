@@ -6,12 +6,12 @@ export class ScoreDto {
   @IsString()
   @IsNotEmpty()
   codeNumber: string;
-  
+
   @ApiProperty()
   @IsNotEmpty()
   @IsIn([1, 2, 3])
   person: number;
-  
+
   @ApiProperty()
   @IsDateString()
   date: string;
@@ -28,4 +28,18 @@ export class ScoreDto {
   @ApiProperty()
   @IsNumber()
   ors: number;
+}
+
+export class OrsAndScore15WithOccasionDto {
+  @ApiProperty()
+  @IsNumber()
+  ors: number;
+
+  @ApiProperty()
+  @IsNumber()
+  score15: number;
+
+  @ApiProperty()
+  @IsIn([1, 2, 3])
+  occasion: 1 | 2 | 3;
 }

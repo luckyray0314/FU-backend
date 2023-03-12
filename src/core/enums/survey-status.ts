@@ -1,5 +1,5 @@
 export enum SurveyStatus {
-  CLEAR = "CLEAR",
-  LOSS = "LOSS",
-  COMING = "COMING"
+  Clear = "Clear",
+  Loss = "Loss",
+  Coming = "Coming"
 }
