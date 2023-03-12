@@ -17,4 +17,19 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
   async update(id: number, entity: ScoreEntity) {
     return this.repo.update(id, entity);
   }
+
+  async numOfClients(codeNumbers: string[], startDate: string, endDate: string) {
+    return codeNumbers.length === 0 ? 0 : await this.repo.createQueryBuilder("score")
+      .select("DISTINCT(codeNumber)")
+      .where("score.codeNumber IN (:...codeNumbers)", { codeNumbers })
+      .andWhere("score.date BETWEEN :startDate AND :endDate", { startDate, endDate })
+      .getCount();
+  }
+
+  async avgOfOrsAndScore15() {
+    return await this.repo.createQueryBuilder("score")
+      .select("AVG(ors)", "ors")
+      .addSelect("AVG(score15)", "score15")
+      .getRawOne();
+  }
 }

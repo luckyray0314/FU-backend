@@ -6,20 +6,36 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { BackgroundDataModule } from './background-data/background-data.module';
+import { BackgroundMetadataModule } from './background-data/background-metadata.module';
 import { EducationVh1Module } from './background-data/education-vh1/education-vh1.module';
+import { SelectedEducationVh1Module } from './background-data/education-vh1/selected-education-vh1.module';
 import { EducationVh2Module } from './background-data/education-vh2/education-vh2.module';
+import { SelectedEducationVh2Module } from './background-data/education-vh2/selected-education-vh2.module';
 import { EmploymentVh1Module } from './background-data/employment-vh1/employment-vh1.module';
+import { SelectedEmploymentVh1Module } from './background-data/employment-vh1/selected-employment-vh1.module';
 import { EmploymentVh2Module } from './background-data/employment-vh2/employment-vh2.module';
+import { SelectedEmploymentVh2Module } from './background-data/employment-vh2/selected-employment-vh2.module';
 import { EstablishedDiagnosesModule } from './background-data/established-diagnoses/established-diagnoses.module';
+import { SelectedEstablishedDiagnosesModule } from './background-data/established-diagnoses/selected-established-diagnoses.module';
 import { FamilyConstellationModule } from './background-data/family-constellation/family-constellation.module';
+import { SelectedFamilyConstellationModule } from './background-data/family-constellation/selected-family-constellation.module';
 import { GenderModule } from './background-data/gender/gender.module';
+import { SelectedGenderModule } from './background-data/gender/selected-gender.module';
 import { InterpreterRequiredModule } from './background-data/interpreter-required/interpreter-required.module';
+import { SelectedInterpreterRequiredModule } from './background-data/interpreter-required/selected-interpreter-required.module';
 import { OtherInterventionsModule } from './background-data/other-interventions/other-interventions.module';
+import { SelectedOtherInterventionsModule } from './background-data/other-interventions/selected-other-interventions.module';
 import { PreviousInterventionModule } from './background-data/previous-intervention/previous-intervention.module';
+import { SelectedPreviousInterventionModule } from './background-data/previous-intervention/selected-previous-intervention.module';
 import { ProblemAreaModule } from './background-data/problem-area/problem-area.module';
+import { SelectedProblemAreaModule } from './background-data/problem-area/selected-problem-area.module';
 import { ReasonForUpdateModule } from './background-data/reason-for-update/reason-for-update.module';
+import { SelectedReasonForUpdateModule } from './background-data/reason-for-update/selected-reason-for-update.module';
 import { SchoolUniformModule } from './background-data/school-uniform/school-uniform.module';
+import { SelectedSchoolUniformModule } from './background-data/school-uniform/selected-school-uniform.module';
+import { SelectedTypeOfEffortModule } from './background-data/type-of-effort/selected-type-of-effort.module';
 import { TypeOfEffortModule } from './background-data/type-of-effort/type-of-effort.module';
+import { SelectedWhoParticipatesModule } from './background-data/who-participates/selected-who-participates.module';
 import { WhoParticipatesModule } from './background-data/who-participates/who-participates.module';
 import { dataSourceOptions } from './data-source';
 import { HealthController } from './health.controller';
@@ -34,6 +50,7 @@ import { UserModule } from './user/user.module';
     SeedModule,
     UserModule,
     AuthModule,
+
     GenderModule,
     EducationVh1Module,
     EducationVh2Module,
@@ -50,6 +67,23 @@ import { UserModule } from './user/user.module';
     TypeOfEffortModule,
     WhoParticipatesModule,
 
+    SelectedGenderModule,
+    SelectedEducationVh1Module,
+    SelectedEducationVh2Module,
+    SelectedEmploymentVh1Module,
+    SelectedEmploymentVh2Module,
+    SelectedEstablishedDiagnosesModule,
+    SelectedFamilyConstellationModule,
+    SelectedInterpreterRequiredModule,
+    SelectedOtherInterventionsModule,
+    SelectedPreviousInterventionModule,
+    SelectedProblemAreaModule,
+    SelectedReasonForUpdateModule,
+    SelectedSchoolUniformModule,
+    SelectedTypeOfEffortModule,
+    SelectedWhoParticipatesModule,
+
+    BackgroundMetadataModule,
     BackgroundDataModule,
     ScoreModule
   ],
@@ -58,4 +92,4 @@ import { UserModule } from './user/user.module';
     AppService
   ],
 })
-export class AppModule {}
+export class AppModule { }
