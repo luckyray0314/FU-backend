@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { BackgroundDataDto, BackgroundSurveyBasicDataDto } from './background-data.dto';
 import { BackgroundDataService } from './background-data.service';
 
@@ -19,6 +19,7 @@ export class BackgroundDataController {
 
   @Post('create')
   @ApiOkResponse({ type: () => Boolean })
+  @ApiBody({ type: BackgroundDataDto })
   async create(
     @Body() payload: BackgroundDataDto,
   ): Promise<boolean> {

@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
-import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CodeNumberDto } from './dto/codeNumber.dto';
 import { FollowUpFilterDto } from './dto/followUpFilter.dto';
 import { FollowUpFilterResultDto } from './dto/followUpFilterResult.dto';
@@ -30,6 +30,7 @@ export class ScoreController {
 
   @Post('/getFollowUpFilterResult')
   @ApiOkResponse({ type: () => FollowUpFilterResultDto })
+  @ApiBody({ type: () => FollowUpFilterDto })
   async getFilterResult(
     @Body() payload: FollowUpFilterDto,
   ): Promise<FollowUpFilterResultDto> {
@@ -38,6 +39,7 @@ export class ScoreController {
 
   @Post('/getScoresByCodeNumberAndOccasion')
   @ApiOkResponse({ type: () => Array<OrsAndScore15WithOccasionDto> })
+  @ApiBody({ type: () => CodeNumberDto })
   async getScoresByCodeNumberAndOccasion(
     @Body() payload: CodeNumberDto
   ): Promise<OrsAndScore15WithOccasionDto[]> {
