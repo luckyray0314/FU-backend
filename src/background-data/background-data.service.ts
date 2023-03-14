@@ -1,4 +1,6 @@
 import { Injectable } from '@nestjs/common';
+import { SurveyStatus } from 'src/core/enums/survey-status';
+import { ScoreService } from 'src/score/score.service';
 import { BackgroundDataDto, BackgroundMetadataDto, BackgroundSurveyBasicDataDto } from './background-data.dto';
 import { BackgroundMetadataService } from './background-metadata.service';
 import { EducationVh1Service } from './education-vh1/education-vh1.service';
@@ -36,6 +38,7 @@ import { WhoParticipatesService } from './who-participates/who-participates.serv
 export class BackgroundDataService {
   constructor(
     public backgroundMetadataService: BackgroundMetadataService,
+    public scoreService: ScoreService,
 
     public genderService: GenderService,
     public educationVh1Service: EducationVh1Service,
@@ -308,4 +311,57 @@ export class BackgroundDataService {
 
     return result;
   };
+
+  async getCaseList() {
+    const backgroundMetadata = await this.backgroundMetadataService.find();
+    const result = await Promise.all(backgroundMetadata.map(async (backgroundMetadataEntity, bgIndex) => {
+      const scoreEntities = await this.scoreService.find({ where: { codeNumber: backgroundMetadataEntity.codeNumber } });
+      const details = await Promise.all([...Array(3)].map(async (_it, arrIndex) => {
+        const entities = scoreEntities.filter(s => s.occasion === arrIndex + 1);
+        const date = entities.at(0) ? new Date(entities[0].date) : new Date();
+        const statuses = [...Array(3)].map((_it2, personIndex) => {
+          const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
+          const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
+            : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
+              : SurveyStatus.Loss;
+          return status;
+        });
+        return { date, statuses };
+      }));
+      const surveyEntity = {
+        codeNumber: backgroundMetadataEntity.codeNumber,
+        status: SurveyStatus.Clear,
+        missedFields: "Missed Field",
+        history: {
+          zeroMonth: {
+            date: details[0].date,
+            statusInDetail: {
+              child: details[0].statuses[0],
+              careGiver1: details[0].statuses[1],
+              careGiver2: details[0].statuses[2],
+            }
+          },
+          sixMonths: {
+            date: details[1].date,
+            statusInDetail: {
+              child: details[1].statuses[0],
+              careGiver1: details[1].statuses[1],
+              careGiver2: details[1].statuses[2],
+            }
+          },
+          twelveMonths: {
+            date: details[2].date,
+            statusInDetail: {
+              child: details[2].statuses[0],
+              careGiver1: details[2].statuses[1],
+              careGiver2: details[2].statuses[2],
+            }
+          },
+        },
+        nextMeal: new Date()
+      };
+      return surveyEntity;
+    }));
+    return result;
+  }
 }

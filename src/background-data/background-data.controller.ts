@@ -1,5 +1,6 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { EstimatesDto } from 'src/score/dto/estimates.dto';
 import { BackgroundDataDto, BackgroundSurveyBasicDataDto } from './background-data.dto';
 import { BackgroundDataService } from './background-data.service';
 
@@ -32,6 +33,12 @@ export class BackgroundDataController {
     @Param('codeNumber') codeNumber: string
   ): Promise<BackgroundDataDto> {
     return await this.service.get(codeNumber);
+  }
+
+  @Get('/getCaseList')
+  @ApiOkResponse({ type: Array<EstimatesDto> })
+  async getCaseList(): Promise<EstimatesDto[]> {
+    return await this.service.getCaseList();
   }
 }
 

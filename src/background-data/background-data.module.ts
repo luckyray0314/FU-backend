@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ScoreModule } from 'src/score/score.module';
 import { BackgroundDataController } from './background-data.controller';
 import { BackgroundDataService } from './background-data.service';
 import { BackgroundMetadataModule } from './background-metadata.module';
@@ -65,7 +66,8 @@ import { WhoParticipatesModule } from './who-participates/who-participates.modul
     SelectedSchoolUniformModule,
     SelectedTypeOfEffortModule,
     SelectedWhoParticipatesModule,
-    BackgroundMetadataModule
+    BackgroundMetadataModule,
+    ScoreModule
   ],
   providers: [BackgroundDataService],
   controllers: [BackgroundDataController],
