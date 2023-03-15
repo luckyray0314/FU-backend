@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import dayjs = require('dayjs');
 import { SurveyStatus } from 'src/core/enums/survey-status';
 import { ScoreService } from 'src/score/score.service';
 import { BackgroundDataDto, BackgroundMetadataDto, BackgroundSurveyBasicDataDto } from './background-data.dto';
@@ -120,7 +121,8 @@ export class BackgroundDataService {
       await this.backgroundMetadataService.create({
         codeNumber,
         date: payload.date,
-        yearOfBirth: payload.yearOfBirth
+        yearOfBirth: payload.yearOfBirth,
+        country: payload.country
       });
 
       await this.selectedGenderService.deleteByCodeNumber(codeNumber);
@@ -318,7 +320,13 @@ export class BackgroundDataService {
       const scoreEntities = await this.scoreService.find({ where: { codeNumber: backgroundMetadataEntity.codeNumber } });
       const details = await Promise.all([...Array(3)].map(async (_it, arrIndex) => {
         const entities = scoreEntities.filter(s => s.occasion === arrIndex + 1);
-        const date = entities.at(0) ? new Date(entities[0].date) : new Date();
+        const today = dayjs();
+        const date = entities.at(0) ? new Date(entities[0].date)
+          : (
+            arrIndex === 0 ? today
+              : arrIndex === 1 ? today.add(6, "month")
+                : today.add(12, "month")
+          ).toDate();
         const statuses = [...Array(3)].map((_it2, personIndex) => {
           const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
           const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear

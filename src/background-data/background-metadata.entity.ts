@@ -12,4 +12,7 @@ export class BackgroundMetadataEntity {
 
   @Column()
   yearOfBirth: number;
+
+  @Column({ nullable: true })
+  country: string;
 }

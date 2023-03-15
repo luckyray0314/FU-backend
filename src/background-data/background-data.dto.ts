@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDateString, IsInt, IsObject, IsString, Min } from 'class-validator';
+import { IsDateString, IsIn, IsInt, IsObject, IsOptional, IsString, Min } from 'class-validator';
 import { EducationVh1Entity } from './education-vh1/entities/education-vh1.entity';
 import { EducationVh2Entity } from './education-vh2/entities/education-vh2.entity';
 import { EmploymentVh1Entity } from './employment-vh1/entities/employment-vh1.entity';
@@ -15,6 +15,9 @@ import { ReasonForUpdateEntity } from './reason-for-update/entities/reason-for-u
 import { SchoolUniformEntity } from './school-uniform/entities/school-uniform.entity';
 import { TypeOfEffortEntity } from './type-of-effort/entities/type-of-effort.entity';
 import { WhoParticipatesEntity } from './who-participates/entities/who-participates.entity';
+import { getNames } from "country-list";
+
+const countryNames = getNames();
 
 export class BackgroundSurveyBasicDataDto {
   @ApiProperty()
@@ -95,6 +98,11 @@ export class BackgroundDataDto {
   @Min(0)
   @IsInt()
   yearOfBirth: number;
+
+  @ApiProperty()
+  @IsOptional()
+  @IsIn(countryNames)
+  country: string;
 
   @ApiProperty({ type: () => ({} as FormDataByEntityName) })
   @IsObject()
