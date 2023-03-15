@@ -117,65 +117,65 @@ export class BackgroundDataService {
     try {
       const codeNumber = payload.codeNumber;
 
-      this.backgroundMetadataService.create({
+      await this.backgroundMetadataService.create({
         codeNumber,
         date: payload.date,
         yearOfBirth: payload.yearOfBirth
       });
 
-      this.selectedGenderService.deleteByCodeNumber(codeNumber);
-      this.selectedEducationVh1Service.deleteByCodeNumber(codeNumber);
-      this.selectedEducationVh2Service.deleteByCodeNumber(codeNumber);
-      this.selectedEmploymentVh1Service.deleteByCodeNumber(codeNumber);
-      this.selectedEmploymentVh2Service.deleteByCodeNumber(codeNumber);
-      this.selectedEstablishedDiagnosesService.deleteByCodeNumber(codeNumber);
-      this.selectedFamilyConstellationService.deleteByCodeNumber(codeNumber);
-      this.selectedInterpreterRequiredService.deleteByCodeNumber(codeNumber);
-      this.selectedOtherInterventionsService.deleteByCodeNumber(codeNumber);
-      this.selectedPreviousInterventionService.deleteByCodeNumber(codeNumber);
-      this.selectedProblemAreaService.deleteByCodeNumber(codeNumber);
-      this.selectedReasonForUpdateService.deleteByCodeNumber(codeNumber);
-      this.selectedSchoolUniformService.deleteByCodeNumber(codeNumber);
-      this.selectedTypeOfEffortService.deleteByCodeNumber(codeNumber);
-      this.selectedWhoParticipatesService.deleteByCodeNumber(codeNumber);
+      await this.selectedGenderService.deleteByCodeNumber(codeNumber);
+      await this.selectedEducationVh1Service.deleteByCodeNumber(codeNumber);
+      await this.selectedEducationVh2Service.deleteByCodeNumber(codeNumber);
+      await this.selectedEmploymentVh1Service.deleteByCodeNumber(codeNumber);
+      await this.selectedEmploymentVh2Service.deleteByCodeNumber(codeNumber);
+      await this.selectedEstablishedDiagnosesService.deleteByCodeNumber(codeNumber);
+      await this.selectedFamilyConstellationService.deleteByCodeNumber(codeNumber);
+      await this.selectedInterpreterRequiredService.deleteByCodeNumber(codeNumber);
+      await this.selectedOtherInterventionsService.deleteByCodeNumber(codeNumber);
+      await this.selectedPreviousInterventionService.deleteByCodeNumber(codeNumber);
+      await this.selectedProblemAreaService.deleteByCodeNumber(codeNumber);
+      await this.selectedReasonForUpdateService.deleteByCodeNumber(codeNumber);
+      await this.selectedSchoolUniformService.deleteByCodeNumber(codeNumber);
+      await this.selectedTypeOfEffortService.deleteByCodeNumber(codeNumber);
+      await this.selectedWhoParticipatesService.deleteByCodeNumber(codeNumber);
 
       for (const id of payload.formDataByEntityName["gender"]) {
-        this.selectedGenderService.create({
+        await this.selectedGenderService.create({
           codeNumber,
           gender: await this.genderService.findOne({ where: { id: +id } })
         });
       }
 
       for (const id of payload.formDataByEntityName["educationVh1"]) {
-        this.selectedEducationVh1Service.create({
+        await this.selectedEducationVh1Service.create({
           codeNumber,
           educationVh1: await this.educationVh1Service.findOne({ where: { id: +id } })
         });
       }
 
       for (const id of payload.formDataByEntityName["educationVh2"]) {
-        this.selectedEducationVh2Service.create({
+        await this.selectedEducationVh2Service.create({
           codeNumber,
           educationVh2: await this.educationVh2Service.findOne({ where: { id: +id } })
         });
       }
 
       for (const id of payload.formDataByEntityName["employmentVh1"]) {
-        this.selectedEmploymentVh1Service.create({
+        await this.selectedEmploymentVh1Service.create({
           codeNumber,
           employmentVh1: await this.employmentVh1Service.findOne({ where: { id: +id } })
         });
       }
 
       for (const id of payload.formDataByEntityName["employmentVh2"]) {
-        this.selectedEmploymentVh2Service.create({
+        await this.selectedEmploymentVh2Service.create({
           codeNumber,
           employmentVh2: await this.employmentVh2Service.findOne({ where: { id: +id } })
         });
       }
 
       for (const id of payload.formDataByEntityName["establishedDiagnoses"]) {
-        this.selectedEstablishedDiagnosesService.create(typeof id === "number" ? {
+        await this.selectedEstablishedDiagnosesService.create(typeof id === "number" ? {
           codeNumber,
           establishedDiagnoses: await this.establishedDiagnosesService.findOne({ where: { id: +id } })
         } : {
@@ -185,7 +185,7 @@ export class BackgroundDataService {
       }
 
       for (const id of payload.formDataByEntityName["familyConstellation"]) {
-        this.selectedFamilyConstellationService.create(typeof id === "number" ? {
+        await this.selectedFamilyConstellationService.create(typeof id === "number" ? {
           codeNumber,
           familyConstellation: await this.familyConstellationService.findOne({ where: { id: +id } })
         } : {
@@ -195,14 +195,14 @@ export class BackgroundDataService {
       }
 
       for (const id of payload.formDataByEntityName["interpreterRequired"]) {
-        this.selectedInterpreterRequiredService.create({
+        await this.selectedInterpreterRequiredService.create({
           codeNumber,
           interpreterRequired: await this.interpreterRequiredService.findOne({ where: { id: +id } })
         });
       }
 
       for (const id of payload.formDataByEntityName["otherInterventions"]) {
-        this.selectedOtherInterventionsService.create(typeof id === "number" ? {
+        await this.selectedOtherInterventionsService.create(typeof id === "number" ? {
           codeNumber,
           otherInterventions: await this.otherInterventionsService.findOne({ where: { id: +id } })
         } : {
@@ -212,7 +212,7 @@ export class BackgroundDataService {
       }
 
       for (const id of payload.formDataByEntityName["previousIntervention"]) {
-        this.selectedPreviousInterventionService.create(typeof id === "number" ? {
+        await this.selectedPreviousInterventionService.create(typeof id === "number" ? {
           codeNumber,
           previousIntervention: await this.previousInterventionService.findOne({ where: { id: +id } })
         } : {
@@ -222,7 +222,7 @@ export class BackgroundDataService {
       }
 
       for (const id of payload.formDataByEntityName["problemArea"]) {
-        await this.selectedProblemAreaService.create(typeof id === "number" ? {
+        await await this.selectedProblemAreaService.create(typeof id === "number" ? {
           codeNumber,
           problemArea: await this.problemAreaService.findOne({ where: { id: +id } })
         } : {
@@ -232,28 +232,28 @@ export class BackgroundDataService {
       }
 
       for (const id of payload.formDataByEntityName["reasonForUpdate"]) {
-        this.selectedReasonForUpdateService.create({
+        await this.selectedReasonForUpdateService.create({
           codeNumber,
           reasonForUpdate: await this.reasonForUpdateService.findOne({ where: { id: +id } })
         });
       }
 
       for (const id of payload.formDataByEntityName["schoolUniform"]) {
-        this.selectedSchoolUniformService.create({
+        await this.selectedSchoolUniformService.create({
           codeNumber,
           schoolUniform: await this.schoolUniformService.findOne({ where: { id: +id } })
         });
       }
 
       for (const id of payload.formDataByEntityName["typeOfEffort"]) {
-        this.selectedTypeOfEffortService.create({
+        await this.selectedTypeOfEffortService.create({
           codeNumber,
           typeOfEffort: await this.typeOfEffortService.findOne({ where: { id: +id } })
         });
       }
 
       for (const id of payload.formDataByEntityName["whoParticipates"]) {
-        this.selectedWhoParticipatesService.create(typeof id === "number" ? {
+        await this.selectedWhoParticipatesService.create(typeof id === "number" ? {
           codeNumber,
           whoParticipates: await this.whoParticipatesService.findOne({ where: { id: +id } })
         } : {
