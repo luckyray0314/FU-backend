@@ -318,15 +318,23 @@ export class BackgroundDataService {
     const backgroundMetadata = await this.backgroundMetadataService.find();
     const result = await Promise.all(backgroundMetadata.map(async (backgroundMetadataEntity, bgIndex) => {
       const scoreEntities = await this.scoreService.find({ where: { codeNumber: backgroundMetadataEntity.codeNumber } });
+
+      let prevOccasionDate = dayjs();
+
       const details = await Promise.all([...Array(3)].map(async (_it, arrIndex) => {
         const entities = scoreEntities.filter(s => s.occasion === arrIndex + 1);
         const today = dayjs();
         const date = entities.at(0) ? new Date(entities[0].date)
           : (
             arrIndex === 0 ? today
-              : arrIndex === 1 ? today.add(6, "month")
-                : today.add(12, "month")
+              : arrIndex === 1 ? prevOccasionDate.add(6, "month")
+                : prevOccasionDate.add(12, "month")
           ).toDate();
+        
+        if (entities.at(0)) {
+          prevOccasionDate = dayjs(entities[0].date);
+        }
+        
         const statuses = [...Array(3)].map((_it2, personIndex) => {
           const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
           const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
@@ -334,12 +342,13 @@ export class BackgroundDataService {
               : SurveyStatus.Loss;
           return status;
         });
+
         return { date, statuses };
       }));
       const surveyEntity = {
         codeNumber: backgroundMetadataEntity.codeNumber,
         status: SurveyStatus.Clear,
-        missedFields: "Missed Field",
+        missedFields: "",
         history: {
           zeroMonth: {
             date: details[0].date,

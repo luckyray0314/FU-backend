@@ -7,7 +7,7 @@ export const dataSourceOptions: DataSourceOptions = {
   host: 'localhost',
   port: 5432,
   username: 'postgres',
-  password: 'postgres',
+  password: 'm81p7*3G8zs7',
   database: 'survey',
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   // migrations: [
