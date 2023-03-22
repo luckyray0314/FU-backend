@@ -38,6 +38,16 @@ import { TypeOfEffortModule } from './background-data/type-of-effort/type-of-eff
 import { SelectedWhoParticipatesModule } from './background-data/who-participates/selected-who-participates.module';
 import { WhoParticipatesModule } from './background-data/who-participates/who-participates.module';
 import { dataSourceOptions } from './data-source';
+import { FollowUpDataModule } from './follow-up-survey/follow-up-data.module';
+import { FollowUpMetadataModule } from './follow-up-survey/follow-up-metadata.module';
+import { InterventionPeriodModule } from './follow-up-survey/intervention-period/intervention-period.module';
+import { SelectedInterventionPeriodModule } from './follow-up-survey/intervention-period/selected-intervention-period.module';
+import { InterventionProgressModule } from './follow-up-survey/intervention-progress/intervention-progress.module';
+import { SelectedInterventionProgressModule } from './follow-up-survey/intervention-progress/selected-intervention-progress.module';
+import { ReasonForTerminationModule } from './follow-up-survey/reason-for-termination/reason-for-termination.module';
+import { SelectedReasonForTerminationModule } from './follow-up-survey/reason-for-termination/selected-reason-for-termination.module';
+import { SelectedTimeConsumptionModule } from './follow-up-survey/time-consumption/selected-time-consumption.module';
+import { TimeConsumptionModule } from './follow-up-survey/time-consumption/time-consumption.module';
 import { HealthController } from './health.controller';
 import { ScoreModule } from './score/score.module';
 import { SeedModule } from './seeds/seed.module';
@@ -85,7 +95,19 @@ import { UserModule } from './user/user.module';
 
     BackgroundMetadataModule,
     BackgroundDataModule,
-    ScoreModule
+    ScoreModule,
+
+    InterventionPeriodModule,
+    InterventionProgressModule,
+    ReasonForTerminationModule,
+    TimeConsumptionModule,
+    SelectedInterventionPeriodModule,
+    SelectedInterventionProgressModule,
+    SelectedReasonForTerminationModule,
+    SelectedTimeConsumptionModule,
+
+    FollowUpMetadataModule,
+    FollowUpDataModule
   ],
   controllers: [AppController, HealthController],
   providers: [

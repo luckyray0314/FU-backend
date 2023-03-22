@@ -15,6 +15,10 @@ import { ReasonForUpdateEntity } from 'src/background-data/reason-for-update/ent
 import { SchoolUniformEntity } from 'src/background-data/school-uniform/entities/school-uniform.entity';
 import { TypeOfEffortEntity } from 'src/background-data/type-of-effort/entities/type-of-effort.entity';
 import { WhoParticipatesEntity } from 'src/background-data/who-participates/entities/who-participates.entity';
+import { InterventionPeriodEntity } from 'src/follow-up-survey/intervention-period/entities/intervention-period.entity';
+import { InterventionProgressEntity } from 'src/follow-up-survey/intervention-progress/entities/intervention-progress.entity';
+import { ReasonForTerminationEntity } from 'src/follow-up-survey/reason-for-termination/entities/reason-for-termination.entity';
+import { TimeConsumptionEntity } from 'src/follow-up-survey/time-consumption/entities/time-consumption.entity';
 import { Repository } from 'typeorm';
 
 import {
@@ -32,7 +36,11 @@ import {
   reasonForUpdateSeedData,
   schoolUniformSeedData,
   typeOfEffortSeedData,
-  whoParticipatesSeedData
+  whoParticipatesSeedData,
+  interventionPeriodData,
+  interventionProgressData,
+  reasonForTerminationData,
+  timeConsumptionData
 } from '../core/constants/seed.constant';
 
 @Injectable()
@@ -53,6 +61,10 @@ export class SeedService {
     @InjectRepository(SchoolUniformEntity) private readonly schoolUniformRepository: Repository<SchoolUniformEntity>,
     @InjectRepository(TypeOfEffortEntity) private readonly typeOfEffortRepository: Repository<TypeOfEffortEntity>,
     @InjectRepository(WhoParticipatesEntity) private readonly whoParticipatesRepository: Repository<WhoParticipatesEntity>,
+    @InjectRepository(InterventionPeriodEntity) private readonly interventionPeriodRepository: Repository<InterventionPeriodEntity>,
+    @InjectRepository(InterventionProgressEntity) private readonly interventionProgressRepository: Repository<InterventionProgressEntity>,
+    @InjectRepository(ReasonForTerminationEntity) private readonly reasonForTerminationRepository: Repository<ReasonForTerminationEntity>,
+    @InjectRepository(TimeConsumptionEntity) private readonly timeConsumptionRepository: Repository<TimeConsumptionEntity>,
   ) { }
 
   async seedGenders(): Promise<void> {
@@ -159,5 +171,34 @@ export class SeedService {
       return;
     }
     this.whoParticipatesRepository.save(whoParticipatesSeedData);
+  }
+  // follow up data
+  async seedInterventionPeriods(): Promise<void> {
+    const numRecords = await this.interventionPeriodRepository.count();
+    if (numRecords > 0) {
+      return;
+    }
+    this.interventionPeriodRepository.save(interventionPeriodData);
+  }
+  async seedInterventionProgresss(): Promise<void> {
+    const numRecords = await this.interventionProgressRepository.count();
+    if (numRecords > 0) {
+      return;
+    }
+    this.interventionProgressRepository.save(interventionProgressData);
+  }
+  async seedReasonForTerminations(): Promise<void> {
+    const numRecords = await this.reasonForTerminationRepository.count();
+    if (numRecords > 0) {
+      return;
+    }
+    this.reasonForTerminationRepository.save(reasonForTerminationData);
+  }
+  async seedTimeConsumptions(): Promise<void> {
+    const numRecords = await this.timeConsumptionRepository.count();
+    if (numRecords > 0) {
+      return;
+    }
+    this.timeConsumptionRepository.save(timeConsumptionData);
   }
 }

@@ -45,6 +45,18 @@ import { TypeOfEffortRepository } from 'src/background-data/type-of-effort/type-
 import { WhoParticipatesEntity } from 'src/background-data/who-participates/entities/who-participates.entity';
 import { WhoParticipatesModule } from 'src/background-data/who-participates/who-participates.module';
 import { WhoParticipatesRepository } from 'src/background-data/who-participates/who-participates.repository';
+import { InterventionPeriodEntity } from 'src/follow-up-survey/intervention-period/entities/intervention-period.entity';
+import { InterventionPeriodModule } from 'src/follow-up-survey/intervention-period/intervention-period.module';
+import { InterventionPeriodRepository } from 'src/follow-up-survey/intervention-period/intervention-period.repository';
+import { InterventionProgressEntity } from 'src/follow-up-survey/intervention-progress/entities/intervention-progress.entity';
+import { InterventionProgressModule } from 'src/follow-up-survey/intervention-progress/intervention-progress.module';
+import { InterventionProgressRepository } from 'src/follow-up-survey/intervention-progress/intervention-progress.repository';
+import { ReasonForTerminationEntity } from 'src/follow-up-survey/reason-for-termination/entities/reason-for-termination.entity';
+import { ReasonForTerminationModule } from 'src/follow-up-survey/reason-for-termination/reason-for-termination.module';
+import { ReasonForTerminationRepository } from 'src/follow-up-survey/reason-for-termination/reason-for-termination.repository';
+import { TimeConsumptionEntity } from 'src/follow-up-survey/time-consumption/entities/time-consumption.entity';
+import { TimeConsumptionModule } from 'src/follow-up-survey/time-consumption/time-consumption.module';
+import { TimeConsumptionRepository } from 'src/follow-up-survey/time-consumption/time-consumption.repository';
 
 import { SeedService } from './seed.service';
 
@@ -65,7 +77,11 @@ import { SeedService } from './seed.service';
     SchoolUniformModule, TypeOrmModule.forFeature([SchoolUniformEntity, SchoolUniformRepository]),
     TypeOfEffortModule, TypeOrmModule.forFeature([TypeOfEffortEntity, TypeOfEffortRepository]),
     WhoParticipatesModule, TypeOrmModule.forFeature([WhoParticipatesEntity, WhoParticipatesRepository]),
+    InterventionPeriodModule, TypeOrmModule.forFeature([InterventionPeriodEntity, InterventionPeriodRepository]),
+    InterventionProgressModule, TypeOrmModule.forFeature([InterventionProgressEntity, InterventionProgressRepository]),
+    ReasonForTerminationModule, TypeOrmModule.forFeature([ReasonForTerminationEntity, ReasonForTerminationRepository]),
+    TimeConsumptionModule, TypeOrmModule.forFeature([TimeConsumptionEntity, TimeConsumptionRepository]),
   ],
   providers: [SeedService],
 })
-export class SeedModule {}
+export class SeedModule { }

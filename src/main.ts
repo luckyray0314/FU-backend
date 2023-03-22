@@ -25,6 +25,10 @@ async function bootstrap() {
   await seedService.seedSchoolUniforms();
   await seedService.seedTypeOfEfforts();
   await seedService.seedWhoParticipatess();
+  await seedService.seedInterventionPeriods();
+  await seedService.seedInterventionProgresss();
+  await seedService.seedReasonForTerminations();
+  await seedService.seedTimeConsumptions();
 
   await app.listen(process.env.VALLENTUNA_SURVEY_BACKEND_PORT || 5000);
 }
