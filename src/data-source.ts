@@ -1,7 +1,5 @@
 import { DataSourceOptions, DataSource } from 'typeorm';
 
-import { CreateSessionStorage1584985637890 } from './migrations/1584985637890-CreateSessionStorage';
-
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
   host: 'localhost',

@@ -140,7 +140,7 @@ export const interventionProgressData = [
   "40-60 hours",
   "60-80 hours",
   "80-100 hours",
-  "Other",
+  "More than 100 hours",
 ].map(data => ({ description: data }));
 
 export const reasonForTerminationData = [
