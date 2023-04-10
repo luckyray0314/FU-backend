@@ -1,92 +1,92 @@
 export const genderSeedData = [
-  'Girl',
-  'Boy',
+  'Gender.Girl',
+  'Gender.Boy',
 ].map(data => ({ description: data }));
 
 export const reasonForUpdateSeedData = [
-  'Own application',
-  'Report of concern',
+  'ReasonForUpdate.OwnApplication',
+  'ReasonForUpdate.ReportOfConcern',
 ].map(data => ({ description: data }));
 
 export const problemAreaSeedData = [
-  'School problems',
-  'Abuse',
-  'Mental illness',
-  'Conflicts between children and adults',
-  'Conflicts between parents',
-  'Problematic relationships',
-  'Violence in the family',
-  'Crime',
+  'ProblemArea.SchoolProblems',
+  'ProblemArea.Abuse',
+  'ProblemArea.MentalIllness',
+  'ProblemArea.ConflictsBetweenChildrenAndAdults',
+  'ProblemArea.ConflictsBetweenParents',
+  'ProblemArea.ProblematicRelationships',
+  'ProblemArea.ViolenceInTheFamily',
+  'ProblemArea.Crime',
   'Other'
 ].map(data => ({ description: data }));
 
 export const previousInterventionSeedData = [
-  'No',
-  'Yes - outpatient care',
-  'Yes - other social services contribution (LSS, placement, LUL)',
-  'Yes - other health and medical services (e.g. BUP, Habilitation, student health)',
+  'PreviousIntervention.No',
+  'PreviousIntervention.YesOutpatientCare',
+  'PreviousIntervention.YesOtherSocial',
+  'PreviousIntervention.YesOtherHealth',
   'Other'
 ].map(data => ({ description: data }));
 
 export const otherInterventionsSeedData = [
-  'No',
-  'Yes - BUP',
-  'Yes - first line psychiatry',
-  'Yes - Habilitation',
-  'Yes - Student health',
-  'Yes - Maria Ungdom',
-  'Yes - group activities within social services',
+  'OtherInterventions.No',
+  'OtherInterventions.YesBUP',
+  'OtherInterventions.YesFirstLinePsychiatry',
+  'OtherInterventions.YesHabilitation',
+  'OtherInterventions.YesStudentHealth',
+  'OtherInterventions.YesMariaUngdom',
+  'OtherInterventions.YesGroupActivities',
   'Other'
 ].map(data => ({ description: data }));
 
 export const familyConstellationSeedData = [
-  'Live with both VH',
-  'Living with a VH',
-  'Living alternately/getting together',
-  'Lives with VH + bonus parent',
-  'Lives in another family',
+  'FamilyConstellation.LiveWithBothVH',
+  'FamilyConstellation.LivingWithAVH',
+  'FamilyConstellation.LivingAlternately',
+  'FamilyConstellation.LivesWithVH',
+  'FamilyConstellation.LivesInAnotherFamily',
   'Other'
 ].map(data => ({ description: data }));
 
 export const whoParticipatesSeedData = [
-  'The child',
-  'Siblings',
-  'A parent',
-  'Both parents',
-  'Parent + bonus parent',
+  'WhoParticipates.TheChild',
+  'WhoParticipates.Siblings',
+  'WhoParticipates.AParent',
+  'WhoParticipates.BothParents',
+  'WhoParticipates.Parent',
   'Other',
 ].map(data => ({ description: data }));
 
 export const educationVh1SeedData = [
-  'Elementary school',
-  'Gymnasium',
-  'Post-secondary education',
-  'College',
-  'Education from another country',
+  'EducationVh.ElementarySchool',
+  'EducationVh.Gymnasium',
+  'EducationVh.Post',
+  'EducationVh.College',
+  'EducationVh.Education',
 ].map(data => ({ description: data }));
 
 export const educationVh2SeedData = [
-  'Elementary school',
-  'Gymnasium',
-  'Post-secondary education',
-  'College',
-  'Education from another country',
+  'EducationVh.ElementarySchool',
+  'EducationVh.Gymnasium',
+  'EducationVh.Post',
+  'EducationVh.College',
+  'EducationVh.Education',
 ].map(data => ({ description: data }));
 
 export const employmentVh1SeedData = [
-  'Full-time employment (job/study)',
-  'Employment part-time',
-  'Job seeker',
-  'Sick leave',
-  'Parental leave',
+  'EmploymentVh.FullTimeEmployment',
+  'EmploymentVh.EmploymentPartTime',
+  'EmploymentVh.JobSeeker',
+  'EmploymentVh.SickLeave',
+  'EmploymentVh.ParentalLeave',
 ].map(data => ({ description: data }));
 
 export const employmentVh2SeedData = [
-  'Full-time employment (job/study)',
-  'Employment part-time',
-  'Job seeker',
-  'Sick leave',
-  'Parental leave',
+  'EmploymentVh.FullTimeEmployment',
+  'EmploymentVh.EmploymentPartTime',
+  'EmploymentVh.JobSeeker',
+  'EmploymentVh.SickLeave',
+  'EmploymentVh.ParentalLeave',
 ].map(data => ({ description: data }));
 
 export const interpreterRequiredSeedData = [
@@ -95,67 +95,67 @@ export const interpreterRequiredSeedData = [
 ].map(data => ({ description: data }));
 
 export const typeOfEffortSeedData = [
-  'Family treatment ( not manual)',
-  'Repulse',
-  'Enhanced Comet',
-  'Individual Comet',
-  'KIBB',
-  'Intensive support',
-  'ONE',
+  'TypeOfEffort.FamilyTreatment',
+  'TypeOfEffort.Repulse',
+  'TypeOfEffort.EnhancedComet',
+  'TypeOfEffort.IndividualComet',
+  'TypeOfEffort.KIBB',
+  'TypeOfEffort.IntensiveSupport',
+  'TypeOfEffort.ONE',
 ].map(data => ({ description: data }));
 
 export const establishedDiagnosesSeedData = [
-  'No diagnosis',
-  'ADHD',
-  'ADD',
-  'AST',
-  'Psychiatric diagnoses',
-  'Gifted functional variation',
-  'Eating disorder',
-  'Self-injurious behavior',
-  'Language disorder',
-  'Defiance syndrome',
+  'EstablishedDiagnoses.NoDiagnosis',
+  'EstablishedDiagnoses.ADHD',
+  'EstablishedDiagnoses.ADD',
+  'EstablishedDiagnoses.AST',
+  'EstablishedDiagnoses.PsychiatricDiagnoses',
+  'EstablishedDiagnoses.GiftedFunctionalVariation',
+  'EstablishedDiagnoses.EatingDisorder',
+  'EstablishedDiagnoses.SelfInjuriousBehavior',
+  'EstablishedDiagnoses.LanguageDisorder',
+  'EstablishedDiagnoses.DefianceSyndrome',
   'Other'
 ].map(data => ({ description: data }));
 
 export const schoolUniformSeedData = [
-  'Ordinary school form',
-  'Resource school',
-  'Special teaching group',
-  'Elementary special school',
-  'no longer has compulsory schooling',
+  'SchoolUniform.OrdinarySchoolForm',
+  'SchoolUniform.ResourceSchool',
+  'SchoolUniform.SpecialTeachingGroup',
+  'SchoolUniform.ElementarySpecialSchool',
+  'SchoolUniform.NoLongerHasCompulsorySchooling',
 ].map(data => ({ description: data }));
 
 export const interventionPeriodData = [
-  "0-3 months",
-  "3-6 months",
-  "6-9 months",
-  "9-12 months",
-  "Still ongoing",
-].map(data => ({ description: data }));
-
-export const interventionProgressData = [
-  "0-20 hours",
-  "20-40 hours",
-  "40-60 hours",
-  "60-80 hours",
-  "80-100 hours",
-  "More than 100 hours",
-].map(data => ({ description: data }));
-
-export const reasonForTerminationData = [
-  "The goals of the effort were achieved",
-  "The family is not interested in further contact",
-  "Move to another municipality",
-  "Investment",
-  "Social services have assessed that the conditions for reaching the goals are lacking",
-  "Other",
+  "InterventionPeriod.0-3",
+  "InterventionPeriod.3-6",
+  "InterventionPeriod.6-9",
+  "InterventionPeriod.9-12",
+  "InterventionPeriod.StillOngoing",
 ].map(data => ({ description: data }));
 
 export const timeConsumptionData = [
-  "Not achieved at all",
-  "A small part achieved",
-  "About half achieved",
-  "A large part achieved",
-  "Fully achieved",
+  "TimeConsumption.0-20",
+  "TimeConsumption.20-40",
+  "TimeConsumption.40-60",
+  "TimeConsumption.60-80",
+  "TimeConsumption.80-100",
+  "TimeConsumption.MoreThan100Hours",
+].map(data => ({ description: data }));
+
+export const reasonForTerminationData = [
+  "ReasonForTermination.TheGoals",
+  "ReasonForTermination.TheFamily",
+  "ReasonForTermination.MoveTo",
+  "ReasonForTermination.Investment",
+  "ReasonForTermination.SocialServices",
+  "Other",
+].map(data => ({ description: data }));
+
+export const interventionProgressData = [
+  "InterventionProgress.NotAchievedAtAll",
+  "InterventionProgress.ASmallPartAchieved",
+  "InterventionProgress.AboutHalfAchieved",
+  "InterventionProgress.ALargePartAchieved",
+  "InterventionProgress.FullyAchieved",
 ].map(data => ({ description: data }));
