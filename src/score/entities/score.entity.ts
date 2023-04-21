@@ -25,7 +25,19 @@ export class ScoreEntity {
   score15: number;
 
   @Column({
+    type: "simple-array",
+    nullable: true
+  })
+  score15Answers: number[];
+
+  @Column({
     type: "decimal"
   })
   ors: number;
+
+  @Column({
+    type: "simple-array",
+    nullable: true
+  })
+  orsAndSatisfactionScaleAnswers: number[];
 }

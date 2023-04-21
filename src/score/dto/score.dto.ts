@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDateString, IsIn, IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsArray, IsDateString, IsIn, IsNotEmpty, IsNumber, IsString } from "class-validator";
 
 export class ScoreDto {
   @ApiProperty()
@@ -28,6 +28,14 @@ export class ScoreDto {
   @ApiProperty()
   @IsNumber()
   ors: number;
+
+  @ApiProperty()
+  @IsArray()
+  score15Answers: number[];
+
+  @ApiProperty()
+  @IsArray()
+  orsAndSatisfactionScaleAnswers: number[];
 }
 
 export class OrsAndScore15WithOccasionDto {

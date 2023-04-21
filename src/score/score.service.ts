@@ -21,6 +21,7 @@ import { In, Repository } from 'typeorm';
 import { FollowUpFilterDto } from './dto/followUpFilter.dto';
 import { ScoreDto } from './dto/score.dto';
 import { ScoreEntity } from './entities/score.entity';
+import { ScoreFilterDto } from "./dto/score-filter.dto";
 
 @Injectable()
 export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
@@ -73,6 +74,22 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
       .getRawOne();
   }
 
+  async getOneScore(payload: ScoreFilterDto) {
+    try {
+      const scoreEntity = await this.repo.findOne({
+        where: {
+          codeNumber: payload.codeNumber,
+          person: payload.person,
+          occasion: payload.occasion
+        }
+      });
+      return scoreEntity
+    }
+    catch (e) {
+      console.log('getOneScore error:', e);
+    }
+  }
+
   async createScoreData(payload: ScoreDto) {
     try {
       const scoreEntity = await this.repo.findOne({
@@ -86,6 +103,8 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
         scoreEntity.date = payload.date;
         scoreEntity.score15 = payload.score15;
         scoreEntity.ors = payload.ors;
+        scoreEntity.score15Answers = payload.score15Answers;
+        scoreEntity.orsAndSatisfactionScaleAnswers = payload.orsAndSatisfactionScaleAnswers;
         this.repo.update(scoreEntity.id, scoreEntity);
       }
       else {
