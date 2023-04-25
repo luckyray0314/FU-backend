@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsArray, IsDateString, IsIn, IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { OccasionIndex } from "src/core/models/occasion.modal";
 
 export class ScoreDto {
   @ApiProperty()
@@ -49,5 +50,5 @@ export class OrsAndScore15WithOccasionDto {
 
   @ApiProperty()
   @IsIn([1, 2, 3])
-  occasion: 1 | 2 | 3;
+  occasion: OccasionIndex;
 }

@@ -17,11 +17,12 @@ import { SelectedReasonForUpdateService } from 'src/background-data/reason-for-u
 import { SelectedSchoolUniformService } from 'src/background-data/school-uniform/selected-school-uniform.service';
 import { SelectedTypeOfEffortService } from 'src/background-data/type-of-effort/selected-type-of-effort.service';
 import { SelectedWhoParticipatesService } from 'src/background-data/who-participates/selected-who-participates.service';
+import { OccasionIndex } from "src/core/models/occasion.modal";
 import { In, Repository } from 'typeorm';
 import { FollowUpFilterDto } from './dto/followUpFilter.dto';
+import { ScoreFilterDto } from "./dto/score-filter.dto";
 import { ScoreDto } from './dto/score.dto';
 import { ScoreEntity } from './entities/score.entity';
-import { ScoreFilterDto } from "./dto/score-filter.dto";
 
 @Injectable()
 export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
@@ -55,15 +56,16 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
     return this.repo.update(id, entity);
   }
 
-  async numOfClients(codeNumbers: string[], startDate: string, endDate: string) {
+  async numOfClients(codeNumbers: string[], startDate: string, endDate: string, occasion: 0 | OccasionIndex) {
     return codeNumbers.length === 0 ? 0 : await this.repo.createQueryBuilder("score")
       .select("DISTINCT(codeNumber)")
       .where("score.codeNumber IN (:...codeNumbers)", { codeNumbers })
+      .andWhere("score.occasion IN (:...occasionNumbers)", { occasionNumbers: occasion === 0 ? [1, 2, 3] : [occasion] })
       .andWhere("score.date BETWEEN :startDate AND :endDate", { startDate, endDate })
       .getCount();
   }
 
-  async avgOfOrsAndScore15(codeNumbers: string[]) {
+  async avgOfOrsAndScore15(codeNumbers: string[], occasion: 0 | OccasionIndex) {
     return codeNumbers.length === 0 ? {
       ors: 0,
       score15: 0
@@ -71,6 +73,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
       .select("AVG(ors)", "ors")
       .addSelect("AVG(score15)", "score15")
       .where("score.codeNumber IN (:...codeNumbers)", { codeNumbers })
+      .andWhere("score.occasion IN (:...occasionNumbers)", { occasionNumbers: occasion === 0 ? [1, 2, 3] : [occasion] })
       .getRawOne();
   }
 
@@ -83,7 +86,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
           occasion: payload.occasion
         }
       });
-      return scoreEntity
+      return scoreEntity;
     }
     catch (e) {
       console.log('getOneScore error:', e);
@@ -296,9 +299,9 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
     }
 
     // filter score table with codeNumbers and date ranges
-    const numOfClients = await this.numOfClients(codeNumbers, payload.startDate, payload.endDate);
+    const numOfClients = await this.numOfClients(codeNumbers, payload.startDate, payload.endDate, payload.occasion);
     const percentage = numOfClients / (await this.backgroundMetadataService.count()) * 100;
-    const { ors, score15 } = await this.avgOfOrsAndScore15(codeNumbers);
+    const { ors, score15 } = await this.avgOfOrsAndScore15(codeNumbers, payload.occasion);
 
     return {
       numOfClients,
