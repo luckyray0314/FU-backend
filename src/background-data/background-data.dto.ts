@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDateString, IsIn, IsInt, IsObject, IsOptional, IsString, Min } from 'class-validator';
+import { IsDateString, IsIn, IsInt, IsNumber, IsObject, IsOptional, IsString, Min } from 'class-validator';
 import { EducationVh1Entity } from './education-vh1/entities/education-vh1.entity';
 import { EducationVh2Entity } from './education-vh2/entities/education-vh2.entity';
 import { EmploymentVh1Entity } from './employment-vh1/entities/employment-vh1.entity';
@@ -16,6 +16,7 @@ import { SchoolUniformEntity } from './school-uniform/entities/school-uniform.en
 import { TypeOfEffortEntity } from './type-of-effort/entities/type-of-effort.entity';
 import { WhoParticipatesEntity } from './who-participates/entities/who-participates.entity';
 import { getNames } from "country-list";
+import { OccasionIndex } from "src/core/models/occasion.modal";
 
 const countryNames = getNames();
 
@@ -107,4 +108,15 @@ export class BackgroundDataDto {
   @ApiProperty({ type: () => ({} as FormDataByEntityName) })
   @IsObject()
   formDataByEntityName: FormDataByEntityName;
+}
+
+export class DocxBufferDto {
+  @ApiProperty()
+  @IsString()
+  codeNumber: string; 
+
+  @ApiProperty()
+  @IsNumber()
+  @IsIn([0, 1, 2, 3])
+  occasion: OccasionIndex | 0;
 }

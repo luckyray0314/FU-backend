@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import dayjs = require('dayjs');
 import { SurveyStatus } from 'src/core/enums/survey-status';
+import { OccasionIndex } from "src/core/models/occasion.modal";
 import { ScoreService } from 'src/score/score.service';
 import { BackgroundDataDto, BackgroundMetadataDto, BackgroundSurveyBasicDataDto } from './background-data.dto';
 import { BackgroundMetadataService } from './background-metadata.service';
@@ -34,6 +34,18 @@ import { SelectedTypeOfEffortService } from './type-of-effort/selected-type-of-e
 import { TypeOfEffortService } from './type-of-effort/type-of-effort.service';
 import { SelectedWhoParticipatesService } from './who-participates/selected-who-participates.service';
 import { WhoParticipatesService } from './who-participates/who-participates.service';
+import dayjs = require('dayjs');
+import AdmZip = require("adm-zip");
+import qr = require("qrcode");
+import fs = require("fs");
+import path = require("path");
+import PizZip = require("pizzip");
+
+const Docxtemplater = require("docxtemplater");
+const template1Path = `${__dirname}/template1.docx`;
+const template2Path = `${__dirname}/template2.docx`;
+const middlePath = `${__dirname}/middle.docx`;
+const destPath = `${__dirname}/survey.docx`;
 
 @Injectable()
 export class BackgroundDataService {
@@ -330,11 +342,11 @@ export class BackgroundDataService {
               : arrIndex === 1 ? prevOccasionDate.add(6, "month")
                 : prevOccasionDate.add(12, "month")
           ).toDate();
-        
+
         if (entities.at(0)) {
           prevOccasionDate = dayjs(entities[0].date);
         }
-        
+
         const statuses = [...Array(3)].map((_it2, personIndex) => {
           const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
           const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
@@ -380,5 +392,65 @@ export class BackgroundDataService {
       return surveyEntity;
     }));
     return result;
+  }
+
+  async downloadDocx(codeNumber: string, occasion: OccasionIndex | 0) {
+    try {
+      const templatePath = occasion === 0 ? template2Path : template1Path;
+
+      // replace {DATE} to today
+      const content = fs.readFileSync(templatePath, "binary");
+      const pizZip = new PizZip(content);
+      const doc = new Docxtemplater(pizZip, {
+        paragraphLoop: true,
+        linebreaks: true,
+      });
+      doc.render({
+        date: dayjs().format("YYYY-MM-DD"),
+      });
+      const buf = doc.getZip().generate({
+        type: "nodebuffer",
+        // compression: DEFLATE adds a compression step.
+        // For a 50MB output document, expect 500ms additional CPU time
+        compression: "DEFLATE",
+      });
+      fs.writeFileSync(middlePath, buf);
+
+      // replace QR code
+      const zip = new AdmZip(middlePath);
+
+      if (occasion !== 0) {
+        const zipEntries = zip.getEntries();
+        let person = 1;
+
+        for await (const zipEntry of zipEntries) {
+          if (/^word\/media\/image.+png$/.test(zipEntry.entryName)) {
+            const qrCodeString = btoa(btoa(btoa(JSON.stringify({
+              codeNumber,
+              person: person,
+              occasion,
+              score15: 0,
+              ors: 0
+            }))));
+            const qrCodeContent = await qr.toBuffer(qrCodeString, {
+              errorCorrectionLevel: 'H',
+              margin: 1,
+              width: 128,
+              type: 'png',
+            });
+            zip.updateFile(zipEntry.entryName, qrCodeContent);
+            person += 1;
+          }
+        }
+      }
+
+      const buffer = zip.toBuffer();
+      fs.writeFileSync(destPath, buffer);
+      return destPath;
+    }
+    catch (e) {
+      console.error(e);
+    }
+    return "";
   }
 }

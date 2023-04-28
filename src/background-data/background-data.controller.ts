@@ -1,8 +1,9 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Res } from '@nestjs/common';
 import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { EstimatesDto } from 'src/score/dto/estimates.dto';
-import { BackgroundDataDto, BackgroundSurveyBasicDataDto } from './background-data.dto';
+import { BackgroundDataDto, BackgroundSurveyBasicDataDto, DocxBufferDto } from './background-data.dto';
 import { BackgroundDataService } from './background-data.service';
+import { Response } from "express";
 
 @ApiTags('Background Data Survey Management')
 @Controller('background-data')
@@ -40,5 +41,14 @@ export class BackgroundDataController {
   async getCaseList(): Promise<EstimatesDto[]> {
     return await this.service.getCaseList();
   }
-}
 
+  @Post('/download-docx')
+  @ApiBody({ type: () => DocxBufferDto })
+  async downloadDocx(
+    @Body() payload: DocxBufferDto,
+    @Res() res: Response
+  ) {
+    const destPath = await this.service.downloadDocx(payload.codeNumber, payload.occasion);
+    return res.download(destPath);
+  }
+}
