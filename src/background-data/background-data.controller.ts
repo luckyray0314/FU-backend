@@ -1,11 +1,14 @@
-import { Body, Controller, Get, Param, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Res, UseGuards } from '@nestjs/common';
 import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { Response } from "express";
+import { JWTAuthGuard } from "src/auth/guards/jwt-auth.guard";
+import { SessionAuthGuard } from "src/auth/guards/session-auth.guard";
 import { EstimatesDto } from 'src/score/dto/estimates.dto';
 import { BackgroundDataDto, BackgroundSurveyBasicDataDto, DocxBufferDto } from './background-data.dto';
 import { BackgroundDataService } from './background-data.service';
-import { Response } from "express";
 
 @ApiTags('Background Data Survey Management')
+@UseGuards(SessionAuthGuard, JWTAuthGuard)
 @Controller('background-data')
 export class BackgroundDataController {
   constructor(

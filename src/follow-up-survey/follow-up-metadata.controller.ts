@@ -1,9 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, UseGuards } from '@nestjs/common';
 import { ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import { JWTAuthGuard } from "src/auth/guards/jwt-auth.guard";
+import { SessionAuthGuard } from "src/auth/guards/session-auth.guard";
 import { FollowUpMetadataDto } from './follow-up-data.dto';
 import { FollowUpMetadataService } from './follow-up-metadata.service';
 
 @ApiTags('Follow Up Data Survey Management')
+@UseGuards(SessionAuthGuard, JWTAuthGuard)
 @Controller('follow-up-metadata')
 export class FollowUpMetadataController {
   constructor(

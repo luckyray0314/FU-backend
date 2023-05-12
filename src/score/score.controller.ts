@@ -5,7 +5,6 @@ import { FollowUpFilterDto } from './dto/followUpFilter.dto';
 import { FollowUpFilterResultDto } from './dto/followUpFilterResult.dto';
 import { OrsAndScore15WithOccasionDto, ScoreDto } from './dto/score.dto';
 import { ScoreService } from './score.service';
-import { ScoreFilterDto } from "./dto/score-filter.dto";
 
 @ApiTags('Score15 And ORS + Satisfaction Score Management')
 @Controller('score')
