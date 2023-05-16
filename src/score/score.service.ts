@@ -301,7 +301,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
     // filter score table with codeNumbers and date ranges
     const numOfClients = await this.numOfClients(codeNumbers, payload.startDate, payload.endDate, payload.occasions);
     const numOfCodeNumbers = await this.backgroundMetadataService.count();
-    const percentage = numOfClients / (numOfCodeNumbers * 3) * 100;
+    const percentage = numOfClients / (numOfCodeNumbers * payload.occasions.length) * 100;
     const { ors, score15 } = await this.avgOfOrsAndScore15(codeNumbers, payload.occasions);
 
     return {
