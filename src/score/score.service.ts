@@ -57,7 +57,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
   }
 
   async numOfClients(codeNumbers: string[], startDate: string, endDate: string, occasions: OccasionIndex[]) {
-    return codeNumbers.length === 0 ? 0 : await this.repo.createQueryBuilder("score")
+    return (codeNumbers.length === 0 || occasions.length === 0) ? 0 : await this.repo.createQueryBuilder("score")
       .select("COUNT(score.codeNumber)", "count")
       .where("score.codeNumber IN (:...codeNumbers)", { codeNumbers })
       .andWhere("score.occasion IN (:...occasionNumbers)", { occasionNumbers: occasions })
@@ -67,7 +67,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
   }
 
   async avgOfOrsAndScore15(codeNumbers: string[], occasions: OccasionIndex[]) {
-    return codeNumbers.length === 0 ? {
+    return (codeNumbers.length === 0 || occasions.length === 0) ? {
       ors: 0,
       score15: 0
     } : await this.repo.createQueryBuilder("score")
@@ -302,9 +302,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
     // filter score table with codeNumbers and date ranges
     const { count: numOfClients } = await this.numOfClients(codeNumbers, payload.startDate, payload.endDate, payload.occasions);
     const numOfCodeNumbers = await this.backgroundMetadataService.count();
-    const percentage = ((numOfCodeNumbers === 0 || payload.occasions.length === 0) ? 0
-      : (+numOfClients / (numOfCodeNumbers * payload.occasions.length))
-    ) * 100;
+    const percentage = ((numOfCodeNumbers === 0) ? 0 : (+numOfClients / numOfCodeNumbers)) * 100;
     const { ors, score15 } = await this.avgOfOrsAndScore15(codeNumbers, payload.occasions);
 
     return {
