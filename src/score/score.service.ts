@@ -56,16 +56,16 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
     return this.repo.update(id, entity);
   }
 
-  async numOfClients(codeNumbers: string[], startDate: string, endDate: string, occasion: 0 | OccasionIndex) {
+  async numOfClients(codeNumbers: string[], startDate: string, endDate: string, occasions: OccasionIndex[]) {
     return codeNumbers.length === 0 ? 0 : await this.repo.createQueryBuilder("score")
       .select("DISTINCT(codeNumber)")
       .where("score.codeNumber IN (:...codeNumbers)", { codeNumbers })
-      .andWhere("score.occasion IN (:...occasionNumbers)", { occasionNumbers: occasion === 0 ? [1, 2, 3] : [occasion] })
+      .andWhere("score.occasion IN (:...occasionNumbers)", { occasionNumbers: occasions })
       .andWhere("score.date BETWEEN :startDate AND :endDate", { startDate, endDate })
       .getCount();
   }
 
-  async avgOfOrsAndScore15(codeNumbers: string[], occasion: 0 | OccasionIndex) {
+  async avgOfOrsAndScore15(codeNumbers: string[], occasions: OccasionIndex[]) {
     return codeNumbers.length === 0 ? {
       ors: 0,
       score15: 0
@@ -73,7 +73,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
       .select("AVG(ors)", "ors")
       .addSelect("AVG(score15)", "score15")
       .where("score.codeNumber IN (:...codeNumbers)", { codeNumbers })
-      .andWhere("score.occasion IN (:...occasionNumbers)", { occasionNumbers: occasion === 0 ? [1, 2, 3] : [occasion] })
+      .andWhere("score.occasion IN (:...occasionNumbers)", { occasionNumbers: occasions })
       .getRawOne();
   }
 
@@ -299,9 +299,9 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
     }
 
     // filter score table with codeNumbers and date ranges
-    const numOfClients = await this.numOfClients(codeNumbers, payload.startDate, payload.endDate, payload.occasion);
+    const numOfClients = await this.numOfClients(codeNumbers, payload.startDate, payload.endDate, payload.occasions);
     const percentage = numOfClients / (await this.backgroundMetadataService.count()) * 100;
-    const { ors, score15 } = await this.avgOfOrsAndScore15(codeNumbers, payload.occasion);
+    const { ors, score15 } = await this.avgOfOrsAndScore15(codeNumbers, payload.occasions);
 
     return {
       numOfClients,

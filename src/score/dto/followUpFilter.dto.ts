@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDateString, IsIn, IsObject } from "class-validator";
+import { IsArray, IsDateString, IsIn, IsObject } from "class-validator";
 import { OccasionIndex } from "src/core/models/occasion.modal";
 
 export class FollowUpFilterDto {
@@ -18,6 +18,6 @@ export class FollowUpFilterDto {
   endDate: string;
 
   @ApiProperty()
-  @IsIn([0, 1, 2, 3])
-  occasion: 0 | OccasionIndex;
+  @IsArray()
+  occasions: OccasionIndex[];
 }
