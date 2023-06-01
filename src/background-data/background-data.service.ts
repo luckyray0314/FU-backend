@@ -357,9 +357,21 @@ export class BackgroundDataService {
 
         return { date, statuses };
       }));
+      let isAllClear = true;
+      let isAllLoss = true;
+      for (let i = 0; i < details.length; ++i) {
+        for (let j = 0; j < details[i].statuses.length; ++j) {
+          if (details[i].statuses[j] === SurveyStatus.Clear) {
+            isAllLoss = false;
+          }
+          else if (details[i].statuses[j] === SurveyStatus.Loss) {
+            isAllClear = false;
+          }
+        }
+      }
       const surveyEntity = {
         codeNumber: backgroundMetadataEntity.codeNumber,
-        status: SurveyStatus.Clear,
+        status: isAllClear ? SurveyStatus.Clear : isAllLoss ? SurveyStatus.Loss : SurveyStatus.Coming,
         missedFields: "",
         history: {
           zeroMonth: {
