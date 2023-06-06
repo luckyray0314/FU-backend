@@ -40,6 +40,7 @@ import qr = require("qrcode");
 import fs = require("fs");
 import path = require("path");
 import PizZip = require("pizzip");
+import { FollowUpDataService } from "src/follow-up-survey/follow-up-data.service";
 
 const Docxtemplater = require("docxtemplater");
 const template1Path = `${__dirname}/template1.docx`;
@@ -52,6 +53,7 @@ export class BackgroundDataService {
   constructor(
     public backgroundMetadataService: BackgroundMetadataService,
     public scoreService: ScoreService,
+    public followUpService: FollowUpDataService,
 
     public genderService: GenderService,
     public educationVh1Service: EducationVh1Service,
@@ -369,6 +371,22 @@ export class BackgroundDataService {
           }
         }
       }
+
+      let nextSurvey = dayjs().format("YYYY-MM-DD");
+      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
+        nextSurvey = dayjs(details[1].date).format("YYYY-MM-DD");
+      }
+      if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
+        nextSurvey = dayjs(details[2].date).format("YYYY-MM-DD");
+      }
+      if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
+        nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")} (after survey)`;
+      }
+      const followUpSurveyData = await this.followUpService.get(backgroundMetadataEntity.codeNumber);
+      if (!!followUpSurveyData) {
+        nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")} (important happenings during 12 months)`;
+      }
+
       const surveyEntity = {
         codeNumber: backgroundMetadataEntity.codeNumber,
         status: isAllClear ? SurveyStatus.Clear : isAllLoss ? SurveyStatus.Loss : SurveyStatus.Coming,
@@ -399,7 +417,7 @@ export class BackgroundDataService {
             }
           },
         },
-        nextMeal: new Date()
+        nextSurvey
       };
       return surveyEntity;
     }));

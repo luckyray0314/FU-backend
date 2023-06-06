@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { FollowUpDataModule } from "src/follow-up-survey/follow-up-data.module";
 import { ScoreModule } from 'src/score/score.module';
 import { BackgroundDataController } from './background-data.controller';
 import { BackgroundDataService } from './background-data.service';
@@ -67,7 +68,8 @@ import { WhoParticipatesModule } from './who-participates/who-participates.modul
     SelectedTypeOfEffortModule,
     SelectedWhoParticipatesModule,
     BackgroundMetadataModule,
-    ScoreModule
+    ScoreModule,
+    FollowUpDataModule
   ],
   providers: [BackgroundDataService],
   controllers: [BackgroundDataController],

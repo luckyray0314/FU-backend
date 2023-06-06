@@ -48,5 +48,5 @@ export class EstimatesDto {
 
   @ApiProperty()
   @IsDate()
-  nextMeal: Date;
+  nextSurvey: string;
 };

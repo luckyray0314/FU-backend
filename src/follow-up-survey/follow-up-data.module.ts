@@ -27,5 +27,6 @@ import { SelectedTimeConsumptionModule } from './time-consumption/selected-time-
   ],
   providers: [FollowUpDataService],
   controllers: [FollowUpDataController],
+  exports: [FollowUpDataService]
 })
 export class FollowUpDataModule { }
