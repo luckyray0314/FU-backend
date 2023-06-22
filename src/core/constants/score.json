@@ -1,0 +1,1552 @@
+[
+ {
+   "codeNumber": "BoF2021-1",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-10-27",
+   "score15": 1.8,
+   "score15Answers": [],
+   "ors": 34,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-2",
+   "person": 1,
+   "occasion": 1,
+   "date": "2021-10-07",
+   "score15": 2.8,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-2",
+   "person": 1,
+   "occasion": 2,
+   "date": "2022-04-07",
+   "score15": 2.4,
+   "score15Answers": [],
+   "ors": 22,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-2",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-10-07",
+   "score15": 2.53,
+   "score15Answers": [],
+   "ors": 27,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-2",
+   "person": 3,
+   "occasion": 2,
+   "date": "2022-04-07",
+   "score15": 2.47,
+   "score15Answers": [],
+   "ors": 29,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-2",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-10-07",
+   "score15": 2.67,
+   "score15Answers": [],
+   "ors": 21,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-2",
+   "person": 2,
+   "occasion": 2,
+   "date": "2022-04-07",
+   "score15": 2.53,
+   "score15Answers": [],
+   "ors": 18,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-3",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-09-24",
+   "score15": 1.67,
+   "score15Answers": [],
+   "ors": 27,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-4",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-09-23",
+   "score15": 1.93,
+   "score15Answers": [],
+   "ors": 7,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-4",
+   "person": 2,
+   "occasion": 2,
+   "date": "2022-03-23",
+   "score15": 2.13,
+   "score15Answers": [],
+   "ors": 15,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-4",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-09-23",
+   "score15": 1.8,
+   "score15Answers": [],
+   "ors": 30,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-5",
+   "person": 1,
+   "occasion": 1,
+   "date": "2021-09-16",
+   "score15": 1.33,
+   "score15Answers": [],
+   "ors": 40,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-5",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-09-16",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 30,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-5",
+   "person": 2,
+   "occasion": 2,
+   "date": "2022-03-16",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-5",
+   "person": 2,
+   "occasion": 3,
+   "date": "2022-09-16",
+   "score15": 2.47,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-5",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-09-16",
+   "score15": 2.4,
+   "score15Answers": [],
+   "ors": 31,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-8",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-10-04",
+   "score15": 2.53,
+   "score15Answers": [],
+   "ors": 26,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-8",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-10-04",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-9",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-10-07",
+   "score15": 1.73,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-9",
+   "person": 2,
+   "occasion": 2,
+   "date": "2022-04-07",
+   "score15": 1.47,
+   "score15Answers": [],
+   "ors": 31,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-9",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-10-07",
+   "score15": 2.07,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-9",
+   "person": 3,
+   "occasion": 2,
+   "date": "2022-04-07",
+   "score15": 1.93,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-10",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-09-07",
+   "score15": 2.8,
+   "score15Answers": [],
+   "ors": 36,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-10",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-09-07",
+   "score15": 2.07,
+   "score15Answers": [],
+   "ors": 24,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-11",
+   "person": 1,
+   "occasion": 1,
+   "date": "2021-09-07",
+   "score15": 1.53,
+   "score15Answers": [],
+   "ors": 40,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-11",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-09-07",
+   "score15": 2.8,
+   "score15Answers": [],
+   "ors": 36,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-11",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-09-07",
+   "score15": 2.07,
+   "score15Answers": [],
+   "ors": 24,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-14",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-09-16",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 30,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-14",
+   "person": 2,
+   "occasion": 2,
+   "date": "2022-03-16",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 31,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-14",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-09-16",
+   "score15": 2.47,
+   "score15Answers": [],
+   "ors": 31,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-15",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-09-16",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 30,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-15",
+   "person": 2,
+   "occasion": 2,
+   "date": "2022-03-16",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-15",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-09-16",
+   "score15": 2.47,
+   "score15Answers": [],
+   "ors": 31,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-16",
+   "person": 1,
+   "occasion": 1,
+   "date": "2021-10-01",
+   "score15": 2.2,
+   "score15Answers": [],
+   "ors": 29,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-18",
+   "person": 1,
+   "occasion": 1,
+   "date": "2021-09-27",
+   "score15": 4.33,
+   "score15Answers": [],
+   "ors": 11,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-18",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-09-27",
+   "score15": 2.8,
+   "score15Answers": [],
+   "ors": 31,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-18",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-09-27",
+   "score15": 3.13,
+   "score15Answers": [],
+   "ors": 11,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-19",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-10-20",
+   "score15": 2.87,
+   "score15Answers": [],
+   "ors": 3,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-21",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-11-19",
+   "score15": 2.07,
+   "score15Answers": [],
+   "ors": 25,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-21",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-11-19",
+   "score15": 2.13,
+   "score15Answers": [],
+   "ors": 31,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-23",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-12-28",
+   "score15": 1.53,
+   "score15Answers": [],
+   "ors": 36,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-24",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-02-01",
+   "score15": 1.87,
+   "score15Answers": [],
+   "ors": 26,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-24",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-02-01",
+   "score15": 1.67,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-24",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-02-01",
+   "score15": 1.73,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-26",
+   "person": 1,
+   "occasion": 1,
+   "date": "2021-12-29",
+   "score15": 2.47,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-26",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-12-29",
+   "score15": 2.93,
+   "score15Answers": [],
+   "ors": 12,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-26",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-12-29",
+   "score15": 2.47,
+   "score15Answers": [],
+   "ors": 23,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-27",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-11-25",
+   "score15": 2,
+   "score15Answers": [],
+   "ors": 0,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-28",
+   "person": 1,
+   "occasion": 1,
+   "date": "2021-12-07",
+   "score15": 1.87,
+   "score15Answers": [],
+   "ors": 29,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-29",
+   "person": 1,
+   "occasion": 1,
+   "date": "2021-12-06",
+   "score15": 2.33,
+   "score15Answers": [],
+   "ors": 22,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-29",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-12-06",
+   "score15": 3.2,
+   "score15Answers": [],
+   "ors": 19,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-29",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-12-06",
+   "score15": 3,
+   "score15Answers": [],
+   "ors": 25,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-32",
+   "person": 1,
+   "occasion": 1,
+   "date": "2021-12-30",
+   "score15": 2.4,
+   "score15Answers": [],
+   "ors": 0,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-32",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-12-30",
+   "score15": 2.07,
+   "score15Answers": [],
+   "ors": 0,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-32",
+   "person": 3,
+   "occasion": 1,
+   "date": "2021-12-30",
+   "score15": 1.93,
+   "score15Answers": [],
+   "ors": 0,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-34",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-02-04",
+   "score15": 1.93,
+   "score15Answers": [],
+   "ors": 23,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-34",
+   "person": 2,
+   "occasion": 3,
+   "date": "2023-02-04",
+   "score15": 2,
+   "score15Answers": [],
+   "ors": 12,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-35",
+   "person": 3,
+   "occasion": 1,
+   "date": "2023-02-04",
+   "score15": 1.33,
+   "score15Answers": [],
+   "ors": 34,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-35",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-02-01",
+   "score15": 2.2,
+   "score15Answers": [],
+   "ors": 27,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-36",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-02-07",
+   "score15": 2.2,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-36",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-02-07",
+   "score15": 1.6,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-38",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-02-08",
+   "score15": 1.33,
+   "score15Answers": [],
+   "ors": 25,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-38",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-02-08",
+   "score15": 1.27,
+   "score15Answers": [],
+   "ors": 19,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-38",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-02-08",
+   "score15": 2.33,
+   "score15Answers": [],
+   "ors": 36,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-48",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-02-25",
+   "score15": 2.39,
+   "score15Answers": [],
+   "ors": 10,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-48",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-02-25",
+   "score15": 2.93,
+   "score15Answers": [],
+   "ors": 15,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-51",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-03-09",
+   "score15": 3.47,
+   "score15Answers": [],
+   "ors": 26,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-51",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-03-09",
+   "score15": 2.33,
+   "score15Answers": [],
+   "ors": 24,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-52",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-03-10",
+   "score15": 2.87,
+   "score15Answers": [],
+   "ors": 13,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-52",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-03-10",
+   "score15": 2.53,
+   "score15Answers": [],
+   "ors": 14,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-55",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-04-11",
+   "score15": 1.4,
+   "score15Answers": [],
+   "ors": 0,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-58",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-03-16",
+   "score15": 3.4,
+   "score15Answers": [],
+   "ors": 8,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-58",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-03-16",
+   "score15": 1.93,
+   "score15Answers": [],
+   "ors": 14,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-58",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-03-16",
+   "score15": 2.67,
+   "score15Answers": [],
+   "ors": 12,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-59",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-04-04",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 22,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-59",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-04-04",
+   "score15": 3.67,
+   "score15Answers": [],
+   "ors": 15,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-60",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-06-16",
+   "score15": 1.73,
+   "score15Answers": [],
+   "ors": 36,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-61",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-06-10",
+   "score15": 1.27,
+   "score15Answers": [],
+   "ors": 35,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-61",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-06-10",
+   "score15": 1,
+   "score15Answers": [],
+   "ors": 27,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-62",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-09-13",
+   "score15": 2.13,
+   "score15Answers": [],
+   "ors": 26,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-62",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-09-13",
+   "score15": 2.13,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-62",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-09-13",
+   "score15": 1.93,
+   "score15Answers": [],
+   "ors": 36,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-64",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-08-18",
+   "score15": 2.73,
+   "score15Answers": [],
+   "ors": 30,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-64",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-08-18",
+   "score15": 3.07,
+   "score15Answers": [],
+   "ors": 20,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-64",
+   "person": 2,
+   "occasion": 2,
+   "date": "2023-02-18",
+   "score15": 2.53,
+   "score15Answers": [],
+   "ors": 25,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-64",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-09-16",
+   "score15": 1.53,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-65",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-08-26",
+   "score15": 2.67,
+   "score15Answers": [],
+   "ors": 16,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-67",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-08-29",
+   "score15": 3.07,
+   "score15Answers": [],
+   "ors": 18,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-68",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-08-30",
+   "score15": 2.4,
+   "score15Answers": [],
+   "ors": 36,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-68",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-08-30",
+   "score15": 2.07,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-68",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-08-30",
+   "score15": 2.2,
+   "score15Answers": [],
+   "ors": 29,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-69",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-08-30",
+   "score15": 2.07,
+   "score15Answers": [],
+   "ors": 30,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-69",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-08-30",
+   "score15": 2.2,
+   "score15Answers": [],
+   "ors": 29,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-72",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-09-02",
+   "score15": 1.67,
+   "score15Answers": [],
+   "ors": 18,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-72",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-09-02",
+   "score15": 2.87,
+   "score15Answers": [],
+   "ors": 22,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-72",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-09-02",
+   "score15": 2.47,
+   "score15Answers": [],
+   "ors": 35,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-74",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-09-07",
+   "score15": 2.07,
+   "score15Answers": [],
+   "ors": 13,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-74",
+   "person": 2,
+   "occasion": 2,
+   "date": "2023-03-07",
+   "score15": 2.53,
+   "score15Answers": [],
+   "ors": 6,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-74",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-09-07",
+   "score15": 2.07,
+   "score15Answers": [],
+   "ors": 18,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-74",
+   "person": 3,
+   "occasion": 2,
+   "date": "2023-03-07",
+   "score15": 1.8,
+   "score15Answers": [],
+   "ors": 26,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-75",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-09-08",
+   "score15": 2.4,
+   "score15Answers": [],
+   "ors": 26,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-75",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-09-08",
+   "score15": 2.47,
+   "score15Answers": [],
+   "ors": 29,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-76",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-09-08",
+   "score15": 1.4,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-76",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-09-08",
+   "score15": 1.6,
+   "score15Answers": [],
+   "ors": 16,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-85",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-09-14",
+   "score15": 2.67,
+   "score15Answers": [],
+   "ors": 29,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-85",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-09-14",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 8,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-85",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-09-14",
+   "score15": 3,
+   "score15Answers": [],
+   "ors": 17,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-87",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-09-23",
+   "score15": 1.53,
+   "score15Answers": [],
+   "ors": 21,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-88",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-10-14",
+   "score15": 2,
+   "score15Answers": [],
+   "ors": 0,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-88",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-10-14",
+   "score15": 2.27,
+   "score15Answers": [],
+   "ors": 24,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-89",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-10-14",
+   "score15": 1.73,
+   "score15Answers": [],
+   "ors": 0,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-89",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-10-14",
+   "score15": 1.33,
+   "score15Answers": [],
+   "ors": 38,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-90",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-10-21",
+   "score15": 3.13,
+   "score15Answers": [],
+   "ors": 0,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-90",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-10-21",
+   "score15": 3.27,
+   "score15Answers": [],
+   "ors": 0,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-91",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-10-31",
+   "score15": 3.47,
+   "score15Answers": [],
+   "ors": 16,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-91",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-10-31",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 5,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-92",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-10-31",
+   "score15": 3.47,
+   "score15Answers": [],
+   "ors": 16,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-92",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-10-31",
+   "score15": 2.6,
+   "score15Answers": [],
+   "ors": 5,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-94",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-12-06",
+   "score15": 1.67,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-94",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-12-07",
+   "score15": 2.87,
+   "score15Answers": [],
+   "ors": 23,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-6",
+   "person": 2,
+   "occasion": 1,
+   "date": "2021-09-24",
+   "score15": 1.87,
+   "score15Answers": [],
+   "ors": 10,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-6",
+   "person": 2,
+   "occasion": 2,
+   "date": "2022-03-24",
+   "score15": 2.47,
+   "score15Answers": [],
+   "ors": 8,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-7",
+   "person": 1,
+   "occasion": 1,
+   "date": "2021-09-24",
+   "score15": 1.87,
+   "score15Answers": [],
+   "ors": 10,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2021-7",
+   "person": 1,
+   "occasion": 2,
+   "date": "2022-03-24",
+   "score15": 2.47,
+   "score15Answers": [],
+   "ors": 8,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-117",
+   "person": 1,
+   "occasion": 1,
+   "date": "2023-02-08",
+   "score15": 1.07,
+   "score15Answers": [],
+   "ors": 40,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-117",
+   "person": 2,
+   "occasion": 1,
+   "date": "2023-02-08",
+   "score15": 1,
+   "score15Answers": [],
+   "ors": 40,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-116",
+   "person": 2,
+   "occasion": 1,
+   "date": "2023-02-09",
+   "score15": 1.87,
+   "score15Answers": [],
+   "ors": 21,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-116",
+   "person": 3,
+   "occasion": 1,
+   "date": "2023-02-09",
+   "score15": 2.4,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-112",
+   "person": 2,
+   "occasion": 1,
+   "date": "2023-02-06",
+   "score15": 1.93,
+   "score15Answers": [],
+   "ors": 27,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-113",
+   "person": 1,
+   "occasion": 1,
+   "date": "2023-02-03",
+   "score15": 2.93,
+   "score15Answers": [],
+   "ors": 18,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-113",
+   "person": 2,
+   "occasion": 1,
+   "date": "2023-02-03",
+   "score15": 1.8,
+   "score15Answers": [],
+   "ors": 35,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-113",
+   "person": 3,
+   "occasion": 1,
+   "date": "2023-02-03",
+   "score15": 1.27,
+   "score15Answers": [],
+   "ors": 40,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-93",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-12-05",
+   "score15": 3.2,
+   "score15Answers": [],
+   "ors": 15,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-93",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-11-28",
+   "score15": 4.4,
+   "score15Answers": [],
+   "ors": 5,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-109",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-12-19",
+   "score15": 2,
+   "score15Answers": [],
+   "ors": 34,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-109",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-12-19",
+   "score15": 2.27,
+   "score15Answers": [],
+   "ors": 32,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-86",
+   "person": 1,
+   "occasion": 1,
+   "date": "2022-09-26",
+   "score15": 1.53,
+   "score15Answers": [],
+   "ors": 34,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-86",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-09-26",
+   "score15": 1.33,
+   "score15Answers": [],
+   "ors": 40,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-104",
+   "person": 1,
+   "occasion": 1,
+   "date": "2023-01-11",
+   "score15": 2.67,
+   "score15Answers": [],
+   "ors": 16,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-104",
+   "person": 2,
+   "occasion": 1,
+   "date": "2023-01-11",
+   "score15": 2.53,
+   "score15Answers": [],
+   "ors": 20,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-104",
+   "person": 3,
+   "occasion": 1,
+   "date": "2023-01-11",
+   "score15": 1.87,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-98",
+   "person": 2,
+   "occasion": 1,
+   "date": "2023-01-09",
+   "score15": 2,
+   "score15Answers": [],
+   "ors": 33,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-95",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-12-20",
+   "score15": 2.87,
+   "score15Answers": [],
+   "ors": 22,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-96",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-12-14",
+   "score15": 3.27,
+   "score15Answers": [],
+   "ors": 26,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-98",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-12-22",
+   "score15": 1.13,
+   "score15Answers": [],
+   "ors": 27,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-111",
+   "person": 2,
+   "occasion": 1,
+   "date": "2023-01-30",
+   "score15": 1.53,
+   "score15Answers": [],
+   "ors": 26,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-115",
+   "person": 2,
+   "occasion": 1,
+   "date": "2023-02-13",
+   "score15": 1.8,
+   "score15Answers": [],
+   "ors": 18,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-115",
+   "person": 3,
+   "occasion": 1,
+   "date": "2023-02-13",
+   "score15": 2.93,
+   "score15Answers": [],
+   "ors": 19,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-103",
+   "person": 2,
+   "occasion": 1,
+   "date": "2023-01-11",
+   "score15": 2.27,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2023-103",
+   "person": 3,
+   "occasion": 1,
+   "date": "2023-01-11",
+   "score15": 2.4,
+   "score15Answers": [],
+   "ors": 16,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-70",
+   "person": 3,
+   "occasion": 2,
+   "date": "2023-02-25",
+   "score15": 2.53,
+   "score15Answers": [],
+   "ors": 28,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-56",
+   "person": 3,
+   "occasion": 1,
+   "date": "2023-02-25",
+   "score15": 1.87,
+   "score15Answers": [],
+   "ors": 29,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-84",
+   "person": 3,
+   "occasion": 1,
+   "date": "2022-09-14",
+   "score15": 1.73,
+   "score15Answers": [],
+   "ors": 29,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-84",
+   "person": 2,
+   "occasion": 1,
+   "date": "2022-09-13",
+   "score15": 2,
+   "score15Answers": [],
+   "ors": 19,
+   "orsAndSatisfactionScaleAnswers": []
+ },
+ {
+   "codeNumber": "BoF2022-56",
+   "person": 2,
+   "occasion": 1,
+   "date": "2023-02-24",
+   "score15": 1.07,
+   "score15Answers": [],
+   "ors": 36,
+   "orsAndSatisfactionScaleAnswers": []
+ }
+]

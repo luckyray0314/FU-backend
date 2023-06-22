@@ -1,0 +1,294 @@
+[
+ {
+   "codeNumber": "BoF2021-1",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-2",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-3",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-4",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-5",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-8",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-9",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-10",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-11",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-14",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-15",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-16",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-18",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-19",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-21",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-23",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-24",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-26",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-27",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-28",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-29",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-32",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-34",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-35",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-36",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-38",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-48",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-51",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-52",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-53",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-55",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-58",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-59",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-60",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-61",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-62",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-64",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-65",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-67",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-68",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-69",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-72",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-74",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-75",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-76",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-85",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-87",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-88",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-89",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-90",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-91",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-92",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-94",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-6",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-7",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-117",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-116",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-112",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-113",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-93",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-109",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-86",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-104",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-98",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-95",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-96",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-98",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-111",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-115",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-103",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-70",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-56",
+   "reasonForTerminationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-84",
+   "reasonForTerminationId": "1"
+ }
+]

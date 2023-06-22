@@ -1,0 +1,294 @@
+[
+ {
+   "codeNumber": "BoF2021-1",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2021-2",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-3",
+   "familyConstellationId": "4"
+ },
+ {
+   "codeNumber": "BoF2021-4",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-5",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-8",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2021-9",
+   "familyConstellationId": "5"
+ },
+ {
+   "codeNumber": "BoF2021-10",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2021-11",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2021-14",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-15",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-16",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-18",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2021-19",
+   "familyConstellationId": "4"
+ },
+ {
+   "codeNumber": "BoF2021-21",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-23",
+   "familyConstellationId": "5"
+ },
+ {
+   "codeNumber": "BoF2021-24",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-26",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-27",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2021-28",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2021-29",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2021-32",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-34",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-35",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-36",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-38",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-48",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-51",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2022-52",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-53",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-55",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-58",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-59",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-60",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-61",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-62",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-64",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-65",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-67",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-68",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-69",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2022-72",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2022-74",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-75",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2022-76",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-85",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-87",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2022-88",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2022-89",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-90",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-91",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-92",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2022-94",
+   "familyConstellationId": "4"
+ },
+ {
+   "codeNumber": "BoF2021-6",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2021-7",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2023-117",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-116",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2023-112",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2023-113",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2022-93",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-109",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2022-86",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2023-104",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2023-98",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2022-95",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-96",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-98",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2023-111",
+   "familyConstellationId": "2"
+ },
+ {
+   "codeNumber": "BoF2023-115",
+   "familyConstellationId": "4"
+ },
+ {
+   "codeNumber": "BoF2023-103",
+   "familyConstellationId": "3"
+ },
+ {
+   "codeNumber": "BoF2022-70",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-56",
+   "familyConstellationId": "1"
+ },
+ {
+   "codeNumber": "BoF2022-84",
+   "familyConstellationId": "1"
+ }
+]

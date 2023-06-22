@@ -58,29 +58,133 @@ import { TimeConsumptionEntity } from 'src/follow-up-survey/time-consumption/ent
 import { TimeConsumptionModule } from 'src/follow-up-survey/time-consumption/time-consumption.module';
 import { TimeConsumptionRepository } from 'src/follow-up-survey/time-consumption/time-consumption.repository';
 
+import { BackgroundMetadataEntity } from 'src/background-data/background-metadata.entity';
+import { BackgroundMetadataModule } from 'src/background-data/background-metadata.module';
+import { BackgroundMetadataRepository } from 'src/background-data/background-metadata.repository';
+import { SelectedEducationVh1Entity } from 'src/background-data/education-vh1/entities/selected-education-vh1.entity';
+import { SelectedEducationVh1Module } from 'src/background-data/education-vh1/selected-education-vh1.module';
+import { SelectedEducationVh1Repository } from 'src/background-data/education-vh1/selected-education-vh1.repository';
+import { SelectedEducationVh2Entity } from 'src/background-data/education-vh2/entities/selected-education-vh2.entity';
+import { SelectedEducationVh2Module } from 'src/background-data/education-vh2/selected-education-vh2.module';
+import { SelectedEducationVh2Repository } from 'src/background-data/education-vh2/selected-education-vh2.repository';
+import { SelectedEmploymentVh1Entity } from 'src/background-data/employment-vh1/entities/selected-employment-vh1.entity';
+import { SelectedEmploymentVh1Module } from 'src/background-data/employment-vh1/selected-employment-vh1.module';
+import { SelectedEmploymentVh1Repository } from 'src/background-data/employment-vh1/selected-employment-vh1.repository';
+import { SelectedEmploymentVh2Entity } from 'src/background-data/employment-vh2/entities/selected-employment-vh2.entity';
+import { SelectedEmploymentVh2Module } from 'src/background-data/employment-vh2/selected-employment-vh2.module';
+import { SelectedEmploymentVh2Repository } from 'src/background-data/employment-vh2/selected-employment-vh2.repository';
+import { SelectedEstablishedDiagnosesEntity } from 'src/background-data/established-diagnoses/entities/selected-established-diagnoses.entity';
+import { SelectedEstablishedDiagnosesModule } from 'src/background-data/established-diagnoses/selected-established-diagnoses.module';
+import { SelectedEstablishedDiagnosesRepository } from 'src/background-data/established-diagnoses/selected-established-diagnoses.repository';
+import { SelectedFamilyConstellationEntity } from 'src/background-data/family-constellation/entities/selected-family-constellation.entity';
+import { SelectedFamilyConstellationModule } from 'src/background-data/family-constellation/selected-family-constellation.module';
+import { SelectedFamilyConstellationRepository } from 'src/background-data/family-constellation/selected-family-constellation.repository';
+import { SelectedGenderEntity } from 'src/background-data/gender/entities/selected-gender.entity';
+import { SelectedGenderModule } from 'src/background-data/gender/selected-gender.module';
+import { SelectedGenderRepository } from 'src/background-data/gender/selected-gender.repository';
+import { SelectedInterpreterRequiredEntity } from 'src/background-data/interpreter-required/entities/selected-interpreter-required.entity';
+import { SelectedInterpreterRequiredModule } from 'src/background-data/interpreter-required/selected-interpreter-required.module';
+import { SelectedInterpreterRequiredRepository } from 'src/background-data/interpreter-required/selected-interpreter-required.repository';
+import { SelectedOtherInterventionsEntity } from 'src/background-data/other-interventions/entities/selected-other-interventions.entity';
+import { SelectedOtherInterventionsModule } from 'src/background-data/other-interventions/selected-other-interventions.module';
+import { SelectedOtherInterventionsRepository } from 'src/background-data/other-interventions/selected-other-interventions.repository';
+import { SelectedPreviousInterventionEntity } from 'src/background-data/previous-intervention/entities/selected-previous-intervention.entity';
+import { SelectedPreviousInterventionModule } from 'src/background-data/previous-intervention/selected-previous-intervention.module';
+import { SelectedPreviousInterventionRepository } from 'src/background-data/previous-intervention/selected-previous-intervention.repository';
+import { SelectedProblemAreaEntity } from 'src/background-data/problem-area/entities/selected-problem-area.entity';
+import { SelectedProblemAreaModule } from 'src/background-data/problem-area/selected-problem-area.module';
+import { SelectedProblemAreaRepository } from 'src/background-data/problem-area/selected-problem-area.repository';
+import { SelectedReasonForUpdateEntity } from 'src/background-data/reason-for-update/entities/selected-reason-for-update.entity';
+import { SelectedReasonForUpdateModule } from 'src/background-data/reason-for-update/selected-reason-for-update.module';
+import { SelectedReasonForUpdateRepository } from 'src/background-data/reason-for-update/selected-reason-for-update.repository';
+import { SelectedSchoolUniformEntity } from 'src/background-data/school-uniform/entities/selected-school-uniform.entity';
+import { SelectedSchoolUniformModule } from 'src/background-data/school-uniform/selected-school-uniform.module';
+import { SelectedSchoolUniformRepository } from 'src/background-data/school-uniform/selected-school-uniform.repository';
+import { SelectedTypeOfEffortEntity } from 'src/background-data/type-of-effort/entities/selected-type-of-effort.entity';
+import { SelectedTypeOfEffortModule } from 'src/background-data/type-of-effort/selected-type-of-effort.module';
+import { SelectedTypeOfEffortRepository } from 'src/background-data/type-of-effort/selected-type-of-effort.repository';
+import { SelectedWhoParticipatesEntity } from 'src/background-data/who-participates/entities/selected-who-participates.entity';
+import { SelectedWhoParticipatesModule } from 'src/background-data/who-participates/selected-who-participates.module';
+import { SelectedWhoParticipatesRepository } from 'src/background-data/who-participates/selected-who-participates.repository';
+import { SelectedInterventionPeriodEntity } from 'src/follow-up-survey/intervention-period/entities/selected-intervention-period.entity';
+import { SelectedInterventionPeriodModule } from 'src/follow-up-survey/intervention-period/selected-intervention-period.module';
+import { SelectedInterventionPeriodRepository } from 'src/follow-up-survey/intervention-period/selected-intervention-period.repository';
+import { SelectedInterventionProgressEntity } from 'src/follow-up-survey/intervention-progress/entities/selected-intervention-progress.entity';
+import { SelectedInterventionProgressModule } from 'src/follow-up-survey/intervention-progress/selected-intervention-progress.module';
+import { SelectedInterventionProgressRepository } from 'src/follow-up-survey/intervention-progress/selected-intervention-progress.repository';
+import { SelectedReasonForTerminationEntity } from 'src/follow-up-survey/reason-for-termination/entities/selected-reason-for-termination.entity';
+import { SelectedReasonForTerminationModule } from 'src/follow-up-survey/reason-for-termination/selected-reason-for-termination.module';
+import { SelectedReasonForTerminationRepository } from 'src/follow-up-survey/reason-for-termination/selected-reason-for-termination.repository';
+import { SelectedTimeConsumptionEntity } from 'src/follow-up-survey/time-consumption/entities/selected-time-consumption.entity';
+import { SelectedTimeConsumptionModule } from 'src/follow-up-survey/time-consumption/selected-time-consumption.module';
+import { SelectedTimeConsumptionRepository } from 'src/follow-up-survey/time-consumption/selected-time-consumption.repository';
+import { ScoreEntity } from 'src/score/entities/score.entity';
+import { ScoreModule } from 'src/score/score.module';
+import { ScoreRepository } from 'src/score/score.repository';
 import { SeedService } from './seed.service';
 
 @Module({
   imports: [
+    BackgroundMetadataModule, TypeOrmModule.forFeature([BackgroundMetadataEntity, BackgroundMetadataRepository]),
+    ScoreModule, TypeOrmModule.forFeature([ScoreEntity, ScoreRepository]),
+
     GenderModule, TypeOrmModule.forFeature([GenderEntity, GenderRepository]),
+    SelectedGenderModule, TypeOrmModule.forFeature([SelectedGenderEntity, SelectedGenderRepository]),
+
     EducationVh1Module, TypeOrmModule.forFeature([EducationVh1Entity, EducationVh1Repository]),
+    SelectedEducationVh1Module, TypeOrmModule.forFeature([SelectedEducationVh1Entity, SelectedEducationVh1Repository]),
+
     EducationVh2Module, TypeOrmModule.forFeature([EducationVh2Entity, EducationVh2Repository]),
+    SelectedEducationVh2Module, TypeOrmModule.forFeature([SelectedEducationVh2Entity, SelectedEducationVh2Repository]),
+
     EmploymentVh1Module, TypeOrmModule.forFeature([EmploymentVh1Entity, EmploymentVh1Repository]),
+    SelectedEmploymentVh1Module, TypeOrmModule.forFeature([SelectedEmploymentVh1Entity, SelectedEmploymentVh1Repository]),
+
     EmploymentVh2Module, TypeOrmModule.forFeature([EmploymentVh2Entity, EmploymentVh2Repository]),
+    SelectedEmploymentVh2Module, TypeOrmModule.forFeature([SelectedEmploymentVh2Entity, SelectedEmploymentVh2Repository]),
+
     EstablishedDiagnosesModule, TypeOrmModule.forFeature([EstablishedDiagnosesEntity, EstablishedDiagnosesRepository]),
+    SelectedEstablishedDiagnosesModule, TypeOrmModule.forFeature([SelectedEstablishedDiagnosesEntity, SelectedEstablishedDiagnosesRepository]),
+
     FamilyConstellationModule, TypeOrmModule.forFeature([FamilyConstellationEntity, FamilyConstellationRepository]),
+    SelectedFamilyConstellationModule, TypeOrmModule.forFeature([SelectedFamilyConstellationEntity, SelectedFamilyConstellationRepository]),
+
     InterpreterRequiredModule, TypeOrmModule.forFeature([InterpreterRequiredEntity, InterpreterRequiredRepository]),
+    SelectedInterpreterRequiredModule, TypeOrmModule.forFeature([SelectedInterpreterRequiredEntity, SelectedInterpreterRequiredRepository]),
+
     OtherInterventionsModule, TypeOrmModule.forFeature([OtherInterventionsEntity, OtherInterventionsRepository]),
+    SelectedOtherInterventionsModule, TypeOrmModule.forFeature([SelectedOtherInterventionsEntity, SelectedOtherInterventionsRepository]),
+
     PreviousInterventionModule, TypeOrmModule.forFeature([PreviousInterventionEntity, PreviousInterventionRepository]),
+    SelectedPreviousInterventionModule, TypeOrmModule.forFeature([SelectedPreviousInterventionEntity, SelectedPreviousInterventionRepository]),
+
     ProblemAreaModule, TypeOrmModule.forFeature([ProblemAreaEntity, ProblemAreaRepository]),
+    SelectedProblemAreaModule, TypeOrmModule.forFeature([SelectedProblemAreaEntity, SelectedProblemAreaRepository]),
+
     ReasonForUpdateModule, TypeOrmModule.forFeature([ReasonForUpdateEntity, ReasonForUpdateRepository]),
+    SelectedReasonForUpdateModule, TypeOrmModule.forFeature([SelectedReasonForUpdateEntity, SelectedReasonForUpdateRepository]),
+
     SchoolUniformModule, TypeOrmModule.forFeature([SchoolUniformEntity, SchoolUniformRepository]),
+    SelectedSchoolUniformModule, TypeOrmModule.forFeature([SelectedSchoolUniformEntity, SelectedSchoolUniformRepository]),
+
     TypeOfEffortModule, TypeOrmModule.forFeature([TypeOfEffortEntity, TypeOfEffortRepository]),
+    SelectedTypeOfEffortModule, TypeOrmModule.forFeature([SelectedTypeOfEffortEntity, SelectedTypeOfEffortRepository]),
+
     WhoParticipatesModule, TypeOrmModule.forFeature([WhoParticipatesEntity, WhoParticipatesRepository]),
+    SelectedWhoParticipatesModule, TypeOrmModule.forFeature([SelectedWhoParticipatesEntity, SelectedWhoParticipatesRepository]),
+
     InterventionPeriodModule, TypeOrmModule.forFeature([InterventionPeriodEntity, InterventionPeriodRepository]),
+    SelectedInterventionPeriodModule, TypeOrmModule.forFeature([SelectedInterventionPeriodEntity, SelectedInterventionPeriodRepository]),
+
     InterventionProgressModule, TypeOrmModule.forFeature([InterventionProgressEntity, InterventionProgressRepository]),
+    SelectedInterventionProgressModule, TypeOrmModule.forFeature([SelectedInterventionProgressEntity, SelectedInterventionProgressRepository]),
+
     ReasonForTerminationModule, TypeOrmModule.forFeature([ReasonForTerminationEntity, ReasonForTerminationRepository]),
+    SelectedReasonForTerminationModule, TypeOrmModule.forFeature([SelectedReasonForTerminationEntity, SelectedReasonForTerminationRepository]),
+
     TimeConsumptionModule, TypeOrmModule.forFeature([TimeConsumptionEntity, TimeConsumptionRepository]),
+    SelectedTimeConsumptionModule, TypeOrmModule.forFeature([SelectedTimeConsumptionEntity, SelectedTimeConsumptionRepository]),
+
   ],
   providers: [SeedService],
 })

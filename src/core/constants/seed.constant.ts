@@ -126,7 +126,7 @@ export const schoolUniformSeedData = [
   'SchoolUniform.NoLongerHasCompulsorySchooling',
 ].map(data => ({ description: data }));
 
-export const interventionPeriodData = [
+export const interventionPeriodSeedData = [
   "InterventionPeriod.0-3",
   "InterventionPeriod.3-6",
   "InterventionPeriod.6-9",
@@ -134,7 +134,7 @@ export const interventionPeriodData = [
   "InterventionPeriod.StillOngoing",
 ].map(data => ({ description: data }));
 
-export const timeConsumptionData = [
+export const timeConsumptionSeedData = [
   "TimeConsumption.0-20",
   "TimeConsumption.20-40",
   "TimeConsumption.40-60",
@@ -143,7 +143,7 @@ export const timeConsumptionData = [
   "TimeConsumption.MoreThan100Hours",
 ].map(data => ({ description: data }));
 
-export const reasonForTerminationData = [
+export const reasonForTerminationSeedData = [
   "ReasonForTermination.TheGoals",
   "ReasonForTermination.TheFamily",
   "ReasonForTermination.MoveTo",
@@ -152,7 +152,7 @@ export const reasonForTerminationData = [
   "Other",
 ].map(data => ({ description: data }));
 
-export const interventionProgressData = [
+export const interventionProgressSeedData = [
   "InterventionProgress.NotAchievedAtAll",
   "InterventionProgress.ASmallPartAchieved",
   "InterventionProgress.AboutHalfAchieved",
