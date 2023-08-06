@@ -18,6 +18,7 @@ import { WhoParticipatesEntity } from './who-participates/entities/who-participa
 import { getNames } from "country-list";
 import { OccasionIndex } from "src/core/models/occasion.modal";
 
+
 const countryNames = getNames();
 
 export class BackgroundSurveyBasicDataDto {

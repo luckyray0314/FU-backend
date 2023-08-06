@@ -33,6 +33,18 @@ import { PreviousInterventionRepository } from 'src/background-data/previous-int
 import { ProblemAreaEntity } from 'src/background-data/problem-area/entities/problem-area.entity';
 import { ProblemAreaModule } from 'src/background-data/problem-area/problem-area.module';
 import { ProblemAreaRepository } from 'src/background-data/problem-area/problem-area.repository';
+import { OtherInterventionsStartedEntity } from 'src/important-events/otherinterventions-started/entities/otherinterventions-started.entity';
+import { OtherInterventionsStartedModule } from 'src/important-events/otherinterventions-started/otherinterventions-started.module';
+import { OtherInterventionsStartedRepository } from 'src/important-events/otherinterventions-started/otherinterventions-started.repository';
+import { DuringInterventionEntity } from 'src/important-events/during-intervention/entities/during-intervention.entity';
+import { DuringInterventionModule } from 'src/important-events/during-intervention/during-intervention.module';
+import { DuringInterventionRepository } from 'src/important-events/during-intervention/during-intervention.repository';
+import { DuringPastEntity } from 'src/important-events/during-past/entities/during-past.entity';
+import { DuringPastModule } from 'src/important-events/during-past/during-past.module';
+import { DuringPastRepository } from 'src/important-events/during-past/during-past.repository';
+import { ChildSchoolEntity } from 'src/important-events/child-school/entities/child-school.entity';
+import { ChildSchoolModule } from 'src/important-events/child-school/child-school.module';
+import { ChildSchoolRepository } from 'src/important-events/child-school/child-school.repository';
 import { ReasonForUpdateEntity } from 'src/background-data/reason-for-update/entities/reason-for-update.entity';
 import { ReasonForUpdateModule } from 'src/background-data/reason-for-update/reason-for-update.module';
 import { ReasonForUpdateRepository } from 'src/background-data/reason-for-update/reason-for-update.repository';
@@ -94,6 +106,18 @@ import { SelectedPreviousInterventionRepository } from 'src/background-data/prev
 import { SelectedProblemAreaEntity } from 'src/background-data/problem-area/entities/selected-problem-area.entity';
 import { SelectedProblemAreaModule } from 'src/background-data/problem-area/selected-problem-area.module';
 import { SelectedProblemAreaRepository } from 'src/background-data/problem-area/selected-problem-area.repository';
+import { SelectedOtherInterventionsStartedEntity } from 'src/important-events/otherinterventions-started/entities/selected-otherinterventions-started.entity';
+import { SelectedOtherInterventionsStartedModule } from 'src/important-events/otherinterventions-started/selected-otherinterventions-started.module';
+import { SelectedOtherInterventionsStartedRepository } from 'src/important-events/otherinterventions-started/selected-otherinterventions-started.repository';
+import { SelectedDuringInterventionEntity } from 'src/important-events/during-intervention/entities/selected-during-intervention.entity';
+import { SelectedDuringInterventionModule } from 'src/important-events/during-intervention/selected-during-intervention.module';
+import { SelectedDuringInterventionRepository } from 'src/important-events/during-intervention/selected-during-intervention.repository';
+import { SelectedDuringPastEntity } from 'src/important-events/during-past/entities/selected-during-past.entity';
+import { SelectedDuringPastModule } from 'src/important-events/during-past/selected-during-past.module';
+import { SelectedDuringPastRepository } from 'src/important-events/during-past/selected-during-past.repository';
+import { SelectedChildSchoolEntity } from 'src/important-events/child-school/entities/selected-child-school.entity';
+import { SelectedChildSchoolModule } from 'src/important-events/child-school/selected-child-school.module';
+import { SelectedChildSchoolRepository } from 'src/important-events/child-school/selected-child-school.repository';
 import { SelectedReasonForUpdateEntity } from 'src/background-data/reason-for-update/entities/selected-reason-for-update.entity';
 import { SelectedReasonForUpdateModule } from 'src/background-data/reason-for-update/selected-reason-for-update.module';
 import { SelectedReasonForUpdateRepository } from 'src/background-data/reason-for-update/selected-reason-for-update.repository';
@@ -160,6 +184,18 @@ import { SeedService } from './seed.service';
 
     ProblemAreaModule, TypeOrmModule.forFeature([ProblemAreaEntity, ProblemAreaRepository]),
     SelectedProblemAreaModule, TypeOrmModule.forFeature([SelectedProblemAreaEntity, SelectedProblemAreaRepository]),
+
+    OtherInterventionsStartedModule, TypeOrmModule.forFeature([OtherInterventionsStartedEntity, OtherInterventionsStartedRepository]),
+    SelectedOtherInterventionsStartedModule, TypeOrmModule.forFeature([SelectedOtherInterventionsStartedEntity, SelectedOtherInterventionsStartedRepository]),
+
+    DuringInterventionModule, TypeOrmModule.forFeature([DuringInterventionEntity, DuringInterventionRepository]),
+    SelectedDuringInterventionModule, TypeOrmModule.forFeature([SelectedDuringInterventionEntity, SelectedDuringInterventionRepository]),
+
+    DuringPastModule, TypeOrmModule.forFeature([DuringPastEntity, DuringPastRepository]),
+    SelectedDuringPastModule, TypeOrmModule.forFeature([SelectedDuringPastEntity, SelectedDuringPastRepository]),
+
+    ChildSchoolModule, TypeOrmModule.forFeature([ChildSchoolEntity, ChildSchoolRepository]),
+    SelectedChildSchoolModule, TypeOrmModule.forFeature([SelectedChildSchoolEntity, SelectedChildSchoolRepository]),
 
     ReasonForUpdateModule, TypeOrmModule.forFeature([ReasonForUpdateEntity, ReasonForUpdateRepository]),
     SelectedReasonForUpdateModule, TypeOrmModule.forFeature([SelectedReasonForUpdateEntity, SelectedReasonForUpdateRepository]),

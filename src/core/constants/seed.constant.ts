@@ -1,3 +1,5 @@
+// Background Survey Seed Data
+
 export const genderSeedData = [
   'Gender.Girl',
   'Gender.Boy',
@@ -17,6 +19,7 @@ export const problemAreaSeedData = [
   'ProblemArea.ProblematicRelationships',
   'ProblemArea.ViolenceInTheFamily',
   'ProblemArea.Crime',
+  'ProblemArea.Other',
   'Other'
 ].map(data => ({ description: data }));
 
@@ -25,6 +28,7 @@ export const previousInterventionSeedData = [
   'PreviousIntervention.YesOutpatientCare',
   'PreviousIntervention.YesOtherSocial',
   'PreviousIntervention.YesOtherHealth',
+  'PreviousIntervention.Other',
   'Other'
 ].map(data => ({ description: data }));
 
@@ -36,6 +40,7 @@ export const otherInterventionsSeedData = [
   'OtherInterventions.YesStudentHealth',
   'OtherInterventions.YesMariaUngdom',
   'OtherInterventions.YesGroupActivities',
+  'OtherInterventions.Other',
   'Other'
 ].map(data => ({ description: data }));
 
@@ -45,6 +50,7 @@ export const familyConstellationSeedData = [
   'FamilyConstellation.LivingAlternately',
   'FamilyConstellation.LivesWithVH',
   'FamilyConstellation.LivesInAnotherFamily',
+  'FamilyConstellation.Other',
   'Other'
 ].map(data => ({ description: data }));
 
@@ -54,6 +60,7 @@ export const whoParticipatesSeedData = [
   'WhoParticipates.AParent',
   'WhoParticipates.BothParents',
   'WhoParticipates.Parent',
+  'WhoParticipates.Other',
   'Other',
 ].map(data => ({ description: data }));
 
@@ -115,6 +122,7 @@ export const establishedDiagnosesSeedData = [
   'EstablishedDiagnoses.SelfInjuriousBehavior',
   'EstablishedDiagnoses.LanguageDisorder',
   'EstablishedDiagnoses.DefianceSyndrome',
+  'EstablishedDiagnoses.Other',
   'Other'
 ].map(data => ({ description: data }));
 
@@ -149,6 +157,7 @@ export const reasonForTerminationSeedData = [
   "ReasonForTermination.MoveTo",
   "ReasonForTermination.Investment",
   "ReasonForTermination.SocialServices",
+  "ReasonForTermination.Other",
   "Other",
 ].map(data => ({ description: data }));
 
@@ -158,4 +167,44 @@ export const interventionProgressSeedData = [
   "InterventionProgress.AboutHalfAchieved",
   "InterventionProgress.ALargePartAchieved",
   "InterventionProgress.FullyAchieved",
+].map(data => ({ description: data }));
+
+// Questions seed data after 12 months
+
+export const otherInterventionsStartedSeedData = [
+  'OtherInterventionsStarted.NoOtherInitiativesStarted',
+  'Yes – other intervention social services (LSS, placement, LUL)',
+  'Yes – other contribution to healthcare (e.g. BUP, Habilitation, student health)',
+  'Medication',
+  'Other effort'
+].map(data => ({ description: data }));
+
+export const duringInterventionSeedData = [
+  'BUP',
+  'first line psychiatry',
+  'Habilitation',
+  'School staff',
+  'Student health',
+  'Maria Youth',
+  'Other part within social services, e.g. LSS, the adult unit, etc.'
+].map(data => ({ description: data }));
+
+export const duringPastSeedData = [
+  'No investigation done',
+  'Investigation done, no diagnosis received',
+  'ADHD',
+  'ADD',
+  'AST',
+  'Psychiatric diagnosis',
+  'Gifted functional variation',
+  'Language disorder',
+  'Other'
+].map(data => ({ description: data }));
+
+export const childSchoolSeedData = [
+  'The child schooling has been the same during the last 12 months',
+  'The child has changed schools',
+  'The child has changed school form',
+  'The child has started special primary school',
+  'The child has finished school (no longer compulsory schooling)',
 ].map(data => ({ description: data }));

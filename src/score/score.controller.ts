@@ -27,6 +27,24 @@ export class ScoreController {
     });
   }
 
+  // @Get('/getByOccasion/:occasion')
+  // @ApiOkResponse({ type: ScoreDto })
+  // async getByOccasion(
+  //   @Param("occasion") occasion: number
+  // ): Promise<ScoreDto> {
+  //   return await this.service.getScoreByOccasion(occasion);
+  // }
+
+  @Get('/getByOccasion/:occasion')
+  @ApiOkResponse({ type: [ScoreDto] }) // note the square brackets around ScoreDto
+  async getByOccasion(
+    @Param("occasion") occasion: number
+  ): Promise<number> {
+    const scores = await this.service.getScoreByOccasion(occasion);
+    return scores.length
+  }
+
+
   @Post('/create')
   @ApiOkResponse({ type: () => Boolean })
   async create(

@@ -34,6 +34,7 @@ import { SelectedTypeOfEffortService } from './type-of-effort/selected-type-of-e
 import { TypeOfEffortService } from './type-of-effort/type-of-effort.service';
 import { SelectedWhoParticipatesService } from './who-participates/selected-who-participates.service';
 import { WhoParticipatesService } from './who-participates/who-participates.service';
+
 import dayjs = require('dayjs');
 import AdmZip = require("adm-zip");
 import qr = require("qrcode");
@@ -42,6 +43,7 @@ import path = require("path");
 import PizZip = require("pizzip");
 import { FollowUpDataService } from "src/follow-up-survey/follow-up-data.service";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const Docxtemplater = require("docxtemplater");
 const template1Path = `${__dirname}/template1.docx`;
 const template2Path = `${__dirname}/template2.docx`;

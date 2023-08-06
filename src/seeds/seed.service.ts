@@ -11,6 +11,10 @@ import { InterpreterRequiredEntity } from 'src/background-data/interpreter-requi
 import { OtherInterventionsEntity } from 'src/background-data/other-interventions/entities/other-interventions.entity';
 import { PreviousInterventionEntity } from 'src/background-data/previous-intervention/entities/previous-intervention.entity';
 import { ProblemAreaEntity } from 'src/background-data/problem-area/entities/problem-area.entity';
+import { OtherInterventionsStartedEntity } from 'src/important-events/otherinterventions-started/entities/otherinterventions-started.entity';
+import { DuringInterventionEntity } from 'src/important-events/during-intervention/entities/during-intervention.entity';
+import { DuringPastEntity } from 'src/important-events/during-past/entities/during-past.entity';
+import { ChildSchoolEntity } from 'src/important-events/child-school/entities/child-school.entity';
 import { ReasonForUpdateEntity } from 'src/background-data/reason-for-update/entities/reason-for-update.entity';
 import { SchoolUniformEntity } from 'src/background-data/school-uniform/entities/school-uniform.entity';
 import { TypeOfEffortEntity } from 'src/background-data/type-of-effort/entities/type-of-effort.entity';
@@ -32,6 +36,10 @@ import { SelectedInterpreterRequiredEntity } from 'src/background-data/interpret
 import { SelectedOtherInterventionsEntity } from 'src/background-data/other-interventions/entities/selected-other-interventions.entity';
 import { SelectedPreviousInterventionEntity } from 'src/background-data/previous-intervention/entities/selected-previous-intervention.entity';
 import { SelectedProblemAreaEntity } from 'src/background-data/problem-area/entities/selected-problem-area.entity';
+import { SelectedOtherInterventionsStartedEntity } from 'src/important-events/otherinterventions-started/entities/selected-otherinterventions-started.entity';
+import { SelectedDuringInterventionEntity } from 'src/important-events/during-intervention/entities/selected-during-intervention.entity';
+import { SelectedDuringPastEntity } from 'src/important-events/during-past/entities/selected-during-past.entity';
+import { SelectedChildSchoolEntity } from 'src/important-events/child-school/entities/selected-child-school.entity';
 import { SelectedReasonForUpdateEntity } from 'src/background-data/reason-for-update/entities/selected-reason-for-update.entity';
 import { SelectedSchoolUniformEntity } from 'src/background-data/school-uniform/entities/selected-school-uniform.entity';
 import { SelectedTypeOfEffortEntity } from 'src/background-data/type-of-effort/entities/selected-type-of-effort.entity';
@@ -54,6 +62,10 @@ import {
   otherInterventionsSeedData,
   previousInterventionSeedData,
   problemAreaSeedData,
+  otherInterventionsStartedSeedData,
+  duringInterventionSeedData,
+  duringPastSeedData,
+  childSchoolSeedData,
   reasonForTerminationSeedData,
   reasonForUpdateSeedData,
   schoolUniformSeedData,
@@ -149,6 +161,26 @@ export class SeedService {
     private readonly problemAreaRepository: Repository<ProblemAreaEntity>,
     @InjectRepository(SelectedProblemAreaEntity)
     private readonly selectedProblemAreaRepository: Repository<SelectedProblemAreaEntity>,
+
+    @InjectRepository(OtherInterventionsStartedEntity)
+    private readonly otherInterventionsStartedRepository: Repository<OtherInterventionsStartedEntity>,
+    @InjectRepository(SelectedOtherInterventionsStartedEntity)
+    private readonly selectedOtherInterventionsStartedRepository: Repository<SelectedOtherInterventionsStartedEntity>,
+
+    @InjectRepository(DuringInterventionEntity)
+    private readonly duringInterventionRepository: Repository<DuringInterventionEntity>,
+    @InjectRepository(SelectedDuringInterventionEntity)
+    private readonly selectedDuringInterventionRepository: Repository<SelectedDuringInterventionEntity>,
+
+    @InjectRepository(DuringPastEntity)
+    private readonly duringPastRepository: Repository<DuringPastEntity>,
+    @InjectRepository(SelectedDuringPastEntity)
+    private readonly selectedDuringPastRepository: Repository<SelectedDuringPastEntity>,
+
+    @InjectRepository(ChildSchoolEntity)
+    private readonly childSchoolRepository: Repository<ChildSchoolEntity>,
+    @InjectRepository(SelectedChildSchoolEntity)
+    private readonly selectedChildSchoolRepository: Repository<SelectedChildSchoolEntity>,
 
     @InjectRepository(ReasonForUpdateEntity)
     private readonly reasonForUpdateRepository: Repository<ReasonForUpdateEntity>,

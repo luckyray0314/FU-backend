@@ -94,6 +94,11 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
     }
   }
 
+  async getScoreByOccasion(occasion: number): Promise<ScoreDto[]> {
+    const scores = await this.repo.find({ where: { occasion } });
+    return scores.map(score => ({ ...score }));
+  }
+
   async createScoreData(payload: ScoreDto) {
     try {
       const scoreEntity = await this.repo.findOne({
@@ -323,4 +328,5 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
       .groupBy("score.occasion")
       .getRawMany();
   }
+
 }
