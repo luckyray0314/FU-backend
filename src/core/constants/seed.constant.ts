@@ -173,38 +173,63 @@ export const interventionProgressSeedData = [
 
 export const otherInterventionsStartedSeedData = [
   'OtherInterventionsStarted.NoOtherInitiativesStarted',
-  'Yes – other intervention social services (LSS, placement, LUL)',
-  'Yes – other contribution to healthcare (e.g. BUP, Habilitation, student health)',
-  'Medication',
-  'Other effort'
+  'OtherInterventionsStarted.YesOtherIntervention',
+  'OtherInterventionsStarted.YesOtherContribution',
+  'OtherInterventionsStarted.Medication',
+  'OtherInterventionsStarted.OtherEffort'
 ].map(data => ({ description: data }));
 
 export const duringInterventionSeedData = [
-  'BUP',
-  'first line psychiatry',
-  'Habilitation',
-  'School staff',
-  'Student health',
-  'Maria Youth',
-  'Other part within social services, e.g. LSS, the adult unit, etc.'
+  'DuringIntervention.BUP',
+  'DuringIntervention.FirstLinePsychiatry',
+  'DuringIntervention.Habilitation',
+  'DuringIntervention.SchoolStaff',
+  'DuringIntervention.StudentHealth',
+  'DuringIntervention.MariaYouth',
+  'DuringIntervention.OtherPartWithinSocial'
 ].map(data => ({ description: data }));
 
 export const duringPastSeedData = [
-  'No investigation done',
-  'Investigation done, no diagnosis received',
-  'ADHD',
-  'ADD',
-  'AST',
-  'Psychiatric diagnosis',
-  'Gifted functional variation',
-  'Language disorder',
-  'Other'
+  'DuringPast.NoInvestigationDone',
+  'DuringPast.InvestigationDoneNoDiagnosisReceived',
+  'DuringPast.ADHD',
+  'DuringPast.ADD',
+  'DuringPast.AST',
+  'DuringPast.PsychiatricDiagnosis',
+  'DuringPast.GiftedFunctionalVariation',
+  'DuringPast.LanguageDisorder',
+  'DuringPast.Other'
 ].map(data => ({ description: data }));
 
 export const childSchoolSeedData = [
-  'The child schooling has been the same during the last 12 months',
-  'The child has changed schools',
-  'The child has changed school form',
-  'The child has started special primary school',
-  'The child has finished school (no longer compulsory schooling)',
+  'ChildSchool.TheChildSchoolingHasBeen',
+  'ChildSchool.TheChildHasChangedSchools',
+  'ChildSchool.TheChildHasChangedSchoolForm',
+  'ChildSchool.ThechildHasCtartedSpecialPrimarySchool',
+  'ChildSchool.TheChildHasFinishedSchool',
+].map(data => ({ description: data }));
+
+export const changeAccomodationSeedData = [
+  'ChangeAccomodation.TheChildLivingSituationHasRemained',
+  'ChangeAccomodation.TheChildHasStartedLivingAlternately',
+  'ChangeAccomodation.TheChildHasStartedLivingWith',
+  'ChangeAccomodation.TheChildHasBeenPlacedThrough',
+].map(data => ({ description: data }));
+
+export const changeEmploymentVh1SeedData = [
+  'ChangeEmploymentVh1.Guardian1HasTheSameOccupation',
+  'ChangeEmploymentVh1.EmploymentChangedToFull-time',
+  'ChangeEmploymentVh1.EmploymentChangedToPart-time',
+  'ChangeEmploymentVh1.BecameAJobSeeker',
+  'ChangeEmploymentVh1.BeenOnSickLeave',
+  'ChangeEmploymentVh1.BeenOnParentalLeave',
+].map(data => ({ description: data }));
+
+export const changeEmploymentVh2SeedData = [
+  'ChangeEmploymentVh2.Guardian2HasTheSameOccupation',
+  'ChangeEmploymentVh2.EmploymentChangedToFull-time',
+  'ChangeEmploymentVh2.EmploymentChangedToPart-time',
+  'ChangeEmploymentVh2.BecameAJobSeeker',
+  'ChangeEmploymentVh2.BeenOnSickLeave',
+  'ChangeEmploymentVh2.BeenOnParentalLeave',
 ].map(data => ({ description: data }));

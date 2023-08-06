@@ -71,7 +71,10 @@ import {
   schoolUniformSeedData,
   timeConsumptionSeedData,
   typeOfEffortSeedData,
-  whoParticipatesSeedData
+  whoParticipatesSeedData,
+  changeAccomodationSeedData,
+  changeEmploymentVh1SeedData,
+  changeEmploymentVh2SeedData
 } from '../core/constants/seed.constant';
 
 import { BackgroundMetadataEntity } from 'src/background-data/background-metadata.entity';
@@ -97,6 +100,12 @@ import * as timeConsumptionRealData from "src/core/constants/selected_time_consu
 import * as typeOfEffortRealData from "src/core/constants/selected_type_of_effort.json";
 import * as whoParticipatesRealData from "src/core/constants/selected_who_partifipates.json";
 import { ScoreEntity } from 'src/score/entities/score.entity';
+import { ChangeAccomodationEntity } from 'src/important-events/change-accomodation/entities/change-accomodation.entity';
+import { SelectedChangeAccomodationEntity } from 'src/important-events/change-accomodation/entities/selected-change-accomodation.entity';
+import { ChangeEmploymentVh1Entity } from 'src/important-events/change-employment-vh1/entities/change-employment-vh1.entity';
+import { SelectedChangeEmploymentVh1Entity } from 'src/important-events/change-employment-vh1/entities/selected-change-employment-vh1.entity';
+import { ChangeEmploymentVh2Entity } from 'src/important-events/change-employment-vh2/entities/change-employment-vh2.entity';
+import { SelectedChangeEmploymentVh2Entity } from 'src/important-events/change-employment-vh2/entities/selected-change-employment-vh2.entity';
 
 @Injectable()
 export class SeedService {
@@ -221,6 +230,21 @@ export class SeedService {
     private readonly timeConsumptionRepository: Repository<TimeConsumptionEntity>,
     @InjectRepository(SelectedTimeConsumptionEntity)
     private readonly selectedTimeConsumptionRepository: Repository<SelectedTimeConsumptionEntity>,
+
+    @InjectRepository(ChangeAccomodationEntity)
+    private readonly changeAccomodationRepository: Repository<ChangeAccomodationEntity>,
+    @InjectRepository(SelectedChangeAccomodationEntity)
+    private readonly selectedChangeAccomodationRepository: Repository<SelectedChangeAccomodationEntity>,
+
+    @InjectRepository(ChangeEmploymentVh1Entity)
+    private readonly changeEmploymentVh1Repository: Repository<ChangeEmploymentVh1Entity>,
+    @InjectRepository(SelectedChangeEmploymentVh1Entity)
+    private readonly selectedChangeEmploymentsVh1Repository: Repository<SelectedChangeEmploymentVh1Entity>,
+
+    @InjectRepository(ChangeEmploymentVh2Entity)
+    private readonly changeEmploymentVh2Repository: Repository<ChangeEmploymentVh2Entity>,
+    @InjectRepository(SelectedChangeEmploymentVh2Entity)
+    private readonly selectedChangeEmploymentsVh2Repository: Repository<SelectedChangeEmploymentVh2Entity>,
 
   ) { }
 
@@ -526,5 +550,26 @@ export class SeedService {
     const numRecords = await this.childSchoolRepository.count();
     if (numRecords > 0) return;
     await this.childSchoolRepository.save(childSchoolSeedData);
+  }
+
+  async seedChangeAccomodation(): Promise<void> {
+    console.log("seeding changeAccomodation data")
+    const numRecords = await this.changeAccomodationRepository.count();
+    if (numRecords > 0) return;
+    await this.changeAccomodationRepository.save(changeAccomodationSeedData);
+  }
+
+  async seedChangeEmploymentVh1(): Promise<void> {
+    console.log("seeding changeEmploymentVh1 data")
+    const numRecords = await this.changeEmploymentVh1Repository.count();
+    if (numRecords > 0) return;
+    await this.changeEmploymentVh1Repository.save(changeEmploymentVh1SeedData);
+  }
+
+  async seedChangeEmploymentVh2(): Promise<void> {
+    console.log("seeding changeEmploymentVh2 data")
+    const numRecords = await this.changeEmploymentVh2Repository.count();
+    if (numRecords > 0) return;
+    await this.changeEmploymentVh2Repository.save(changeEmploymentVh2SeedData);
   }
 }

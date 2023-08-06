@@ -6,6 +6,9 @@ import { DuringInterventionEntity } from '../important-events/during-interventio
 import { OtherInterventionsStartedEntity } from '../important-events/otherinterventions-started/entities/otherinterventions-started.entity';
 import { ChildSchoolEntity } from './child-school/entities/child-school.entity';
 import { DuringPastEntity } from './during-past/entities/during-past.entity';
+import { ChangeAccomodationEntity } from './change-accomodation/entities/change-accomodation.entity';
+import { ChangeEmploymentVh1Entity } from './change-employment-vh1/entities/change-employment-vh1.entity';
+import { ChangeEmploymentVh2Entity } from './change-employment-vh2/entities/change-employment-vh2.entity';
 
 
 export class ImportantEventsBasicDataDto {
@@ -20,6 +23,15 @@ export class ImportantEventsBasicDataDto {
 
   @ApiProperty()
   childSchoolEntities: ChildSchoolEntity[];
+
+  @ApiProperty()
+  changeAccomodationEntities: ChangeAccomodationEntity[];
+  
+  @ApiProperty()
+  changeEmploymentVh1Entities: ChangeEmploymentVh1Entity[];
+
+  @ApiProperty()
+  changeEmploymentVh2Entities: ChangeEmploymentVh2Entity[];
 }
 
 export class ImportantEventsDataDto {

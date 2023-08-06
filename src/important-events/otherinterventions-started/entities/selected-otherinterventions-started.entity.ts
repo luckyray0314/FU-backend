@@ -14,7 +14,4 @@ export class SelectedOtherInterventionsStartedEntity {
   @ManyToOne(() => OtherInterventionsStartedEntity, { nullable: true })
   @JoinColumn()
   otherInterventionsStarted?: OtherInterventionsStartedEntity;
-
-  @Column({ nullable: true })
-  other?: string;
 }

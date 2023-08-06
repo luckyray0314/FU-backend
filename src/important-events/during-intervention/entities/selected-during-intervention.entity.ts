@@ -14,7 +14,4 @@ export class SelectedDuringInterventionEntity {
   @ManyToOne(() => DuringInterventionEntity, { nullable: true })
   @JoinColumn()
   duringIntervention?: DuringInterventionEntity;
-
-  @Column({ nullable: true })
-  other?: string;
 }

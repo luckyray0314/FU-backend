@@ -146,6 +146,24 @@ import { ScoreEntity } from 'src/score/entities/score.entity';
 import { ScoreModule } from 'src/score/score.module';
 import { ScoreRepository } from 'src/score/score.repository';
 import { SeedService } from './seed.service';
+import { ChangeAccomodationModule } from 'src/important-events/change-accomodation/change-accomodation.module';
+import { ChangeAccomodationRepository } from 'src/important-events/change-accomodation/change-accomodation.repository';
+import { ChangeAccomodationEntity } from 'src/important-events/change-accomodation/entities/change-accomodation.entity';
+import { SelectedChangeAccomodationEntity } from 'src/important-events/change-accomodation/entities/selected-change-accomodation.entity';
+import { SelectedChangeAccomodationModule } from 'src/important-events/change-accomodation/selected-change-accomodation.module';
+import { SelectedChangeAccomodationRepository } from 'src/important-events/change-accomodation/selected-change-accomodation.repository';
+import { ChangeEmploymentVh1Module } from 'src/important-events/change-employment-vh1/change-employment-vh1.module';
+import { ChangeEmploymentVh1Repository } from 'src/important-events/change-employment-vh1/change-employment-vh1.repository';
+import { ChangeEmploymentVh1Entity } from 'src/important-events/change-employment-vh1/entities/change-employment-vh1.entity';
+import { SelectedChangeEmploymentVh1Entity } from 'src/important-events/change-employment-vh1/entities/selected-change-employment-vh1.entity';
+import { SelectedChangeEmploymentVh1Module } from 'src/important-events/change-employment-vh1/selected-change-employment-vh1.module';
+import { SelectedChangeEmploymentVh1Repository } from 'src/important-events/change-employment-vh1/selected-change-employment-vh1.repository';
+import { ChangeEmploymentVh2Module } from 'src/important-events/change-employment-vh2/change-employment-vh2.module';
+import { ChangeEmploymentVh2Repository } from 'src/important-events/change-employment-vh2/change-employment-vh2.repository';
+import { ChangeEmploymentVh2Entity } from 'src/important-events/change-employment-vh2/entities/change-employment-vh2.entity';
+import { SelectedChangeEmploymentVh2Entity } from 'src/important-events/change-employment-vh2/entities/selected-change-employment-vh2.entity';
+import { SelectedChangeEmploymentVh2Module } from 'src/important-events/change-employment-vh2/selected-change-employment-vh2.module';
+import { SelectedChangeEmploymentVh2Repository } from 'src/important-events/change-employment-vh2/selected-change-employment-vh2.repository';
 
 @Module({
   imports: [
@@ -220,6 +238,15 @@ import { SeedService } from './seed.service';
 
     TimeConsumptionModule, TypeOrmModule.forFeature([TimeConsumptionEntity, TimeConsumptionRepository]),
     SelectedTimeConsumptionModule, TypeOrmModule.forFeature([SelectedTimeConsumptionEntity, SelectedTimeConsumptionRepository]),
+
+    ChangeAccomodationModule, TypeOrmModule.forFeature([ChangeAccomodationEntity, ChangeAccomodationRepository]),
+    SelectedChangeAccomodationModule, TypeOrmModule.forFeature([SelectedChangeAccomodationEntity, SelectedChangeAccomodationRepository]),
+
+    ChangeEmploymentVh1Module, TypeOrmModule.forFeature([ChangeEmploymentVh1Entity, ChangeEmploymentVh1Repository]),
+    SelectedChangeEmploymentVh1Module, TypeOrmModule.forFeature([SelectedChangeEmploymentVh1Entity, SelectedChangeEmploymentVh1Repository]),
+
+    ChangeEmploymentVh2Module, TypeOrmModule.forFeature([ChangeEmploymentVh2Entity, ChangeEmploymentVh2Repository]),
+    SelectedChangeEmploymentVh2Module, TypeOrmModule.forFeature([SelectedChangeEmploymentVh2Entity, SelectedChangeEmploymentVh2Repository]),
 
   ],
   providers: [SeedService],

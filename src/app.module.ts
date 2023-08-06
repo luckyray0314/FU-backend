@@ -59,10 +59,16 @@ import { SelectedChildSchoolModule } from './important-events/child-school/selec
 import { DuringInterventionModule } from './important-events/during-intervention/during-intervention.module';
 import { SelectedDuringInterventionModule } from './important-events/during-intervention/selected-during-intervention.module';
 import { DuringPastModule } from './important-events/during-past/during-past.module';
+import { ChangeAccomodationModule } from './important-events/change-accomodation/change-accomodation.module';
 import { SelectedDuringPastModule } from './important-events/during-past/selected-during-past.module';
 import { ImportantEventsModule } from './important-events/important-events.module';
 import { OtherInterventionsStartedModule } from './important-events/otherinterventions-started/otherinterventions-started.module';
 import { SelectedOtherInterventionsStartedModule } from './important-events/otherinterventions-started/selected-otherinterventions-started.module';
+import { SelectedChangeAccomodationModule } from './important-events/change-accomodation/selected-change-accomodation.module';
+import { ChangeEmploymentVh1Module } from './important-events/change-employment-vh1/change-employment-vh1.module';
+import { SelectedChangeEmploymentVh1Module } from './important-events/change-employment-vh1/selected-change-employment-vh1.module';
+import { ChangeEmploymentVh2Module } from './important-events/change-employment-vh2/change-employment-vh2.module';
+import { SelectedChangeEmploymentVh2Module } from './important-events/change-employment-vh2/selected-change-employment-vh2.module';
 
 @Module({
   imports: [
@@ -91,6 +97,9 @@ import { SelectedOtherInterventionsStartedModule } from './important-events/othe
     DuringInterventionModule,
     DuringPastModule,
     ChildSchoolModule,
+    ChangeAccomodationModule,
+    ChangeEmploymentVh1Module,
+    ChangeEmploymentVh2Module,
 
     SelectedGenderModule,
     SelectedEducationVh1Module,
@@ -111,6 +120,9 @@ import { SelectedOtherInterventionsStartedModule } from './important-events/othe
     SelectedDuringInterventionModule,
     SelectedDuringPastModule,
     SelectedChildSchoolModule,
+    SelectedChangeAccomodationModule,
+    SelectedChangeEmploymentVh1Module,
+    SelectedChangeEmploymentVh2Module,
 
     BackgroundMetadataModule,
     BackgroundDataModule,

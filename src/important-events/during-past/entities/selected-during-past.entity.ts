@@ -14,7 +14,4 @@ export class SelectedDuringPastEntity {
   @ManyToOne(() => DuringPastEntity, { nullable: true })
   @JoinColumn()
   duringPast?: DuringPastEntity;
-
-  @Column({ nullable: true })
-  other?: string;
 }

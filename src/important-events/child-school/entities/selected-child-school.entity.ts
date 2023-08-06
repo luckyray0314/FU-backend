@@ -14,7 +14,4 @@ export class SelectedChildSchoolEntity {
   @ManyToOne(() => ChildSchoolEntity, { nullable: true })
   @JoinColumn()
   childSchool?: ChildSchoolEntity;
-
-  @Column({ nullable: true })
-  other?: string;
 }

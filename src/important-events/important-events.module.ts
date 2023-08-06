@@ -9,6 +9,12 @@ import { OtherInterventionsStartedModule } from '../important-events/otherinterv
 import { SelectedOtherInterventionsStartedModule } from '../important-events/otherinterventions-started/selected-otherinterventions-started.module';
 import { ImportantEventsController } from './important-events.controller';
 import { ImportantEventsService } from './important-events.service';
+import { ChangeAccomodationModule } from './change-accomodation/change-accomodation.module';
+import { ChangeEmploymentVh1Module } from './change-employment-vh1/change-employment-vh1.module';
+import { ChangeEmploymentVh2Module } from './change-employment-vh2/change-employment-vh2.module';
+import { SelectedChangeAccomodationModule } from './change-accomodation/selected-change-accomodation.module';
+import { SelectedChangeEmploymentVh1Module } from './change-employment-vh1/selected-change-employment-vh1.module';
+import { SelectedChangeEmploymentVh2Module } from './change-employment-vh2/selected-change-employment-vh2.module';
 
 @Module({
   imports: [
@@ -16,10 +22,16 @@ import { ImportantEventsService } from './important-events.service';
     DuringInterventionModule,
     DuringPastModule,
     ChildSchoolModule,
+    ChangeAccomodationModule,
+    ChangeEmploymentVh1Module,
+    ChangeEmploymentVh2Module,
     SelectedOtherInterventionsStartedModule,
     SelectedDuringInterventionModule,
     SelectedDuringPastModule,
     SelectedChildSchoolModule,
+    SelectedChangeAccomodationModule,
+    SelectedChangeEmploymentVh1Module,
+    SelectedChangeEmploymentVh2Module,
   ],
   providers: [ImportantEventsService],
   controllers: [ImportantEventsController],
