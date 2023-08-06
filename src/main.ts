@@ -31,6 +31,10 @@ async function bootstrap() {
   await seedService.seedInterventionProgresss();
   await seedService.seedReasonForTerminations();
   await seedService.seedTimeConsumptions();
+  await seedService.seedOtherInterventionsStarted();
+  await seedService.seedDuringIntervention();
+  await seedService.seedDuringPast();
+  await seedService.seedChildSchool();
 
   await app.listen(process.env.VALLENTUNA_SURVEY_BACKEND_PORT || 5000);
 }

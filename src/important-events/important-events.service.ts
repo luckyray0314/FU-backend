@@ -55,4 +55,49 @@ export class ImportantEventsService {
     };
     return result;
   };
+
+  async save(payload: ImportantEventsDataDto): Promise<boolean> {
+    try {
+      const codeNumber = payload.codeNumber;
+
+      await this.selectedOtherInterventionsStartedService.deleteByCodeNumber(codeNumber);
+      await this.selectedDuringInterventionService.deleteByCodeNumber(codeNumber);
+      await this.selectedDuringPastService.deleteByCodeNumber(codeNumber);
+      await this.selectedChildSchoolService.deleteByCodeNumber(codeNumber);
+
+      for (const id of payload.formDataByEntityName["otherInterventionsStarted"]) {
+        await this.selectedOtherInterventionsStartedService.create({
+          codeNumber,
+          otherInterventionsStarted: await this.otherInterventionsStartedService.findOne({ where: { id: +id } })
+        });
+      }
+
+      for (const id of payload.formDataByEntityName["duringIntervention"]) {
+        await this.selectedDuringInterventionService.create({
+          codeNumber,
+          duringIntervention: await this.duringInterventionService.findOne({ where: { id: +id } })
+        });
+      }
+
+      for (const id of payload.formDataByEntityName["duringPast"]) {
+        await this.selectedDuringPastService.create({
+          codeNumber,
+          duringPast: await this.duringPastService.findOne({ where: { id: +id } })
+        });
+      }
+
+      for (const id of payload.formDataByEntityName["childSchool"]) {
+        await this.selectedChildSchoolService.create({
+          codeNumber,
+          childSchool: await this.childSchoolService.findOne({ where: { id: +id } })
+        });
+      }
+
+      return true;
+    }
+    catch (e) {
+      console.log("important events data create error: ", e);
+      return false;
+    }
+  }
 }

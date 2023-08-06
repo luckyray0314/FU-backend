@@ -390,6 +390,11 @@ export class SeedService {
       await this.selectedProblemAreaRepository.save(entity);
     }));
   }
+  async seedOtherInterventionsStarted(): Promise<void> {
+    const numRecords = await this.otherInterventionsStartedRepository.count();
+    if (numRecords > 0) return;
+    await this.otherInterventionsStartedRepository.save(otherInterventionsStartedSeedData);
+  }
   async seedReasonForUpdates(): Promise<void> {
     const numRecords = await this.reasonForUpdateRepository.count();
     if (numRecords > 0) return;
@@ -502,5 +507,24 @@ export class SeedService {
       entity.timeConsumption = await this.timeConsumptionRepository.findOneBy({ id: +data.timeConsumptionId || 1 });
       await this.selectedTimeConsumptionRepository.save(entity);
     }));
+  }
+
+  // Important Events
+  async seedDuringIntervention(): Promise<void> {
+    const numRecords = await this.duringInterventionRepository.count();
+    if (numRecords > 0) return;
+    await this.duringInterventionRepository.save(duringInterventionSeedData);
+  }
+  async seedDuringPast(): Promise<void> {
+    console.log("seeding duringpast data")
+    const numRecords = await this.duringPastRepository.count();
+    if (numRecords > 0) return;
+    await this.duringPastRepository.save(duringPastSeedData);
+  }
+  async seedChildSchool(): Promise<void> {
+    console.log("seeding childschool data")
+    const numRecords = await this.childSchoolRepository.count();
+    if (numRecords > 0) return;
+    await this.childSchoolRepository.save(childSchoolSeedData);
   }
 }

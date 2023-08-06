@@ -87,6 +87,10 @@ import { SelectedOtherInterventionsStartedModule } from './important-events/othe
     SchoolUniformModule,
     TypeOfEffortModule,
     WhoParticipatesModule,
+    OtherInterventionsStartedModule,
+    DuringInterventionModule,
+    DuringPastModule,
+    ChildSchoolModule,
 
     SelectedGenderModule,
     SelectedEducationVh1Module,
@@ -103,6 +107,10 @@ import { SelectedOtherInterventionsStartedModule } from './important-events/othe
     SelectedSchoolUniformModule,
     SelectedTypeOfEffortModule,
     SelectedWhoParticipatesModule,
+    SelectedOtherInterventionsStartedModule,
+    SelectedDuringInterventionModule,
+    SelectedDuringPastModule,
+    SelectedChildSchoolModule,
 
     BackgroundMetadataModule,
     BackgroundDataModule,
@@ -117,19 +125,12 @@ import { SelectedOtherInterventionsStartedModule } from './important-events/othe
     SelectedReasonForTerminationModule,
     SelectedTimeConsumptionModule,
 
+    
+    
+    ImportantEventsModule,
+
     FollowUpMetadataModule,
     FollowUpDataModule,
-
-    // Important Events Modules
-    OtherInterventionsStartedModule,
-    DuringInterventionModule,
-    DuringPastModule,
-    ChildSchoolModule,
-    SelectedOtherInterventionsStartedModule,
-    SelectedDuringInterventionModule,
-    SelectedDuringPastModule,
-    SelectedChildSchoolModule,
-    ImportantEventsModule
   ],
   controllers: [AppController, HealthController],
   providers: [
