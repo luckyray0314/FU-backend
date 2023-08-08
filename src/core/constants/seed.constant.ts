@@ -20,7 +20,7 @@ export const problemAreaSeedData = [
   'ProblemArea.ViolenceInTheFamily',
   'ProblemArea.Crime',
   'ProblemArea.Other',
-  'Other'
+  'OtherText'
 ].map(data => ({ description: data }));
 
 export const previousInterventionSeedData = [
@@ -29,7 +29,7 @@ export const previousInterventionSeedData = [
   'PreviousIntervention.YesOtherSocial',
   'PreviousIntervention.YesOtherHealth',
   'PreviousIntervention.Other',
-  'Other'
+  'OtherText'
 ].map(data => ({ description: data }));
 
 export const otherInterventionsSeedData = [
@@ -41,7 +41,7 @@ export const otherInterventionsSeedData = [
   'OtherInterventions.YesMariaUngdom',
   'OtherInterventions.YesGroupActivities',
   'OtherInterventions.Other',
-  'Other'
+  'OtherText'
 ].map(data => ({ description: data }));
 
 export const familyConstellationSeedData = [
@@ -51,7 +51,7 @@ export const familyConstellationSeedData = [
   'FamilyConstellation.LivesWithVH',
   'FamilyConstellation.LivesInAnotherFamily',
   'FamilyConstellation.Other',
-  'Other'
+  'OtherText'
 ].map(data => ({ description: data }));
 
 export const whoParticipatesSeedData = [
@@ -61,7 +61,7 @@ export const whoParticipatesSeedData = [
   'WhoParticipates.BothParents',
   'WhoParticipates.Parent',
   'WhoParticipates.Other',
-  'Other',
+  'OtherText',
 ].map(data => ({ description: data }));
 
 export const educationVh1SeedData = [
@@ -123,7 +123,7 @@ export const establishedDiagnosesSeedData = [
   'EstablishedDiagnoses.LanguageDisorder',
   'EstablishedDiagnoses.DefianceSyndrome',
   'EstablishedDiagnoses.Other',
-  'Other'
+  'OtherText'
 ].map(data => ({ description: data }));
 
 export const schoolUniformSeedData = [
@@ -158,7 +158,7 @@ export const reasonForTerminationSeedData = [
   "ReasonForTermination.Investment",
   "ReasonForTermination.SocialServices",
   "ReasonForTermination.Other",
-  "Other",
+  "OtherText",
 ].map(data => ({ description: data }));
 
 export const interventionProgressSeedData = [
