@@ -19,7 +19,7 @@ export const problemAreaSeedData = [
   'ProblemArea.ProblematicRelationships',
   'ProblemArea.ViolenceInTheFamily',
   'ProblemArea.Crime',
-  'ProblemArea.Other',
+  'Other',
   'OtherText'
 ].map(data => ({ description: data }));
 
@@ -28,7 +28,7 @@ export const previousInterventionSeedData = [
   'PreviousIntervention.YesOutpatientCare',
   'PreviousIntervention.YesOtherSocial',
   'PreviousIntervention.YesOtherHealth',
-  'PreviousIntervention.Other',
+  'Other',
   'OtherText'
 ].map(data => ({ description: data }));
 
@@ -40,7 +40,7 @@ export const otherInterventionsSeedData = [
   'OtherInterventions.YesStudentHealth',
   'OtherInterventions.YesMariaUngdom',
   'OtherInterventions.YesGroupActivities',
-  'OtherInterventions.Other',
+  'Other',
   'OtherText'
 ].map(data => ({ description: data }));
 
@@ -50,7 +50,7 @@ export const familyConstellationSeedData = [
   'FamilyConstellation.LivingAlternately',
   'FamilyConstellation.LivesWithVH',
   'FamilyConstellation.LivesInAnotherFamily',
-  'FamilyConstellation.Other',
+  'Other',
   'OtherText'
 ].map(data => ({ description: data }));
 
@@ -60,7 +60,7 @@ export const whoParticipatesSeedData = [
   'WhoParticipates.AParent',
   'WhoParticipates.BothParents',
   'WhoParticipates.Parent',
-  'WhoParticipates.Other',
+  'Other',
   'OtherText',
 ].map(data => ({ description: data }));
 
@@ -157,7 +157,7 @@ export const reasonForTerminationSeedData = [
   "ReasonForTermination.MoveTo",
   "ReasonForTermination.Investment",
   "ReasonForTermination.SocialServices",
-  "ReasonForTermination.Other",
+  "Other",
   "OtherText",
 ].map(data => ({ description: data }));
 
