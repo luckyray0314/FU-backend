@@ -13,5 +13,8 @@ export class SelectedActionAssignmentEntity {
 
   @ManyToOne(() => ActionAssignmentEntity)
   @JoinColumn()
-  actionAssignment: ActionAssignmentEntity;
+  actionAssignment?: ActionAssignmentEntity;
+
+  @Column({ nullable: true })
+  other?: string;
 }

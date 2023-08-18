@@ -375,19 +375,40 @@ export class BackgroundDataService {
       }
 
       let nextSurvey = dayjs().format("YYYY-MM-DD");
-      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
-        nextSurvey = dayjs(details[1].date).format("YYYY-MM-DD");
+      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 1 &&
+        details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 2 &&
+        details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 3) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (Background Survey)`;
       }
-      if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
-        nextSurvey = dayjs(details[2].date).format("YYYY-MM-DD");
+      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
+        details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (0 Month Survey)`;
       }
-      if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
-        nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")} (after survey)`;
+      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
+        !details[1].statuses.filter(status => status === SurveyStatus.Clear).length) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (6 Month Survey)`;
       }
-      const followUpSurveyData = await this.followUpService.get(backgroundMetadataEntity.codeNumber);
-      if (!!followUpSurveyData) {
-        nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")} (important happenings during 12 months)`;
+      if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
+        details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (6 Month Survey)`;
       }
+      if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
+        !details[2].statuses.filter(status => status === SurveyStatus.Clear).length) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (12 Month Survey)`;
+      }
+      if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
+        details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (12 Month Survey)`;
+      }
+      if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3 ) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (Post Survey)`;
+      }
+      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
+        details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
+        details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (Important Happenings During 12 Months)`;
+      }
+     
 
       const surveyEntity = {
         codeNumber: backgroundMetadataEntity.codeNumber,

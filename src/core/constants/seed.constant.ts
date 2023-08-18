@@ -122,7 +122,7 @@ export const establishedDiagnosesSeedData = [
   'EstablishedDiagnoses.SelfInjuriousBehavior',
   'EstablishedDiagnoses.LanguageDisorder',
   'EstablishedDiagnoses.DefianceSyndrome',
-  'EstablishedDiagnoses.Other',
+  'Other',
   'OtherText'
 ].map(data => ({ description: data }));
 
@@ -198,7 +198,7 @@ export const duringPastSeedData = [
   'DuringPast.PsychiatricDiagnosis',
   'DuringPast.GiftedFunctionalVariation',
   'DuringPast.LanguageDisorder',
-  'DuringPast.Other'
+  'Other'
 ].map(data => ({ description: data }));
 
 export const childSchoolSeedData = [
@@ -232,4 +232,117 @@ export const changeEmploymentVh2SeedData = [
   'ChangeEmploymentVh2.BecameAJobSeeker',
   'ChangeEmploymentVh2.BeenOnSickLeave',
   'ChangeEmploymentVh2.BeenOnParentalLeave',
+].map(data => ({ description: data }));
+
+
+// Background Adult Survey Seed Data
+
+export const problemAreaAdultSeedData = [
+  'ProblemAreaAdult.Unemployment',
+  'ProblemAreaAdult.Substance',
+  'ProblemAreaAdult.Mental',
+  'ProblemAreaAdult.Problematic',
+  'ProblemAreaAdult.Violence',
+  'ProblemAreaAdult.Crime',
+  'ProblemAreaAdult.Gambling',
+  'ProblemAreaAdult.Emotion',
+  'Other',
+  'OtherText',
+].map(data => ({ description: data }));
+
+export const duringOperationSeedData = [
+  'DuringOperation.Yes',
+  'DuringOperation.No',
+].map(data => ({ description: data }));
+
+export const educationLevelSeedData = [
+  'EducationLevel.Elementary',
+  'EducationLevel.HighSchool',
+  'EducationLevel.PostSecondary',
+  'EducationLevel.College',
+  'EducationLevel.AnotherCountry',
+].map(data => ({ description: data }));
+
+export const employmentSeedData = [
+  'Employment.FullTime',
+  'Employment.PartTime',
+  'Employment.JobSeekers',
+  'Employment.SickLeave',
+  'Employment.ParentalLeave',
+  'Employment.Students',
+  'Employment.Unemployed',
+].map(data => ({ description: data }));
+
+export const establishDiagnoseSeedData = [
+  'EstablishDiagnose.ADHD',
+  'EstablishDiagnose.ADD',
+  'EstablishDiagnose.AST',
+  'EstablishDiagnose.Psychiatric',
+  'EstablishDiagnose.Gifted',
+  'EstablishDiagnose.Eating',
+  'EstablishDiagnose.SelfInjurious',
+  'EstablishDiagnose.Language',
+  'EstablishDiagnose.Depression',
+  'EstablishDiagnose.Somatic',
+  'EstablishDiagnose.Alcohol',
+  'EstablishDiagnose.Dyslexia',
+  'Other',
+  'OtherText',
+].map(data => ({ description: data }));
+
+export const familyConstellationAdultSeedData = [
+  'FamilyConstellationAdult.Single',
+  'FamilyConstellationAdult.Cohabitant',
+  'FamilyConstellationAdult.Serbs',
+  'FamilyConstellationAdult.OtherConstellation',
+].map(data => ({ description: data }));
+
+export const genderAdultSeedData = [
+  'GenderAdult.Man',
+  'GenderAdult.Woman',
+].map(data => ({ description: data }));
+
+export const otherOngoingEffortSeedData = [
+  'OtherOngoingEffort.No',
+  'OtherOngoingEffort.YesPsychiatry',
+  'OtherOngoingEffort.YesHabilitation',
+  'OtherOngoingEffort.YesAddiction',
+  'OtherOngoingEffort.YesProbation',
+  'OtherOngoingEffort.YesGroup',
+  'OtherOngoingEffort.HealthCenter',
+  'OtherOngoingEffort.Healthcare',
+  'Other',
+  'OtherText',
+
+].map(data => ({ description: data }));
+
+export const previousEffortSeedData = [
+  'PreviousEffort.No',
+  'PreviousEffort.YesOutpatient',
+  'PreviousEffort.YesAnother',
+  'PreviousEffort.YesOther',
+  'PreviousEffort.LVM',
+  'PreviousEffort.Probation',
+  'PreviousEffort.Maria',
+  'PreviousEffort.MI',
+  'PreviousEffort.BUP',
+  'PreviousEffort.VAC',
+  'Other',
+  'OtherText',
+
+].map(data => ({ description: data }));
+
+export const actionAssignmentSeedData = [
+  'ActionAssignment.Repulsion',
+  'ActionAssignment.Steps',
+  'ActionAssignment.HAP',
+  'ActionAssignment.OP',
+  'ActionAssignment.KD',
+  'ActionAssignment.Gambling',
+  'ActionAssignment.Structured',
+  'ActionAssignment.A-CRA',
+  'ActionAssignment.MI',
+  'Other',
+  'OtherText',
+
 ].map(data => ({ description: data }));

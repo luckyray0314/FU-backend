@@ -113,6 +113,15 @@ export class BackgroundAdultDataService {
       });
 
       await this.selectedGenderAdultService.deleteByCodeNumber(codeNumber);
+      await this.selectedActionAssignmentService.deleteByCodeNumber(codeNumber);
+      await this.selectedDuringOperationService.deleteByCodeNumber(codeNumber);
+      await this.selectedEducationLevelService.deleteByCodeNumber(codeNumber);
+      await this.selectedEmploymentService.deleteByCodeNumber(codeNumber);
+      await this.selectedEstablishDiagnoseService.deleteByCodeNumber(codeNumber);
+      await this.selectedFamilyConstellationAdultService.deleteByCodeNumber(codeNumber);
+      await this.selectedOtherOngoingEffortService.deleteByCodeNumber(codeNumber);
+      await this.selectedPreviousEffortService.deleteByCodeNumber(codeNumber);
+      await this.selectedProblemAreaAdultService.deleteByCodeNumber(codeNumber);
 
       for (const id of payload.formDataByEntityName["genderAdult"]) {
         await this.selectedGenderAdultService.create({
@@ -149,7 +158,7 @@ export class BackgroundAdultDataService {
         });
       }
 
-      for (const id of payload.formDataByEntityName["problemArea"]) {
+      for (const id of payload.formDataByEntityName["problemAreaAdult"]) {
         await this.selectedProblemAreaAdultService.create({
           codeNumber,
           problemAreaAdult: await this.problemAreaAdultService.findOne({ where: { id: +id } })
@@ -188,19 +197,37 @@ export class BackgroundAdultDataService {
       return true;
     }
     catch (e) {
-      console.log("background data create error: ", e);
+      console.log("background adult data create error: ", e);
       return false;
     }
   }
 
   async get(codeNumber: string): Promise<BackgroundAdultDataDto> {
     const metadata = await this.backgroundAdultMetadataService.findOne({ where: { codeNumber: codeNumber } });
-    const selectedGenderEntities = await this.selectedGenderAdultService.find({ where: { codeNumber }, relations: ["gender"] });
+    const selectedGenderAdultEntities = await this.selectedGenderAdultService.find({ where: { codeNumber }, relations: ["genderAdult"] });
+    const selectedActionAssignmentEntities = await this.selectedActionAssignmentService.find({ where: { codeNumber }, relations: ["actionAssignment"] });
+    const selectedDuringOperationEntities = await this.selectedDuringOperationService.find({ where: { codeNumber }, relations: ["duringOperation"] });
+    const selectedEducationLevelEntities = await this.selectedEducationLevelService.find({ where: { codeNumber }, relations: ["educationLevel"] });
+    const selectedEmploymentEntities = await this.selectedEmploymentService.find({ where: { codeNumber }, relations: ["employment"] });
+    const selectedEstablishDiagnoseEntities = await this.selectedEstablishDiagnoseService.find({ where: { codeNumber }, relations: ["establishDiagnose"] });
+    const selectedFamilyConstellationAdultEntities = await this.selectedFamilyConstellationAdultService.find({ where: { codeNumber }, relations: ["familyConstellationAdult"] });
+    const selectedOtherOngoingEffortEntities = await this.selectedOtherOngoingEffortService.find({ where: { codeNumber }, relations: ["otherOngoingEffort"] });
+    const selectedPreviousEffortEntities = await this.selectedPreviousEffortService.find({ where: { codeNumber }, relations: ["previousEffort"] });
+    const selectedProblemAreaAdultEntities = await this.selectedProblemAreaAdultService.find({ where: { codeNumber }, relations: ["problemAreaAdult"] });
 
     const result: BackgroundAdultDataDto = {
       ...metadata,
       formDataByEntityName: {
-        gender: selectedGenderEntities.map(data => data.genderAdult.id),
+        gender: selectedGenderAdultEntities.map(data => data.genderAdult.id),
+        actionAssignment: selectedActionAssignmentEntities.map(data => data.actionAssignment.id),
+        duringOperation: selectedDuringOperationEntities.map(data => data.duringOperation.id),
+        educationLevel: selectedEducationLevelEntities.map(data => data.educationLevel.id),
+        employment: selectedEmploymentEntities.map(data => data.employment.id),
+        establishDiagnose: selectedEstablishDiagnoseEntities.map(data => data.establishDiagnose.id),
+        familyConstellationAdult: selectedFamilyConstellationAdultEntities.map(data => data.familyConstellationAdult.id),
+        otherOngoingEffort: selectedOtherOngoingEffortEntities.map(data => data.otherOngoingEffort.id),
+        previousEffort: selectedPreviousEffortEntities.map(data => data.previousEffort.id),
+        problemAreaAdult: selectedProblemAreaAdultEntities.map(data => data.problemAreaAdult.id),
 
       }
     };
@@ -209,9 +236,9 @@ export class BackgroundAdultDataService {
   };
 
   async getCaseList() {
-    const backgroundMetadata = await this.backgroundAdultMetadataService.find();
-    const result = await Promise.all(backgroundMetadata.map(async (backgroundMetadataEntity, bgIndex) => {
-      const scoreEntities = await this.scoreService.find({ where: { codeNumber: backgroundMetadataEntity.codeNumber } });
+    const backgroundAdultMetadata = await this.backgroundAdultMetadataService.find();
+    const result = await Promise.all(backgroundAdultMetadata.map(async (backgroundAdultMetadataEntity, bgIndex) => {
+      const scoreEntities = await this.scoreService.find({ where: { codeNumber: backgroundAdultMetadataEntity.codeNumber } });
 
       let prevOccasionDate = dayjs();
 
@@ -253,22 +280,42 @@ export class BackgroundAdultDataService {
       }
 
       let nextSurvey = dayjs().format("YYYY-MM-DD");
-      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
-        nextSurvey = dayjs(details[1].date).format("YYYY-MM-DD");
+      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 1 &&
+        details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 2 &&
+        details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 3) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (Background Survey)`;
       }
-      if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
-        nextSurvey = dayjs(details[2].date).format("YYYY-MM-DD");
+      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
+        details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (0 Month Survey)`;
       }
-      if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
-        nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")} (after survey)`;
+      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
+        !details[1].statuses.filter(status => status === SurveyStatus.Clear).length) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (6 Month Survey)`;
       }
-      const followUpSurveyData = await this.followUpService.get(backgroundMetadataEntity.codeNumber);
-      if (!!followUpSurveyData) {
-        nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")} (important happenings during 12 months)`;
+      if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
+        details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (6 Month Survey)`;
+      }
+      if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
+        !details[2].statuses.filter(status => status === SurveyStatus.Clear).length) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (12 Month Survey)`;
+      }
+      if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
+        details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (12 Month Survey)`;
+      }
+      if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3 ) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (Post Survey)`;
+      }
+      if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
+        details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
+        details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (Important Happenings During 12 Months)`;
       }
 
       const surveyEntity = {
-        codeNumber: backgroundMetadataEntity.codeNumber,
+        codeNumber: backgroundAdultMetadataEntity.codeNumber,
         status: isAllClear ? SurveyStatus.Clear : isAllLoss ? SurveyStatus.Loss : SurveyStatus.Coming,
         missedFields: "",
         history: {

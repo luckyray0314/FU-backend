@@ -164,6 +164,72 @@ import { ChangeEmploymentVh2Entity } from 'src/important-events/change-employmen
 import { SelectedChangeEmploymentVh2Entity } from 'src/important-events/change-employment-vh2/entities/selected-change-employment-vh2.entity';
 import { SelectedChangeEmploymentVh2Module } from 'src/important-events/change-employment-vh2/selected-change-employment-vh2.module';
 import { SelectedChangeEmploymentVh2Repository } from 'src/important-events/change-employment-vh2/selected-change-employment-vh2.repository';
+import { ActionAssignmentModule } from 'src/background-adult-data/action-assignment/action-assignment.module';
+import { ActionAssignmentRepository } from 'src/background-adult-data/action-assignment/action-assignment.repository';
+import { ActionAssignmentEntity } from 'src/background-adult-data/action-assignment/entities/action-assignment.entity';
+import { SelectedActionAssignmentEntity } from 'src/background-adult-data/action-assignment/entities/selected-action-assignment.entity';
+import { SelectedActionAssignmentModule } from 'src/background-adult-data/action-assignment/selected-action-assignment.module';
+import { SelectedActionAssignmentRepository } from 'src/background-adult-data/action-assignment/selected-action-assignment.repository';
+import { DuringOperationModule } from 'src/background-adult-data/during-operation/during-operation.module';
+import { DuringOperationRepository } from 'src/background-adult-data/during-operation/during-operation.repository';
+import { DuringOperationEntity } from 'src/background-adult-data/during-operation/entities/during-operation.entity';
+import { SelectedDuringOperationEntity } from 'src/background-adult-data/during-operation/entities/selected-during-operation.entity';
+import { SelectedDuringOperationModule } from 'src/background-adult-data/during-operation/selected-during-operation.module';
+import { SelectedDuringOperationRepository } from 'src/background-adult-data/during-operation/selected-during-operation.repository';
+import { EducationLevelModule } from 'src/background-adult-data/education-level/education-level.module';
+import { EducationLevelRepository } from 'src/background-adult-data/education-level/education-level.repository';
+import { EducationLevelEntity } from 'src/background-adult-data/education-level/entities/education-level.entity';
+import { SelectedEducationLevelEntity } from 'src/background-adult-data/education-level/entities/selected-education-level.entity';
+import { SelectedEducationLevelModule } from 'src/background-adult-data/education-level/selected-education-level.module';
+import { SelectedEducationLevelRepository } from 'src/background-adult-data/education-level/selected-education-level.repository';
+import { EmploymentModule } from 'src/background-adult-data/employment/employment.module';
+import { EmploymentRepository } from 'src/background-adult-data/employment/employment.repository';
+import { EmploymentEntity } from 'src/background-adult-data/employment/entities/employment.entity';
+import { SelectedEmploymentEntity } from 'src/background-adult-data/employment/entities/selected-employment.entity';
+import { SelectedEmploymentModule } from 'src/background-adult-data/employment/selected-employment.module';
+import { SelectedEmploymentRepository } from 'src/background-adult-data/employment/selected-employment.repository';
+import { EstablishDiagnoseEntity } from 'src/background-adult-data/establish-diagnose/entities/establish-diagnose.entity';
+import { SelectedEstablishDiagnoseEntity } from 'src/background-adult-data/establish-diagnose/entities/selected-establish-diagnose.entity';
+import { EstablishDiagnoseModule } from 'src/background-adult-data/establish-diagnose/establish-diagnose.module';
+import { EstablishDiagnoseRepository } from 'src/background-adult-data/establish-diagnose/establish-diagnose.repository';
+import { SelectedEstablishDiagnoseModule } from 'src/background-adult-data/establish-diagnose/selected-establish-diagnose.module';
+import { SelectedEstablishDiagnoseRepository } from 'src/background-adult-data/establish-diagnose/selected-establish-diagnose.repository';
+import { FamilyConstellationAdultEntity } from 'src/background-adult-data/family-constellation/entities/family-constellation.entity';
+import { SelectedFamilyConstellationAdultEntity } from 'src/background-adult-data/family-constellation/entities/selected-family-constellation.entity';
+import { FamilyConstellationAdultModule } from 'src/background-adult-data/family-constellation/family-constellation.module';
+import { FamilyConstellationAdultRepository } from 'src/background-adult-data/family-constellation/family-constellation.repository';
+import { SelectedFamilyConstellationAdultModule } from 'src/background-adult-data/family-constellation/selected-family-constellation.module';
+import { SelectedFamilyConstellationAdultRepository } from 'src/background-adult-data/family-constellation/selected-family-constellation.repository';
+import { GenderAdultEntity } from 'src/background-adult-data/gender/entities/gender.entity';
+import { SelectedGenderAdultEntity } from 'src/background-adult-data/gender/entities/selected-gender.entity';
+import { GenderAdultModule } from 'src/background-adult-data/gender/gender.module';
+import { GenderAdultRepository } from 'src/background-adult-data/gender/gender.repository';
+import { SelectedGenderAdultModule } from 'src/background-adult-data/gender/selected-gender.module';
+import { SelectedGenderAdultRepository } from 'src/background-adult-data/gender/selected-gender.repository';
+import { OtherOngoingEffortEntity } from 'src/background-adult-data/other-ongoing-effort/entities/other-ongoing-effort.entity';
+import { SelectedOtherOngoingEffortEntity } from 'src/background-adult-data/other-ongoing-effort/entities/selected-other-ongoing-effort.entity';
+import { OtherOngoingEffortModule } from 'src/background-adult-data/other-ongoing-effort/other-ongoing-effort.module';
+import { OtherOngoingEffortRepository } from 'src/background-adult-data/other-ongoing-effort/other-ongoing-effort.repository';
+import { SelectedOtherOngoingEffortModule } from 'src/background-adult-data/other-ongoing-effort/selected-other-ongoing-effort.module';
+import { SelectedOtherOngoingEffortRepository } from 'src/background-adult-data/other-ongoing-effort/selected-other-ongoing-effort.repository';
+import { PreviousEffortEntity } from 'src/background-adult-data/previous-effort/entities/previous-effort.entity';
+import { SelectedPreviousEffortEntity } from 'src/background-adult-data/previous-effort/entities/selected-previous-effort.entity';
+import { PreviousEffortModule } from 'src/background-adult-data/previous-effort/previous-effort.module';
+import { PreviousEffortRepository } from 'src/background-adult-data/previous-effort/previous-effort.repository';
+import { SelectedPreviousEffortModule } from 'src/background-adult-data/previous-effort/selected-previous-effort.module';
+import { SelectedPreviousEffortRepository } from 'src/background-adult-data/previous-effort/selected-previous-effort.repository';
+import { ProblemAreaAdultEntity } from 'src/background-adult-data/problem-area/entities/problem-area.entity';
+import { SelectedProblemAreaAdultEntity } from 'src/background-adult-data/problem-area/entities/selected-problem-area.entity';
+import { ProblemAreaAdultModule } from 'src/background-adult-data/problem-area/problem-area.module';
+import { ProblemAreaAdultRepository } from 'src/background-adult-data/problem-area/problem-area.repository';
+import { SelectedProblemAreaAdultModule } from 'src/background-adult-data/problem-area/selected-problem-area.module';
+import { SelectedProblemAreaAdultRepository } from 'src/background-adult-data/problem-area/selected-problem-area.repository';
+import { BackgroundAdultMetadataEntity } from 'src/background-adult-data/background-adult-metadata.entity';
+import { BackgroundAdultMetadataModule } from 'src/background-adult-data/background-adult-metadata.module';
+import { BackgroundAdultMetadataRepository } from 'src/background-adult-data/background-adult-metadata.repository';
+import { AdultScoreRepository } from 'src/adult-score/adult-score.repository';
+import { AdultScoreEntity } from 'src/adult-score/entities/adult-score.entity';
+import { AdultScoreModule } from 'src/adult-score/adult-score.module';
 
 @Module({
   imports: [
@@ -248,6 +314,38 @@ import { SelectedChangeEmploymentVh2Repository } from 'src/important-events/chan
     ChangeEmploymentVh2Module, TypeOrmModule.forFeature([ChangeEmploymentVh2Entity, ChangeEmploymentVh2Repository]),
     SelectedChangeEmploymentVh2Module, TypeOrmModule.forFeature([SelectedChangeEmploymentVh2Entity, SelectedChangeEmploymentVh2Repository]),
 
+    ActionAssignmentModule, TypeOrmModule.forFeature([ActionAssignmentEntity, ActionAssignmentRepository]),
+    SelectedActionAssignmentModule, TypeOrmModule.forFeature([SelectedActionAssignmentEntity, SelectedActionAssignmentRepository]),
+
+    DuringOperationModule, TypeOrmModule.forFeature([DuringOperationEntity, DuringOperationRepository]),
+    SelectedDuringOperationModule, TypeOrmModule.forFeature([SelectedDuringOperationEntity, SelectedDuringOperationRepository]),
+
+    EducationLevelModule, TypeOrmModule.forFeature([EducationLevelEntity, EducationLevelRepository]),
+    SelectedEducationLevelModule, TypeOrmModule.forFeature([SelectedEducationLevelEntity, SelectedEducationLevelRepository]),
+
+    EmploymentModule, TypeOrmModule.forFeature([EmploymentEntity, EmploymentRepository]),
+    SelectedEmploymentModule, TypeOrmModule.forFeature([SelectedEmploymentEntity, SelectedEmploymentRepository]),
+
+    EstablishDiagnoseModule, TypeOrmModule.forFeature([EstablishDiagnoseEntity, EstablishDiagnoseRepository]),
+    SelectedEstablishDiagnoseModule, TypeOrmModule.forFeature([SelectedEstablishDiagnoseEntity, SelectedEstablishDiagnoseRepository]),
+
+    FamilyConstellationAdultModule, TypeOrmModule.forFeature([FamilyConstellationAdultEntity, FamilyConstellationAdultRepository]),
+    SelectedFamilyConstellationAdultModule, TypeOrmModule.forFeature([SelectedFamilyConstellationAdultEntity, SelectedFamilyConstellationAdultRepository]),
+
+    GenderAdultModule, TypeOrmModule.forFeature([GenderAdultEntity, GenderAdultRepository]),
+    SelectedGenderAdultModule, TypeOrmModule.forFeature([SelectedGenderAdultEntity, SelectedGenderAdultRepository]),
+
+    OtherOngoingEffortModule, TypeOrmModule.forFeature([OtherOngoingEffortEntity, OtherOngoingEffortRepository]),
+    SelectedOtherOngoingEffortModule, TypeOrmModule.forFeature([SelectedOtherOngoingEffortEntity, SelectedOtherOngoingEffortRepository]),
+
+    PreviousEffortModule, TypeOrmModule.forFeature([PreviousEffortEntity, PreviousEffortRepository]),
+    SelectedPreviousEffortModule, TypeOrmModule.forFeature([SelectedPreviousEffortEntity, SelectedPreviousEffortRepository]),
+
+    ProblemAreaAdultModule, TypeOrmModule.forFeature([ProblemAreaAdultEntity, ProblemAreaAdultRepository]),
+    SelectedProblemAreaAdultModule, TypeOrmModule.forFeature([SelectedProblemAreaAdultEntity, SelectedProblemAreaAdultRepository]),
+
+    BackgroundAdultMetadataModule, TypeOrmModule.forFeature([BackgroundAdultMetadataEntity, BackgroundAdultMetadataRepository]),
+    AdultScoreModule, TypeOrmModule.forFeature([AdultScoreEntity, AdultScoreRepository]),
   ],
   providers: [SeedService],
 })

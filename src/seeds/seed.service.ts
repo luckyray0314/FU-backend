@@ -74,12 +74,24 @@ import {
   whoParticipatesSeedData,
   changeAccomodationSeedData,
   changeEmploymentVh1SeedData,
-  changeEmploymentVh2SeedData
+  changeEmploymentVh2SeedData,
+  genderAdultSeedData,
+  actionAssignmentSeedData,
+  duringOperationSeedData,
+  educationLevelSeedData,
+  employmentSeedData,
+  establishDiagnoseSeedData,
+  familyConstellationAdultSeedData,
+  otherOngoingEffortSeedData,
+  previousEffortSeedData,
+  problemAreaAdultSeedData
 } from '../core/constants/seed.constant';
 
 import { BackgroundMetadataEntity } from 'src/background-data/background-metadata.entity';
 import * as backgroundMetadata from "src/core/constants/background_metadata.json";
+import * as backgroundAdultMetadata from "src/core/constants/background_adult_metadata.json";
 import * as scoreRealData from "src/core/constants/score.json";
+import * as adultScoreRealData from "src/core/constants/adult-score.json";
 import * as educationVh1RealData from "src/core/constants/selected_education_vh1.json";
 import * as educationVh2RealData from "src/core/constants/selected_education_vh2.json";
 import * as employmentVh1RealData from "src/core/constants/selected_employment_vh1.json";
@@ -99,6 +111,17 @@ import * as schoolUniformRealData from "src/core/constants/selected_school_unifo
 import * as timeConsumptionRealData from "src/core/constants/selected_time_consumption.json";
 import * as typeOfEffortRealData from "src/core/constants/selected_type_of_effort.json";
 import * as whoParticipatesRealData from "src/core/constants/selected_who_partifipates.json";
+import * as genderAdultRealData from "src/core/constants/selected_gender_adult.json";
+import * as actionAssignmentRealData from "src/core/constants/selected_action_assignment.json";
+import * as duringOperationRealData from "src/core/constants/selected_during_operation.json";
+import * as educationLevelRealData from "src/core/constants/selected_education_level.json";
+import * as employmentRealData from "src/core/constants/selected_employment.json";
+import * as establishDiagnoseRealData from "src/core/constants/selected_establish_diagonose.json";
+import * as familyConstellationAdultRealData from "src/core/constants/selected_family_constellation_adult.json";
+import * as otherOngoingEffortRealData from "src/core/constants/selected_other_ongoing_effort.json";
+import * as previousEffortRealData from "src/core/constants/selected_previous_effort.json";
+import * as problemAreaAdultRealData from "src/core/constants/selected_problem_area_adult.json";
+
 import { ScoreEntity } from 'src/score/entities/score.entity';
 import { ChangeAccomodationEntity } from 'src/important-events/change-accomodation/entities/change-accomodation.entity';
 import { SelectedChangeAccomodationEntity } from 'src/important-events/change-accomodation/entities/selected-change-accomodation.entity';
@@ -106,12 +129,37 @@ import { ChangeEmploymentVh1Entity } from 'src/important-events/change-employmen
 import { SelectedChangeEmploymentVh1Entity } from 'src/important-events/change-employment-vh1/entities/selected-change-employment-vh1.entity';
 import { ChangeEmploymentVh2Entity } from 'src/important-events/change-employment-vh2/entities/change-employment-vh2.entity';
 import { SelectedChangeEmploymentVh2Entity } from 'src/important-events/change-employment-vh2/entities/selected-change-employment-vh2.entity';
+import { BackgroundAdultMetadataEntity } from 'src/background-adult-data/background-adult-metadata.entity';
+import { GenderAdultEntity } from 'src/background-adult-data/gender/entities/gender.entity';
+import { SelectedGenderAdultEntity } from 'src/background-adult-data/gender/entities/selected-gender.entity';
+import { ActionAssignmentEntity } from 'src/background-adult-data/action-assignment/entities/action-assignment.entity';
+import { SelectedActionAssignmentEntity } from 'src/background-adult-data/action-assignment/entities/selected-action-assignment.entity';
+import { DuringOperationEntity } from 'src/background-adult-data/during-operation/entities/during-operation.entity';
+import { SelectedDuringOperationEntity } from 'src/background-adult-data/during-operation/entities/selected-during-operation.entity';
+import { EducationLevelEntity } from 'src/background-adult-data/education-level/entities/education-level.entity';
+import { SelectedEducationLevelEntity } from 'src/background-adult-data/education-level/entities/selected-education-level.entity';
+import { EmploymentEntity } from 'src/background-adult-data/employment/entities/employment.entity';
+import { SelectedEmploymentEntity } from 'src/background-adult-data/employment/entities/selected-employment.entity';
+import { EstablishDiagnoseEntity } from 'src/background-adult-data/establish-diagnose/entities/establish-diagnose.entity';
+import { SelectedEstablishDiagnoseEntity } from 'src/background-adult-data/establish-diagnose/entities/selected-establish-diagnose.entity';
+import { FamilyConstellationAdultEntity } from 'src/background-adult-data/family-constellation/entities/family-constellation.entity';
+import { SelectedFamilyConstellationAdultEntity } from 'src/background-adult-data/family-constellation/entities/selected-family-constellation.entity';
+import { OtherOngoingEffortEntity } from 'src/background-adult-data/other-ongoing-effort/entities/other-ongoing-effort.entity';
+import { SelectedOtherOngoingEffortEntity } from 'src/background-adult-data/other-ongoing-effort/entities/selected-other-ongoing-effort.entity';
+import { PreviousEffortEntity } from 'src/background-adult-data/previous-effort/entities/previous-effort.entity';
+import { SelectedPreviousEffortEntity } from 'src/background-adult-data/previous-effort/entities/selected-previous-effort.entity';
+import { ProblemAreaAdultEntity } from 'src/background-adult-data/problem-area/entities/problem-area.entity';
+import { SelectedProblemAreaAdultEntity } from 'src/background-adult-data/problem-area/entities/selected-problem-area.entity';
+import { AdultScoreEntity } from 'src/adult-score/entities/adult-score.entity';
 
 @Injectable()
 export class SeedService {
   constructor(
     @InjectRepository(ScoreEntity)
     private readonly scoreRepository: Repository<ScoreEntity>,
+
+    @InjectRepository(AdultScoreEntity)
+    private readonly adultScoreRepository: Repository<AdultScoreEntity>,
 
     @InjectRepository(BackgroundMetadataEntity)
     private readonly backgroundMetadataRepository: Repository<BackgroundMetadataEntity>,
@@ -246,6 +294,60 @@ export class SeedService {
     @InjectRepository(SelectedChangeEmploymentVh2Entity)
     private readonly selectedChangeEmploymentsVh2Repository: Repository<SelectedChangeEmploymentVh2Entity>,
 
+    //Adult data
+    @InjectRepository(BackgroundAdultMetadataEntity)
+    private readonly backgroundAdultMetadataRepository: Repository<BackgroundAdultMetadataEntity>,
+
+    @InjectRepository(GenderAdultEntity)
+    private readonly genderAdultRepository: Repository<GenderAdultEntity>,
+    @InjectRepository(SelectedGenderAdultEntity)
+    private readonly selectedGenderAdultRepository: Repository<SelectedGenderAdultEntity>,
+
+    @InjectRepository(ActionAssignmentEntity)
+    private readonly actionAssignmentRepository: Repository<ActionAssignmentEntity>,
+    @InjectRepository(SelectedActionAssignmentEntity)
+    private readonly selectedActionAssignmentRepository: Repository<SelectedActionAssignmentEntity>,
+
+    @InjectRepository(DuringOperationEntity)
+    private readonly duringOperationRepository: Repository<DuringOperationEntity>,
+    @InjectRepository(SelectedDuringOperationEntity)
+    private readonly selectedDuringOperationRepository: Repository<SelectedDuringOperationEntity>,
+
+    @InjectRepository(EducationLevelEntity)
+    private readonly educationLevelRepository: Repository<EducationLevelEntity>,
+    @InjectRepository(SelectedEducationLevelEntity)
+    private readonly selectedEducationLevelRepository: Repository<SelectedEducationLevelEntity>,
+
+    @InjectRepository(EmploymentEntity)
+    private readonly employmentRepository: Repository<EmploymentEntity>,
+    @InjectRepository(SelectedEmploymentEntity)
+    private readonly selectedEmploymentRepository: Repository<SelectedEmploymentEntity>,
+
+    @InjectRepository(EstablishDiagnoseEntity)
+    private readonly establishDiagnoseRepository: Repository<EstablishDiagnoseEntity>,
+    @InjectRepository(SelectedEstablishDiagnoseEntity)
+    private readonly selectedEstablishDiagnoseRepository: Repository<SelectedEstablishDiagnoseEntity>,
+
+    @InjectRepository(FamilyConstellationAdultEntity)
+    private readonly familyConstellationAdultRepository: Repository<FamilyConstellationAdultEntity>,
+    @InjectRepository(SelectedFamilyConstellationAdultEntity)
+    private readonly selectedFamilyConstellationAdultRepository: Repository<SelectedFamilyConstellationAdultEntity>,
+
+    @InjectRepository(OtherOngoingEffortEntity)
+    private readonly otherOngoingEffortRepository: Repository<OtherOngoingEffortEntity>,
+    @InjectRepository(SelectedOtherOngoingEffortEntity)
+    private readonly selectedOtherOngoingEffortRepository: Repository<SelectedOtherOngoingEffortEntity>,
+
+    @InjectRepository(PreviousEffortEntity)
+    private readonly previousEffortRepository: Repository<PreviousEffortEntity>,
+    @InjectRepository(SelectedPreviousEffortEntity)
+    private readonly selectedPreviousEffortRepository: Repository<SelectedPreviousEffortEntity>,
+
+    @InjectRepository(ProblemAreaAdultEntity)
+    private readonly problemAreaAdultRepository: Repository<ProblemAreaAdultEntity>,
+    @InjectRepository(SelectedProblemAreaAdultEntity)
+    private readonly selectedProblemAreaAdultRepository: Repository<SelectedProblemAreaAdultEntity>,
+
   ) { }
 
   async seedBackgroundMetadata(): Promise<void> {
@@ -258,6 +360,12 @@ export class SeedService {
     const numRecords = await this.scoreRepository.count();
     if (numRecords > 0) return;
     await this.scoreRepository.save(scoreRealData);
+  }
+
+  async seedAdultScoreData(): Promise<void> {
+    const numRecords = await this.adultScoreRepository.count();
+    if (numRecords > 0) return;
+    await this.adultScoreRepository.save(adultScoreRealData);
   }
 
   async seedGenders(): Promise<void> {
@@ -571,5 +679,162 @@ export class SeedService {
     const numRecords = await this.changeEmploymentVh2Repository.count();
     if (numRecords > 0) return;
     await this.changeEmploymentVh2Repository.save(changeEmploymentVh2SeedData);
+  }
+
+  //Adult Data
+  async seedAdultGenders(): Promise<void> {
+    const numRecords = await this.genderAdultRepository.count();
+    if (numRecords > 0) return;
+    await this.genderAdultRepository.save(genderAdultSeedData);
+
+    const numRecordsOfRealData = await this.selectedGenderAdultRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(genderAdultRealData.map(async (data) => {
+      const entity = new SelectedGenderAdultEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.genderAdult = await this.genderAdultRepository.findOneBy({ id: data.genderId || 1 });
+      await this.selectedGenderAdultRepository.save(entity);
+    }));
+  }
+
+  async seedBackgroundAdultMetadata(): Promise<void> {
+    const numRecords = await this.backgroundAdultMetadataRepository.count();
+    if (numRecords > 0) return;
+    await this.backgroundAdultMetadataRepository.save(backgroundAdultMetadata);
+  }
+
+  async seedActionAssignment(): Promise<void> {
+    const numRecords = await this.actionAssignmentRepository.count();
+    if (numRecords > 0) return;
+    await this.actionAssignmentRepository.save(actionAssignmentSeedData);
+
+    const numRecordsOfRealData = await this.selectedActionAssignmentRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(actionAssignmentRealData.map(async (data) => {
+      const entity = new SelectedActionAssignmentEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.actionAssignment = await this.actionAssignmentRepository.findOneBy({ id: +data.actionAssignmentId || 1 });
+      await this.selectedActionAssignmentRepository.save(entity);
+    }));
+  }
+
+  async seedDuringOperation(): Promise<void> {
+    const numRecords = await this.duringOperationRepository.count();
+    if (numRecords > 0) return;
+    await this.duringOperationRepository.save(duringOperationSeedData);
+
+    const numRecordsOfRealData = await this.selectedDuringOperationRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(duringOperationRealData.map(async (data) => {
+      const entity = new SelectedDuringOperationEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.duringOperation = await this.duringOperationRepository.findOneBy({ id: +data.duringOperationId || 1 });
+      await this.selectedDuringOperationRepository.save(entity);
+    }));
+  }
+
+  async seedEducationLevel(): Promise<void> {
+    const numRecords = await this.educationLevelRepository.count();
+    if (numRecords > 0) return;
+    await this.educationLevelRepository.save(educationLevelSeedData);
+
+    const numRecordsOfRealData = await this.selectedEducationLevelRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(educationLevelRealData.map(async (data) => {
+      const entity = new SelectedEducationLevelEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.educationLevel = await this.educationLevelRepository.findOneBy({ id: +data.educationLevelId || 1 });
+      await this.selectedEducationLevelRepository.save(entity);
+    }));
+  }
+
+  async seedEmployment(): Promise<void> {
+    const numRecords = await this.employmentRepository.count();
+    if (numRecords > 0) return;
+    await this.employmentRepository.save(employmentSeedData);
+
+    const numRecordsOfRealData = await this.selectedEmploymentRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(employmentRealData.map(async (data) => {
+      const entity = new SelectedEmploymentEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.employment = await this.employmentRepository.findOneBy({ id: +data.employmentId || 1 });
+      await this.selectedEmploymentRepository.save(entity);
+    }));
+  }
+
+  async seedEstablishDiagnose(): Promise<void> {
+    const numRecords = await this.establishDiagnoseRepository.count();
+    if (numRecords > 0) return;
+    await this.establishDiagnoseRepository.save(establishDiagnoseSeedData);
+
+    const numRecordsOfRealData = await this.selectedEstablishDiagnoseRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(establishDiagnoseRealData.map(async (data) => {
+      const entity = new SelectedEstablishDiagnoseEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.establishDiagnose = await this.establishDiagnoseRepository.findOneBy({ id: +data.establishDiagnoseId || 1 });
+      await this.selectedEstablishDiagnoseRepository.save(entity);
+    }));
+  }
+
+  async seedFamilyConstellationAdult(): Promise<void> {
+    const numRecords = await this.familyConstellationAdultRepository.count();
+    if (numRecords > 0) return;
+    await this.familyConstellationAdultRepository.save(familyConstellationAdultSeedData);
+
+    const numRecordsOfRealData = await this.selectedFamilyConstellationAdultRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(familyConstellationAdultRealData.map(async (data) => {
+      const entity = new SelectedFamilyConstellationAdultEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.familyConstellationAdult = await this.familyConstellationAdultRepository.findOneBy({ id: +data.familyConstellationAdultId || 1 });
+      await this.selectedFamilyConstellationAdultRepository.save(entity);
+    }));
+  }
+
+  async seedOtherOngoingEffort(): Promise<void> {
+    const numRecords = await this.otherOngoingEffortRepository.count();
+    if (numRecords > 0) return;
+    await this.otherOngoingEffortRepository.save(otherOngoingEffortSeedData);
+
+    const numRecordsOfRealData = await this.selectedOtherOngoingEffortRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(otherOngoingEffortRealData.map(async (data) => {
+      const entity = new SelectedOtherOngoingEffortEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.otherOngoingEffort = await this.otherOngoingEffortRepository.findOneBy({ id: +data.otherOngoingEffortId || 1 });
+      await this.selectedOtherOngoingEffortRepository.save(entity);
+    }));
+  }
+
+  async seedPreviousEffort(): Promise<void> {
+    const numRecords = await this.previousEffortRepository.count();
+    if (numRecords > 0) return;
+    await this.previousEffortRepository.save(previousEffortSeedData);
+
+    const numRecordsOfRealData = await this.selectedPreviousEffortRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(previousEffortRealData.map(async (data) => {
+      const entity = new SelectedPreviousEffortEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.previousEffort = await this.previousEffortRepository.findOneBy({ id: +data.previousEffortId || 1 });
+      await this.selectedPreviousEffortRepository.save(entity);
+    }));
+  }
+
+  async seedProblemAreaAdult(): Promise<void> {
+    const numRecords = await this.problemAreaAdultRepository.count();
+    if (numRecords > 0) return;
+    await this.problemAreaAdultRepository.save(problemAreaAdultSeedData);
+
+    const numRecordsOfRealData = await this.selectedProblemAreaAdultRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(problemAreaAdultRealData.map(async (data) => {
+      const entity = new SelectedProblemAreaAdultEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.problemAreaAdult = await this.problemAreaAdultRepository.findOneBy({ id: +data.problemAreaAdultId || 1 });
+      await this.selectedProblemAreaAdultRepository.save(entity);
+    }));
   }
 }

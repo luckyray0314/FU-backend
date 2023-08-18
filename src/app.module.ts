@@ -70,6 +70,33 @@ import { SelectedChangeEmploymentVh1Module } from './important-events/change-emp
 import { ChangeEmploymentVh2Module } from './important-events/change-employment-vh2/change-employment-vh2.module';
 import { SelectedChangeEmploymentVh2Module } from './important-events/change-employment-vh2/selected-change-employment-vh2.module';
 
+//Background Adult Data Module
+import { ActionAssignmentModule } from './background-adult-data/action-assignment/action-assignment.module';
+import { DuringOperationModule } from './background-adult-data/during-operation/during-operation.module';
+import { EducationLevelModule } from './background-adult-data/education-level/education-level.module';
+import { EmploymentModule } from './background-adult-data/employment/employment.module';
+import { EstablishDiagnoseModule } from './background-adult-data/establish-diagnose/establish-diagnose.module';
+import { FamilyConstellationAdultModule } from './background-adult-data/family-constellation/family-constellation.module';
+import { GenderAdultModule } from './background-adult-data/gender/gender.module';
+import { OtherOngoingEffortModule } from './background-adult-data/other-ongoing-effort/other-ongoing-effort.module';
+import { PreviousEffortModule } from './background-adult-data/previous-effort/previous-effort.module';
+import { ProblemAreaAdultModule } from './background-adult-data/problem-area/problem-area.module';
+
+import { SelectedActionAssignmentModule } from './background-adult-data/action-assignment/selected-action-assignment.module';
+import { SelectedDuringOperationModule } from './background-adult-data/during-operation/selected-during-operation.module';
+import { SelectedEducationLevelModule } from './background-adult-data/education-level/selected-education-level.module';
+import { SelectedEmploymentModule } from './background-adult-data/employment/selected-employment.module';
+import { SelectedEstablishDiagnoseModule } from './background-adult-data/establish-diagnose/selected-establish-diagnose.module';
+import { SelectedFamilyConstellationAdultModule } from './background-adult-data/family-constellation/selected-family-constellation.module';
+import { SelectedGenderAdultModule } from './background-adult-data/gender/selected-gender.module';
+import { SelectedOtherOngoingEffortModule } from './background-adult-data/other-ongoing-effort/selected-other-ongoing-effort.module';
+import { SelectedPreviousEffortModule } from './background-adult-data/previous-effort/selected-previous-effort.module';
+import { SelectedProblemAreaAdultModule } from './background-adult-data/problem-area/selected-problem-area.module';
+
+import { BackgroundAdultDataModule } from './background-adult-data/background-adult-data.module';
+import { BackgroundAdultMetadataModule } from './background-adult-data/background-adult-metadata.module';
+import { AdultScoreModule } from './adult-score/adult-score.module';
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({ ...dataSourceOptions, autoLoadEntities: true }),
@@ -77,6 +104,33 @@ import { SelectedChangeEmploymentVh2Module } from './important-events/change-emp
     SeedModule,
     UserModule,
     AuthModule,
+
+    //Background Adult Data
+    ActionAssignmentModule,
+    DuringOperationModule,
+    EducationLevelModule,
+    EmploymentModule,
+    EstablishDiagnoseModule,
+    FamilyConstellationAdultModule,
+    GenderAdultModule,
+    OtherOngoingEffortModule,
+    PreviousEffortModule,
+    ProblemAreaAdultModule,
+
+    SelectedActionAssignmentModule,
+    SelectedDuringOperationModule,
+    SelectedEducationLevelModule,
+    SelectedEmploymentModule,
+    SelectedEstablishDiagnoseModule,
+    SelectedFamilyConstellationAdultModule,
+    SelectedGenderAdultModule,
+    SelectedOtherOngoingEffortModule,
+    SelectedPreviousEffortModule,
+    SelectedProblemAreaAdultModule,
+    BackgroundAdultDataModule,
+    BackgroundAdultMetadataModule,
+
+    //
 
     GenderModule,
     EducationVh1Module,
@@ -127,6 +181,7 @@ import { SelectedChangeEmploymentVh2Module } from './important-events/change-emp
     BackgroundMetadataModule,
     BackgroundDataModule,
     ScoreModule,
+    AdultScoreModule,
 
     InterventionPeriodModule,
     InterventionProgressModule,
@@ -137,8 +192,8 @@ import { SelectedChangeEmploymentVh2Module } from './important-events/change-emp
     SelectedReasonForTerminationModule,
     SelectedTimeConsumptionModule,
 
-    
-    
+
+
     ImportantEventsModule,
 
     FollowUpMetadataModule,

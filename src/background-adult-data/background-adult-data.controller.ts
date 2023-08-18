@@ -3,7 +3,7 @@ import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { Response } from "express";
 import { JWTAuthGuard } from "src/auth/guards/jwt-auth.guard";
 import { SessionAuthGuard } from "src/auth/guards/session-auth.guard";
-import { EstimatesDto } from 'src/score/dto/estimates.dto';
+import { AdultEstimatesDto } from 'src/adult-score/dto/adultEstimates.dto';
 import { BackgroundAdultDataDto, BackgroundAdultSurveyBasicDataDto, DocxBufferDto } from './background-adult-data.dto';
 import { BackgroundAdultDataService } from './background-adult-data.service';
 
@@ -40,8 +40,8 @@ export class BackgroundAdultDataController {
   }
 
   @Get('/getCaseList')
-  @ApiOkResponse({ type: Array<EstimatesDto> })
-  async getCaseList(): Promise<EstimatesDto[]> {
+  @ApiOkResponse({ type: Array<AdultEstimatesDto> })
+  async getCaseList(): Promise<AdultEstimatesDto[]> {
     return await this.service.getCaseList();
   }
 

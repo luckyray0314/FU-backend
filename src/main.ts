@@ -12,6 +12,7 @@ async function bootstrap() {
   const seedService = app.get<SeedService>(SeedService);
   await seedService.seedBackgroundMetadata();
   await seedService.seedScoreData();
+  await seedService.seedAdultScoreData();
   await seedService.seedGenders();
   await seedService.seedEducationVh1s();
   await seedService.seedEducationVh2s();
@@ -38,6 +39,18 @@ async function bootstrap() {
   await seedService.seedChangeAccomodation();
   await seedService.seedChangeEmploymentVh1();
   await seedService.seedChangeEmploymentVh2();
+
+  await seedService.seedBackgroundAdultMetadata();
+  await seedService.seedActionAssignment();
+  await seedService.seedDuringOperation();
+  await seedService.seedEducationLevel();
+  await seedService.seedEmployment();
+  await seedService.seedEstablishDiagnose();
+  await seedService.seedFamilyConstellationAdult();
+  await seedService.seedAdultGenders();
+  await seedService.seedOtherOngoingEffort();
+  await seedService.seedPreviousEffort();
+  await seedService.seedProblemAreaAdult();
 
 
   await app.listen(process.env.VALLENTUNA_SURVEY_BACKEND_PORT || 5000);

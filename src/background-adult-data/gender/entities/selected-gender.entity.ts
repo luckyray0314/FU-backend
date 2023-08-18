@@ -1,6 +1,5 @@
 import {
-  Column,
-  Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
+  Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn
 } from "typeorm";
 import { GenderAdultEntity } from "./gender.entity";
 

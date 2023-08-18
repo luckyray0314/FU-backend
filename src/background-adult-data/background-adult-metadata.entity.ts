@@ -2,7 +2,7 @@ import {
   Column, Entity, PrimaryColumn
 } from "typeorm";
 
-@Entity("background-adult_metadata_entity")
+@Entity("background_adult_metadata_entity")
 export class BackgroundAdultMetadataEntity {
   @PrimaryColumn()
   codeNumber: string;
