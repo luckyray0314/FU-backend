@@ -25,7 +25,6 @@ import { PreviousEffortService } from './previous-effort/previous-effort.service
 import { SelectedPreviousEffortService } from './previous-effort/selected-previous-effort.service';
 import { ProblemAreaAdultService } from './problem-area/problem-area.service';
 import { SelectedProblemAreaAdultService } from './problem-area/selected-problem-area.service';
-import { useTranslation } from "react-i18next";
 
 import dayjs = require('dayjs');
 import AdmZip = require("adm-zip");
@@ -237,7 +236,6 @@ export class BackgroundAdultDataService {
   };
 
   async getCaseList() {
-    const { t } = useTranslation();
     const backgroundAdultMetadata = await this.backgroundAdultMetadataService.find();
     const result = await Promise.all(backgroundAdultMetadata.map(async (backgroundAdultMetadataEntity, bgIndex) => {
       const scoreEntities = await this.scoreService.find({ where: { codeNumber: backgroundAdultMetadataEntity.codeNumber } });
@@ -285,35 +283,35 @@ export class BackgroundAdultDataService {
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 1 &&
         details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 2 &&
         details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 3) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} ${t("BackgroundSurvey")}`;
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (BackgroundSurvey)`;
       }
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
         details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} ${t("0MonthSurvey")}`;
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (0MonthSurvey)`;
       }
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         !details[1].statuses.filter(status => status === SurveyStatus.Clear).length) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} ${t("6MonthSurvey")}`;
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (6MonthSurvey)`;
       }
       if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
         details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} ${t("6MonthSurvey")}`;
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (6MonthSurvey)`;
       }
       if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         !details[2].statuses.filter(status => status === SurveyStatus.Clear).length) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} ${t("12MonthSurvey")}`;
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (12MonthSurvey)`;
       }
       if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
         details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} ${t("12MonthSurvey")}`;
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (12MonthSurvey)`;
       }
       if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3 ) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} ${t("PostSurvey")}`;
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (PostSurvey)`;
       }
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} ${t("ImportantHappeningsDuring12Months")}`;
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (ImportantHappeningsDuring12Months)`;
       }
 
       const surveyEntity = {
