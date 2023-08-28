@@ -7,6 +7,7 @@ import * as session from 'express-session';
 import * as passport from 'passport';
 
 import { AppModule } from './app.module';
+import { VALLENTUNA_SURVEY_BACKEND_APP_SECRET, VALLENTUNA_SURVEY_BACKEND_NODE_ENV } from './core/constants/environment.const';
 
 export function setup(app: INestApplication): INestApplication {
   app.useGlobalPipes(
@@ -19,22 +20,22 @@ export function setup(app: INestApplication): INestApplication {
     }),
   );
 
-  app.use(cookieParser(process.env.VALLENTUNA_SURVEY_BACKEND_APP_SECRET));
+  app.use(cookieParser(VALLENTUNA_SURVEY_BACKEND_APP_SECRET));
 
   app.use(
     session({
-      secret: process.env.VALLENTUNA_SURVEY_BACKEND_APP_SECRET as string,
+      secret: VALLENTUNA_SURVEY_BACKEND_APP_SECRET as string,
       resave: false,
       saveUninitialized: false,
       store:
-        process.env.VALLENTUNA_SURVEY_BACKEND_NODE_ENV === 'production'
+        VALLENTUNA_SURVEY_BACKEND_NODE_ENV === 'production'
           ? new (connectPgSimple(session))()
           : new session.MemoryStore(),
       cookie: {
         httpOnly: true,
         signed: true,
         sameSite: 'strict',
-        secure: process.env.VALLENTUNA_SURVEY_BACKEND_NODE_ENV === 'production',
+        secure: VALLENTUNA_SURVEY_BACKEND_NODE_ENV === 'production',
       },
     }),
   );

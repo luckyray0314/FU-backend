@@ -280,43 +280,53 @@ export class BackgroundAdultDataService {
       }
 
       let nextSurvey = dayjs().format("YYYY-MM-DD");
+      let signal = "BackgroundSurvey";
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 1 &&
         details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 2 &&
         details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 3) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (BackgroundSurvey)`;
+        signal = "BackgroundSurvey";
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")}`;
       }
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
         details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (0MonthSurvey)`;
+          signal = "0MonthSurvey";
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")}`;
       }
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         !details[1].statuses.filter(status => status === SurveyStatus.Clear).length) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (6MonthSurvey)`;
+          signal = "6MonthSurvey";
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")}`;
       }
       if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
         details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (6MonthSurvey)`;
+          signal = "6MonthSurvey";
+        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")}`;
       }
       if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         !details[2].statuses.filter(status => status === SurveyStatus.Clear).length) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (12MonthSurvey)`;
+          signal = "12MonthSurvey";
+        nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")}`;
       }
       if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
         details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (12MonthSurvey)`;
+          signal = "12MonthSurvey";
+        nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")}`;
       }
-      if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3 ) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (PostSurvey)`;
+      if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
+        signal = "PostSurvey";
+        nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")}`;
       }
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
-        nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")} (ImportantHappeningsDuring12Months)`;
+          signal = "ImportantHappeningsDuring12Months";
+        nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")}`;
       }
 
       const surveyEntity = {
         codeNumber: backgroundAdultMetadataEntity.codeNumber,
         status: isAllClear ? SurveyStatus.Clear : isAllLoss ? SurveyStatus.Loss : SurveyStatus.Coming,
+        signal,
         missedFields: "",
         history: {
           zeroMonth: {

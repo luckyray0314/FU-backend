@@ -1,13 +1,14 @@
-import { DataSourceOptions, DataSource } from 'typeorm';
+import { DataSource, DataSourceOptions } from 'typeorm';
+import { VALLENTUNA_SURVEY_BACKEND_SSL_MODE } from './core/constants/environment.const';
 
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
-  host: 'localhost',
-  // host: '194.242.11.106',
+  // host: 'localhost',
+  host: '194.242.11.106',
   port: 5432,
   username: 'postgres',
   password: 'm81p7*3G8zs7',
-  database: 'survey',
+  database: 'survey-dev',
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   // migrations: [
   //   CreateUser1557166726050,
@@ -19,10 +20,10 @@ export const dataSourceOptions: DataSourceOptions = {
   synchronize: true,
   extra: {
     ssl:
-      process.env.VALLENTUNA_SURVEY_BACKEND_SSL_MODE === 'require'
+      VALLENTUNA_SURVEY_BACKEND_SSL_MODE === 'require'
         ? {
-            rejectUnauthorized: false,
-          }
+          rejectUnauthorized: false,
+        }
         : false,
   },
 };

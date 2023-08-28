@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app.module';
+import { VALLENTUNA_SURVEY_BACKEND_PORT } from './core/constants/environment.const';
 import { SeedService } from './seeds/seed.service';
 import { setup } from './setup';
 // import { createClient } from '@supabase/supabase-js';
@@ -89,6 +90,6 @@ async function bootstrap() {
   await seedService.seedProblemAreaAdult();
 
 
-  await app.listen(process.env.VALLENTUNA_SURVEY_BACKEND_PORT || 5000);
+  await app.listen(VALLENTUNA_SURVEY_BACKEND_PORT || 5000);
 }
 bootstrap();
