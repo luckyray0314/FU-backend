@@ -281,7 +281,7 @@ export class BackgroundAdultDataService {
         }
 
         const statuses = [...Array(3)].map((_it2, personIndex) => {
-          const scoreEntity = entities.filter(entity => entity.person === (personIndex)).at(0);
+          const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
           const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
             : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
               : SurveyStatus.Loss;
