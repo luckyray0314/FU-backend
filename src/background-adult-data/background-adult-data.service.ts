@@ -269,14 +269,13 @@ export class BackgroundAdultDataService {
       let isAllClear = true;
       let isAllLoss = true;
       for (let i = 0; i < details.length; ++i) {
-        for (let j = 0; j < details[i].statuses.length; ++j) {
-          if (details[i].statuses[j] === SurveyStatus.Clear) {
+          if (details[i].statuses[0] === SurveyStatus.Clear) {
             isAllLoss = false;
           }
-          else if (details[i].statuses[j] === SurveyStatus.Loss) {
+          else if (details[i].statuses[0] === SurveyStatus.Loss) {
             isAllClear = false;
           }
-        }
+        
       }
 
       let nextSurvey = dayjs().format("YYYY-MM-DD");
