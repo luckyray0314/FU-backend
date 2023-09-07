@@ -280,16 +280,8 @@ export class BackgroundAdultDataService {
           prevOccasionDate = dayjs(entities[0].date);
         }
 
-        // const statuses = [...Array(3)].map((_it2, personIndex) => {
-        //   const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
-        //   const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
-        //     : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
-        //       : SurveyStatus.Loss;
-        //   return status;
-        // });
-
-        const statuses = Array.from({ length: 3 }, () => {
-          const scoreEntity = entities.find(entity => entity.person === 2);
+        const statuses = [...Array(3)].map((_it2, personIndex) => {
+          const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
           const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
             : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
               : SurveyStatus.Loss;
