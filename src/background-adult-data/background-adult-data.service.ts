@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { SurveyStatus } from 'src/core/enums/survey-status';
 import { OccasionIndex } from "src/core/models/occasion.modal";
 import { FollowUpDataService } from "src/follow-up-survey/follow-up-data.service";
-import { ScoreService } from 'src/score/score.service';
+import { AdultScoreService } from 'src/adult-score/adult-score.service';
 import { ActionAssignmentService } from './action-assignment/action-assignment.service';
 import { SelectedActionAssignmentService } from './action-assignment/selected-action-assignment.service';
 import { BackgroundAdultDataDto, BackgroundAdultMetadataDto, BackgroundAdultSurveyBasicDataDto } from './background-adult-data.dto';
@@ -44,7 +44,7 @@ const destPath = `${__dirname}/survey.docx`;
 export class BackgroundAdultDataService {
   constructor(
     public backgroundAdultMetadataService: BackgroundAdultMetadataService,
-    public scoreService: ScoreService,
+    public adultScoreService: AdultScoreService,
     public followUpService: FollowUpDataService,
 
     public genderAdultService: GenderAdultService,
@@ -238,26 +238,26 @@ export class BackgroundAdultDataService {
   async getCaseList() {
     const backgroundAdultMetadata = await this.backgroundAdultMetadataService.find();
     const result = await Promise.all(backgroundAdultMetadata.map(async (backgroundAdultMetadataEntity, bgIndex) => {
-      const scoreEntities = await this.scoreService.find({ where: { codeNumber: backgroundAdultMetadataEntity.codeNumber } });
+      const scoreEntities = await this.adultScoreService.find({ where: { codeNumber: backgroundAdultMetadataEntity.codeNumber } });
 
       let prevOccasionDate = dayjs();
 
       const details = await Promise.all([...Array(3)].map(async (_it, arrIndex) => {
-        const entities = scoreEntities.filter(s => s.occasion === arrIndex + 1);
+        const scoreEntity = scoreEntities.find(s => s.occasion === arrIndex + 1);
         const today = dayjs();
-        const date = entities.at(0) ? new Date(entities[0].date)
+        const date = scoreEntity ? new Date(scoreEntity.date)
           : (
             arrIndex === 0 ? today
               : arrIndex === 1 ? prevOccasionDate.add(6, "month")
                 : prevOccasionDate.add(12, "month")
           ).toDate();
 
-        if (entities.at(0)) {
-          prevOccasionDate = dayjs(entities[0].date);
+        if (scoreEntity) {
+          prevOccasionDate = dayjs(scoreEntity.date);
         }
 
         const statuses = [...Array(3)].map((_it2, personIndex) => {
-          const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
+          const scoreEntity = scoreEntities.find(entity => entity.person === (personIndex + 1));
           const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
             : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
               : SurveyStatus.Loss;

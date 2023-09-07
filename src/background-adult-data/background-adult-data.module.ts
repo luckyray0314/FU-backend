@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
+import { AdultScoreModule } from 'src/adult-score/adult-score.module';
 import { FollowUpDataModule } from "src/follow-up-survey/follow-up-data.module";
-import { ScoreModule } from 'src/score/score.module';
 import { ActionAssignmentModule } from './action-assignment/action-assignment.module';
 import { SelectedActionAssignmentModule } from './action-assignment/selected-action-assignment.module';
 import { BackgroundAdultDataController } from './background-adult-data.controller';
@@ -48,7 +48,7 @@ import { SelectedProblemAreaAdultModule } from './problem-area/selected-problem-
     SelectedOtherOngoingEffortModule,
     SelectedPreviousEffortModule,
     SelectedProblemAreaAdultModule,
-    ScoreModule,
+    AdultScoreModule,
     FollowUpDataModule,
     
   ],
