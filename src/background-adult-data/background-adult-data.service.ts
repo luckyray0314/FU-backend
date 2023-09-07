@@ -280,8 +280,16 @@ export class BackgroundAdultDataService {
           prevOccasionDate = dayjs(entities[0].date);
         }
 
-        const statuses = [...Array(3)].map((_it2, personIndex) => {
-          const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
+        // const statuses = [...Array(3)].map((_it2, personIndex) => {
+        //   const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
+        //   const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
+        //     : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
+        //       : SurveyStatus.Loss;
+        //   return status;
+        // });
+
+        const statuses = Array.from({ length: 3 }, () => {
+          const scoreEntity = entities.find(entity => entity.person === 2);
           const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
             : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
               : SurveyStatus.Loss;
@@ -290,28 +298,14 @@ export class BackgroundAdultDataService {
 
         return { date, statuses };
       }));
-      // let isAllClear = true;
-      // let isAllLoss = true;
-      // for (let i = 0; i < details.length; ++i) {
-      //   if (details[i].statuses[0] === SurveyStatus.Clear) {
-      //     isAllLoss = false;
-      //   }
-      //   else if (details[i].statuses[0] === SurveyStatus.Loss) {
-      //     isAllClear = false;
-      //   }
-
-      // }
-
       let isAllClear = true;
       let isAllLoss = true;
       for (let i = 0; i < details.length; ++i) {
-        for (let j = 0; j < details[i].statuses.length; ++j) {
-          if (details[i].statuses[j] === SurveyStatus.Clear) {
-            isAllLoss = false;
-          }
-          else if (details[i].statuses[j] === SurveyStatus.Loss) {
-            isAllClear = false;
-          }
+        if (details[i].statuses[0] === SurveyStatus.Clear) {
+          isAllLoss = false;
+        }
+        else if (details[i].statuses[0] === SurveyStatus.Loss) {
+          isAllClear = false;
         }
       }
 
