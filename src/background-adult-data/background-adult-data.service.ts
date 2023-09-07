@@ -315,25 +315,19 @@ export class BackgroundAdultDataService {
           zeroMonth: {
             date: details[0].date,
             statusInDetail: {
-              child: details[0].statuses[0],
-              careGiver1: details[0].statuses[1],
-              careGiver2: details[0].statuses[2],
+              child: details[0].statuses[0]
             }
           },
           sixMonths: {
             date: details[1].date,
             statusInDetail: {
-              child: details[1].statuses[0],
-              careGiver1: details[1].statuses[1],
-              careGiver2: details[1].statuses[2],
+              child: details[1].statuses[0]
             }
           },
           twelveMonths: {
             date: details[2].date,
             statusInDetail: {
-              child: details[2].statuses[0],
-              careGiver1: details[2].statuses[1],
-              careGiver2: details[2].statuses[2],
+              child: details[2].statuses[0]
             }
           },
         },
