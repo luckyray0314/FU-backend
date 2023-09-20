@@ -426,7 +426,7 @@ export class BackgroundDataService {
 
       const surveyEntity = {
         codeNumber: backgroundMetadataEntity.codeNumber,
-        status: isAllClear ? SurveyStatus.Clear : isAllLoss ? SurveyStatus.Loss : SurveyStatus.Coming,
+        status: isAllClear ? SurveyStatus.Clear : isAllComing ? SurveyStatus.Coming : SurveyStatus.Loss,
         signal,
         missedFields: "",
         history: {
