@@ -364,6 +364,7 @@ export class BackgroundDataService {
       }));
       let isAllClear = true;
       let isAllLoss = true;
+      let isAllComing = true;
       for (let i = 0; i < details.length; ++i) {
         for (let j = 0; j < details[i].statuses.length; ++j) {
           if (details[i].statuses[j] === SurveyStatus.Clear) {
@@ -371,6 +372,9 @@ export class BackgroundDataService {
           }
           else if (details[i].statuses[j] === SurveyStatus.Loss) {
             isAllClear = false;
+          }
+          else if (details[i].statuses[j] === SurveyStatus.Coming) {
+            isAllComing = false;
           }
         }
       }
