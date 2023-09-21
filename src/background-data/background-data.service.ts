@@ -465,7 +465,7 @@ export class BackgroundDataService {
   async downloadDocx(codeNumber: string, occasion: OccasionIndex | 0) {
     try {
       const templatePath = occasion === 0 ? template2Path : template1Path;
-
+      const domain = "https://vallentuna-quiz.vercel.app"
       // replace {DATE} to today
       const content = fs.readFileSync(templatePath, "binary");
       const pizZip = new PizZip(content);
@@ -494,6 +494,7 @@ export class BackgroundDataService {
         for await (const zipEntry of zipEntries) {
           if (/^word\/media\/image.+png$/.test(zipEntry.entryName)) {
             const qrCodeString = btoa(btoa(btoa(JSON.stringify({
+              domain,
               codeNumber,
               person: person,
               occasion,
