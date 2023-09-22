@@ -382,7 +382,7 @@ export class BackgroundAdultDataService {
       });
       fs.writeFileSync(middlePath, buf);
 
-      // replace QR code
+      // replace QR code v
       const zip = new AdmZip(middlePath);
 
       if (occasion !== 0) {
