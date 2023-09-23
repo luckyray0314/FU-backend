@@ -370,7 +370,7 @@ export class BackgroundDataService {
           if (details[i].statuses[j] === SurveyStatus.Clear) {
             isAllLoss = false;
           }
-          else if (details[i].statuses[j] === SurveyStatus.Loss) {
+          if (details[i].statuses[j] === SurveyStatus.Loss) {
             isAllClear = false;
           }
           else if (details[i].statuses[j] === SurveyStatus.Coming) {
