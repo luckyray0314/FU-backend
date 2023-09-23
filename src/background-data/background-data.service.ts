@@ -368,13 +368,13 @@ export class BackgroundDataService {
       for (let i = 0; i < details.length; ++i) {
         for (let j = 0; j < details[i].statuses.length; ++j) {
           if (details[i].statuses[j] === SurveyStatus.Clear) {
-            isAllLoss = false;
+            isAllComing = false;
           }
           if (details[i].statuses[j] === SurveyStatus.Loss) {
             isAllClear = false;
           }
           else if (details[i].statuses[j] === SurveyStatus.Coming) {
-            isAllComing = false;
+            isAllLoss = false;
           }
         }
       }
