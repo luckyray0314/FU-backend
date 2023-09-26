@@ -362,9 +362,9 @@ export class BackgroundDataService {
           //   : !isScanLocked
           //     ? SurveyStatus.Coming
           //     : SurveyStatus.Loss;
-          const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Loss
+          const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
             : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
-              : SurveyStatus.Clear;
+              : SurveyStatus.Loss;
           return status;
         });
   
@@ -434,7 +434,7 @@ export class BackgroundDataService {
 
       const surveyEntity = {
         codeNumber: backgroundMetadataEntity.codeNumber,
-        status: isAllClear ? SurveyStatus.Clear : isAllComing ? SurveyStatus.Coming : SurveyStatus.Loss,
+        status: !isAllClear ? SurveyStatus.Clear : !isAllComing ? SurveyStatus.Coming : SurveyStatus.Loss,
         signal,
         missedFields: "",
         history: {
