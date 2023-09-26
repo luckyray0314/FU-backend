@@ -360,8 +360,8 @@ export class BackgroundDataService {
           const status = (scoreEntity?.score15 && scoreEntity?.ors)
             ? SurveyStatus.Clear
             : !isScanLocked
-              ? SurveyStatus.Coming
-              : SurveyStatus.Loss;
+              ? SurveyStatus.Loss
+              : SurveyStatus.Coming;
           return status;
         });
 
