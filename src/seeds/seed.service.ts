@@ -154,15 +154,10 @@ import { SelectedPreviousEffortEntity } from 'src/background-adult-data/previous
 import { ProblemAreaAdultEntity } from 'src/background-adult-data/problem-area/entities/problem-area.entity';
 import { SelectedProblemAreaAdultEntity } from 'src/background-adult-data/problem-area/entities/selected-problem-area.entity';
 import { AdultScoreEntity } from 'src/adult-score/entities/adult-score.entity';
-import { CloseStatusEntity } from 'src/close-status/entities/close-status.entity';
 
 @Injectable()
 export class SeedService {
   constructor(
-    //Close Status
-    @InjectRepository(CloseStatusEntity)
-    private readonly closeStatusRepository: Repository<CloseStatusEntity>,
-
     @InjectRepository(ScoreEntity)
     private readonly scoreRepository: Repository<ScoreEntity>,
 
@@ -374,13 +369,6 @@ export class SeedService {
     const numRecords = await this.adultScoreRepository.count();
     if (numRecords > 0) return;
     await this.adultScoreRepository.save(adultScoreRealData);
-  }
-
-  //Close Status
-  async seedCloseStatusData(): Promise<void> {
-    const numRecords = await this.closeStatusRepository.count();
-    if (numRecords > 0) return;
-    await this.closeStatusRepository.save(closeStatusRealData);
   }
 
   async seedGenders(): Promise<void> {

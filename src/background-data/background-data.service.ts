@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { SurveyStatus } from 'src/core/enums/survey-status';
 import { OccasionIndex } from "src/core/models/occasion.modal";
+import { FollowUpDataService } from "src/follow-up-survey/follow-up-data.service";
 import { ScoreService } from 'src/score/score.service';
 import { BackgroundDataDto, BackgroundMetadataDto, BackgroundSurveyBasicDataDto } from './background-data.dto';
 import { BackgroundMetadataService } from './background-metadata.service';
@@ -41,7 +42,6 @@ import qr = require("qrcode");
 import fs = require("fs");
 import path = require("path");
 import PizZip = require("pizzip");
-import { FollowUpDataService } from "src/follow-up-survey/follow-up-data.service";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Docxtemplater = require("docxtemplater");
@@ -139,7 +139,9 @@ export class BackgroundDataService {
         codeNumber,
         date: payload.date,
         yearOfBirth: payload.yearOfBirth,
-        country: payload.country
+        country: payload.country,
+        isClosed: false,
+        processor: null
       });
 
       await this.selectedGenderService.deleteByCodeNumber(codeNumber);
@@ -352,10 +354,13 @@ export class BackgroundDataService {
           prevOccasionDate = dayjs(entities[0].date);
         }
 
+        const isScanLocked = Math.abs(dayjs().diff(date, "week")) > 0;
         const statuses = [...Array(3)].map((_it2, personIndex) => {
           const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
-          const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
-            : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
+          const status = (scoreEntity?.score15 && scoreEntity?.ors)
+            ? SurveyStatus.Clear
+            : !isScanLocked
+              ? SurveyStatus.Coming
               : SurveyStatus.Loss;
           return status;
         });
@@ -389,27 +394,27 @@ export class BackgroundDataService {
       }
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
         details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
-          signal = "0MonthSurvey";
+        signal = "0MonthSurvey";
         nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")}`;
       }
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         !details[1].statuses.filter(status => status === SurveyStatus.Clear).length) {
-          signal = "6MonthSurvey";
+        signal = "6MonthSurvey";
         nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")}`;
       }
       if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
         details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
-          signal = "6MonthSurvey";
+        signal = "6MonthSurvey";
         nextSurvey = `${dayjs(details[1].date).format("YYYY-MM-DD")}`;
       }
       if (details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         !details[2].statuses.filter(status => status === SurveyStatus.Clear).length) {
-          signal = "12MonthSurvey";
+        signal = "12MonthSurvey";
         nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")}`;
       }
       if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 1 ||
         details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 2) {
-          signal = "12MonthSurvey";
+        signal = "12MonthSurvey";
         nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")}`;
       }
       if (details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
@@ -419,7 +424,7 @@ export class BackgroundDataService {
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         details[1].statuses.filter(status => status === SurveyStatus.Clear).length === 3 &&
         details[2].statuses.filter(status => status === SurveyStatus.Clear).length === 3) {
-          signal = "ImportantHappeningsDuring12Months";
+        signal = "ImportantHappeningsDuring12Months";
         nextSurvey = `${dayjs(details[2].date).format("YYYY-MM-DD")}`;
       }
 

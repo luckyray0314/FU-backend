@@ -97,9 +97,6 @@ import { BackgroundAdultDataModule } from './background-adult-data/background-ad
 import { BackgroundAdultMetadataModule } from './background-adult-data/background-adult-metadata.module';
 import { AdultScoreModule } from './adult-score/adult-score.module';
 
-// Close Case Status
-import { CloseStatusModule } from './close-status/close.status.module';
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({ ...dataSourceOptions, autoLoadEntities: true }),
@@ -107,9 +104,6 @@ import { CloseStatusModule } from './close-status/close.status.module';
     SeedModule,
     UserModule,
     AuthModule,
-
-    //Close Status
-    CloseStatusModule,
 
     //Background Adult Data
     ActionAssignmentModule,

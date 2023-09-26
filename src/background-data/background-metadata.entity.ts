@@ -1,5 +1,6 @@
+import { User } from "src/user/user.entity";
 import {
-  Column, Entity, PrimaryColumn
+  Column, Entity, JoinColumn, ManyToOne, PrimaryColumn
 } from "typeorm";
 
 @Entity("background_metadata_entity")
@@ -15,4 +16,11 @@ export class BackgroundMetadataEntity {
 
   @Column({ nullable: true })
   country: string;
+
+  @Column({ nullable: true, default: false })
+  isClosed: boolean;
+
+  @ManyToOne(() => User, { nullable: true })
+  @JoinColumn()
+  processor: User;
 }

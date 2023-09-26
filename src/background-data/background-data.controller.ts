@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Res, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Req, Request, Res, UseGuards } from '@nestjs/common';
 import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { Response } from "express";
 import { JWTAuthGuard } from "src/auth/guards/jwt-auth.guard";
@@ -18,7 +18,9 @@ export class BackgroundDataController {
   @Get('/basicData')
   @ApiOkResponse({ type: BackgroundSurveyBasicDataDto })
   async basicData(
+    @Request() req: any
   ): Promise<BackgroundSurveyBasicDataDto> {
+    console.log("req", req);
     return await this.service.basicData();
   }
 
@@ -27,7 +29,9 @@ export class BackgroundDataController {
   @ApiBody({ type: BackgroundDataDto })
   async create(
     @Body() payload: BackgroundDataDto,
+    @Request() req: any
   ): Promise<boolean> {
+    console.log(req);
     return await this.service.create(payload);
   }
 
