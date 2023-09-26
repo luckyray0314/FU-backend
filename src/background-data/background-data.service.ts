@@ -375,7 +375,7 @@ export class BackgroundDataService {
           if (details[i].statuses[j] === SurveyStatus.Clear) {
             isAllClear = false;
           }
-           if (details[i].statuses[j] === SurveyStatus.Loss) {
+          else if (details[i].statuses[j] === SurveyStatus.Loss) {
             isAllLoss = false;
           }
           else if (details[i].statuses[j] === SurveyStatus.Coming) {
@@ -431,7 +431,7 @@ export class BackgroundDataService {
 
       const surveyEntity = {
         codeNumber: backgroundMetadataEntity.codeNumber,
-        status: isAllClear ? SurveyStatus.Clear : isAllComing ? SurveyStatus.Loss : SurveyStatus.Coming,
+        status: isAllClear ? SurveyStatus.Clear : isAllComing ? SurveyStatus.Coming : SurveyStatus.Loss,
         signal,
         missedFields: "",
         history: {
