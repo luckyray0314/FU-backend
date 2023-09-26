@@ -364,21 +364,30 @@ export class BackgroundDataService {
               : SurveyStatus.Loss;
           return status;
         });
+        // return { date, statuses };
 
-        return { date, statuses };
+        const statuses1 = [...Array(3)].map((_it2, personIndex) => {
+          const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
+          const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
+            : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
+              : SurveyStatus.Loss;
+          return status;
+        });
+
+        return { date, statuses1, statuses };
       }));
       let isAllClear = true;
       let isAllLoss = true;
       let isAllComing = true;
       for (let i = 0; i < details.length; ++i) {
-        for (let j = 0; j < details[i].statuses.length; ++j) {
-          if (details[i].statuses[j] === SurveyStatus.Clear) {
+        for (let j = 0; j < details[i].statuses1.length; ++j) {
+          if (details[i].statuses1[j] === SurveyStatus.Clear) {
             isAllClear = false;
           }
-          else if (details[i].statuses[j] === SurveyStatus.Loss) {
+          else if (details[i].statuses1[j] === SurveyStatus.Loss) {
             isAllLoss = false;
           }
-          else if (details[i].statuses[j] === SurveyStatus.Coming) {
+          else if (details[i].statuses1[j] === SurveyStatus.Coming) {
             isAllComing = false;
           }
         }
