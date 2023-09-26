@@ -360,8 +360,8 @@ export class BackgroundDataService {
           const status = (scoreEntity?.score15 && scoreEntity?.ors)
             ? SurveyStatus.Clear
             : !isScanLocked
-              ? SurveyStatus.Loss
-              : SurveyStatus.Coming;
+              ? SurveyStatus.Coming
+              : SurveyStatus.Loss;
           return status;
         });
 
@@ -431,7 +431,7 @@ export class BackgroundDataService {
 
       const surveyEntity = {
         codeNumber: backgroundMetadataEntity.codeNumber,
-        status: isAllClear ? SurveyStatus.Clear : isAllComing ? SurveyStatus.Coming : SurveyStatus.Loss,
+        status: isAllClear ? SurveyStatus.Clear : isAllComing ? SurveyStatus.Loss : SurveyStatus.Coming,
         signal,
         missedFields: "",
         history: {
