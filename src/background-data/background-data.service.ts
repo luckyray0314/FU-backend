@@ -362,9 +362,9 @@ export class BackgroundDataService {
           //   : !isScanLocked
           //     ? SurveyStatus.Coming
           //     : SurveyStatus.Loss;
-          const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
+          const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Loss
             : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
-              : SurveyStatus.Loss;
+              : SurveyStatus.Clear;
           return status;
         });
   
