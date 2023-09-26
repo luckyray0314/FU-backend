@@ -381,7 +381,7 @@ export class BackgroundDataService {
           else if (details[i].statuses[j] === SurveyStatus.Loss) {
             isAllLoss = false;
           }
-          else if (details[i].statuses[j] === SurveyStatus.Coming) {
+          else {
             isAllComing = false;
           }
         }
