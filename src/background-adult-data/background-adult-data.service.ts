@@ -280,11 +280,21 @@ export class BackgroundAdultDataService {
           prevOccasionDate = dayjs(entities[0].date);
         }
 
+        const isScanLocked = Math.abs(dayjs().diff(date, "week")) > 0;
+
         const statuses = [...Array(3)].map((_it2, personIndex) => {
           const scoreEntity = entities.filter(entity => entity.person === (personIndex + 1)).at(0);
-          const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
-            : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
+          // const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
+          //   : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
+          //     : SurveyStatus.Loss;
+
+          const status = (scoreEntity?.score15 && scoreEntity?.ors)
+            ? SurveyStatus.Clear
+            : !isScanLocked
+              ? SurveyStatus.Coming
               : SurveyStatus.Loss;
+
+
           return status;
         });
 
