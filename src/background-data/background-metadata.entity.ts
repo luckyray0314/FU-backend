@@ -18,7 +18,7 @@ export class BackgroundMetadataEntity {
   country: string;
 
   @Column({ nullable: true, default: false })
-  isClosed: boolean;
+  isClosed: string;
 
   @ManyToOne(() => User, { nullable: true })
   @JoinColumn()

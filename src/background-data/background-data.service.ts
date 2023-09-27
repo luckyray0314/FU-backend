@@ -140,7 +140,7 @@ export class BackgroundDataService {
         date: payload.date,
         yearOfBirth: payload.yearOfBirth,
         country: payload.country,
-        isClosed: false,
+        isClosed: "false",
         processor: null
       });
 
@@ -387,7 +387,7 @@ export class BackgroundDataService {
         }
       }
 
-      const closeStatus = "true";
+      // const closeStatus = "true";
 
       let nextSurvey = dayjs().format("YYYY-MM-DD");
       let signal = "BackgroundSurvey";
@@ -466,7 +466,7 @@ export class BackgroundDataService {
           },
         },
         nextSurvey,
-        closeStatus
+        closeStatus: backgroundMetadataEntity.isClosed
       };
       return surveyEntity;
     }));
@@ -553,7 +553,7 @@ export class BackgroundDataService {
       if (!metadata) {
         throw new Error(`Background metadata with code number ${codeNumber} not found.`);
       }
-      metadata.isClosed = true;
+      metadata.isClosed = "true";
       await this.backgroundMetadataService.update(metadata);
     } catch (error) {
       console.log(`Error closing background metadata with code number ${codeNumber}:`, error);
