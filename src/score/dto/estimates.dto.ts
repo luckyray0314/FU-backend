@@ -49,4 +49,9 @@ export class EstimatesDto {
   @ApiProperty()
   @IsDate()
   nextSurvey: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsNotEmpty()
+  closeStatus: string;
 };

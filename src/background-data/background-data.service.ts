@@ -387,6 +387,8 @@ export class BackgroundDataService {
         }
       }
 
+      const closeStatus = "true";
+
       let nextSurvey = dayjs().format("YYYY-MM-DD");
       let signal = "BackgroundSurvey";
       if (details[0].statuses.filter(status => status === SurveyStatus.Clear).length !== 1 &&
@@ -463,7 +465,8 @@ export class BackgroundDataService {
             }
           },
         },
-        nextSurvey
+        nextSurvey,
+        closeStatus
       };
       return surveyEntity;
     }));
