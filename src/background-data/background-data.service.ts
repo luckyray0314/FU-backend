@@ -531,7 +531,20 @@ export class BackgroundDataService {
     return "";
   }
 
-  async closeStatus(codeNumber: any): Promise<any> {
+  // async closeStatus(codeNumber: string): Promise<any> {
+  //   try {
+  //     const metadata = await this.backgroundMetadataService.findOne({ where: { codeNumber } });
+  //     if (!metadata) {
+  //       throw new Error(`Background metadata with code number ${codeNumber} not found.`);
+  //     }
+  //     metadata.isClosed = true;
+  //     await this.backgroundMetadataService.update(metadata);
+  //   } catch (error) {
+  //     console.log(`Error closing background metadata with code number ${codeNumber}:`, error);
+  //   }
+  // }
+
+  async closeStatus(codeNumber: string): Promise<any> {
     try {
       const metadata = await this.backgroundMetadataService.findOne({ where: { codeNumber } });
       if (!metadata) {

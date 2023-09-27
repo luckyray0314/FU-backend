@@ -24,14 +24,24 @@ export class BackgroundDataController {
     return await this.service.basicData();
   }
 
-  @Get('/close-status')
+  // @Get('/close-status')
+  // @ApiOkResponse({ type: BackgroundDataDto })
+  // async closeStatus(
+  //   @Body() payload: string,
+  //   @Request() req: any
+  // ): Promise<BackgroundDataDto> {
+  //   console.log("req", req);
+  //   return await this.service.closeStatus(payload);
+  // }
+
+  @Post('/close-status')
   @ApiOkResponse({ type: BackgroundDataDto })
   async closeStatus(
-    @Body() payload: BackgroundDataDto,
+    @Body() payload: { codeNumber: string },
     @Request() req: any
   ): Promise<BackgroundDataDto> {
     console.log("req", req);
-    return await this.service.closeStatus(payload);
+    return await this.service.closeStatus(payload.codeNumber);
   }
 
   @Post('create')
