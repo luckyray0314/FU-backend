@@ -17,10 +17,10 @@ export class BackgroundMetadataEntity {
   @Column({ nullable: true })
   country: string;
 
-  @Column({ nullable: true, default: false })
-  isClosed: string;
+  // @Column({ nullable: true, default: false })
+  // isClosed: string;
 
-  @ManyToOne(() => User, { nullable: true })
-  @JoinColumn()
-  processor: User;
+  // @ManyToOne(() => User, { nullable: true })
+  // @JoinColumn()
+  // processor: User;
 }

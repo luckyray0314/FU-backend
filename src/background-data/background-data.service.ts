@@ -140,8 +140,8 @@ export class BackgroundDataService {
         date: payload.date,
         yearOfBirth: payload.yearOfBirth,
         country: payload.country,
-        isClosed: "false",
-        processor: null
+        // isClosed: "false",
+        // processor: null
       });
 
       await this.selectedGenderService.deleteByCodeNumber(codeNumber);
@@ -466,7 +466,7 @@ export class BackgroundDataService {
           },
         },
         nextSurvey,
-        closeStatus: backgroundMetadataEntity.isClosed
+        // closeStatus: backgroundMetadataEntity.isClosed
       };
       return surveyEntity;
     }));
@@ -553,7 +553,7 @@ export class BackgroundDataService {
       if (!metadata) {
         throw new Error(`Background metadata with code number ${codeNumber} not found.`);
       }
-      metadata.isClosed = "true";
+      // metadata.isClosed = "true";
       await this.backgroundMetadataService.update(metadata);
     } catch (error) {
       console.log(`Error closing background metadata with code number ${codeNumber}:`, error);
