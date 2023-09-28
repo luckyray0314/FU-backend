@@ -49,6 +49,7 @@ async function bootstrap() {
   const seedService = app.get<SeedService>(SeedService);
   await seedService.seedBackgroundMetadata();
   await seedService.seedScoreData();
+  await seedService.seedCloseStatusData();
   await seedService.seedAdultScoreData();
   await seedService.seedGenders();
   await seedService.seedEducationVh1s();

@@ -230,11 +230,14 @@ import { BackgroundAdultMetadataRepository } from 'src/background-adult-data/bac
 import { AdultScoreRepository } from 'src/adult-score/adult-score.repository';
 import { AdultScoreEntity } from 'src/adult-score/entities/adult-score.entity';
 import { AdultScoreModule } from 'src/adult-score/adult-score.module';
+import { CloseStatusModule } from 'src/close-status/close.status.module';
+import { CloseStatusRepository } from 'src/close-status/close.status.repository';
+import { CloseStatusEntity } from 'src/close-status/entities/close.status.entity';
 
 @Module({
   imports: [
     //Close Status
-    BackgroundMetadataModule, TypeOrmModule.forFeature([BackgroundMetadataEntity, BackgroundMetadataRepository]),
+    CloseStatusModule, TypeOrmModule.forFeature([CloseStatusEntity, CloseStatusRepository]),
 
     BackgroundMetadataModule, TypeOrmModule.forFeature([BackgroundMetadataEntity, BackgroundMetadataRepository]),
     ScoreModule, TypeOrmModule.forFeature([ScoreEntity, ScoreRepository]),

@@ -96,6 +96,7 @@ import { SelectedProblemAreaAdultModule } from './background-adult-data/problem-
 import { BackgroundAdultDataModule } from './background-adult-data/background-adult-data.module';
 import { BackgroundAdultMetadataModule } from './background-adult-data/background-adult-metadata.module';
 import { AdultScoreModule } from './adult-score/adult-score.module';
+import { CloseStatusModule } from './close-status/close.status.module';
 
 @Module({
   imports: [
@@ -104,6 +105,7 @@ import { AdultScoreModule } from './adult-score/adult-score.module';
     SeedModule,
     UserModule,
     AuthModule,
+    CloseStatusModule,
 
     //Background Adult Data
     ActionAssignmentModule,
