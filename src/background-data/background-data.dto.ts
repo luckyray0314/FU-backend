@@ -109,6 +109,10 @@ export class BackgroundDataDto {
   @ApiProperty({ type: () => ({} as FormDataByEntityName) })
   @IsObject()
   formDataByEntityName: FormDataByEntityName;
+
+  @ApiProperty()
+  @IsString()
+  closeStatus: string;
 }
 
 export class DocxBufferDto {

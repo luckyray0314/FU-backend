@@ -140,7 +140,7 @@ export class BackgroundDataService {
         date: payload.date,
         yearOfBirth: payload.yearOfBirth,
         country: payload.country,
-        isClosed: "false",
+        isClosed: payload.closeStatus,
         processor: null
       });
 
@@ -327,7 +327,8 @@ export class BackgroundDataService {
         schoolUniform: selectedSchoolUniformEntities.map(data => data.schoolUniform.id),
         typeOfEffort: selectedTypeOfEffortEntities.map(data => data.typeOfEffort.id),
         whoParticipates: selectedWhoParticipatesEntities.map(data => data.other || data.whoParticipates.id),
-      }
+      },
+      closeStatus: ''
     };
 
     return result;
@@ -553,7 +554,7 @@ export class BackgroundDataService {
       if (!metadata) {
         throw new Error(`Background metadata with code number ${codeNumber} not found.`);
       }
-      metadata.isClosed = "true";
+      // metadata.isClosed = "false";
       await this.backgroundMetadataService.update(metadata);
     } catch (error) {
       console.log(`Error closing background metadata with code number ${codeNumber}:`, error);
