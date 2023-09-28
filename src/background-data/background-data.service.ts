@@ -554,7 +554,7 @@ export class BackgroundDataService {
       if (!metadata) {
         throw new Error(`Background metadata with code number ${codeNumber} not found.`);
       }
-      // metadata.isClosed = "false";
+      metadata.isClosed = "true";
       await this.backgroundMetadataService.update(metadata);
     } catch (error) {
       console.log(`Error closing background metadata with code number ${codeNumber}:`, error);

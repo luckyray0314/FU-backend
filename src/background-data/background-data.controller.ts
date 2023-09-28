@@ -35,12 +35,12 @@ export class BackgroundDataController {
   // }
 
   @Post('/close-status')
-  @ApiOkResponse({ type: () => String })
+  @ApiOkResponse({ type: () => Boolean })
   @ApiBody({ type: BackgroundDataDto })
   async closeStatus(
     @Body() payload: BackgroundDataDto,
     @Request() req: any
-  ): Promise<string> {
+  ): Promise<boolean> {
     console.log("req", req);
     return await this.service.closeStatus(payload.codeNumber);
   }
