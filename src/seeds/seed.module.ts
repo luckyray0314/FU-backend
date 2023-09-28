@@ -233,11 +233,16 @@ import { AdultScoreModule } from 'src/adult-score/adult-score.module';
 import { CloseStatusModule } from 'src/close-status/close.status.module';
 import { CloseStatusRepository } from 'src/close-status/close.status.repository';
 import { CloseStatusEntity } from 'src/close-status/entities/close.status.entity';
+import { CloseStatusAdultModule } from 'src/close-status-adult/close.status.adult.module';
+import { CloseStatusAdultRepository } from 'src/close-status-adult/close.status.adult.repository';
+import { CloseStatusAdultEntity } from 'src/close-status-adult/entities/close.status.adult.entity';
 
 @Module({
   imports: [
     //Close Status
     CloseStatusModule, TypeOrmModule.forFeature([CloseStatusEntity, CloseStatusRepository]),
+
+    CloseStatusAdultModule, TypeOrmModule.forFeature([CloseStatusAdultEntity, CloseStatusAdultRepository]),
 
     BackgroundMetadataModule, TypeOrmModule.forFeature([BackgroundMetadataEntity, BackgroundMetadataRepository]),
     ScoreModule, TypeOrmModule.forFeature([ScoreEntity, ScoreRepository]),

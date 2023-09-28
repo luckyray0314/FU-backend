@@ -50,6 +50,7 @@ async function bootstrap() {
   await seedService.seedBackgroundMetadata();
   await seedService.seedScoreData();
   await seedService.seedCloseStatusData();
+  await seedService.seedCloseStatusAdultData();
   await seedService.seedAdultScoreData();
   await seedService.seedGenders();
   await seedService.seedEducationVh1s();

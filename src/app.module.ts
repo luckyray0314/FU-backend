@@ -97,6 +97,7 @@ import { BackgroundAdultDataModule } from './background-adult-data/background-ad
 import { BackgroundAdultMetadataModule } from './background-adult-data/background-adult-metadata.module';
 import { AdultScoreModule } from './adult-score/adult-score.module';
 import { CloseStatusModule } from './close-status/close.status.module';
+import { CloseStatusAdultModule } from './close-status-adult/close.status.adult.module';
 
 @Module({
   imports: [
@@ -200,6 +201,7 @@ import { CloseStatusModule } from './close-status/close.status.module';
     FollowUpMetadataModule,
     FollowUpDataModule,
     CloseStatusModule,
+    CloseStatusAdultModule,
 
   ],
   controllers: [AppController, HealthController],

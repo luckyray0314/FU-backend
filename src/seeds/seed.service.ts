@@ -90,6 +90,7 @@ import {
 import { BackgroundMetadataEntity } from 'src/background-data/background-metadata.entity';
 //Close Status
 import * as closeStatusRealData from "src/core/constants/close-status.json";
+import * as closeStatusAdultRealData from "src/core/constants/close-status-adult.json"
 
 import * as backgroundMetadata from "src/core/constants/background_metadata.json";
 import * as backgroundAdultMetadata from "src/core/constants/background_adult_metadata.json";
@@ -155,6 +156,7 @@ import { ProblemAreaAdultEntity } from 'src/background-adult-data/problem-area/e
 import { SelectedProblemAreaAdultEntity } from 'src/background-adult-data/problem-area/entities/selected-problem-area.entity';
 import { AdultScoreEntity } from 'src/adult-score/entities/adult-score.entity';
 import { CloseStatusEntity } from 'src/close-status/entities/close.status.entity';
+import { CloseStatusAdultEntity } from 'src/close-status-adult/entities/close.status.adult.entity';
 
 @Injectable()
 export class SeedService {
@@ -164,6 +166,9 @@ export class SeedService {
 
     @InjectRepository(CloseStatusEntity)
     private readonly closeStatusRepository: Repository<CloseStatusEntity>,
+
+    @InjectRepository(CloseStatusAdultEntity)
+    private readonly closeStatusAdultRepository: Repository<CloseStatusAdultEntity>,
 
     @InjectRepository(AdultScoreEntity)
     private readonly adultScoreRepository: Repository<AdultScoreEntity>,
@@ -373,6 +378,12 @@ export class SeedService {
     const numRecords = await this.closeStatusRepository.count();
     if (numRecords > 0) return;
     await this.closeStatusRepository.save(closeStatusRealData);
+  }
+
+  async seedCloseStatusAdultData(): Promise<void> {
+    const numRecords = await this.closeStatusAdultRepository.count();
+    if (numRecords > 0) return;
+    await this.closeStatusAdultRepository.save(closeStatusAdultRealData);
   }
 
   async seedAdultScoreData(): Promise<void> {
