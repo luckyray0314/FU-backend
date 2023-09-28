@@ -105,7 +105,6 @@ import { CloseStatusModule } from './close-status/close.status.module';
     SeedModule,
     UserModule,
     AuthModule,
-    CloseStatusModule,
 
     //Background Adult Data
     ActionAssignmentModule,
@@ -200,6 +199,8 @@ import { CloseStatusModule } from './close-status/close.status.module';
 
     FollowUpMetadataModule,
     FollowUpDataModule,
+    CloseStatusModule,
+
   ],
   controllers: [AppController, HealthController],
   providers: [

@@ -34,16 +34,16 @@ export class BackgroundDataController {
   //   return await this.service.closeStatus(payload);
   // }
 
-  @Post('/close-status')
-  @ApiOkResponse({ type: () => Boolean })
-  @ApiBody({ type: BackgroundDataDto })
-  async closeStatus(
-    @Body() payload: BackgroundDataDto,
-    @Request() req: any
-  ): Promise<boolean> {
-    console.log("req", req);
-    return await this.service.closeStatus(payload.codeNumber);
-  }
+  // @Post('/close-status')
+  // @ApiOkResponse({ type: () => Boolean })
+  // @ApiBody({ type: BackgroundDataDto })
+  // async closeStatus(
+  //   @Body() payload: BackgroundDataDto,
+  //   @Request() req: any
+  // ): Promise<boolean> {
+  //   console.log("req", req);
+  //   return await this.service.closeStatus(payload.codeNumber);
+  // }
 
   @Post('create')
   @ApiOkResponse({ type: () => Boolean })

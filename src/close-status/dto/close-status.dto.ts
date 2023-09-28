@@ -8,12 +8,12 @@ export class CloseStatusDto {
   codeNumber: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsString()
   @IsNotEmpty()
   processor: string;
 
   @ApiProperty()
-  @IsNotEmpty()
+  @IsString()
   @IsNotEmpty()
   isClosed: string;
 }
