@@ -140,7 +140,7 @@ export class BackgroundDataService {
         date: payload.date,
         yearOfBirth: payload.yearOfBirth,
         country: payload.country,
-        isClosed: payload.closeStatus,
+        isClosed: "false",
         processor: null
       });
 
@@ -328,7 +328,6 @@ export class BackgroundDataService {
         typeOfEffort: selectedTypeOfEffortEntities.map(data => data.typeOfEffort.id),
         whoParticipates: selectedWhoParticipatesEntities.map(data => data.other || data.whoParticipates.id),
       },
-      closeStatus: ''
     };
 
     return result;
