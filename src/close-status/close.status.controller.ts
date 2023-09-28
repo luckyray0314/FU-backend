@@ -42,4 +42,18 @@ export class CloseStatusController {
       });
     }
 
+    @Get('/getOne/:processor')
+    @ApiOkResponse({ type: CloseStatusDto })
+    async getOne1(
+      @Param("codeNumber") codeNumber: string,
+      @Param("processor") processor: string,
+      @Param("isClosed") isClosed: string
+    ): Promise<CloseStatusDto> {
+      return await this.service.getOneCloseStatus1({
+        codeNumber,
+        processor,
+        isClosed
+      });
+    }
+
 }

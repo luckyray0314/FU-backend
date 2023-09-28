@@ -56,16 +56,30 @@ export class CloseStatusService extends TypeOrmCrudService<CloseStatusEntity> {
 
     async getOneCloseStatus(payload: CloseStatusDto) {
         try {
-          const closeStatusEntity = await this.repo.findOne({
-            where: {
-              codeNumber: payload.codeNumber,
-            }
-          });
-          return closeStatusEntity;
+            const closeStatusEntity = await this.repo.findOne({
+                where: {
+                    codeNumber: payload.codeNumber,
+                }
+            });
+            return closeStatusEntity;
         }
         catch (e) {
-          console.log('getOneScore error:', e);
+            console.log('getOneScore error:', e);
         }
-      }
+    }
+
+    async getOneCloseStatus1(payload: CloseStatusDto) {
+        try {
+            const closeStatusEntity = await this.repo.findOne({
+                where: {
+                    processor: payload.processor,
+                }
+            });
+            return closeStatusEntity;
+        }
+        catch (e) {
+            console.log('getOneScore error:', e);
+        }
+    }
 
 }
