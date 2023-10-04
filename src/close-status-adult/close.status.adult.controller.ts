@@ -41,4 +41,10 @@ export class CloseStatusAdultController {
         isClosed
       });
     }
+
+    @Get('/getAll')
+    @ApiOkResponse({ type: Array<CloseStatusAdultDto> })
+    async getAll(): Promise<CloseStatusAdultDto[]> {
+      return await this.service.getAll();
+    }
 }
