@@ -82,4 +82,9 @@ export class CloseStatusService extends TypeOrmCrudService<CloseStatusEntity> {
         }
     }
 
+    async getAll(): Promise<CloseStatusDto[]> {
+        const closeStatuses = await this.repo.find();
+        return closeStatuses.map(status => ({ ...status }));
+      }
+
 }
