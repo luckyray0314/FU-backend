@@ -8,7 +8,7 @@ export const dataSourceOptions: DataSourceOptions = {
   port: 5432,
   username: 'postgres',
   password: 'm81p7*3G8zs7',
-  database: 'survey-dev',
+  database: 'survey-eagle',
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   // migrations: [
   //   CreateUser1557166726050,
