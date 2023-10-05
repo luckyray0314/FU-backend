@@ -492,7 +492,8 @@ export class BackgroundDataService {
       });
       doc.render({
         date: dayjs().format("YYYY-MM-DD"),
-        QRCODE: domain + "/" + atob(atob(atob(uri)))
+        QRCODE: codeNumber
+        // QRCODE: domain + "/" + atob(atob(atob(uri)))
       });
       const buf = doc.getZip().generate({
         type: "nodebuffer",
