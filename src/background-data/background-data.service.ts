@@ -477,6 +477,12 @@ export class BackgroundDataService {
     try {
       const templatePath = occasion === 0 ? template2Path : template1Path;
       const domain = "https://vallentuna-quiz.vercel.app"
+      const uri =btoa(btoa(btoa(JSON.stringify({
+        codeNumber: codeNumber,
+        occasion,
+        score15: 0,
+        ors: 0
+      }))));
       // replace {DATE} to today
       const content = fs.readFileSync(templatePath, "binary");
       const pizZip = new PizZip(content);
@@ -486,6 +492,7 @@ export class BackgroundDataService {
       });
       doc.render({
         date: dayjs().format("YYYY-MM-DD"),
+        QRCODE: domain + "/" + atob(atob(atob(uri)))
       });
       const buf = doc.getZip().generate({
         type: "nodebuffer",
