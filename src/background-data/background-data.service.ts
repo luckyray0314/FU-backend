@@ -486,14 +486,14 @@ export class BackgroundDataService {
       }))));
       const uri2 =btoa(btoa(btoa(JSON.stringify({
         codeNumber: codeNumber,
-        person: 1,
+        person: 2,
         occasion,
         score15: 0,
         ors: 0
       }))));
       const uri3 =btoa(btoa(btoa(JSON.stringify({
         codeNumber: codeNumber,
-        person: 1,
+        person: 3,
         occasion,
         score15: 0,
         ors: 0
