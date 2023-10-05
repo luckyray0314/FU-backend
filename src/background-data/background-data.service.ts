@@ -477,7 +477,21 @@ export class BackgroundDataService {
     try {
       const templatePath = occasion === 0 ? template2Path : template1Path;
       const domain = "https://vallentuna-quiz.vercel.app"
-      const uri =btoa(btoa(btoa(JSON.stringify({
+      const uri1 =btoa(btoa(btoa(JSON.stringify({
+        codeNumber: codeNumber,
+        person: 1,
+        occasion,
+        score15: 0,
+        ors: 0
+      }))));
+      const uri2 =btoa(btoa(btoa(JSON.stringify({
+        codeNumber: codeNumber,
+        person: 1,
+        occasion,
+        score15: 0,
+        ors: 0
+      }))));
+      const uri3 =btoa(btoa(btoa(JSON.stringify({
         codeNumber: codeNumber,
         person: 1,
         occasion,
@@ -493,7 +507,9 @@ export class BackgroundDataService {
       });
       doc.render({
         date: dayjs().format("YYYY-MM-DD"),
-        string: domain + "/" + uri
+        parent1: domain + "/" + uri1,
+        parent2: domain + "/" + uri2,
+        child: domain + "/" + uri3
         // QRCODE: domain + "/" + atob(atob(atob(uri)))
       });
       const buf = doc.getZip().generate({
