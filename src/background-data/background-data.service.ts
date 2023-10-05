@@ -479,6 +479,7 @@ export class BackgroundDataService {
       const domain = "https://vallentuna-quiz.vercel.app"
       const uri =btoa(btoa(btoa(JSON.stringify({
         codeNumber: codeNumber,
+        person: 1,
         occasion,
         score15: 0,
         ors: 0
@@ -492,7 +493,7 @@ export class BackgroundDataService {
       });
       doc.render({
         date: dayjs().format("YYYY-MM-DD"),
-        string: domain + "/" + atob(atob(atob(uri)))
+        string: domain + "/" + uri
         // QRCODE: domain + "/" + atob(atob(atob(uri)))
       });
       const buf = doc.getZip().generate({
