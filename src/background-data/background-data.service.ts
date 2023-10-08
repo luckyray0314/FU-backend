@@ -523,31 +523,31 @@ export class BackgroundDataService {
       // replace QR code
       const zip = new AdmZip(middlePath);
 
-      if (occasion !== 0) {
-        const zipEntries = zip.getEntries();
-        let person = 1;
+      // if (occasion !== 0) {
+      //   const zipEntries = zip.getEntries();
+      //   let person = 1;
 
-        for await (const zipEntry of zipEntries) {
-          if (/^word\/media\/image.+png$/.test(zipEntry.entryName)) {
-            const qrCodeString = btoa(btoa(btoa(JSON.stringify({
-              domain,
-              codeNumber,
-              person: person,
-              occasion,
-              score15: 0,
-              ors: 0
-            }))));
-            const qrCodeContent = await qr.toBuffer(qrCodeString, {
-              errorCorrectionLevel: 'H',
-              margin: 1,
-              width: 128,
-              type: 'png',
-            });
-            zip.updateFile(zipEntry.entryName, qrCodeContent);
-            person += 1;
-          }
-        }
-      }
+      //   for await (const zipEntry of zipEntries) {
+      //     if (/^word\/media\/image.+png$/.test(zipEntry.entryName)) {
+      //       const qrCodeString = btoa(btoa(btoa(JSON.stringify({
+      //         domain,
+      //         codeNumber,
+      //         person: person,
+      //         occasion,
+      //         score15: 0,
+      //         ors: 0
+      //       }))));
+      //       const qrCodeContent = await qr.toBuffer(qrCodeString, {
+      //         errorCorrectionLevel: 'H',
+      //         margin: 1,
+      //         width: 128,
+      //         type: 'png',
+      //       });
+      //       zip.updateFile(zipEntry.entryName, qrCodeContent);
+      //       person += 1;
+      //     }
+      //   }
+      // }
 
       const buffer = zip.toBuffer();
       fs.writeFileSync(destPath, buffer);
