@@ -541,7 +541,7 @@ export class BackgroundDataService {
         parent1: domain + "/" + uri1,
         parent2: domain + "/" + uri2,
         child: domain + "/" + uri3,
-        qrcode: zip
+        qrcode: "zip"
         // QRCODE: domain + "/" + atob(atob(atob(uri)))
       });
       const buf = doc.getZip().generate({
