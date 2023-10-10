@@ -346,3 +346,48 @@ export const actionAssignmentSeedData = [
   'OtherText',
 
 ].map(data => ({ description: data }));
+
+export const changeLiveSeedData = [
+  'ChangeLive.Situation',
+  'ChangeLive.Single',
+  'ChangeLive.Cohabitant',
+  'ChangeLive.Special',
+  'ChangeLive.Consellation',
+
+].map(data => ({ description: data }));
+
+export const changeOverSeedData = [
+  'ChangeOver.Occupation',
+  'ChangeOver.FullTime',
+  'ChangeOver.PartTime',
+  'ChangeOver.JobSeeker',
+  'ChangeOver.SickLeave',
+  'ChangeOver.ParentalLeave',
+  'ChangeOver.Turn',
+
+].map(data => ({ description: data }));
+ 
+export const investigationOutSeedData = [
+  'InvestigationOut.NoInvest',
+  'InvestigationOut.Received',
+  'InvestigationOut.ADHD',
+  'InvestigationOut.ADD',
+  'InvestigationOut.AST',
+  'InvestigationOut.Psychiatric',
+  'InvestigationOut.Conducted',
+  'Other',
+  'OtherText',
+
+].map(data => ({ description: data }));
+
+export const otherInitiativeSeedData = [
+  'OtherInitiative.Started',
+  'OtherInitiative.LSS',
+  'OtherInitiative.Addiction',
+  'OtherInitiative.LVM',
+  'OtherInitiative.Probation',
+  'OtherInitiative.Medication',
+  'Other',
+  'OtherText',
+
+].map(data => ({ description: data }));

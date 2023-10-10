@@ -85,6 +85,10 @@ import {
   otherOngoingEffortSeedData,
   previousEffortSeedData,
   problemAreaAdultSeedData,
+  changeLiveSeedData,
+  changeOverSeedData,
+  investigationOutSeedData,
+  otherInitiativeSeedData,
 } from '../core/constants/seed.constant';
 
 import { BackgroundMetadataEntity } from 'src/background-data/background-metadata.entity';
@@ -125,6 +129,10 @@ import * as familyConstellationAdultRealData from "src/core/constants/selected_f
 import * as otherOngoingEffortRealData from "src/core/constants/selected_other_ongoing_effort.json";
 import * as previousEffortRealData from "src/core/constants/selected_previous_effort.json";
 import * as problemAreaAdultRealData from "src/core/constants/selected_problem_area_adult.json";
+import * as changeLiveRealData from "src/core/constants/change_live.json";
+import * as changeOverRealData from "src/core/constants/change_over.json";
+import * as investigationOutRealData from "src/core/constants/investigation_out.json";
+import * as otherInitiativeRealData from "src/core/constants/other_initiative.json";
 
 import { ScoreEntity } from 'src/score/entities/score.entity';
 import { ChangeAccomodationEntity } from 'src/important-events/change-accomodation/entities/change-accomodation.entity';
@@ -157,9 +165,29 @@ import { SelectedProblemAreaAdultEntity } from 'src/background-adult-data/proble
 import { AdultScoreEntity } from 'src/adult-score/entities/adult-score.entity';
 import { CloseStatusEntity } from 'src/close-status/entities/close.status.entity';
 import { CloseStatusAdultEntity } from 'src/close-status-adult/entities/close.status.adult.entity';
+import { ChangeLiveEntity } from 'src/important-events-vux/change-live/entities/change-live.entity';
+import { SelectedChangeLiveEntity } from 'src/important-events-vux/change-live/entities/selected-change-live.entity';
+import { ChangeOverEntity } from 'src/important-events-vux/change-over/entities/change-over.entity';
+import { SelectedChangeOverEntity } from 'src/important-events-vux/change-over/entities/selected-change-over.entity';
+import { InvestigationOutEntity } from 'src/important-events-vux/investigation-out/entities/investigation-out.entity';
+import { SelectedInvestigationOutEntity } from 'src/important-events-vux/investigation-out/entities/selected-investigation-out.entity';
+import { OtherInitiativeEntity } from 'src/important-events-vux/other-initiative/entities/other-initiative.entity';
+import { SelectedOtherInitiativeEntity } from 'src/important-events-vux/other-initiative/entities/selected-other-initiative.entity';
 
 @Injectable()
 export class SeedService {
+  // seedChangeLive() {
+  //   throw new Error('Method not implemented.');
+  // }
+  // seedChangeOver() {
+  //   throw new Error('Method not implemented.');
+  // }
+  // seedInvestigationOut() {
+  //   throw new Error('Method not implemented.');
+  // }
+  // seedOtherInitiative() {
+  //   throw new Error('Method not implemented.');
+  // }
   constructor(
     @InjectRepository(ScoreEntity)
     private readonly scoreRepository: Repository<ScoreEntity>,
@@ -359,6 +387,26 @@ export class SeedService {
     private readonly problemAreaAdultRepository: Repository<ProblemAreaAdultEntity>,
     @InjectRepository(SelectedProblemAreaAdultEntity)
     private readonly selectedProblemAreaAdultRepository: Repository<SelectedProblemAreaAdultEntity>,
+
+    @InjectRepository(ChangeLiveEntity)
+    private readonly changeLiveRepository: Repository<ChangeLiveEntity>,
+    @InjectRepository(SelectedChangeLiveEntity)
+    private readonly selectedChangeLiveRepository: Repository<SelectedChangeLiveEntity>,
+
+    @InjectRepository(ChangeOverEntity)
+    private readonly changeOverRepository: Repository<ChangeOverEntity>,
+    @InjectRepository(SelectedChangeOverEntity)
+    private readonly selectedChangeOverRepository: Repository<SelectedChangeOverEntity>,
+
+    @InjectRepository(InvestigationOutEntity)
+    private readonly investigationOutRepository: Repository<InvestigationOutEntity>,
+    @InjectRepository(SelectedInvestigationOutEntity)
+    private readonly selectedInvestigationOutRepository: Repository<SelectedInvestigationOutEntity>,
+
+    @InjectRepository(OtherInitiativeEntity)
+    private readonly otherInitiativeRepository: Repository<OtherInitiativeEntity>,
+    @InjectRepository(SelectedOtherInitiativeEntity)
+    private readonly selectedOtherInitiativeRepository: Repository<SelectedOtherInitiativeEntity>,
 
   ) { }
 
@@ -859,6 +907,67 @@ export class SeedService {
       entity.codeNumber = data.codeNumber;
       entity.problemAreaAdult = await this.problemAreaAdultRepository.findOneBy({ id: +data.problemAreaAdultId || 1 });
       await this.selectedProblemAreaAdultRepository.save(entity);
+    }));
+  }
+
+  //Important Events Vux
+  async seedChangeLive(): Promise<void> {
+    const numRecords = await this.changeLiveRepository.count();
+    if (numRecords > 0) return;
+    await this.changeLiveRepository.save(changeLiveSeedData);
+
+    const numRecordsOfRealData = await this.selectedChangeLiveRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(changeLiveRealData.map(async (data) => {
+      const entity = new SelectedChangeLiveEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.changeLive = await this.changeLiveRepository.findOneBy({ id: data.changeLive || 1 });
+      await this.selectedChangeLiveRepository.save(entity);
+    }));
+  }
+
+  async seedChangeOver(): Promise<void> {
+    const numRecords = await this.changeOverRepository.count();
+    if (numRecords > 0) return;
+    await this.changeOverRepository.save(changeOverSeedData);
+
+    const numRecordsOfRealData = await this.selectedChangeOverRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(changeOverRealData.map(async (data) => {
+      const entity = new SelectedChangeOverEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.changeOver = await this.changeOverRepository.findOneBy({ id: data.changeOver || 1 });
+      await this.selectedChangeOverRepository.save(entity);
+    }));
+  }
+
+  async seedInvestigationOut(): Promise<void> {
+    const numRecords = await this.investigationOutRepository.count();
+    if (numRecords > 0) return;
+    await this.investigationOutRepository.save(investigationOutSeedData);
+
+    const numRecordsOfRealData = await this.selectedInvestigationOutRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(investigationOutRealData.map(async (data) => {
+      const entity = new SelectedInvestigationOutEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.investigationOut = await this.investigationOutRepository.findOneBy({ id: data.investigationOut || 1 });
+      await this.selectedInvestigationOutRepository.save(entity);
+    }));
+  }
+
+  async seedOtherInitiative(): Promise<void> {
+    const numRecords = await this.otherInitiativeRepository.count();
+    if (numRecords > 0) return;
+    await this.otherInitiativeRepository.save(otherInitiativeSeedData);
+
+    const numRecordsOfRealData = await this.selectedOtherInitiativeRepository.count();
+    if (numRecordsOfRealData > 0) return;
+    await Promise.all(otherInitiativeRealData.map(async (data) => {
+      const entity = new SelectedOtherInitiativeEntity();
+      entity.codeNumber = data.codeNumber;
+      entity.otherInitiative = await this.otherInitiativeRepository.findOneBy({ id: data.otherInitiative || 1 });
+      await this.selectedOtherInitiativeRepository.save(entity);
     }));
   }
 }

@@ -91,6 +91,11 @@ async function bootstrap() {
   await seedService.seedPreviousEffort();
   await seedService.seedProblemAreaAdult();
 
+  await seedService.seedChangeLive();
+  await seedService.seedChangeOver();
+  await seedService.seedInvestigationOut();
+  await seedService.seedOtherInitiative();
+
 
   await app.listen(VALLENTUNA_SURVEY_BACKEND_PORT || 5000);
 }

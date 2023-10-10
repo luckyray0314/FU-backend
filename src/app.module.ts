@@ -98,6 +98,15 @@ import { BackgroundAdultMetadataModule } from './background-adult-data/backgroun
 import { AdultScoreModule } from './adult-score/adult-score.module';
 import { CloseStatusModule } from './close-status/close.status.module';
 import { CloseStatusAdultModule } from './close-status-adult/close.status.adult.module';
+import { ChangeLiveModule } from './important-events-vux/change-live/change-live.module';
+import { ChangeOverModule } from './important-events-vux/change-over/change-over.module';
+import { InvestigationOutModule } from './important-events-vux/investigation-out/investigation-out.module';
+import { OtherInitiativeModule } from './important-events-vux/other-initiative/other-initiative.module';
+import { ImportantEventsVuxModule } from './important-events-vux/important-events-vux.module';
+import { SelectedChangeLiveModule } from './important-events-vux/change-live/selected-change-live.module';
+import { SelectedChangeOverModule } from './important-events-vux/change-over/selected-change-over.module';
+import { SelectedInvestigationOutModule } from './important-events-vux/investigation-out/selected-investigation-out.module';
+import { SelectedOtherInitiativeModule } from './important-events-vux/other-initiative/selected-other-initiative.module';
 
 @Module({
   imports: [
@@ -197,11 +206,22 @@ import { CloseStatusAdultModule } from './close-status-adult/close.status.adult.
 
 
     ImportantEventsModule,
+    ImportantEventsVuxModule,
 
     FollowUpMetadataModule,
     FollowUpDataModule,
     CloseStatusModule,
     CloseStatusAdultModule,
+
+    ChangeLiveModule,
+    ChangeOverModule,
+    InvestigationOutModule,
+    OtherInitiativeModule,
+
+    SelectedChangeLiveModule,
+    SelectedChangeOverModule,
+    SelectedInvestigationOutModule,
+    SelectedOtherInitiativeModule
 
   ],
   controllers: [AppController, HealthController],

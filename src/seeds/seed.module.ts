@@ -236,6 +236,30 @@ import { CloseStatusEntity } from 'src/close-status/entities/close.status.entity
 import { CloseStatusAdultModule } from 'src/close-status-adult/close.status.adult.module';
 import { CloseStatusAdultRepository } from 'src/close-status-adult/close.status.adult.repository';
 import { CloseStatusAdultEntity } from 'src/close-status-adult/entities/close.status.adult.entity';
+import { ChangeLiveModule } from 'src/important-events-vux/change-live/change-live.module';
+import { ChangeLiveRepository } from 'src/important-events-vux/change-live/change-live.repository';
+import { ChangeLiveEntity } from 'src/important-events-vux/change-live/entities/change-live.entity';
+import { SelectedChangeLiveEntity } from 'src/important-events-vux/change-live/entities/selected-change-live.entity';
+import { SelectedChangeLiveModule } from 'src/important-events-vux/change-live/selected-change-live.module';
+import { ChangeOverModule } from 'src/important-events-vux/change-over/change-over.module';
+import { ChangeOverRepository } from 'src/important-events-vux/change-over/change-over.repository';
+import { ChangeOverEntity } from 'src/important-events-vux/change-over/entities/change-over.entity';
+import { SelectedChangeOverEntity } from 'src/important-events-vux/change-over/entities/selected-change-over.entity';
+import { SelectedChangeOverModule } from 'src/important-events-vux/change-over/selected-change-over.module';
+import { InvestigationOutEntity } from 'src/important-events-vux/investigation-out/entities/investigation-out.entity';
+import { SelectedInvestigationOutEntity } from 'src/important-events-vux/investigation-out/entities/selected-investigation-out.entity';
+import { InvestigationOutModule } from 'src/important-events-vux/investigation-out/investigation-out.module';
+import { InvestigationOutRepository } from 'src/important-events-vux/investigation-out/investigation-out.repository';
+import { SelectedInvestigationOutModule } from 'src/important-events-vux/investigation-out/selected-investigation-out.module';
+import { SelectedInvestigationOutRepository } from 'src/important-events-vux/investigation-out/selected-investigation-out.repository';
+import { OtherInitiativeEntity } from 'src/important-events-vux/other-initiative/entities/other-initiative.entity';
+import { SelectedOtherInitiativeEntity } from 'src/important-events-vux/other-initiative/entities/selected-other-initiative.entity';
+import { OtherInitiativeModule } from 'src/important-events-vux/other-initiative/other-initiative.module';
+import { OtherInitiativeRepository } from 'src/important-events-vux/other-initiative/other-initiative.repository';
+import { SelectedOtherInitiativeModule } from 'src/important-events-vux/other-initiative/selected-other-initiative.module';
+import { SelectedOtherInitiativeRepository } from 'src/important-events-vux/other-initiative/selected-other-initiative.repository';
+import { SelectedChangeOverRepository } from 'src/important-events-vux/change-over/selected-change-over.repository';
+import { SelectedChangeLiveRepository } from 'src/important-events-vux/change-live/selected-change-live.repository';
 
 @Module({
   imports: [
@@ -357,6 +381,18 @@ import { CloseStatusAdultEntity } from 'src/close-status-adult/entities/close.st
 
     BackgroundAdultMetadataModule, TypeOrmModule.forFeature([BackgroundAdultMetadataEntity, BackgroundAdultMetadataRepository]),
     AdultScoreModule, TypeOrmModule.forFeature([AdultScoreEntity, AdultScoreRepository]),
+
+    ChangeLiveModule, TypeOrmModule.forFeature([ChangeLiveEntity, ChangeLiveRepository]),
+    SelectedChangeLiveModule, TypeOrmModule.forFeature([SelectedChangeLiveEntity, SelectedChangeLiveRepository]),
+
+    ChangeOverModule, TypeOrmModule.forFeature([ChangeOverEntity, ChangeOverRepository]),
+    SelectedChangeOverModule, TypeOrmModule.forFeature([SelectedChangeOverEntity, SelectedChangeOverRepository]),
+
+    InvestigationOutModule, TypeOrmModule.forFeature([InvestigationOutEntity, InvestigationOutRepository]),
+    SelectedInvestigationOutModule, TypeOrmModule.forFeature([SelectedInvestigationOutEntity, SelectedInvestigationOutRepository]),
+
+    OtherInitiativeModule, TypeOrmModule.forFeature([OtherInitiativeEntity, OtherInitiativeRepository]),
+    SelectedOtherInitiativeModule, TypeOrmModule.forFeature([SelectedOtherInitiativeEntity, SelectedOtherInitiativeRepository]),
   ],
   providers: [SeedService],
 })
