@@ -376,7 +376,6 @@ export const investigationOutSeedData = [
   'InvestigationOut.Psychiatric',
   'InvestigationOut.Conducted',
   'Other',
-  'OtherText',
 
 ].map(data => ({ description: data }));
 
@@ -388,6 +387,5 @@ export const otherInitiativeSeedData = [
   'OtherInitiative.Probation',
   'OtherInitiative.Medication',
   'Other',
-  'OtherText',
 
 ].map(data => ({ description: data }));
