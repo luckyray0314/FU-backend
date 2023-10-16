@@ -362,8 +362,7 @@ export const changeOverSeedData = [
   'ChangeOver.PartTime',
   'ChangeOver.JobSeeker',
   'ChangeOver.SickLeave',
-  'ChangeOver.ParentalLeave',
-  'ChangeOver.Turn',
+  'ChangeOver.ParentalLeave'
 
 ].map(data => ({ description: data }));
  
