@@ -372,7 +372,7 @@ export class BackgroundAdultDataService {
 
   async downloadDocx(codeNumber: string, occasion: OccasionIndex | 0) {
     try {
-      const templatePath = template2Path;
+      const templatePath = occasion === 0 ? template1Path : template2Path;
       const domain = "https://vallentuna-quiz.vercel.app"
       // replace {DATE} to today
       const content = fs.readFileSync(templatePath, "binary");
