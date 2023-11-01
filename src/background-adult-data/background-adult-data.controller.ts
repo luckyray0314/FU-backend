@@ -9,7 +9,7 @@ import { BackgroundAdultDataService } from './background-adult-data.service';
 
 @ApiTags('Background Adult Data Survey Management')
 @UseGuards(SessionAuthGuard, JWTAuthGuard)
-@Controller('background-vux-data')
+@Controller('background-adult-data')
 export class BackgroundAdultDataController {
   constructor(
     public service: BackgroundAdultDataService,
