@@ -475,26 +475,28 @@ export class BackgroundDataService {
 
   async downloadDocx(codeNumber: string, occasion: OccasionIndex | 0) {
     try {
-      const templatePath = occasion === 0 ? template1Path : template2Path;
+
+      const templatePath = occasion <= 3 ? template1Path : template2Path;
       const domain = "https://vallentuna-quiz.vercel.app"
+      const occasionNum = occasion <= 3 ? occasion : occasion - 3;
       const uri1 =btoa(btoa(btoa(JSON.stringify({
         codeNumber: codeNumber,
         person: 1,
-        occasion,
+        occasionNum,
         score15: 0,
         ors: 0
       }))));
       const uri2 =btoa(btoa(btoa(JSON.stringify({
         codeNumber: codeNumber,
         person: 2,
-        occasion,
+        occasionNum,
         score15: 0,
         ors: 0
       }))));
       const uri3 =btoa(btoa(btoa(JSON.stringify({
         codeNumber: codeNumber,
         person: 3,
-        occasion,
+        occasionNum,
         score15: 0,
         ors: 0
       }))));
