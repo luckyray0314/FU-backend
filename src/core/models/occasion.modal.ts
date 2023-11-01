@@ -1,4 +1,4 @@
-type OccasionIndex = 1 | 2 | 3;
+type OccasionIndex = 1 | 2 | 3 | 4 | 5 | 6;
 
 export {
   OccasionIndex
