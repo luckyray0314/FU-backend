@@ -1,295 +1,207 @@
 [
   {
     "codeNumber": "Vux2021-1",
-    "problemAreaAdultId": "1"
+    "problemAreaAdultId": 1
   },
   {
     "codeNumber": "Vux2021-2",
-    "problemAreaAdultId": "1"
+    "problemAreaAdultId": 1
   },
   {
     "codeNumber": "Vux2021-3",
-    "problemAreaAdultId": "1"
+    "problemAreaAdultId": 1
   },
   {
     "codeNumber": "Vux2021-4",
-    "problemAreaAdultId": "1"
+    "problemAreaAdultId": 2
   },
   {
     "codeNumber": "Vux2021-5",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-8",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-9",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-10",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-11",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-14",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-15",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-16",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-18",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-19",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-21",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-23",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-24",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-26",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-27",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-28",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-29",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-32",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-34",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-35",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-36",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-38",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-48",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-51",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-52",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-53",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-55",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-58",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-59",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-60",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-61",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-62",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-64",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-65",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-67",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-68",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-69",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-72",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-74",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-75",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-76",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-85",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-87",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-88",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-89",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-90",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-91",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-92",
-    "problemAreaAdultId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-94",
-    "problemAreaAdultId": "1"
+    "problemAreaAdultId": 1
   },
   {
     "codeNumber": "Vux2021-6",
-    "problemAreaAdultId": "1"
+    "problemAreaAdultId": 1
   },
   {
     "codeNumber": "Vux2021-7",
-    "problemAreaAdultId": "1"
+    "problemAreaAdultId": 1
   },
   {
-    "codeNumber": "Vux2023-117",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2021-8",
+    "problemAreaAdultId": 1
   },
   {
-    "codeNumber": "Vux2023-116",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2021-9",
+    "problemAreaAdultId": 1
   },
   {
-    "codeNumber": "Vux2023-112",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2021-10",
+    "problemAreaAdultId": 3
   },
   {
-    "codeNumber": "Vux2023-113",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2021-11",
+    "problemAreaAdultId": 2
   },
   {
-    "codeNumber": "Vux2022-93",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2021-12",
+    "problemAreaAdultId": 1
   },
   {
-    "codeNumber": "Vux2022-109",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-13",
+    "problemAreaAdultId": 2
   },
   {
-    "codeNumber": "Vux2022-86",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-14",
+    "problemAreaAdultId": 3
   },
   {
-    "codeNumber": "Vux2023-104",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-15",
+    "problemAreaAdultId": 4
   },
   {
-    "codeNumber": "Vux2023-98",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-16",
+    "problemAreaAdultId": 2
   },
   {
-    "codeNumber": "Vux2022-95",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-17",
+    "problemAreaAdultId": 4
   },
   {
-    "codeNumber": "Vux2022-96",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-18",
+    "problemAreaAdultId": 4
   },
   {
-    "codeNumber": "Vux2022-98",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-19",
+    "problemAreaAdultId": 1
   },
   {
-    "codeNumber": "Vux2023-111",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-20",
+    "problemAreaAdultId": 2
   },
   {
-    "codeNumber": "Vux2023-115",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-21",
+    "problemAreaAdultId": 1
   },
   {
-    "codeNumber": "Vux2023-103",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-22",
+    "problemAreaAdultId": 2
   },
   {
-    "codeNumber": "Vux2022-70",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-23",
+    "problemAreaAdultId": 2
   },
   {
-    "codeNumber": "Vux2022-56",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-24",
+    "problemAreaAdultId": 2
   },
   {
-    "codeNumber": "Vux2022-84",
-    "problemAreaAdultId": "1"
+    "codeNumber": "Vux2022-25",
+    "problemAreaAdultId": 1
+  },
+  {
+    "codeNumber": "Vux2022-26",
+    "problemAreaAdultId": 3
+  },
+  {
+    "codeNumber": "Vux2022-27",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2022-28",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2022-29",
+    "problemAreaAdultId": 1
+  },
+  {
+    "codeNumber": "Vux2022-30",
+    "problemAreaAdultId": 1
+  },
+  {
+    "codeNumber": "Vux2023-31",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2023-32",
+    "problemAreaAdultId": 6
+  },
+  {
+    "codeNumber": "Vux2023-33",
+    "problemAreaAdultId": 1
+  },
+  {
+    "codeNumber": "Vux2023-34",
+    "problemAreaAdultId": 1
+  },
+  {
+    "codeNumber": "Vux2023-35",
+    "problemAreaAdultId": 3
+  },
+  {
+    "codeNumber": "Vux2023-36",
+    "problemAreaAdultId": 1
+  },
+  {
+    "codeNumber": "Vux2023-37",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2023-38",
+    "problemAreaAdultId": 1
+  },
+  {
+    "codeNumber": "Vux2023-39",
+    "problemAreaAdultId": 4
+  },
+  {
+    "codeNumber": "Vux2023-40",
+    "problemAreaAdultId": 1
+  },
+  {
+    "codeNumber": "Vux2023-41",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2023-42",
+    "problemAreaAdultId": 3
+  },
+  {
+    "codeNumber": "Vux2023-43",
+    "problemAreaAdultId": 3
+  },
+  {
+    "codeNumber": "Vux2023-44",
+    "problemAreaAdultId": 1
+  },
+  {
+    "codeNumber": "Vux2023-45",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2023-46",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2023-47",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2023-48",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2023-49",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2023-50",
+    "problemAreaAdultId": 2
+  },
+  {
+    "codeNumber": "Vux2023-51",
+    "problemAreaAdultId": 1
   }
  ]
  

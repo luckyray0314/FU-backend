@@ -1,295 +1,208 @@
 [
   {
     "codeNumber": "Vux2021-1",
-    "educationLevelId": "1"
+    "educationLevelId": 1
   },
   {
     "codeNumber": "Vux2021-2",
-    "educationLevelId": "1"
+    "educationLevelId": 2
   },
   {
     "codeNumber": "Vux2021-3",
-    "educationLevelId": "1"
+    "educationLevelId": 1
   },
   {
     "codeNumber": "Vux2021-4",
-    "educationLevelId": "1"
+    "educationLevelId": 2
   },
   {
     "codeNumber": "Vux2021-5",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-8",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-9",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-10",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-11",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-14",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-15",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-16",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-18",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-19",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-21",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-23",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-24",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-26",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-27",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-28",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-29",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-32",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-34",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-35",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-36",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-38",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-48",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-51",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-52",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-53",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-55",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-58",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-59",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-60",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-61",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-62",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-64",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-65",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-67",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-68",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-69",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-72",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-74",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-75",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-76",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-85",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-87",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-88",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-89",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-90",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-91",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-92",
-    "educationLevelId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-94",
-    "educationLevelId": "1"
+    "educationLevelId": 1
   },
   {
     "codeNumber": "Vux2021-6",
-    "educationLevelId": "1"
+    "educationLevelId": 3
   },
   {
     "codeNumber": "Vux2021-7",
-    "educationLevelId": "1"
+    "educationLevelId": 3
   },
   {
-    "codeNumber": "Vux2023-117",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2021-8",
+    "educationLevelId": 1
   },
   {
-    "codeNumber": "Vux2023-116",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2021-9",
+    "educationLevelId": 2
   },
   {
-    "codeNumber": "Vux2023-112",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2021-10",
+    "educationLevelId": 1
   },
   {
-    "codeNumber": "Vux2023-113",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2021-11",
+    "educationLevelId": 1
   },
   {
-    "codeNumber": "Vux2022-93",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2021-12",
+    "educationLevelId": 1
   },
   {
-    "codeNumber": "Vux2022-109",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-13",
+    "educationLevelId": 1
   },
   {
-    "codeNumber": "Vux2022-86",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-14",
+    "educationLevelId": 2
   },
   {
-    "codeNumber": "Vux2023-104",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-15",
+    "educationLevelId": 1
   },
   {
-    "codeNumber": "Vux2023-98",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-16",
+    "educationLevelId": 2
   },
   {
-    "codeNumber": "Vux2022-95",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-17",
+    "educationLevelId": 2
   },
   {
-    "codeNumber": "Vux2022-96",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-18",
+    "educationLevelId": 3
   },
   {
-    "codeNumber": "Vux2022-98",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-19",
+    "educationLevelId": 1
   },
   {
-    "codeNumber": "Vux2023-111",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-20",
+    "educationLevelId": 2
   },
   {
-    "codeNumber": "Vux2023-115",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-21",
+    "educationLevelId": 4
   },
   {
-    "codeNumber": "Vux2023-103",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-22",
+    "educationLevelId": 1
   },
   {
-    "codeNumber": "Vux2022-70",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-23",
+    "educationLevelId": 2
   },
   {
-    "codeNumber": "Vux2022-56",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-24",
+    "educationLevelId": 2
   },
   {
-    "codeNumber": "Vux2022-84",
-    "educationLevelId": "1"
+    "codeNumber": "Vux2022-25",
+    "educationLevelId": 1
+  },
+  {
+    "codeNumber": "Vux2022-26",
+    "educationLevelId": 3
+  },
+  {
+    "codeNumber": "Vux2022-27",
+    "educationLevelId": 3
+  },
+  {
+    "codeNumber": "Vux2022-28",
+    "educationLevelId": 3
+  },
+  {
+    "codeNumber": "Vux2022-29",
+    "educationLevelId": 1
+  },
+  {
+    "codeNumber": "Vux2022-30",
+    "educationLevelId": 4
+  },
+  {
+    "codeNumber": "Vux2023-31",
+    "educationLevelId": 2
+  },
+  {
+    "codeNumber": "Vux2023-32",
+    "educationLevelId": 1
+  },
+  {
+    "codeNumber": "Vux2023-33",
+    "educationLevelId": 1
+  },
+  {
+    "codeNumber": "Vux2023-34",
+    "educationLevelId": 1
+  },
+  {
+    "codeNumber": "Vux2023-35",
+    "educationLevelId": 1
+  },
+  {
+    "codeNumber": "Vux2023-36",
+    "educationLevelId": 3
+  },
+  {
+    "codeNumber": "Vux2023-37",
+    "educationLevelId": 2
+  },
+  {
+    "codeNumber": "Vux2023-38",
+    "educationLevelId": 1
+  },
+  {
+    "codeNumber": "Vux2023-39",
+    "educationLevelId": 4
+  },
+  {
+    "codeNumber": "Vux2023-40",
+    "educationLevelId": 1
+  },
+  {
+    "codeNumber": "Vux2023-41",
+    "educationLevelId": 2
+  },
+  {
+    "codeNumber": "Vux2023-42",
+    "educationLevelId": 3
+  },
+  {
+    "codeNumber": "Vux2023-43",
+    "educationLevelId": 1
+  },
+  {
+    "codeNumber": "Vux2023-44",
+    "educationLevelId": 2
+  },
+  {
+    "codeNumber": "Vux2023-45",
+    "educationLevelId": 2
+  },
+  {
+    "codeNumber": "Vux2023-46",
+    "educationLevelId": 2
+  },
+  {
+    "codeNumber": "Vux2023-47",
+    "educationLevelId": 2
+  },
+  {
+    "codeNumber": "Vux2023-48",
+    "educationLevelId": 4
+  },
+  {
+    "codeNumber": "Vux2023-49",
+    "educationLevelId": 2
+  },
+  {
+    "codeNumber": "Vux2023-50",
+    "educationLevelId": 3
+  },
+  {
+    "codeNumber": "Vux2023-51",
+    "educationLevelId": 1
   }
  ]
+ 
  

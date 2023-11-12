@@ -1,295 +1,208 @@
 [
   {
     "codeNumber": "Vux2021-1",
-    "establishDiagnoseId": "1"
+    "establishDiagnoseId": 1
   },
   {
     "codeNumber": "Vux2021-2",
-    "establishDiagnoseId": "1"
+    "establishDiagnoseId": 2
   },
   {
     "codeNumber": "Vux2021-3",
-    "establishDiagnoseId": "1"
+    "establishDiagnoseId": 1
   },
   {
     "codeNumber": "Vux2021-4",
-    "establishDiagnoseId": "1"
+    "establishDiagnoseId": 2
   },
   {
     "codeNumber": "Vux2021-5",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-8",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-9",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-10",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-11",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-14",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-15",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-16",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-18",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-19",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-21",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-23",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-24",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-26",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-27",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-28",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-29",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-32",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-34",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-35",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-36",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-38",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-48",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-51",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-52",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-53",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-55",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-58",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-59",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-60",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-61",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-62",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-64",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-65",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-67",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-68",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-69",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-72",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-74",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-75",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-76",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-85",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-87",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-88",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-89",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-90",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-91",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-92",
-    "establishDiagnoseId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-94",
-    "establishDiagnoseId": "1"
+    "establishDiagnoseId": 1
   },
   {
     "codeNumber": "Vux2021-6",
-    "establishDiagnoseId": "1"
+    "establishDiagnoseId": 4
   },
   {
     "codeNumber": "Vux2021-7",
-    "establishDiagnoseId": "1"
+    "establishDiagnoseId": 3
   },
   {
-    "codeNumber": "Vux2023-117",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2021-8",
+    "establishDiagnoseId": 1
   },
   {
-    "codeNumber": "Vux2023-116",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2021-9",
+    "establishDiagnoseId": 6
   },
   {
-    "codeNumber": "Vux2023-112",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2021-10",
+    "establishDiagnoseId": 1
   },
   {
-    "codeNumber": "Vux2023-113",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2021-11",
+    "establishDiagnoseId": 1
   },
   {
-    "codeNumber": "Vux2022-93",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2021-12",
+    "establishDiagnoseId": 1
   },
   {
-    "codeNumber": "Vux2022-109",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-13",
+    "establishDiagnoseId": 1
   },
   {
-    "codeNumber": "Vux2022-86",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-14",
+    "establishDiagnoseId": 2
   },
   {
-    "codeNumber": "Vux2023-104",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-15",
+    "establishDiagnoseId": 1
   },
   {
-    "codeNumber": "Vux2023-98",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-16",
+    "establishDiagnoseId": 2
   },
   {
-    "codeNumber": "Vux2022-95",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-17",
+    "establishDiagnoseId": 2
   },
   {
-    "codeNumber": "Vux2022-96",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-18",
+    "establishDiagnoseId": 3
   },
   {
-    "codeNumber": "Vux2022-98",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-19",
+    "establishDiagnoseId": 1
   },
   {
-    "codeNumber": "Vux2023-111",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-20",
+    "establishDiagnoseId": 2
   },
   {
-    "codeNumber": "Vux2023-115",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-21",
+    "establishDiagnoseId": 4
   },
   {
-    "codeNumber": "Vux2023-103",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-22",
+    "establishDiagnoseId": 1
   },
   {
-    "codeNumber": "Vux2022-70",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-23",
+    "establishDiagnoseId": 2
   },
   {
-    "codeNumber": "Vux2022-56",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-24",
+    "establishDiagnoseId": 6
   },
   {
-    "codeNumber": "Vux2022-84",
-    "establishDiagnoseId": "1"
+    "codeNumber": "Vux2022-25",
+    "establishDiagnoseId": 1
+  },
+  {
+    "codeNumber": "Vux2022-26",
+    "establishDiagnoseId": 3
+  },
+  {
+    "codeNumber": "Vux2022-27",
+    "establishDiagnoseId": 3
+  },
+  {
+    "codeNumber": "Vux2022-28",
+    "establishDiagnoseId": 3
+  },
+  {
+    "codeNumber": "Vux2022-29",
+    "establishDiagnoseId": 1
+  },
+  {
+    "codeNumber": "Vux2022-30",
+    "establishDiagnoseId": 5
+  },
+  {
+    "codeNumber": "Vux2023-31",
+    "establishDiagnoseId": 2
+  },
+  {
+    "codeNumber": "Vux2023-32",
+    "establishDiagnoseId": 1
+  },
+  {
+    "codeNumber": "Vux2023-33",
+    "establishDiagnoseId": 1
+  },
+  {
+    "codeNumber": "Vux2023-34",
+    "establishDiagnoseId": 1
+  },
+  {
+    "codeNumber": "Vux2023-35",
+    "establishDiagnoseId": 1
+  },
+  {
+    "codeNumber": "Vux2023-36",
+    "establishDiagnoseId": 3
+  },
+  {
+    "codeNumber": "Vux2023-37",
+    "establishDiagnoseId": 2
+  },
+  {
+    "codeNumber": "Vux2023-38",
+    "establishDiagnoseId": 1
+  },
+  {
+    "codeNumber": "Vux2023-39",
+    "establishDiagnoseId": 4
+  },
+  {
+    "codeNumber": "Vux2023-40",
+    "establishDiagnoseId": 7
+  },
+  {
+    "codeNumber": "Vux2023-41",
+    "establishDiagnoseId": 2
+  },
+  {
+    "codeNumber": "Vux2023-42",
+    "establishDiagnoseId": 6
+  },
+  {
+    "codeNumber": "Vux2023-43",
+    "establishDiagnoseId": 1
+  },
+  {
+    "codeNumber": "Vux2023-44",
+    "establishDiagnoseId": 9
+  },
+  {
+    "codeNumber": "Vux2023-45",
+    "establishDiagnoseId": 2
+  },
+  {
+    "codeNumber": "Vux2023-46",
+    "establishDiagnoseId": 2
+  },
+  {
+    "codeNumber": "Vux2023-47",
+    "establishDiagnoseId": 2
+  },
+  {
+    "codeNumber": "Vux2023-48",
+    "establishDiagnoseId": 4
+  },
+  {
+    "codeNumber": "Vux2023-49",
+    "establishDiagnoseId": 7
+  },
+  {
+    "codeNumber": "Vux2023-50",
+    "establishDiagnoseId": 8
+  },
+  {
+    "codeNumber": "Vux2023-51",
+    "establishDiagnoseId": 1
   }
  ]
+ 
  

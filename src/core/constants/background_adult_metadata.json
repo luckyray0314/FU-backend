@@ -1,278 +1,308 @@
 [
   {
     "codeNumber": "Vux2021-1",
-    "date": "2021-10-27",
-    "yearOfBirth": 2023,
+    "date": "2021-9-15",
+    "yearOfBirth": 2003,
     "country": "Sweden"
   },
   {
     "codeNumber": "Vux2021-2",
-    "date": "2021-10-07",
-    "yearOfBirth": 2011,
+    "date": "2021-10-04",
+    "yearOfBirth": 1999,
     "country": "Sweden"
   },
   {
     "codeNumber": "Vux2021-3",
-    "date": "2021-09-24",
-    "yearOfBirth": 2015,
+    "date": "2021-10-07",
+    "yearOfBirth": 1993,
     "country": "Sweden"
   },
   {
     "codeNumber": "Vux2021-4",
-    "date": "2021-09-23",
-    "yearOfBirth": 2012,
+    "date": "2021-10-13",
+    "yearOfBirth": 1971,
     "country": "Sweden"
   },
   {
     "codeNumber": "Vux2021-5",
-    "date": "2021-09-16",
-    "yearOfBirth": 2023,
+    "date": "2021-10-20",
+    "yearOfBirth": 1988,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2021-6",
+    "date": "2021-10-21",
+    "yearOfBirth": 1959,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2021-7",
+    "date": "2021-11-11",
+    "yearOfBirth": 2003,
     "country": "Sweden"
   },
   {
     "codeNumber": "Vux2021-8",
-    "date": "2021-10-04",
-    "yearOfBirth": 2015,
+    "date": "2021-11-15",
+    "yearOfBirth": 1996,
     "country": "Sweden"
   },
   {
     "codeNumber": "Vux2021-9",
-    "date": "2021-10-07",
-    "yearOfBirth": 2013,
+    "date": "2021-11-19",
+    "yearOfBirth": 1998,
     "country": "Sweden"
   },
   {
     "codeNumber": "Vux2021-10",
-    "date": "2021-09-07",
-    "yearOfBirth": 2007,
+    "date": "2021-11-19",
+    "yearOfBirth": 2000,
     "country": "Sweden"
   },
   {
     "codeNumber": "Vux2021-11",
-    "date": "2021-09-07",
-    "yearOfBirth": 2007,
+    "date": "2021-12-09",
+    "yearOfBirth": 1985,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2021-14",
-    "date": "2021-09-16",
-    "yearOfBirth": 2023,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2021-15",
-    "date": "2021-09-16",
-    "yearOfBirth": 2023,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2021-16",
-    "date": "2021-10-01",
-    "yearOfBirth": 2024,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2021-18",
-    "date": "2021-09-27",
-    "yearOfBirth": 2006,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2021-19",
-    "date": "2021-10-20",
-    "yearOfBirth": 2023,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2021-21",
-    "date": "2021-11-19",
-    "yearOfBirth": 2023,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2021-23",
-    "date": "2021-12-28",
-    "yearOfBirth": 2005,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2021-24",
-    "date": "2022-02-01",
-    "yearOfBirth": 2007,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2021-26",
+    "codeNumber": "Vux2021-12",
     "date": "2021-12-29",
-    "yearOfBirth": 2006,
+    "yearOfBirth": 1998,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2021-27",
-    "date": "2021-11-25",
-    "yearOfBirth": 2013,
+    "codeNumber": "Vux2022-13",
+    "date": "2022-02-11",
+    "yearOfBirth": 2001,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2021-28",
-    "date": "2021-12-07",
-    "yearOfBirth": 2004,
+    "codeNumber": "Vux2022-14",
+    "date": "2022-03-29",
+    "yearOfBirth": 2002,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2021-29",
-    "date": "2021-12-06",
-    "yearOfBirth": 2007,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2021-32",
-    "date": "2021-12-30",
-    "yearOfBirth": 2023,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-34",
-    "date": "2022-02-04",
-    "yearOfBirth": 2023,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-35",
-    "date": "2022-02-01",
-    "yearOfBirth": 2006,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-36",
-    "date": "2022-02-07",
-    "yearOfBirth": 2008,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-38",
-    "date": "2022-02-08",
-    "yearOfBirth": 2007,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-48",
-    "date": "2022-02-25",
-    "yearOfBirth": 2023,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-51",
-    "date": "2022-03-09",
-    "yearOfBirth": 2023,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-52",
-    "date": "2022-03-10",
-    "yearOfBirth": 2008,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-53",
+    "codeNumber": "Vux2022-15",
     "date": "2022-03-21",
-    "yearOfBirth": 2007,
+    "yearOfBirth": 1982,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2022-55",
-    "date": "2022-04-11",
-    "yearOfBirth": 2020,
+    "codeNumber": "Vux2022-16",
+    "date": "2022-04-29",
+    "yearOfBirth": 2002,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2022-58",
-    "date": "2022-03-16",
-    "yearOfBirth": 2004,
+    "codeNumber": "Vux2022-17",
+    "date": "2022-05-16",
+    "yearOfBirth": 1973,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2022-59",
-    "date": "2022-04-04",
-    "yearOfBirth": 2007,
+    "codeNumber": "Vux2022-18",
+    "date": "2022-05-18",
+    "yearOfBirth": 1968,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2022-60",
-    "date": "2022-06-16",
-    "yearOfBirth": 2009,
+    "codeNumber": "Vux2022-19",
+    "date": "2022-06-01",
+    "yearOfBirth": 1996,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2022-61",
-    "date": "2022-06-10",
-    "yearOfBirth": 2007,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-62",
-    "date": "2022-09-13",
-    "yearOfBirth": 2010,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-64",
-    "date": "2022-08-18",
-    "yearOfBirth": 2009,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-65",
-    "date": "2022-08-26",
-    "yearOfBirth": 2011,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-67",
-    "date": "2022-08-29",
-    "yearOfBirth": 2010,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-68",
-    "date": "2022-08-30",
-    "yearOfBirth": 2014,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-69",
-    "date": "2022-08-30",
-    "yearOfBirth": 2016,
-    "country": "Sweden"
-  },
-  {
-    "codeNumber": "Vux2022-72",
+    "codeNumber": "Vux2022-20",
     "date": "2022-09-02",
-    "yearOfBirth": 2010,
+    "yearOfBirth": 1975,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2022-74",
-    "date": "2022-09-07",
-    "yearOfBirth": 2011,
+    "codeNumber": "Vux2022-21",
+    "date": "2022-08-26",
+    "yearOfBirth": 1989,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2022-75",
-    "date": "2022-09-08",
-    "yearOfBirth": 2008,
+    "codeNumber": "Vux2022-22",
+    "date": "2022-09-26",
+    "yearOfBirth": 1981,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2022-76",
-    "date": "2022-09-08",
-    "yearOfBirth": 2013,
+    "codeNumber": "Vux2022-23",
+    "date": "2022-10-14",
+    "yearOfBirth": 1981,
     "country": "Sweden"
   },
   {
-    "codeNumber": "Vux2022-85",
-    "date": "2022-09-14",
-    "yearOfBirth": 2005,
+    "codeNumber": "Vux2022-24",
+    "date": "2022-11-11",
+    "yearOfBirth": 1998,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2022-25",
+    "date": "2022-11-16",
+    "yearOfBirth": 1998,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2022-26",
+    "date": "2022-11-22",
+    "yearOfBirth": 1982,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2022-27",
+    "date": "2022-11-23",
+    "yearOfBirth": 1982,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2022-28",
+    "date": "2022-12-16",
+    "yearOfBirth": 1998,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2022-29",
+    "date": "2022-12-19",
+    "yearOfBirth": 1987,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2022-30",
+    "date": "2022-12-20",
+    "yearOfBirth": 1987,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-31",
+    "date": "2023-01-13",
+    "yearOfBirth": 1979,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-32",
+    "date": "2023-01-18",
+    "yearOfBirth": 1985,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-33",
+    "date": "2023-01-23",
+    "yearOfBirth": 1985,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-34",
+    "date": "2023-02-07",
+    "yearOfBirth": 1987,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-35",
+    "date": "2023-02-16",
+    "yearOfBirth": 1975,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-36",
+    "date": "2023-03-01",
+    "yearOfBirth": 1986,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-37",
+    "date": "2023-03-15",
+    "yearOfBirth": 1962,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-38",
+    "date": "2023-04-12",
+    "yearOfBirth": 1976,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-39",
+    "date": "2023-04-18",
+    "yearOfBirth": 1969,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-40",
+    "date": "2023-04-17",
+    "yearOfBirth": 1966,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-41",
+    "date": "2023-04-05",
+    "yearOfBirth": 1985,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-42",
+    "date": "2023-03-15",
+    "yearOfBirth": 1998,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-43",
+    "date": "2023-04-23",
+    "yearOfBirth": 1986,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-44",
+    "date": "2023-04-24",
+    "yearOfBirth": 1968,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-45",
+    "date": "2023-04-26",
+    "yearOfBirth": 1972,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-46",
+    "date": "2023-05-03",
+    "yearOfBirth": 2001,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-47",
+    "date": "2023-05-03",
+    "yearOfBirth": 1976,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-48",
+    "date": "2023-05-23",
+    "yearOfBirth": 1991,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-49",
+    "date": "2023-05-23",
+    "yearOfBirth": 1991,
+    "country": "Sweden"
+  },
+  {
+    "codeNumber": "Vux2023-50",
+    "date": "2023-05-24",
+    "yearOfBirth": 1998,
+    "country": "Colombia"
+  },
+  {
+    "codeNumber": "Vux2023-51",
+    "date": "2023-05-30",
+    "yearOfBirth": 1990,
     "country": "Sweden"
   }
  ]

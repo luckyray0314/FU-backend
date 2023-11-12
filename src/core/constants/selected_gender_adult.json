@@ -9,7 +9,7 @@
   },
   {
     "codeNumber": "Vux2021-3",
-    "genderId": 2
+    "genderId": 1
   },
   {
     "codeNumber": "Vux2021-4",
@@ -17,198 +17,6 @@
   },
   {
     "codeNumber": "Vux2021-5",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2021-8",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2021-9",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-10",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2021-11",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2021-14",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2021-15",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-16",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-18",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-19",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-21",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2021-23",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-24",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-26",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-27",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-28",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-29",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2021-32",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-34",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-35",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-36",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-38",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-48",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-51",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-52",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-53",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-55",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-58",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-59",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-60",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-61",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-62",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-64",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-65",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-67",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-68",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-69",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-72",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-74",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-75",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-76",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-85",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-87",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-88",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-89",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-90",
-    "genderId": 2
-  },
-  {
-    "codeNumber": "Vux2022-91",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-92",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-94",
     "genderId": 1
   },
   {
@@ -220,76 +28,180 @@
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2023-117",
+    "codeNumber": "Vux2021-8",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2023-116",
+    "codeNumber": "Vux2021-9",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2023-112",
+    "codeNumber": "Vux2021-10",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2023-113",
+    "codeNumber": "Vux2021-11",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2022-93",
+    "codeNumber": "Vux2021-12",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2022-109",
+    "codeNumber": "Vux2022-13",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2022-86",
+    "codeNumber": "Vux2022-14",
     "genderId": 2
   },
   {
-    "codeNumber": "Vux2023-104",
+    "codeNumber": "Vux2022-15",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2023-98",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-95",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-96",
-    "genderId": 1
-  },
-  {
-    "codeNumber": "Vux2022-98",
+    "codeNumber": "Vux2022-16",
     "genderId": 2
   },
   {
-    "codeNumber": "Vux2023-111",
+    "codeNumber": "Vux2022-17",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2022-18",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2022-19",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2023-115",
+    "codeNumber": "Vux2022-20",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2022-21",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2023-103",
+    "codeNumber": "Vux2022-22",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2022-70",
+    "codeNumber": "Vux2022-23",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2022-24",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2022-25",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2022-56",
+    "codeNumber": "Vux2022-26",
     "genderId": 1
   },
   {
-    "codeNumber": "Vux2022-84",
+    "codeNumber": "Vux2022-27",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2022-28",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2022-29",
     "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2022-30",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-31",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-32",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-33",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-34",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-35",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-36",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-37",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2023-38",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-39",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-40",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-41",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2023-42",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2023-43",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-44",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-45",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2023-46",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2023-47",
+    "genderId": 2
+  },
+  {
+    "codeNumber": "Vux2023-48",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-49",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-50",
+    "genderId": 1
+  },
+  {
+    "codeNumber": "Vux2023-51",
+    "genderId": 2
   }
  ]
  

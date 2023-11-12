@@ -1,295 +1,209 @@
 [
   {
     "codeNumber": "Vux2021-1",
-    "employmentId": "1"
+    "employmentId": 1
   },
   {
     "codeNumber": "Vux2021-2",
-    "employmentId": "1"
+    "employmentId": 2
   },
   {
     "codeNumber": "Vux2021-3",
-    "employmentId": "1"
+    "employmentId": 1
   },
   {
     "codeNumber": "Vux2021-4",
-    "employmentId": "1"
+    "employmentId": 2
   },
   {
     "codeNumber": "Vux2021-5",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-8",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-9",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-10",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-11",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-14",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-15",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-16",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-18",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-19",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-21",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-23",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-24",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-26",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-27",
-    "employmentId": "4"
-  },
-  {
-    "codeNumber": "Vux2021-28",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-29",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2021-32",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-34",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-35",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-36",
-    "employmentId": "2"
-  },
-  {
-    "codeNumber": "Vux2022-38",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-48",
-    "employmentId": "4"
-  },
-  {
-    "codeNumber": "Vux2022-51",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-52",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-53",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-55",
-    "employmentId": "3"
-  },
-  {
-    "codeNumber": "Vux2022-58",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-59",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-60",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-61",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-62",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-64",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-65",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-67",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-68",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-69",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-72",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-74",
-    "employmentId": "4"
-  },
-  {
-    "codeNumber": "Vux2022-75",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-76",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-85",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-87",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-88",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-89",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-90",
-    "employmentId": "1"
-  },
-  {
-    "codeNumber": "Vux2022-91",
-    "employmentId": "2"
-  },
-  {
-    "codeNumber": "Vux2022-92",
-    "employmentId": "2"
-  },
-  {
-    "codeNumber": "Vux2022-94",
-    "employmentId": "1"
+    "employmentId": 1
   },
   {
     "codeNumber": "Vux2021-6",
-    "employmentId": "1"
+    "employmentId": 3
   },
   {
     "codeNumber": "Vux2021-7",
-    "employmentId": "1"
+    "employmentId": 3
   },
   {
-    "codeNumber": "Vux2023-117",
-    "employmentId": "1"
+    "codeNumber": "Vux2021-8",
+    "employmentId": 1
   },
   {
-    "codeNumber": "Vux2023-116",
-    "employmentId": "1"
+    "codeNumber": "Vux2021-9",
+    "employmentId": 2
   },
   {
-    "codeNumber": "Vux2023-112",
-    "employmentId": "1"
+    "codeNumber": "Vux2021-10",
+    "employmentId": 1
   },
   {
-    "codeNumber": "Vux2023-113",
-    "employmentId": "1"
+    "codeNumber": "Vux2021-11",
+    "employmentId": 1
   },
   {
-    "codeNumber": "Vux2022-93",
-    "employmentId": "3"
+    "codeNumber": "Vux2021-12",
+    "employmentId": 1
   },
   {
-    "codeNumber": "Vux2022-109",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-13",
+    "employmentId": 1
   },
   {
-    "codeNumber": "Vux2022-86",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-14",
+    "employmentId": 2
   },
   {
-    "codeNumber": "Vux2023-104",
-    "employmentId": "2"
+    "codeNumber": "Vux2022-15",
+    "employmentId": 1
   },
   {
-    "codeNumber": "Vux2023-98",
-    "employmentId": "4"
+    "codeNumber": "Vux2022-16",
+    "employmentId": 2
   },
   {
-    "codeNumber": "Vux2022-95",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-17",
+    "employmentId": 2
   },
   {
-    "codeNumber": "Vux2022-96",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-18",
+    "employmentId": 3
   },
   {
-    "codeNumber": "Vux2022-98",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-19",
+    "employmentId": 1
   },
   {
-    "codeNumber": "Vux2023-111",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-20",
+    "employmentId": 2
   },
   {
-    "codeNumber": "Vux2023-115",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-21",
+    "employmentId": 4
   },
   {
-    "codeNumber": "Vux2023-103",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-22",
+    "employmentId": 1
   },
   {
-    "codeNumber": "Vux2022-70",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-23",
+    "employmentId": 2
   },
   {
-    "codeNumber": "Vux2022-56",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-24",
+    "employmentId": 2
   },
   {
-    "codeNumber": "Vux2022-84",
-    "employmentId": "1"
+    "codeNumber": "Vux2022-25",
+    "employmentId": 1
+  },
+  {
+    "codeNumber": "Vux2022-26",
+    "employmentId": 3
+  },
+  {
+    "codeNumber": "Vux2022-27",
+    "employmentId": 3
+  },
+  {
+    "codeNumber": "Vux2022-28",
+    "employmentId": 3
+  },
+  {
+    "codeNumber": "Vux2022-29",
+    "employmentId": 1
+  },
+  {
+    "codeNumber": "Vux2022-30",
+    "employmentId": 4
+  },
+  {
+    "codeNumber": "Vux2023-31",
+    "employmentId": 2
+  },
+  {
+    "codeNumber": "Vux2023-32",
+    "employmentId": 1
+  },
+  {
+    "codeNumber": "Vux2023-33",
+    "employmentId": 1
+  },
+  {
+    "codeNumber": "Vux2023-34",
+    "employmentId": 1
+  },
+  {
+    "codeNumber": "Vux2023-35",
+    "employmentId": 1
+  },
+  {
+    "codeNumber": "Vux2023-36",
+    "employmentId": 3
+  },
+  {
+    "codeNumber": "Vux2023-37",
+    "employmentId": 2
+  },
+  {
+    "codeNumber": "Vux2023-38",
+    "employmentId": 1
+  },
+  {
+    "codeNumber": "Vux2023-39",
+    "employmentId": 4
+  },
+  {
+    "codeNumber": "Vux2023-40",
+    "employmentId": 1
+  },
+  {
+    "codeNumber": "Vux2023-41",
+    "employmentId": 2
+  },
+  {
+    "codeNumber": "Vux2023-42",
+    "employmentId": 3
+  },
+  {
+    "codeNumber": "Vux2023-43",
+    "employmentId": 1
+  },
+  {
+    "codeNumber": "Vux2023-44",
+    "employmentId": 2
+  },
+  {
+    "codeNumber": "Vux2023-45",
+    "employmentId": 2
+  },
+  {
+    "codeNumber": "Vux2023-46",
+    "employmentId": 2
+  },
+  {
+    "codeNumber": "Vux2023-47",
+    "employmentId": 2
+  },
+  {
+    "codeNumber": "Vux2023-48",
+    "employmentId": 4
+  },
+  {
+    "codeNumber": "Vux2023-49",
+    "employmentId": 2
+  },
+  {
+    "codeNumber": "Vux2023-50",
+    "employmentId": 3
+  },
+  {
+    "codeNumber": "Vux2023-51",
+    "employmentId": 1
   }
  ]
+ 
+ 
  

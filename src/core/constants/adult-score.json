@@ -3,1551 +3,721 @@
     "codeNumber": "Vux2021-1",
     "person": 1,
     "occasion": 1,
-    "date": "2021-10-27",
-    "score15": 1.8,
-    "score15Answers": [],
-    "ors": 34,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-2",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-10-07",
-    "score15": 2.8,
+    "date": "2021-09-15",
+    "score15": 3.5,
     "score15Answers": [],
     "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-2",
-    "person": 1,
-    "occasion": 2,
-    "date": "2022-04-07",
-    "score15": 2.4,
-    "score15Answers": [],
-    "ors": 22,
-    "orsAndSatisfactionScaleAnswers": []
+    "orsAndSatisfactionScaleAnswers": [113]
   },
   {
     "codeNumber": "Vux2021-2",
     "person": 1,
     "occasion": 1,
-    "date": "2021-10-07",
-    "score15": 2.53,
+    "date": "2021-10-04",
+    "score15": 3.25,
     "score15Answers": [],
-    "ors": 27,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 26,
+    "orsAndSatisfactionScaleAnswers": [85]
   },
   {
     "codeNumber": "Vux2021-2",
     "person": 1,
     "occasion": 2,
-    "date": "2022-04-07",
-    "score15": 2.47,
+    "date": "2022-04-04",
+    "score15": 3.88,
     "score15Answers": [],
-    "ors": 29,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-2",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-10-07",
-    "score15": 2.67,
-    "score15Answers": [],
-    "ors": 21,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-2",
-    "person": 1,
-    "occasion": 2,
-    "date": "2022-04-07",
-    "score15": 2.53,
-    "score15Answers": [],
-    "ors": 18,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 31,
+    "orsAndSatisfactionScaleAnswers": [107]
   },
   {
     "codeNumber": "Vux2021-3",
     "person": 1,
     "occasion": 1,
-    "date": "2021-09-24",
-    "score15": 1.67,
+    "date": "2021-10-07",
+    "score15": 3.38,
     "score15Answers": [],
     "ors": 27,
-    "orsAndSatisfactionScaleAnswers": []
+    "orsAndSatisfactionScaleAnswers": [101]
   },
   {
-    "codeNumber": "Vux2021-4",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-23",
-    "score15": 1.93,
-    "score15Answers": [],
-    "ors": 7,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-4",
+    "codeNumber": "Vux2021-3",
     "person": 1,
     "occasion": 2,
-    "date": "2022-03-23",
-    "score15": 2.13,
-    "score15Answers": [],
-    "ors": 15,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-4",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-23",
-    "score15": 1.8,
-    "score15Answers": [],
-    "ors": 30,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-5",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-16",
-    "score15": 1.33,
-    "score15Answers": [],
-    "ors": 40,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-5",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-16",
-    "score15": 2.6,
-    "score15Answers": [],
-    "ors": 30,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-5",
-    "person": 1,
-    "occasion": 2,
-    "date": "2022-03-16",
-    "score15": 2.6,
-    "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-5",
-    "person": 1,
-    "occasion": 3,
-    "date": "2022-09-16",
-    "score15": 2.47,
-    "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-5",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-16",
-    "score15": 2.4,
-    "score15Answers": [],
-    "ors": 31,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-8",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-10-04",
-    "score15": 2.53,
-    "score15Answers": [],
-    "ors": 26,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-8",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-10-04",
-    "score15": 2.6,
+    "date": "2022-04-07",
+    "score15": 3.5,
     "score15Answers": [],
     "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
+    "orsAndSatisfactionScaleAnswers": [104]
   },
   {
-    "codeNumber": "Vux2021-9",
+    "codeNumber": "Vux2021-4",
     "person": 1,
     "occasion": 1,
-    "date": "2021-10-07",
-    "score15": 1.73,
+    "date": "2021-10-13",
+    "score15": 1.88,
     "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 15,
+    "orsAndSatisfactionScaleAnswers": [74]
   },
   {
-    "codeNumber": "Vux2021-9",
-    "person": 1,
-    "occasion": 2,
-    "date": "2022-04-07",
-    "score15": 1.47,
-    "score15Answers": [],
-    "ors": 31,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-9",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-10-07",
-    "score15": 2.07,
-    "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-9",
-    "person": 1,
-    "occasion": 2,
-    "date": "2022-04-07",
-    "score15": 1.93,
-    "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-10",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-07",
-    "score15": 2.8,
-    "score15Answers": [],
-    "ors": 36,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-10",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-07",
-    "score15": 2.07,
-    "score15Answers": [],
-    "ors": 24,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-11",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-07",
-    "score15": 1.53,
-    "score15Answers": [],
-    "ors": 40,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-11",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-07",
-    "score15": 2.8,
-    "score15Answers": [],
-    "ors": 36,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-11",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-07",
-    "score15": 2.07,
-    "score15Answers": [],
-    "ors": 24,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-14",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-16",
-    "score15": 2.6,
-    "score15Answers": [],
-    "ors": 30,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-14",
-    "person": 1,
-    "occasion": 2,
-    "date": "2022-03-16",
-    "score15": 2.6,
-    "score15Answers": [],
-    "ors": 31,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-14",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-16",
-    "score15": 2.47,
-    "score15Answers": [],
-    "ors": 31,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-15",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-16",
-    "score15": 2.6,
-    "score15Answers": [],
-    "ors": 30,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-15",
-    "person": 1,
-    "occasion": 2,
-    "date": "2022-03-16",
-    "score15": 2.6,
-    "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-15",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-16",
-    "score15": 2.47,
-    "score15Answers": [],
-    "ors": 31,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-16",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-10-01",
-    "score15": 2.2,
-    "score15Answers": [],
-    "ors": 29,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-18",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-27",
-    "score15": 4.33,
-    "score15Answers": [],
-    "ors": 11,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-18",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-27",
-    "score15": 2.8,
-    "score15Answers": [],
-    "ors": 31,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-18",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-27",
-    "score15": 3.13,
-    "score15Answers": [],
-    "ors": 11,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-19",
+    "codeNumber": "Vux2021-5",
     "person": 1,
     "occasion": 1,
     "date": "2021-10-20",
-    "score15": 2.87,
+    "score15": 2.25,
     "score15Answers": [],
-    "ors": 3,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 18,
+    "orsAndSatisfactionScaleAnswers": [100]
   },
   {
-    "codeNumber": "Vux2021-21",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-11-19",
-    "score15": 2.07,
-    "score15Answers": [],
-    "ors": 25,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-21",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-11-19",
-    "score15": 2.13,
-    "score15Answers": [],
-    "ors": 31,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-23",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-28",
-    "score15": 1.53,
-    "score15Answers": [],
-    "ors": 36,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-24",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-01",
-    "score15": 1.87,
-    "score15Answers": [],
-    "ors": 26,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-24",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-01",
-    "score15": 1.67,
-    "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-24",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-01",
-    "score15": 1.73,
-    "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-26",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-29",
-    "score15": 2.47,
-    "score15Answers": [],
-    "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-26",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-29",
-    "score15": 2.93,
-    "score15Answers": [],
-    "ors": 12,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-26",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-29",
-    "score15": 2.47,
-    "score15Answers": [],
-    "ors": 23,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-27",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-11-25",
-    "score15": 2,
-    "score15Answers": [],
-    "ors": 0,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-28",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-07",
-    "score15": 1.87,
-    "score15Answers": [],
-    "ors": 29,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-29",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-06",
-    "score15": 2.33,
-    "score15Answers": [],
-    "ors": 22,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-29",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-06",
-    "score15": 3.2,
-    "score15Answers": [],
-    "ors": 19,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-29",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-06",
-    "score15": 3,
-    "score15Answers": [],
-    "ors": 25,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-32",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-30",
-    "score15": 2.4,
-    "score15Answers": [],
-    "ors": 0,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-32",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-30",
-    "score15": 2.07,
-    "score15Answers": [],
-    "ors": 0,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-32",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-12-30",
-    "score15": 1.93,
-    "score15Answers": [],
-    "ors": 0,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-34",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-04",
-    "score15": 1.93,
-    "score15Answers": [],
-    "ors": 23,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-34",
-    "person": 1,
-    "occasion": 3,
-    "date": "2023-02-04",
-    "score15": 2,
-    "score15Answers": [],
-    "ors": 12,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-35",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-04",
-    "score15": 1.33,
-    "score15Answers": [],
-    "ors": 34,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-35",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-01",
-    "score15": 2.2,
-    "score15Answers": [],
-    "ors": 27,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-36",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-07",
-    "score15": 2.2,
-    "score15Answers": [],
-    "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-36",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-07",
-    "score15": 1.6,
-    "score15Answers": [],
-    "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-38",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-08",
-    "score15": 1.33,
-    "score15Answers": [],
-    "ors": 25,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-38",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-08",
-    "score15": 1.27,
-    "score15Answers": [],
-    "ors": 19,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-38",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-08",
-    "score15": 2.33,
-    "score15Answers": [],
-    "ors": 36,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-48",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-25",
-    "score15": 2.39,
-    "score15Answers": [],
-    "ors": 10,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-48",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-02-25",
-    "score15": 2.93,
-    "score15Answers": [],
-    "ors": 15,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-51",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-03-09",
-    "score15": 3.47,
-    "score15Answers": [],
-    "ors": 26,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-51",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-03-09",
-    "score15": 2.33,
-    "score15Answers": [],
-    "ors": 24,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-52",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-03-10",
-    "score15": 2.87,
-    "score15Answers": [],
-    "ors": 13,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-52",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-03-10",
-    "score15": 2.53,
-    "score15Answers": [],
-    "ors": 14,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-55",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-04-11",
-    "score15": 1.4,
-    "score15Answers": [],
-    "ors": 0,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-58",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-03-16",
-    "score15": 3.4,
-    "score15Answers": [],
-    "ors": 8,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-58",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-03-16",
-    "score15": 1.93,
-    "score15Answers": [],
-    "ors": 14,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-58",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-03-16",
-    "score15": 2.67,
-    "score15Answers": [],
-    "ors": 12,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-59",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-04-04",
-    "score15": 2.6,
-    "score15Answers": [],
-    "ors": 22,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-59",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-04-04",
-    "score15": 3.67,
-    "score15Answers": [],
-    "ors": 15,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-60",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-06-16",
-    "score15": 1.73,
-    "score15Answers": [],
-    "ors": 36,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-61",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-06-10",
-    "score15": 1.27,
-    "score15Answers": [],
-    "ors": 35,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-61",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-06-10",
-    "score15": 1,
-    "score15Answers": [],
-    "ors": 27,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-62",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-13",
-    "score15": 2.13,
-    "score15Answers": [],
-    "ors": 26,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-62",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-13",
-    "score15": 2.13,
-    "score15Answers": [],
-    "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-62",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-13",
-    "score15": 1.93,
-    "score15Answers": [],
-    "ors": 36,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-64",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-08-18",
-    "score15": 2.73,
-    "score15Answers": [],
-    "ors": 30,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-64",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-08-18",
-    "score15": 3.07,
-    "score15Answers": [],
-    "ors": 20,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-64",
+    "codeNumber": "Vux2021-5",
     "person": 1,
     "occasion": 2,
-    "date": "2023-02-18",
-    "score15": 2.53,
+    "date": "2022-04-20",
+    "score15": 3.25,
     "score15Answers": [],
-    "ors": 25,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 26,
+    "orsAndSatisfactionScaleAnswers": [102]
   },
   {
-    "codeNumber": "Vux2022-64",
+    "codeNumber": "Vux2021-6",
     "person": 1,
     "occasion": 1,
-    "date": "2022-09-16",
-    "score15": 1.53,
+    "date": "2021-10-21",
+    "score15": 2.5,
     "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 20,
+    "orsAndSatisfactionScaleAnswers": [77]
   },
   {
-    "codeNumber": "Vux2022-65",
+    "codeNumber": "Vux2021-6",
+    "person": 1,
+    "occasion": 2,
+    "date": "2022-04-21",
+    "score15": 1.75,
+    "score15Answers": [],
+    "ors": 14,
+    "orsAndSatisfactionScaleAnswers": [64]
+  },
+  {
+    "codeNumber": "Vux2021-7",
+    "person": 1,
+    "occasion": 1,
+    "date": "2021-11-11",
+    "score15": 4.75,
+    "score15Answers": [],
+    "ors": 38,
+    "orsAndSatisfactionScaleAnswers": [122]
+  },
+  {
+    "codeNumber": "Vux2021-7",
+    "person": 1,
+    "occasion": 2,
+    "date": "2022-05-11",
+    "score15": 4.25,
+    "score15Answers": [],
+    "ors": 34,
+    "orsAndSatisfactionScaleAnswers": [113]
+  },
+  {
+    "codeNumber": "Vux2021-8",
+    "person": 1,
+    "occasion": 1,
+    "date": "2021-11-15",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 23,
+    "orsAndSatisfactionScaleAnswers": [91]
+  },
+  {
+    "codeNumber": "Vux2021-9",
+    "person": 1,
+    "occasion": 1,
+    "date": "2021-11-19",
+    "score15": 3.25,
+    "score15Answers": [],
+    "ors": 26,
+    "orsAndSatisfactionScaleAnswers": [92]
+  },
+  {
+    "codeNumber": "Vux2021-9",
+    "person": 1,
+    "occasion": 2,
+    "date": "2022-05-19",
+    "score15": 3.13,
+    "score15Answers": [],
+    "ors": 25,
+    "orsAndSatisfactionScaleAnswers": [87]
+  },
+  {
+    "codeNumber": "Vux2021-10",
+    "person": 1,
+    "occasion": 1,
+    "date": "2021-11-19",
+    "score15": 4,
+    "score15Answers": [],
+    "ors": 32,
+    "orsAndSatisfactionScaleAnswers": [112]
+  },
+  {
+    "codeNumber": "Vux2021-10",
+    "person": 1,
+    "occasion": 2,
+    "date": "2022-05-19",
+    "score15": 2.79,
+    "score15Answers": [],
+    "ors": 22.3,
+    "orsAndSatisfactionScaleAnswers": [95]
+  },
+  {
+    "codeNumber": "Vux2021-10",
+    "person": 1,
+    "occasion": 3,
+    "date": "2022-11-19",
+    "score15": 3.88,
+    "score15Answers": [],
+    "ors": 31,
+    "orsAndSatisfactionScaleAnswers": [107]
+  },
+  {
+    "codeNumber": "Vux2021-11",
+    "person": 1,
+    "occasion": 1,
+    "date": "2021-12-09",
+    "score15": 1.88,
+    "score15Answers": [],
+    "ors": 15,
+    "orsAndSatisfactionScaleAnswers": [72]
+  },
+  {
+    "codeNumber": "Vux2021-11",
+    "person": 1,
+    "occasion": 2,
+    "date": "2022-06-09",
+    "score15": 3,
+    "score15Answers": [],
+    "ors": 24,
+    "orsAndSatisfactionScaleAnswers": [85]
+  },
+  {
+    "codeNumber": "Vux2021-12",
+    "person": 1,
+    "occasion": 1,
+    "date": "2021-12-29",
+    "score15": 3.25,
+    "score15Answers": [],
+    "ors": 26,
+    "orsAndSatisfactionScaleAnswers": [81]
+  },
+  {
+    "codeNumber": "Vux2021-12",
+    "person": 1,
+    "occasion": 2,
+    "date": "2022-06-29",
+    "score15": 3,
+    "score15Answers": [],
+    "ors": 24,
+    "orsAndSatisfactionScaleAnswers": [77]
+  },
+  {
+    "codeNumber": "Vux2022-13",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-02-11",
+    "score15": 4.25,
+    "score15Answers": [],
+    "ors": 34,
+    "orsAndSatisfactionScaleAnswers": [130]
+  },
+  {
+    "codeNumber": "Vux2022-13",
+    "person": 1,
+    "occasion": 2,
+    "date": "2022-08-11",
+    "score15": 4.06,
+    "score15Answers": [],
+    "ors": 32.5,
+    "orsAndSatisfactionScaleAnswers": [111]
+  },
+  {
+    "codeNumber": "Vux2022-14",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-03-29",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [64]
+  },
+  {
+    "codeNumber": "Vux2022-15",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-03-21",
+    "score15": 0,
+    "score15Answers": [],
+    "ors": 0,
+    "orsAndSatisfactionScaleAnswers": [52]
+  },
+  {
+    "codeNumber": "Vux2022-15",
+    "person": 1,
+    "occasion": 2,
+    "date": "2022-09-21",
+    "score15": 2.25,
+    "score15Answers": [],
+    "ors": 18,
+    "orsAndSatisfactionScaleAnswers": [75]
+  },
+  {
+    "codeNumber": "Vux2022-16",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-04-29",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [83]
+  },
+  {
+    "codeNumber": "Vux2022-17",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-05-16",
+    "score15": 4.5,
+    "score15Answers": [],
+    "ors": 36,
+    "orsAndSatisfactionScaleAnswers": [108]
+  },
+  {
+    "codeNumber": "Vux2022-17",
+    "person": 1,
+    "occasion": 2,
+    "date": "2022-11-16",
+    "score15": 1.38,
+    "score15Answers": [],
+    "ors": 11,
+    "orsAndSatisfactionScaleAnswers": [108]
+  },
+  {
+    "codeNumber": "Vux2022-18",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-05-18",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [66]
+  },
+  {
+    "codeNumber": "Vux2022-19",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-06-01",
+    "score15": 1.88,
+    "score15Answers": [],
+    "ors": 15,
+    "orsAndSatisfactionScaleAnswers": [95]
+  },
+  {
+    "codeNumber": "Vux2022-19",
+    "person": 1,
+    "occasion": 2,
+    "date": "2022-12-01",
+    "score15": 4.5,
+    "score15Answers": [],
+    "ors": 36,
+    "orsAndSatisfactionScaleAnswers": [110]
+  },
+  {
+    "codeNumber": "Vux2022-20",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-09-02",
+    "score15": 1.13,
+    "score15Answers": [],
+    "ors": 9,
+    "orsAndSatisfactionScaleAnswers": [79]
+  },
+  {
+    "codeNumber": "Vux2022-20",
+    "person": 1,
+    "occasion": 2,
+    "date": "2023-03-02",
+    "score15": 2,
+    "score15Answers": [],
+    "ors": 16,
+    "orsAndSatisfactionScaleAnswers": [84]
+  },
+  {
+    "codeNumber": "Vux2022-21",
+    "person": 1,
+    "occasion": 1,
+    "date": "",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [82]
+  },
+  {
+    "codeNumber": "Vux2022-22",
     "person": 1,
     "occasion": 1,
     "date": "2022-08-26",
-    "score15": 2.67,
-    "score15Answers": [],
-    "ors": 16,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-67",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-08-29",
-    "score15": 3.07,
-    "score15Answers": [],
-    "ors": 18,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-68",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-08-30",
-    "score15": 2.4,
-    "score15Answers": [],
-    "ors": 36,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-68",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-08-30",
-    "score15": 2.07,
-    "score15Answers": [],
-    "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-68",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-08-30",
-    "score15": 2.2,
-    "score15Answers": [],
-    "ors": 29,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-69",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-08-30",
-    "score15": 2.07,
-    "score15Answers": [],
-    "ors": 30,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-69",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-08-30",
-    "score15": 2.2,
-    "score15Answers": [],
-    "ors": 29,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-72",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-02",
-    "score15": 1.67,
-    "score15Answers": [],
-    "ors": 18,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-72",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-02",
-    "score15": 2.87,
-    "score15Answers": [],
-    "ors": 22,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-72",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-02",
-    "score15": 2.47,
-    "score15Answers": [],
-    "ors": 35,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-74",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-07",
-    "score15": 2.07,
-    "score15Answers": [],
-    "ors": 13,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-74",
-    "person": 1,
-    "occasion": 2,
-    "date": "2023-03-07",
-    "score15": 2.53,
-    "score15Answers": [],
-    "ors": 6,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-74",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-07",
-    "score15": 2.07,
-    "score15Answers": [],
-    "ors": 18,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-74",
-    "person": 1,
-    "occasion": 2,
-    "date": "2023-03-07",
-    "score15": 1.8,
-    "score15Answers": [],
-    "ors": 26,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-75",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-08",
-    "score15": 2.4,
-    "score15Answers": [],
-    "ors": 26,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-75",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-08",
-    "score15": 2.47,
-    "score15Answers": [],
-    "ors": 29,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-76",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-08",
-    "score15": 1.4,
-    "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-76",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-08",
-    "score15": 1.6,
-    "score15Answers": [],
-    "ors": 16,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-85",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-14",
-    "score15": 2.67,
-    "score15Answers": [],
-    "ors": 29,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-85",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-14",
-    "score15": 2.6,
-    "score15Answers": [],
-    "ors": 8,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-85",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-14",
-    "score15": 3,
-    "score15Answers": [],
-    "ors": 17,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-87",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-23",
-    "score15": 1.53,
+    "score15": 2.63,
     "score15Answers": [],
     "ors": 21,
-    "orsAndSatisfactionScaleAnswers": []
+    "orsAndSatisfactionScaleAnswers": [116]
   },
   {
-    "codeNumber": "Vux2022-88",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-10-14",
-    "score15": 2,
-    "score15Answers": [],
-    "ors": 0,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-88",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-10-14",
-    "score15": 2.27,
-    "score15Answers": [],
-    "ors": 24,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-89",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-10-14",
-    "score15": 1.73,
-    "score15Answers": [],
-    "ors": 0,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-89",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-10-14",
-    "score15": 1.33,
-    "score15Answers": [],
-    "ors": 38,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-90",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-10-21",
-    "score15": 3.13,
-    "score15Answers": [],
-    "ors": 0,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-90",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-10-21",
-    "score15": 3.27,
-    "score15Answers": [],
-    "ors": 0,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-91",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-10-31",
-    "score15": 3.47,
-    "score15Answers": [],
-    "ors": 16,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-91",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-10-31",
-    "score15": 2.6,
-    "score15Answers": [],
-    "ors": 5,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-92",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-10-31",
-    "score15": 3.47,
-    "score15Answers": [],
-    "ors": 16,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-92",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-10-31",
-    "score15": 2.6,
-    "score15Answers": [],
-    "ors": 5,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-94",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-12-06",
-    "score15": 1.67,
-    "score15Answers": [],
-    "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-94",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-12-07",
-    "score15": 2.87,
-    "score15Answers": [],
-    "ors": 23,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-6",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-24",
-    "score15": 1.87,
-    "score15Answers": [],
-    "ors": 10,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-6",
+    "codeNumber": "Vux2022-22",
     "person": 1,
     "occasion": 2,
-    "date": "2022-03-24",
-    "score15": 2.47,
-    "score15Answers": [],
-    "ors": 8,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-7",
-    "person": 1,
-    "occasion": 1,
-    "date": "2021-09-24",
-    "score15": 1.87,
-    "score15Answers": [],
-    "ors": 10,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2021-7",
-    "person": 1,
-    "occasion": 2,
-    "date": "2022-03-24",
-    "score15": 2.47,
-    "score15Answers": [],
-    "ors": 8,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-117",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-08",
-    "score15": 1.07,
-    "score15Answers": [],
-    "ors": 40,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-117",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-08",
-    "score15": 1,
-    "score15Answers": [],
-    "ors": 40,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-116",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-09",
-    "score15": 1.87,
-    "score15Answers": [],
-    "ors": 21,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-116",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-09",
-    "score15": 2.4,
-    "score15Answers": [],
-    "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-112",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-06",
-    "score15": 1.93,
-    "score15Answers": [],
-    "ors": 27,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-113",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-03",
-    "score15": 2.93,
-    "score15Answers": [],
-    "ors": 18,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-113",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-03",
-    "score15": 1.8,
-    "score15Answers": [],
-    "ors": 35,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-113",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-03",
-    "score15": 1.27,
-    "score15Answers": [],
-    "ors": 40,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-93",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-12-05",
-    "score15": 3.2,
-    "score15Answers": [],
-    "ors": 15,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-93",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-11-28",
-    "score15": 4.4,
-    "score15Answers": [],
-    "ors": 5,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-109",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-12-19",
-    "score15": 2,
-    "score15Answers": [],
-    "ors": 34,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-109",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-12-19",
-    "score15": 2.27,
-    "score15Answers": [],
-    "ors": 32,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-86",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-26",
-    "score15": 1.53,
-    "score15Answers": [],
-    "ors": 34,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-86",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-09-26",
-    "score15": 1.33,
-    "score15Answers": [],
-    "ors": 40,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-104",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-01-11",
-    "score15": 2.67,
-    "score15Answers": [],
-    "ors": 16,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-104",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-01-11",
-    "score15": 2.53,
+    "date": "2023-02-26",
+    "score15": 2.5,
     "score15Answers": [],
     "ors": 20,
-    "orsAndSatisfactionScaleAnswers": []
+    "orsAndSatisfactionScaleAnswers": [85]
   },
   {
-    "codeNumber": "Vux2023-104",
+    "codeNumber": "Vux2022-23",
     "person": 1,
     "occasion": 1,
-    "date": "2023-01-11",
-    "score15": 1.87,
+    "date": "2022-09-26",
+    "score15": 1.13,
+    "score15Answers": [],
+    "ors": 9,
+    "orsAndSatisfactionScaleAnswers": [50]
+  },
+  {
+    "codeNumber": "Vux2022-23",
+    "person": 1,
+    "occasion": 2,
+    "date": "2023-03-26",
+    "score15": 1.25,
+    "score15Answers": [],
+    "ors": 10,
+    "orsAndSatisfactionScaleAnswers": [76]
+  },
+  {
+    "codeNumber": "Vux2022-24",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-10-14",
+    "score15": 2.13,
+    "score15Answers": [],
+    "ors": 17,
+    "orsAndSatisfactionScaleAnswers": [89]
+  },
+  {
+    "codeNumber": "Vux2022-24",
+    "person": 1,
+    "occasion": 2,
+    "date": "2023-04-14",
+    "score15": 1.63,
+    "score15Answers": [],
+    "ors": 13,
+    "orsAndSatisfactionScaleAnswers": [99]
+  },
+  {
+    "codeNumber": "Vux2022-25",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-11-11",
+    "score15": 2.8,
     "score15Answers": [],
     "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
+    "orsAndSatisfactionScaleAnswers": [102]
   },
   {
-    "codeNumber": "Vux2023-98",
+    "codeNumber": "Vux2022-26",
     "person": 1,
     "occasion": 1,
-    "date": "2023-01-09",
-    "score15": 2,
+    "date": "2022-11-16",
+    "score15": 2.8,
     "score15Answers": [],
-    "ors": 33,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [57]
   },
   {
-    "codeNumber": "Vux2022-95",
+    "codeNumber": "Vux2022-27",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-11-22",
+    "score15": 2.13,
+    "score15Answers": [],
+    "ors": 17,
+    "orsAndSatisfactionScaleAnswers": [82]
+  },
+  {
+    "codeNumber": "Vux2022-27",
+    "person": 1,
+    "occasion": 2,
+    "date": "2023-05-22",
+    "score15": 3.13,
+    "score15Answers": [],
+    "ors": 25,
+    "orsAndSatisfactionScaleAnswers": [93]
+  },
+  {
+    "codeNumber": "Vux2022-28",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-11-23",
+    "score15": 3.5,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [104]
+  },
+  {
+    "codeNumber": "Vux2022-28",
+    "person": 1,
+    "occasion": 2,
+    "date": "2023-05-23",
+    "score15": 3.25,
+    "score15Answers": [],
+    "ors": 26,
+    "orsAndSatisfactionScaleAnswers": [98]
+  },
+  {
+    "codeNumber": "Vux2022-29",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-12-16",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [63]
+  },
+  {
+    "codeNumber": "Vux2022-30",
+    "person": 1,
+    "occasion": 1,
+    "date": "2022-12-19",
+    "score15": 3.25,
+    "score15Answers": [],
+    "ors": 26,
+    "orsAndSatisfactionScaleAnswers": [103]
+  },
+  {
+    "codeNumber": "Vux2022-30",
+    "person": 1,
+    "occasion": 2,
+    "date": "2023-06-19",
+    "score15": 4,
+    "score15Answers": [],
+    "ors": 32,
+    "orsAndSatisfactionScaleAnswers": [123]
+  },
+  {
+    "codeNumber": "Vux2022-31",
     "person": 1,
     "occasion": 1,
     "date": "2022-12-20",
-    "score15": 2.87,
-    "score15Answers": [],
-    "ors": 22,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-96",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-12-14",
-    "score15": 3.27,
-    "score15Answers": [],
-    "ors": 26,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-98",
-    "person": 1,
-    "occasion": 1,
-    "date": "2022-12-22",
-    "score15": 1.13,
-    "score15Answers": [],
-    "ors": 27,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-111",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-01-30",
-    "score15": 1.53,
-    "score15Answers": [],
-    "ors": 26,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-115",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-13",
-    "score15": 1.8,
-    "score15Answers": [],
-    "ors": 18,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-115",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-02-13",
-    "score15": 2.93,
-    "score15Answers": [],
-    "ors": 19,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2023-103",
-    "person": 1,
-    "occasion": 1,
-    "date": "2023-01-11",
-    "score15": 2.27,
+    "score15": 2.8,
     "score15Answers": [],
     "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
+    "orsAndSatisfactionScaleAnswers": [82]
   },
   {
-    "codeNumber": "Vux2023-103",
+    "codeNumber": "Vux2023-32",
     "person": 1,
     "occasion": 1,
-    "date": "2023-01-11",
-    "score15": 2.4,
-    "score15Answers": [],
-    "ors": 16,
-    "orsAndSatisfactionScaleAnswers": []
-  },
-  {
-    "codeNumber": "Vux2022-70",
-    "person": 1,
-    "occasion": 2,
-    "date": "2023-02-25",
-    "score15": 2.53,
+    "date": "2023-01-13",
+    "score15": 2.8,
     "score15Answers": [],
     "ors": 28,
-    "orsAndSatisfactionScaleAnswers": []
+    "orsAndSatisfactionScaleAnswers": [99]
   },
   {
-    "codeNumber": "Vux2022-56",
+    "codeNumber": "Vux2023-33",
     "person": 1,
     "occasion": 1,
-    "date": "2023-02-25",
-    "score15": 1.87,
+    "date": "2023-01-18",
+    "score15": 2.8,
     "score15Answers": [],
-    "ors": 29,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [80]
   },
   {
-    "codeNumber": "Vux2022-84",
+    "codeNumber": "Vux2023-34",
     "person": 1,
     "occasion": 1,
-    "date": "2022-09-14",
-    "score15": 1.73,
+    "date": "2023-01-23",
+    "score15": 2.8,
     "score15Answers": [],
-    "ors": 29,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [85]
   },
   {
-    "codeNumber": "Vux2022-84",
+    "codeNumber": "Vux2023-35",
     "person": 1,
     "occasion": 1,
-    "date": "2022-09-13",
-    "score15": 2,
+    "date": "2023-02-07",
+    "score15": 2.8,
     "score15Answers": [],
-    "ors": 19,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [87]
   },
   {
-    "codeNumber": "Vux2022-56",
+    "codeNumber": "Vux2023-36",
     "person": 1,
     "occasion": 1,
-    "date": "2023-02-24",
-    "score15": 1.07,
+    "date": "2023-02-16",
+    "score15": 2.8,
     "score15Answers": [],
-    "ors": 36,
-    "orsAndSatisfactionScaleAnswers": []
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [103]
+  },
+  {
+    "codeNumber": "Vux2023-37",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-03-01",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [90]
+  },
+  {
+    "codeNumber": "Vux2023-38",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-03-15",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [83]
+  },
+  {
+    "codeNumber": "Vux2023-39",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-04-12",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [70]
+  },
+  {
+    "codeNumber": "Vux2023-40",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-04-18",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [122]
+  },
+  {
+    "codeNumber": "Vux2023-41",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-04-17",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [65]
+  },
+  {
+    "codeNumber": "Vux2023-42",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-03-15",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [58]
+  },
+  {
+    "codeNumber": "Vux2023-43",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-04-23",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [104]
+  },
+  {
+    "codeNumber": "Vux2023-44",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-04-24",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [93]
+  },
+  {
+    "codeNumber": "Vux2023-45",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-04-26",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [105]
+  },
+  {
+    "codeNumber": "Vux2023-46",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-05-03",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [80]
+  },
+  {
+    "codeNumber": "Vux2023-47",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-05-03",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [69]
+  },
+  {
+    "codeNumber": "Vux2023-48",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-05-23",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [69]
+  },
+  {
+    "codeNumber": "Vux2023-49",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-05-23",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [73]
+  },
+  {
+    "codeNumber": "Vux2023-50",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-05-24",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [68]
+  },
+  {
+    "codeNumber": "Vux2023-51",
+    "person": 1,
+    "occasion": 1,
+    "date": "2023-05-30",
+    "score15": 2.8,
+    "score15Answers": [],
+    "ors": 28,
+    "orsAndSatisfactionScaleAnswers": [64]
   }
  ]
  
