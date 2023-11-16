@@ -47,6 +47,8 @@ import PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
 const template1Path = `${__dirname}/template1.docx`;
 const template2Path = `${__dirname}/template2.docx`;
+const templateAPath = `${__dirname}/templateA.docx`;
+const templateBPath = `${__dirname}/templateB.docx`;
 const middlePath = `${__dirname}/middle.docx`;
 const destPath = `${__dirname}/survey.docx`;
 
@@ -476,7 +478,8 @@ export class BackgroundDataService {
   async downloadDocx(codeNumber: string, occasion: OccasionIndex | 0) {
     try {
 
-      const templatePath = occasion <= 3 ? template1Path : template2Path;
+      // const templatePath = occasion <= 3 ? template1Path : template2Path;
+      const templatePath = occasion === 3 ? templateAPath : occasion === 6 ? templateBPath : occasion <= 3 ? template1Path : template2Path;
       const domain = "https://vallentuna-quiz.vercel.app"
       const occasionNum = occasion <= 3 ? occasion : occasion - 3;
       const uri1 =btoa(btoa(btoa(JSON.stringify({
