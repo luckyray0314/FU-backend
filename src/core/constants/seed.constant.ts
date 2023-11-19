@@ -340,7 +340,6 @@ export const actionAssignmentSeedData = [
   'ActionAssignment.KD',
   'ActionAssignment.Gambling',
   'ActionAssignment.Structured',
-  'ActionAssignment.A-CRA',
   'ActionAssignment.MI',
   'Other',
   'OtherText',
