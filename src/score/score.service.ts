@@ -111,7 +111,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
       if (scoreEntity) {
         scoreEntity.date = payload.date;
         scoreEntity.score15 = payload.score15Answers.reduce((total, answer) => total + answer) / 15;
-        scoreEntity.ors = payload.ors;
+        scoreEntity.ors = (payload.ors * 100 / 15);
         scoreEntity.score15Answers = payload.score15Answers;
         scoreEntity.orsAndSatisfactionScaleAnswers = payload.orsAndSatisfactionScaleAnswers;
         this.repo.update(scoreEntity.id, scoreEntity);

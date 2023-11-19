@@ -101,7 +101,7 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
       if (scoreEntity) {
         scoreEntity.date = payload.date;
         scoreEntity.score15 = payload.ors - (payload.orsAndSatisfactionScaleAnswers[0] + payload.orsAndSatisfactionScaleAnswers[1] + payload.orsAndSatisfactionScaleAnswers[2]);
-        scoreEntity.ors = payload.orsAndSatisfactionScaleAnswers[0] + payload.orsAndSatisfactionScaleAnswers[1] + payload.orsAndSatisfactionScaleAnswers[2];
+        scoreEntity.ors = (payload.orsAndSatisfactionScaleAnswers[0] + payload.orsAndSatisfactionScaleAnswers[1] + payload.orsAndSatisfactionScaleAnswers[2]) * 100 / 15;
         scoreEntity.score15Answers = payload.score15Answers;
         scoreEntity.orsAndSatisfactionScaleAnswers = payload.orsAndSatisfactionScaleAnswers;
         this.repo.update(scoreEntity.id, scoreEntity);
