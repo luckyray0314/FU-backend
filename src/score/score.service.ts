@@ -110,7 +110,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
       });
       if (scoreEntity) {
         scoreEntity.date = payload.date;
-        scoreEntity.score15 = payload.score15;
+        scoreEntity.score15 = payload.score15Answers.reduce((total, answer) => total + answer) / 15;
         scoreEntity.ors = payload.ors;
         scoreEntity.score15Answers = payload.score15Answers;
         scoreEntity.orsAndSatisfactionScaleAnswers = payload.orsAndSatisfactionScaleAnswers;
