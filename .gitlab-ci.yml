@@ -1,4 +1,4 @@
-image: node:16
+image: node:latest
 
 stages:
   - deploy-to-development
@@ -42,7 +42,6 @@ deploy-production:
     - whoami
     - node --version
     - npm --version
-    - npm install
     #- apt-get update -qy
     #- apt-get install -qy git
     #- 'which ssh-agent || ( apt-get install -qy openssh-client )'
