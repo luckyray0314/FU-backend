@@ -56,7 +56,7 @@ export function setup(app: INestApplication): INestApplication {
     .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('doc', app, document);
+  SwaggerModule.setup('api-doc', app, document);
 
   useContainer(app.select(AppModule), { fallbackOnErrors: true });
 

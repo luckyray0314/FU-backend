@@ -97,7 +97,6 @@ async function bootstrap() {
   await seedService.seedOtherInitiative();
 
 
-  await app.listen(5000);
+  await app.listen(VALLENTUNA_SURVEY_BACKEND_PORT);
 }
 bootstrap();
-
