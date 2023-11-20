@@ -1,9 +1,9 @@
 #!/bin/bash
-
-DEPLOY_SERVER=su.eagle.productions
+DEPLOY_USER=cooldev
+DEPLOY_SERVER=vallentuna.su.eagle.productions
 
 echo "Deploying to production into ${DEPLOY_SERVER}"
-ssh cooldev@${DEPLOY_SERVER} 'bash' < ./deploy/server.sh
+ssh ${DEPLOY_USER}@${DEPLOY_SERVER} 'bash' < ./deploy/production.sh
 
 # Install last PM2
 yarn global add pm2
