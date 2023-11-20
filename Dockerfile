@@ -1,8 +1,8 @@
 FROM node:18-bullseye-slim AS build
 
-WORKDIR /var/cache/backend
+WORKDIR /home/cooldev/vallentuna/production
 
-RUN chown node:node /var/cache/backend
+RUN chown node:node /home/cooldev/vallentuna/production
 
 USER node
 
@@ -20,14 +20,14 @@ RUN npm prune --omit=dev
 
 FROM gcr.io/distroless/nodejs:18 AS app
 
-ARG NODE_ENV="production" PORT=5000
+ARG NODE_ENV="production" PORT=8000
 
 ENV NODE_ENV=${NODE_ENV} PORT=${PORT}
 
 WORKDIR /srv/app
 
-COPY --from=dependencies /var/cache/backend/node_modules ./node_modules
-COPY --from=build /var/cache/backend/dist ./
+COPY --from=dependencies /home/cooldev/vallentuna/production/node_modules ./node_modules
+COPY --from=build /home/cooldev/vallentuna/production/dist ./
 
 EXPOSE ${PORT}
 

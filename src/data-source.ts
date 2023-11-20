@@ -1,14 +1,13 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
-import { VALLENTUNA_SURVEY_BACKEND_SSL_MODE } from './core/constants/environment.const';
+import { POSTGRES_HOST, POSTGRES_NAME, POSTGRES_PASS, POSTGRES_PORT, POSTGRES_USER, VALLENTUNA_SURVEY_BACKEND_SSL_MODE } from './core/constants/environment.const';
 
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
-  // host: 'localhost',
-  host: '194.242.11.106',
-  port: 5432,
-  username: 'postgres',
-  password: 'm81p7*3G8zs7',
-  database: 'survey-eagle-product',
+  host: POSTGRES_HOST,
+  port: Number(POSTGRES_PORT),
+  username: POSTGRES_USER,
+  password: POSTGRES_PASS,
+  database: POSTGRES_NAME,
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   // migrations: [
   //   CreateUser1557166726050,
@@ -22,8 +21,8 @@ export const dataSourceOptions: DataSourceOptions = {
     ssl:
       VALLENTUNA_SURVEY_BACKEND_SSL_MODE === 'require'
         ? {
-          rejectUnauthorized: false,
-        }
+            rejectUnauthorized: false,
+          }
         : false,
   },
 };

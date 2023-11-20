@@ -14,7 +14,7 @@ import { AuthService } from '../auth.service';
 
 @Injectable()
 export class TokenInterceptor implements NestInterceptor {
-  constructor(private readonly authService: AuthService) { }
+  constructor(private readonly authService: AuthService) {}
 
   intercept(
     context: ExecutionContext,
