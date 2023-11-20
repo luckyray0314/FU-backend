@@ -26,4 +26,4 @@ node --version
 npm ci
 npm install env-cmd
 npm run build
-pm2 start ../ecosystem-production.config.js --env production
+pm2 start ../ecosystem-production.config.js
