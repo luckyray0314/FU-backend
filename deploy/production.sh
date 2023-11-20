@@ -10,6 +10,9 @@ cd /home/cooldev/vallentuna/production
 git checkout main
 git pull origin main
 
+pwd
+ls
+
 # Node version
 node --version
 
