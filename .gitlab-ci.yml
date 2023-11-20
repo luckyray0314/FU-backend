@@ -3,11 +3,11 @@ image: ubuntu:latest
 stages:
   - deploy-to-production
 
-nohttp:
-  stage: check
+job:
   tags:
     - vallentuna
     - backend
+
 deploy-production:
   stage: deploy-to-production
   environment:
