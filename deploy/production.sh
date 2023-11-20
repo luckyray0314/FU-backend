@@ -14,6 +14,6 @@ git checkout main
 git pull origin main
 
 # Build and deploy
-npm install
+npm ci
 npm run build
 pm2 start ecosystem.config.js --env production
