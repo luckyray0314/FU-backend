@@ -5,8 +5,6 @@ stages:
   - deploy-to-production
 
 deploy-development:
-  image:
-    - node:16
   tags:
     - vallentuna
     - backend
