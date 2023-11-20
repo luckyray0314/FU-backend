@@ -1,33 +1,11 @@
-image: node:latest
+image: node:18.7.0
+
+before_script:
+  - apt-get update -qq && apt-get install
+  - node -v
 
 stages:
-  - deploy-to-development
   - deploy-to-production
-
-deploy-development:
-  tags:
-    - vallentuna
-    - backend
-    - development
-  stage: deploy-to-development
-  environment:
-    name: development
-    url: https://development.vallentuna.su
-  before_script:
-    - whoami
-
-    #- apt-get update -qy
-    #- apt-get install -qy git
-    #- 'which ssh-agent || ( apt-get install -qy openssh-client )'
-    #- eval $(ssh-agent -s)
-    #- ssh-add <(echo "$SSH_KEY")
-    #- mkdir -p ~/.ssh
-    #- '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
-  script:
-    - bash deploy/development.sh
-  only:
-    - dev
-
 
 deploy-production:
   tags:
