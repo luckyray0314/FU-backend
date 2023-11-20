@@ -3,12 +3,10 @@ image: ubuntu:latest
 stages:
   - deploy-to-production
 
-job:
+deploy-production:
   tags:
     - vallentuna
     - backend
-
-deploy-production:
   stage: deploy-to-production
   environment:
     name: production
