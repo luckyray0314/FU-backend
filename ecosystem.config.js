@@ -3,8 +3,6 @@ module.exports = {
     {
       name: 'vallentuna-backend-production',
       script: './dist/main.js',
-      cwd: '/home/cooldev/vallentuna/production/',
-      node_args: '-r dotenv/config',
       instances: 4,
       exec_mode: 'cluster',
       watch: true,
