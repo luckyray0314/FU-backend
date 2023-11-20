@@ -1,4 +1,4 @@
-image: ubuntu:latest
+image: node:16
 
 stages:
   - deploy-to-development
