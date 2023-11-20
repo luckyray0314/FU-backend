@@ -30,8 +30,6 @@ deploy-development:
 
 
 deploy-production:
-  image:
-    - node:16
   tags:
     - vallentuna
     - backend
