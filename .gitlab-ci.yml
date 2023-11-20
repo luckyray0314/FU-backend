@@ -5,6 +5,8 @@ stages:
   - deploy-to-production
 
 deploy-development:
+  image:
+    - node:16
   tags:
     - vallentuna
     - backend
@@ -30,6 +32,8 @@ deploy-development:
 
 
 deploy-production:
+  image:
+    - node:16
   tags:
     - vallentuna
     - backend
@@ -40,6 +44,9 @@ deploy-production:
     url: https://vallentuna.su
   before_script:
     - whoami
+    - node --version
+    - npm --version
+    - npm install
     #- apt-get update -qy
     #- apt-get install -qy git
     #- 'which ssh-agent || ( apt-get install -qy openssh-client )'
