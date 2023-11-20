@@ -14,9 +14,9 @@ deploy-development:
     name: development
     url: https://development.vallentuna.su
   before_script:
-    - sudo apt-get update -qy
-    - sudo apt-get install -qy git
-    - 'which ssh-agent || ( sudo apt-get install -qy openssh-client )'
+    - apt-get update -qy
+    - apt-get install -qy git
+    - 'which ssh-agent || ( apt-get install -qy openssh-client )'
     - eval $(ssh-agent -s)
     - ssh-add <(echo "$SSH_KEY")
     - mkdir -p ~/.ssh
@@ -37,9 +37,10 @@ deploy-production:
     name: production
     url: https://vallentuna.su
   before_script:
-    - sudo apt-get update -qy
-    - sudo apt-get install -qy git
-    - 'which ssh-agent || ( sudo apt-get install -qy openssh-client )'
+    - whoami
+    - apt-get update -qy
+    - apt-get install -qy git
+    - 'which ssh-agent || ( apt-get install -qy openssh-client )'
     - eval $(ssh-agent -s)
     - ssh-add <(echo "$SSH_KEY")
     - mkdir -p ~/.ssh
