@@ -13,6 +13,10 @@ cd /home/cooldev/vallentuna/production
 git checkout main
 git pull origin main
 
+# Node version
+nvm use v16
+nvm list
+
 # Build and deploy
 npm ci
 npm run build
