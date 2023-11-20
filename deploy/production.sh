@@ -14,8 +14,8 @@ git checkout main
 git pull origin main
 
 # Node version
-nvm use v16
-nvm list
+npm install -g n
+node --version
 
 # Build and deploy
 npm ci
