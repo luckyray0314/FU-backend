@@ -24,4 +24,5 @@ node --version
 
 # Build and deploy
 npm ci
+npm install env-cmd
 npm run build && env-cmd -f .env pm2 start ecosystem.config.js --env production
