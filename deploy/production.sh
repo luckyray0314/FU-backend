@@ -26,5 +26,4 @@ node --version
 npm ci
 npm install env-cmd
 npm run build
-#./node_modules/.bin/env-cmd -f .env pm2 start ecosystem.config.js --env production
-pm2 start ecosystem.config.js --node-args="--require dotenv/config" --env production
+pm2 start ../ecosystem-production.config.js --env production
