@@ -5,8 +5,27 @@ before_script:
   - node -v
 
 stages:
+  - deploy-to-staging
   - deploy-to-test
   - deploy-to-production
+
+deploy-staging:
+  tags:
+    - vallentuna
+    - backend
+    - staging
+  stage: deploy-to-staging
+  environment:
+    name: staging
+    url: https://api.staging.vallentuna.su.eagle.productions
+  before_script:
+    - whoami
+    - node --version
+    - npm --version
+  script:
+    - bash deploy/staging.sh
+  only:
+    - staging
 
 deploy-test:
   tags:
