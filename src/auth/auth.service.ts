@@ -5,6 +5,7 @@ import { SignUp } from './dto/sign-up.dto';
 import { JwtPayload } from './interfaces/jwt-payload.interface';
 import { UserService } from '../user/user.service';
 import { Login } from './dto/login.dto';
+import { CreateUserDto } from 'src/user/dto/user-create.dto';
 
 @Injectable()
 export class AuthService {
@@ -13,8 +14,8 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  async register(signUp: SignUp): Promise<User> {
-    const user = await this.userService.create(signUp);
+  async register(data: CreateUserDto): Promise<User> {
+    const user = await this.userService.create(data);
     delete user.password;
 
     return user;
