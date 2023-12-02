@@ -23,7 +23,7 @@ sudo ln -s "$NVM_DIR/versions/node/$(nvm version)/bin/npm" "/usr/local/bin/npm"
 node --version
 
 # Build and deploy
-npm ci
+npm install
 npm install env-cmd
 npm run build
 pm2 start ../ecosystem-development.config.js

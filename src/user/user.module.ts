@@ -2,14 +2,13 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { User } from './user.entity';
-import { ProfileController } from './profile.controller';
 import { UserService } from './user.service';
 import { IsUserAlreadyExist } from './is-user-already-exist.validator';
-import { Profile } from './profile.entity';
+import { UserController } from './user.controller';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([User, Profile])],
-  controllers: [ProfileController],
+  imports: [TypeOrmModule.forFeature([User])],
+  controllers: [UserController],
   providers: [UserService, IsUserAlreadyExist],
   exports: [UserService],
 })
