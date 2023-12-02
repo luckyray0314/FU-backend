@@ -3,7 +3,7 @@ DEPLOY_USER=cooldev
 DEPLOY_SERVER=vallentuna.su.eagle.productions
 
 echo "Deploying to staging into ${DEPLOY_SERVER}"
-ssh ${DEPLOY_USER}@${DEPLOY_SERVER} 'bash' < ./deploy/test.sh
+ssh ${DEPLOY_USER}@${DEPLOY_SERVER} 'bash' < ./deploy/staging.sh
 
 # Pull code
 cd /home/cooldev/vallentuna/staging
@@ -23,7 +23,7 @@ sudo ln -s "$NVM_DIR/versions/node/$(nvm version)/bin/npm" "/usr/local/bin/npm"
 node --version
 
 # Build and deploy
-npm install
-npm install env-cmd
-npm run build
+yarn
+yarn add env-cmd
+yarn build
 pm2 start ../ecosystem-staging.config.js
