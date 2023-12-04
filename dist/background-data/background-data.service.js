@@ -566,33 +566,12 @@ let BackgroundDataService = class BackgroundDataService {
         }));
         return result;
     }
-    async downloadDocx(codeNumber, occasion, appDomain) {
+    async downloadDocx(codeNumber, occasion, appDomain, childUri, firstGuardianUri, secondGuardianUri, importantEventsUri) {
         try {
             const occasionNum = occasion <= 3 ? occasion : occasion - 3;
             const templatePath = occasionNum <= 2
                 ? (0, path_1.join)(__dirname, '../../', 'src/assets/template/6-month-survey-bof.docx')
                 : (0, path_1.join)(__dirname, '../../', 'src/assets/template/12-month-survey-bof.docx');
-            const firstParentUri = btoa(btoa(btoa(JSON.stringify({
-                codeNumber: codeNumber,
-                person: 1,
-                occasionNum,
-                score15: 0,
-                ors: 0,
-            }))));
-            const secondParentUri = btoa(btoa(btoa(JSON.stringify({
-                codeNumber: codeNumber,
-                person: 2,
-                occasionNum,
-                score15: 0,
-                ors: 0,
-            }))));
-            const childUri = btoa(btoa(btoa(JSON.stringify({
-                codeNumber: codeNumber,
-                person: 3,
-                occasionNum,
-                score15: 0,
-                ors: 0,
-            }))));
             const content = fs.readFileSync(templatePath, 'binary');
             const pizZip = new PizZip(content);
             const imageOptions = {
@@ -609,12 +588,14 @@ let BackgroundDataService = class BackgroundDataService {
                 linebreaks: true,
                 modules: [new docxtemplater_image_module_free_1.default(imageOptions)],
             });
-            const qrCodeBase64FirstParent = await qrcode.toDataURL(appDomain + '/' + firstParentUri);
-            const qrCodeBase64SecondParent = await qrcode.toDataURL(appDomain + '/' + secondParentUri);
+            const qrCodeBase64FirstGuardian = await qrcode.toDataURL(appDomain + '/' + firstGuardianUri);
+            const qrCodeBase64SecondGuardian = await qrcode.toDataURL(appDomain + '/' + secondGuardianUri);
+            const qrCodeBase64ImportantEvents = await qrcode.toDataURL(appDomain + '/' + importantEventsUri);
             const qrCodeBase64Child = await qrcode.toDataURL(appDomain + '/' + childUri);
             doc.render({
-                qrCodeFirstParent: qrCodeBase64FirstParent,
-                qrCodeSecondParent: qrCodeBase64SecondParent,
+                qrCodeFirstGuardian: qrCodeBase64FirstGuardian,
+                qrCodeSecondGuardian: qrCodeBase64SecondGuardian,
+                qrCodeImportantEvents: qrCodeBase64ImportantEvents,
                 qrCodeChild: qrCodeBase64Child,
             });
             const buf = doc.getZip().generate({

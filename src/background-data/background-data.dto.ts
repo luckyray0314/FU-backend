@@ -1,5 +1,14 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDateString, IsIn, IsInt, IsNumber, IsObject, IsOptional, IsString, Min } from 'class-validator';
+import {
+  IsDateString,
+  IsIn,
+  IsInt,
+  IsNumber,
+  IsObject,
+  IsOptional,
+  IsString,
+  Min,
+} from 'class-validator';
 import { EducationVh1Entity } from './education-vh1/entities/education-vh1.entity';
 import { EducationVh2Entity } from './education-vh2/entities/education-vh2.entity';
 import { EmploymentVh1Entity } from './employment-vh1/entities/employment-vh1.entity';
@@ -15,9 +24,8 @@ import { ReasonForUpdateEntity } from './reason-for-update/entities/reason-for-u
 import { SchoolUniformEntity } from './school-uniform/entities/school-uniform.entity';
 import { TypeOfEffortEntity } from './type-of-effort/entities/type-of-effort.entity';
 import { WhoParticipatesEntity } from './who-participates/entities/who-participates.entity';
-import { getNames } from "country-list";
-import { OccasionIndex } from "src/core/models/occasion.modal";
-
+import { getNames } from 'country-list';
+import { OccasionIndex } from 'src/core/models/occasion.modal';
 
 const countryNames = getNames();
 
@@ -124,4 +132,20 @@ export class DocxBufferDto {
   @ApiProperty()
   @IsString()
   appDomain: string;
+
+  @ApiProperty()
+  @IsString()
+  childUri: string;
+
+  @ApiProperty()
+  @IsString()
+  firstGuardianUri: string;
+
+  @ApiProperty()
+  @IsString()
+  secondGuardianUri: string;
+
+  @ApiProperty()
+  @IsString()
+  importantEventsUri: string;
 }

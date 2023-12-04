@@ -13,7 +13,7 @@ import { ReasonForUpdateEntity } from './reason-for-update/entities/reason-for-u
 import { SchoolUniformEntity } from './school-uniform/entities/school-uniform.entity';
 import { TypeOfEffortEntity } from './type-of-effort/entities/type-of-effort.entity';
 import { WhoParticipatesEntity } from './who-participates/entities/who-participates.entity';
-import { OccasionIndex } from "src/core/models/occasion.modal";
+import { OccasionIndex } from 'src/core/models/occasion.modal';
 export declare class BackgroundSurveyBasicDataDto {
     genderEntities: GenderEntity[];
     educationVh1Entities: EducationVh1Entity[];
@@ -50,4 +50,8 @@ export declare class DocxBufferDto {
     codeNumber: string;
     occasion: OccasionIndex | 0;
     appDomain: string;
+    childUri: string;
+    firstGuardianUri: string;
+    secondGuardianUri: string;
+    importantEventsUri: string;
 }
