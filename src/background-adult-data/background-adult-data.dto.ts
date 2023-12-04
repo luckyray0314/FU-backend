@@ -95,10 +95,14 @@ export class BackgroundAdultDataDto {
 export class DocxBufferDto {
   @ApiProperty()
   @IsString()
-  codeNumber: string; 
+  codeNumber: string;
 
   @ApiProperty()
   @IsNumber()
   @IsIn([0, 1, 2, 3])
   occasion: OccasionIndex | 0;
+
+  @ApiProperty()
+  @IsString()
+  appDomain: string;
 }

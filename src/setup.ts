@@ -1,10 +1,10 @@
 import { HttpStatus, INestApplication, ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { useContainer } from 'class-validator';
-import * as connectPgSimple from 'connect-pg-simple';
-import * as cookieParser from 'cookie-parser';
-import * as session from 'express-session';
-import * as passport from 'passport';
+import connectPgSimple from 'connect-pg-simple';
+import cookieParser from 'cookie-parser';
+import session from 'express-session';
+import passport from 'passport';
 
 import { AppModule } from './app.module';
 import { VALLENTUNA_SURVEY_BACKEND_APP_SECRET, VALLENTUNA_SURVEY_BACKEND_NODE_ENV } from './core/constants/environment.const';

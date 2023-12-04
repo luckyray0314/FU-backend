@@ -19,6 +19,7 @@ import { LocalAuthGuard } from './guards/local-auth.guard';
 import { SessionAuthGuard } from './guards/session-auth.guard';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { Login } from './dto/login.dto';
+import { CreateUserDto } from 'src/user/dto/user-create.dto';
 
 @ApiTags('Auth Management')
 @Controller('auth')
@@ -29,8 +30,8 @@ export class AuthController {
   @HttpCode(HttpStatus.CREATED)
   @UseInterceptors(TokenInterceptor)
   @ApiOkResponse({ type: () => User })
-  register(@Body() signUp: SignUp): Promise<User> {
-    return this.authService.register(signUp);
+  register(@Body() data: CreateUserDto): Promise<User> {
+    return this.authService.register(data);
   }
 
   @Post('login')
