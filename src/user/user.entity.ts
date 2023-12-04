@@ -13,6 +13,10 @@ import {
 
 @Entity()
 export class User {
+  constructor(data: Partial<User> = {}) {
+    Object.assign(this, data);
+  }
+
   @ApiProperty()
   @PrimaryGeneratedColumn()
   id: number;
@@ -31,16 +35,32 @@ export class User {
   password: string;
 
   @ApiProperty()
+  @Column({ nullable: true })
+  title?: string;
+
+  @ApiProperty()
+  @Column({ nullable: true })
+  department?: string;
+
+  @ApiProperty()
+  @Column({ nullable: true })
+  address?: string;
+
+  @ApiProperty()
+  @Column({ nullable: true })
+  phone?: string;
+
+  @ApiProperty()
+  @Column({ nullable: true })
+  isAdmin?: boolean;
+
+  @ApiProperty()
   @CreateDateColumn()
   createdAt: Date;
 
   @ApiProperty()
   @UpdateDateColumn()
   updatedAt: Date;
-
-  constructor(data: Partial<User> = {}) {
-    Object.assign(this, data);
-  }
 
   @BeforeInsert()
   @BeforeUpdate()

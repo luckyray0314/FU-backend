@@ -23,7 +23,7 @@ sudo ln -s "$NVM_DIR/versions/node/$(nvm version)/bin/npm" "/usr/local/bin/npm"
 node --version
 
 # Build and deploy
-npm ci
-npm install env-cmd
-npm run build
+yarn
+yarn add env-cmd
+yarn build
 pm2 start ../ecosystem-production.config.js
