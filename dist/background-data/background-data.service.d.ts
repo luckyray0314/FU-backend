@@ -106,5 +106,5 @@ export declare class BackgroundDataService {
         };
         nextSurvey: string;
     }[]>;
-    downloadDocx(codeNumber: string, occasion: OccasionIndex | 0, appDomain: string): Promise<string>;
+    downloadDocx(codeNumber: string, occasion: OccasionIndex | 0, appDomain: string, childUri: string, firstGuardianUri: string, secondGuardianUri: string, importantEventsUri: string): Promise<string>;
 }
