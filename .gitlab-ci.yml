@@ -5,9 +5,47 @@ before_script:
   - node -v
 
 stages:
+  - deploy-to-development
+  - deploy-to-testing
   - deploy-to-staging
   - deploy-to-test
   - deploy-to-production
+
+deploy-development:
+  tags:
+    - vallentuna
+    - backend
+    - development
+  stage: deploy-to-development
+  environment:
+    name: development
+    url: https://api.development.vallentuna.su.eagle.productions
+  before_script:
+    - whoami
+    - node --version
+    - npm --version
+  script:
+    - bash deploy/development.sh
+  only:
+    - development
+
+deploy-testing:
+  tags:
+    - vallentuna
+    - backend
+    - testing
+  stage: deploy-to-testing
+  environment:
+    name: testing
+    url: https://api.testing.vallentuna.su.eagle.productions
+  before_script:
+    - whoami
+    - node --version
+    - npm --version
+  script:
+    - bash deploy/testing.sh
+  only:
+    - testing
 
 deploy-staging:
   tags:

@@ -1,56 +1,51 @@
-import { Body, Controller, Get, Param, Post, Req, Request, Res, UseGuards } from '@nestjs/common';
-import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { Response } from "express";
-import { JWTAuthGuard } from "src/auth/guards/jwt-auth.guard";
-import { SessionAuthGuard } from "src/auth/guards/session-auth.guard";
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Req,
+  Request,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOkResponse,
+  ApiTags,
+} from '@nestjs/swagger';
+import { Response } from 'express';
+import { JWTAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { SessionAuthGuard } from 'src/auth/guards/session-auth.guard';
 import { EstimatesDto } from 'src/score/dto/estimates.dto';
-import { BackgroundDataDto, BackgroundSurveyBasicDataDto, DocxBufferDto } from './background-data.dto';
+import {
+  BackgroundDataDto,
+  BackgroundSurveyBasicDataDto,
+  DocxBufferDto,
+} from './background-data.dto';
 import { BackgroundDataService } from './background-data.service';
 
 @ApiTags('Background Data Survey Management')
 @UseGuards(SessionAuthGuard, JWTAuthGuard)
+@ApiBearerAuth()
 @Controller('background-data')
 export class BackgroundDataController {
-  constructor(
-    public service: BackgroundDataService,
-  ) { }
+  constructor(public service: BackgroundDataService) {}
 
   @Get('/basicData')
   @ApiOkResponse({ type: BackgroundSurveyBasicDataDto })
-  async basicData(
-    @Request() req: any
-  ): Promise<BackgroundSurveyBasicDataDto> {
-    console.log("req", req);
+  async basicData(@Request() req: any): Promise<BackgroundSurveyBasicDataDto> {
+    console.log('req', req);
     return await this.service.basicData();
   }
-
-  // @Get('/close-status')
-  // @ApiOkResponse({ type: BackgroundDataDto })
-  // async closeStatus(
-  //   @Body() payload: string,
-  //   @Request() req: any
-  // ): Promise<BackgroundDataDto> {
-  //   console.log("req", req);
-  //   return await this.service.closeStatus(payload);
-  // }
-
-  // @Post('/close-status')
-  // @ApiOkResponse({ type: () => Boolean })
-  // @ApiBody({ type: BackgroundDataDto })
-  // async closeStatus(
-  //   @Body() payload: BackgroundDataDto,
-  //   @Request() req: any
-  // ): Promise<boolean> {
-  //   console.log("req", req);
-  //   return await this.service.closeStatus(payload.codeNumber);
-  // }
 
   @Post('create')
   @ApiOkResponse({ type: () => Boolean })
   @ApiBody({ type: BackgroundDataDto })
   async create(
     @Body() payload: BackgroundDataDto,
-    @Request() req: any
+    @Request() req: any,
   ): Promise<boolean> {
     console.log(req);
     return await this.service.create(payload);
@@ -59,7 +54,7 @@ export class BackgroundDataController {
   @Get('/get/:codeNumber')
   @ApiOkResponse({ type: BackgroundDataDto })
   async get(
-    @Param('codeNumber') codeNumber: string
+    @Param('codeNumber') codeNumber: string,
   ): Promise<BackgroundDataDto> {
     return await this.service.get(codeNumber);
   }
@@ -72,11 +67,12 @@ export class BackgroundDataController {
 
   @Post('/download-docx')
   @ApiBody({ type: () => DocxBufferDto })
-  async downloadDocx(
-    @Body() payload: DocxBufferDto,
-    @Res() res: Response
-  ) {
-    const destPath = await this.service.downloadDocx(payload.codeNumber, payload.occasion);
+  async downloadDocx(@Body() payload: DocxBufferDto, @Res() res: Response) {
+    const destPath = await this.service.downloadDocx(
+      payload.codeNumber,
+      payload.occasion,
+      payload.appDomain,
+    );
     return res.download(destPath);
   }
 }

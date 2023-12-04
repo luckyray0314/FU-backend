@@ -1,5 +1,12 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
-import { POSTGRES_HOST, POSTGRES_NAME, POSTGRES_PASS, POSTGRES_PORT, POSTGRES_USER, VALLENTUNA_SURVEY_BACKEND_SSL_MODE } from './core/constants/environment.const';
+import {
+  POSTGRES_HOST,
+  POSTGRES_NAME,
+  POSTGRES_PASS,
+  POSTGRES_PORT,
+  POSTGRES_USER,
+  VALLENTUNA_SURVEY_BACKEND_SSL_MODE,
+} from './core/constants/environment.const';
 
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
