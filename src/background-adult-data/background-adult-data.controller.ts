@@ -1,10 +1,27 @@
-import { Body, Controller, Get, Param, Post, Res, UseGuards } from '@nestjs/common';
-import { ApiBearerAuth, ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
-import { Response } from "express";
-import { JWTAuthGuard } from "src/auth/guards/jwt-auth.guard";
-import { SessionAuthGuard } from "src/auth/guards/session-auth.guard";
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Res,
+  UseGuards,
+} from '@nestjs/common';
+import {
+  ApiBearerAuth,
+  ApiBody,
+  ApiOkResponse,
+  ApiTags,
+} from '@nestjs/swagger';
+import { Response } from 'express';
+import { JWTAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { SessionAuthGuard } from 'src/auth/guards/session-auth.guard';
 import { AdultEstimatesDto } from 'src/adult-score/dto/adultEstimates.dto';
-import { BackgroundAdultDataDto, BackgroundAdultSurveyBasicDataDto, DocxBufferDto } from './background-adult-data.dto';
+import {
+  BackgroundAdultDataDto,
+  BackgroundAdultSurveyBasicDataDto,
+  DocxBufferDto,
+} from './background-adult-data.dto';
 import { BackgroundAdultDataService } from './background-adult-data.service';
 
 @ApiTags('Background Adult Data Survey Management')
@@ -48,6 +65,8 @@ export class BackgroundAdultDataController {
       payload.codeNumber,
       payload.occasion,
       payload.appDomain,
+      payload.adultUri,
+      payload.importantEventsUri,
     );
     return res.download(destPath);
   }

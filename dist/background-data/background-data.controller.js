@@ -38,7 +38,7 @@ let BackgroundDataController = class BackgroundDataController {
         return await this.service.getCaseList();
     }
     async downloadDocx(payload, res) {
-        const destPath = await this.service.downloadDocx(payload.codeNumber, payload.occasion, payload.appDomain);
+        const destPath = await this.service.downloadDocx(payload.codeNumber, payload.occasion, payload.appDomain, payload.childUri, payload.firstGuardianUri, payload.secondGuardianUri, payload.importantEventsUri);
         return res.download(destPath);
     }
 };
