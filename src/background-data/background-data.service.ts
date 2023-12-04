@@ -738,7 +738,7 @@ export class BackgroundDataService {
         appDomain + '/survey/bof/quiz/' + secondGuardianUri,
       );
       const qrCodeBase64ImportantEvents = await qrcode.toDataURL(
-        appDomain + '/survey/bof/imp/' + importantEventsUri,
+        appDomain + '/survey/bof/important-event/' + importantEventsUri,
       );
       const qrCodeBase64Child = await qrcode.toDataURL(
         appDomain + '/survey/bof/quiz/' + childUri,

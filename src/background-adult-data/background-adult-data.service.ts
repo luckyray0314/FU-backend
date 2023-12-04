@@ -543,7 +543,7 @@ export class BackgroundAdultDataService {
         appDomain + '/survey/vux/quiz/' + adultUri,
       );
       const qrCodeBase64ImportantEvents = await qrcode.toDataURL(
-        appDomain + '/survey/vux/imp/' + importantEventsUri,
+        appDomain + '/survey/vux/important-event/' + importantEventsUri,
       );
       doc.render({
         qrCodeAdult: qrCodeBase64Adult,
