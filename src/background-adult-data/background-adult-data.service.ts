@@ -540,10 +540,10 @@ export class BackgroundAdultDataService {
         modules: [new ImageModule(imageOptions)],
       });
       const qrCodeBase64Adult = await qrcode.toDataURL(
-        appDomain + '/survey/vux/quiz' + adultUri,
+        appDomain + '/survey/vux/quiz/' + adultUri,
       );
       const qrCodeBase64ImportantEvents = await qrcode.toDataURL(
-        appDomain + '/survey/vux/imp' + importantEventsUri,
+        appDomain + '/survey/vux/imp/' + importantEventsUri,
       );
       doc.render({
         qrCodeAdult: qrCodeBase64Adult,

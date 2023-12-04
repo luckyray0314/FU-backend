@@ -732,16 +732,16 @@ export class BackgroundDataService {
         modules: [new ImageModule(imageOptions)],
       });
       const qrCodeBase64FirstGuardian = await qrcode.toDataURL(
-        appDomain + '/survey/bof/quiz' + firstGuardianUri,
+        appDomain + '/survey/bof/quiz/' + firstGuardianUri,
       );
       const qrCodeBase64SecondGuardian = await qrcode.toDataURL(
-        appDomain + '/survey/bof/quiz' + secondGuardianUri,
+        appDomain + '/survey/bof/quiz/' + secondGuardianUri,
       );
       const qrCodeBase64ImportantEvents = await qrcode.toDataURL(
-        appDomain + '/survey/bof/imp' + importantEventsUri,
+        appDomain + '/survey/bof/imp/' + importantEventsUri,
       );
       const qrCodeBase64Child = await qrcode.toDataURL(
-        appDomain + '/survey/bof/quiz' + childUri,
+        appDomain + '/survey/bof/quiz/' + childUri,
       );
       doc.render({
         qrCodeFirstGuardian: qrCodeBase64FirstGuardian,
