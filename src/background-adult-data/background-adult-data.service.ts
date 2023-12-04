@@ -502,6 +502,8 @@ export class BackgroundAdultDataService {
     codeNumber: string,
     occasion: OccasionIndex | 0,
     appDomain: string,
+    adultUri: string,
+    importantEventsUri: string,
   ) {
     try {
       const occasionNum = occasion <= 3 ? occasion : occasion - 3;
@@ -517,19 +519,7 @@ export class BackgroundAdultDataService {
               '../../',
               'src/assets/template/12-month-survey-vux.docx',
             );
-      const uri = btoa(
-        btoa(
-          btoa(
-            JSON.stringify({
-              codeNumber: codeNumber,
-              person: 1,
-              occasionNum,
-              score15: 0,
-              ors: 0,
-            }),
-          ),
-        ),
-      );
+      
       // occasion == 1 || occasion == 2 => 6 months template
       // occasion == 3 => 12 months template
       const content = fs.readFileSync(templatePath, 'binary');
@@ -549,9 +539,13 @@ export class BackgroundAdultDataService {
         linebreaks: true,
         modules: [new ImageModule(imageOptions)],
       });
-      const qrCodeBase64 = await qrcode.toDataURL(appDomain + '/' + uri);
+      const qrCodeBase64Adult = await qrcode.toDataURL(appDomain + '/' + adultUri);
+      const qrCodeBase64ImportantEvents = await qrcode.toDataURL(
+        appDomain + '/' + importantEventsUri,
+      );
       doc.render({
-        qrCode: qrCodeBase64,
+        qrCodeAdult: qrCodeBase64Adult,
+        qrCodeImportantEvents: qrCodeBase64ImportantEvents,
       });
       const buf = doc.getZip().generate({
         type: 'nodebuffer',

@@ -144,5 +144,25 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], DocxBufferDto.prototype, "appDomain", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], DocxBufferDto.prototype, "childUri", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], DocxBufferDto.prototype, "firstGuardianUri", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], DocxBufferDto.prototype, "secondGuardianUri", void 0);
+__decorate([
+    (0, swagger_1.ApiProperty)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], DocxBufferDto.prototype, "importantEventsUri", void 0);
 exports.DocxBufferDto = DocxBufferDto;
 //# sourceMappingURL=background-data.dto.js.map
