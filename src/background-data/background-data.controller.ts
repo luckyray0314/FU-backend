@@ -72,6 +72,10 @@ export class BackgroundDataController {
       payload.codeNumber,
       payload.occasion,
       payload.appDomain,
+      payload.childUri,
+      payload.firstGuardianUri,
+      payload.secondGuardianUri,
+      payload.importantEventsUri,
     );
     return res.download(destPath);
   }

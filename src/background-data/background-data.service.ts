@@ -693,6 +693,10 @@ export class BackgroundDataService {
     codeNumber: string,
     occasion: OccasionIndex | 0,
     appDomain: string,
+    childUri: string,
+    firstGuardianUri: string,
+    secondGuardianUri: string,
+    importantEventsUri: string,
   ) {
     try {
       const occasionNum = occasion <= 3 ? occasion : occasion - 3;
@@ -708,47 +712,8 @@ export class BackgroundDataService {
               '../../',
               'src/assets/template/12-month-survey-bof.docx',
             );
-      const firstParentUri = btoa(
-        btoa(
-          btoa(
-            JSON.stringify({
-              codeNumber: codeNumber,
-              person: 1,
-              occasionNum,
-              score15: 0,
-              ors: 0,
-            }),
-          ),
-        ),
-      );
-      const secondParentUri = btoa(
-        btoa(
-          btoa(
-            JSON.stringify({
-              codeNumber: codeNumber,
-              person: 2,
-              occasionNum,
-              score15: 0,
-              ors: 0,
-            }),
-          ),
-        ),
-      );
-      const childUri = btoa(
-        btoa(
-          btoa(
-            JSON.stringify({
-              codeNumber: codeNumber,
-              person: 3,
-              occasionNum,
-              score15: 0,
-              ors: 0,
-            }),
-          ),
-        ),
-      );
       // occasion == 1 || occasion == 2 => 6 months template
-      // occasion == 3 => 12 months template
+      // occasion == 3 => 12 months template with important events
       const content = fs.readFileSync(templatePath, 'binary');
       const pizZip = new PizZip(content);
 
@@ -766,18 +731,22 @@ export class BackgroundDataService {
         linebreaks: true,
         modules: [new ImageModule(imageOptions)],
       });
-      const qrCodeBase64FirstParent = await qrcode.toDataURL(
-        appDomain + '/' + firstParentUri,
+      const qrCodeBase64FirstGuardian = await qrcode.toDataURL(
+        appDomain + '/survey/bof/quiz/' + firstGuardianUri,
       );
-      const qrCodeBase64SecondParent = await qrcode.toDataURL(
-        appDomain + '/' + secondParentUri,
+      const qrCodeBase64SecondGuardian = await qrcode.toDataURL(
+        appDomain + '/survey/bof/quiz/' + secondGuardianUri,
+      );
+      const qrCodeBase64ImportantEvents = await qrcode.toDataURL(
+        appDomain + '/survey/bof/important-event/' + importantEventsUri,
       );
       const qrCodeBase64Child = await qrcode.toDataURL(
-        appDomain + '/' + childUri,
+        appDomain + '/survey/bof/quiz/' + childUri,
       );
       doc.render({
-        qrCodeFirstParent: qrCodeBase64FirstParent,
-        qrCodeSecondParent: qrCodeBase64SecondParent,
+        qrCodeFirstGuardian: qrCodeBase64FirstGuardian,
+        qrCodeSecondGuardian: qrCodeBase64SecondGuardian,
+        qrCodeImportantEvents: qrCodeBase64ImportantEvents,
         qrCodeChild: qrCodeBase64Child,
       });
       const buf = doc.getZip().generate({

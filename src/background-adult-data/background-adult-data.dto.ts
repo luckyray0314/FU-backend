@@ -105,4 +105,12 @@ export class DocxBufferDto {
   @ApiProperty()
   @IsString()
   appDomain: string;
+
+  @ApiProperty()
+  @IsString()
+  adultUri: string;
+
+  @ApiProperty()
+  @IsString()
+  importantEventsUri: string;
 }
