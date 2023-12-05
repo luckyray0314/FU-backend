@@ -588,10 +588,10 @@ let BackgroundDataService = class BackgroundDataService {
                 linebreaks: true,
                 modules: [new docxtemplater_image_module_free_1.default(imageOptions)],
             });
-            const qrCodeBase64FirstGuardian = await qrcode.toDataURL(appDomain + '/' + firstGuardianUri);
-            const qrCodeBase64SecondGuardian = await qrcode.toDataURL(appDomain + '/' + secondGuardianUri);
-            const qrCodeBase64ImportantEvents = await qrcode.toDataURL(appDomain + '/' + importantEventsUri);
-            const qrCodeBase64Child = await qrcode.toDataURL(appDomain + '/' + childUri);
+            const qrCodeBase64FirstGuardian = await qrcode.toDataURL(appDomain + '/survey/bof/quiz/' + firstGuardianUri);
+            const qrCodeBase64SecondGuardian = await qrcode.toDataURL(appDomain + '/survey/bof/quiz/' + secondGuardianUri);
+            const qrCodeBase64ImportantEvents = await qrcode.toDataURL(appDomain + '/survey/bof/important-event/' + importantEventsUri);
+            const qrCodeBase64Child = await qrcode.toDataURL(appDomain + '/survey/bof/quiz/' + childUri);
             doc.render({
                 qrCodeFirstGuardian: qrCodeBase64FirstGuardian,
                 qrCodeSecondGuardian: qrCodeBase64SecondGuardian,
