@@ -519,7 +519,7 @@ export class BackgroundAdultDataService {
               '../../',
               'src/assets/template/12-month-survey-vux.docx',
             );
-      
+
       // occasion == 1 || occasion == 2 => 6 months template
       // occasion == 3 => 12 months template
       const content = fs.readFileSync(templatePath, 'binary');
@@ -540,10 +540,10 @@ export class BackgroundAdultDataService {
         modules: [new ImageModule(imageOptions)],
       });
       const qrCodeBase64Adult = await qrcode.toDataURL(
-        appDomain + '/survey/vux/quiz' + adultUri,
+        appDomain + '/survey/vux/quiz/' + adultUri,
       );
       const qrCodeBase64ImportantEvents = await qrcode.toDataURL(
-        appDomain + '/survey/vux/imp' + importantEventsUri,
+        appDomain + '/survey/vux/important-event/' + importantEventsUri,
       );
       doc.render({
         qrCodeAdult: qrCodeBase64Adult,
