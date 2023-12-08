@@ -4,6 +4,7 @@ import {
   Get,
   HttpCode,
   HttpStatus,
+  Patch,
   Post,
   UseGuards,
   UseInterceptors,
@@ -20,11 +21,16 @@ import { SessionAuthGuard } from './guards/session-auth.guard';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { Login } from './dto/login.dto';
 import { CreateUserDto } from 'src/user/dto/user-create.dto';
+import { UpdateUserDto } from 'src/user/dto/user-update.dto';
+import { UserService } from 'src/user/user.service';
 
 @ApiTags('Auth Management')
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly authService: AuthService) {}
+  constructor(
+    private readonly authService: AuthService,
+    private readonly userService: UserService,
+  ) {}
 
   @Post('register')
   @HttpCode(HttpStatus.CREATED)
@@ -48,5 +54,15 @@ export class AuthController {
   @UseGuards(SessionAuthGuard, JWTAuthGuard)
   me(@AuthUser() user: User): User {
     return user;
+  }
+
+  @ApiBearerAuth()
+  @Patch('/profile')
+  @UseGuards(SessionAuthGuard, JWTAuthGuard)
+  updateProfile(
+    @AuthUser() user: User,
+    @Body() updateUser: UpdateUserDto,
+  ): Promise<User> {
+    return this.userService.update(user?.id, updateUser);
   }
 }
