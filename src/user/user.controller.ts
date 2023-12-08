@@ -4,6 +4,7 @@ import {
   Delete,
   Get,
   Param,
+  Patch,
   Post,
   Put,
   UseGuards,
@@ -41,7 +42,7 @@ export class UserController {
     return this.userService.findById(id);
   }
 
-  @Put('/:id')
+  @Patch('/:id')
   @UseGuards(SessionAuthGuard, JWTAuthGuard)
   update(@Param('id') id: number, @Body() body: UpdateUserDto): Promise<User> {
     return this.userService.update(id, body);

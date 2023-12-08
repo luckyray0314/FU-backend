@@ -3,53 +3,41 @@ import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { AdultCodeNumberDto } from './dto/adultCodeNumber.dto';
 import { AdultFollowUpFilterDto } from './dto/adultFollowUpFilter.dto';
 import { AdultFollowUpFilterResultDto } from './dto/adultFollowUpFilterResult.dto';
-import { AdultOrsAndScore15WithOccasionDto, AdultScoreDto } from './dto/adultScore.dto';
+import {
+  AdultOrsAndScore15WithOccasionDto,
+  AdultScoreDto,
+} from './dto/adultScore.dto';
 import { AdultScoreService } from './adult-score.service';
 
 @ApiTags('Adult Score15 And ORS + Satisfaction Score Management')
 @Controller('adult-score')
 export class AdultScoreController {
-  constructor(
-    public service: AdultScoreService,
-  ) { }
+  constructor(public service: AdultScoreService) {}
 
   @Get('/getOne/:codeNumber/:person/:occasion')
   @ApiOkResponse({ type: AdultScoreDto })
   async getOne(
-    @Param("codeNumber") codeNumber: string,
-    @Param("person") person: number,
-    @Param("occasion") occasion: number
+    @Param('codeNumber') codeNumber: string,
+    @Param('person') person: number,
+    @Param('occasion') occasion: number,
   ): Promise<AdultScoreDto> {
     return await this.service.getOneScore({
       codeNumber,
       person,
-      occasion
+      occasion,
     });
   }
 
-  // @Get('/getByOccasion/:occasion')
-  // @ApiOkResponse({ type: ScoreDto })
-  // async getByOccasion(
-  //   @Param("occasion") occasion: number
-  // ): Promise<ScoreDto> {
-  //   return await this.service.getScoreByOccasion(occasion);
-  // }
-
   @Get('/getByOccasion/:occasion')
   @ApiOkResponse({ type: [AdultScoreDto] }) // note the square brackets around ScoreDto
-  async getByOccasion(
-    @Param("occasion") occasion: number
-  ): Promise<number> {
+  async getByOccasion(@Param('occasion') occasion: number): Promise<number> {
     const scores = await this.service.getScoreByOccasion(occasion);
-    return scores.length
+    return scores.length;
   }
-
 
   @Post('/create')
   @ApiOkResponse({ type: () => Boolean })
-  async create(
-    @Body() payload: AdultScoreDto,
-  ): Promise<boolean> {
+  async create(@Body() payload: AdultScoreDto): Promise<boolean> {
     return await this.service.createScoreData(payload);
   }
 
@@ -62,12 +50,11 @@ export class AdultScoreController {
     return await this.service.getFollowUpFilterResult(payload);
   }
 
-  @Post('/getScoresByCodeNumberAndOccasion')
+  @Get('/getScoresByCodeNumberAndOccasion/:codeNumber')
   @ApiOkResponse({ type: () => Array<AdultOrsAndScore15WithOccasionDto> })
-  @ApiBody({ type: () => AdultCodeNumberDto })
   async getScoresByCodeNumberAndOccasion(
-    @Body() payload: AdultCodeNumberDto
+    @Param('codeNumber') codeNumber: string,
   ): Promise<AdultOrsAndScore15WithOccasionDto[]> {
-    return await this.service.getScoresByCodeNumberAndOccasion(payload.codeNumber);
+    return await this.service.getScoresByCodeNumberAndOccasion(codeNumber);
   }
 }

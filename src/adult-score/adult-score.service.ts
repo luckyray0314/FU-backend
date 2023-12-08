@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
-import { OccasionIndex } from "src/core/models/occasion.modal";
+import { OccasionIndex } from 'src/core/models/occasion.modal';
 import { In, Repository } from 'typeorm';
 import { AdultFollowUpFilterDto } from './dto/adultFollowUpFilter.dto';
-import { AdultScoreFilterDto } from "./dto/adult-score-filter.dto";
+import { AdultScoreFilterDto } from './dto/adult-score-filter.dto';
 import { AdultScoreDto } from './dto/adultScore.dto';
 import { AdultScoreEntity } from './entities/adult-score.entity';
 import { SelectedActionAssignmentService } from 'src/background-adult-data/action-assignment/selected-action-assignment.service';
@@ -33,7 +33,7 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
     public selectedOtherOngoingEffortService: SelectedOtherOngoingEffortService,
     public selectedPreviousEffortService: SelectedPreviousEffortService,
     public selectedProblemAreaAdultService: SelectedProblemAreaAdultService,
-    public backgroundAdultMetadataService: BackgroundAdultMetadataService
+    public backgroundAdultMetadataService: BackgroundAdultMetadataService,
   ) {
     super(repo);
   }
@@ -46,26 +46,44 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
     return this.repo.update(id, entity);
   }
 
-  async numOfClients(codeNumbers: string[], startDate: string, endDate: string, occasions: OccasionIndex[]) {
-    return (codeNumbers.length === 0 || occasions.length === 0) ? 0 : await this.repo.createQueryBuilder("score")
-      .select("score.codeNumber")
-      .where("score.codeNumber IN (:...codeNumbers)", { codeNumbers })
-      .andWhere("score.occasion IN (:...occasionNumbers)", { occasionNumbers: occasions })
-      .andWhere("score.date BETWEEN :startDate AND :endDate", { startDate, endDate })
-      .distinct(true)
-      .getRawMany();
+  async numOfClients(
+    codeNumbers: string[],
+    startDate: string,
+    endDate: string,
+    occasions: OccasionIndex[],
+  ) {
+    return codeNumbers.length === 0 || occasions.length === 0
+      ? 0
+      : await this.repo
+          .createQueryBuilder('score')
+          .select('score.codeNumber')
+          .where('score.codeNumber IN (:...codeNumbers)', { codeNumbers })
+          .andWhere('score.occasion IN (:...occasionNumbers)', {
+            occasionNumbers: occasions,
+          })
+          .andWhere('score.date BETWEEN :startDate AND :endDate', {
+            startDate,
+            endDate,
+          })
+          .distinct(true)
+          .getRawMany();
   }
 
   async avgOfOrsAndScore15(codeNumbers: string[], occasions: OccasionIndex[]) {
-    return (codeNumbers.length === 0 || occasions.length === 0) ? {
-      ors: 0,
-      score15: 0
-    } : await this.repo.createQueryBuilder("score")
-      .select("AVG(ors)", "ors")
-      .addSelect("AVG(score15)", "score15")
-      .where("score.codeNumber IN (:...codeNumbers)", { codeNumbers })
-      .andWhere("score.occasion IN (:...occasionNumbers)", { occasionNumbers: occasions })
-      .getRawOne();
+    return codeNumbers.length === 0 || occasions.length === 0
+      ? {
+          ors: 0,
+          score15: 0,
+        }
+      : await this.repo
+          .createQueryBuilder('score')
+          .select('AVG(ors)', 'ors')
+          .addSelect('AVG(score15)', 'score15')
+          .where('score.codeNumber IN (:...codeNumbers)', { codeNumbers })
+          .andWhere('score.occasion IN (:...occasionNumbers)', {
+            occasionNumbers: occasions,
+          })
+          .getRawOne();
   }
 
   async getOneScore(payload: AdultScoreFilterDto) {
@@ -74,12 +92,11 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
         where: {
           codeNumber: payload.codeNumber,
           person: payload.person,
-          occasion: payload.occasion
-        }
+          occasion: payload.occasion,
+        },
       });
       return scoreEntity;
-    }
-    catch (e) {
+    } catch (e) {
       console.log('getOneScore error:', e);
     }
   }
@@ -95,30 +112,30 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
         where: {
           codeNumber: payload.codeNumber,
           person: payload.person,
-          occasion: payload.occasion
-        }
+          occasion: payload.occasion,
+        },
       });
       if (scoreEntity) {
         scoreEntity.date = payload.date;
-        scoreEntity.score15 = payload.ors - (payload.orsAndSatisfactionScaleAnswers[0] + payload.orsAndSatisfactionScaleAnswers[1] + payload.orsAndSatisfactionScaleAnswers[2]);
-        scoreEntity.ors = (payload.orsAndSatisfactionScaleAnswers[0] + payload.orsAndSatisfactionScaleAnswers[1] + payload.orsAndSatisfactionScaleAnswers[2]) * 100 / 15;
+        scoreEntity.score15 = payload.score15;
         scoreEntity.score15Answers = payload.score15Answers;
-        scoreEntity.orsAndSatisfactionScaleAnswers = payload.orsAndSatisfactionScaleAnswers;
+        scoreEntity.ors = payload.ors;
+        scoreEntity.orsAndSatisfactionScaleAnswers =
+          payload.orsAndSatisfactionScaleAnswers;
         this.repo.update(scoreEntity.id, scoreEntity);
-      }
-      else {
+      } else {
         this.repo.insert(payload);
       }
       return true;
-    }
-    catch (e) {
-      console.log("create error: ", e);
+    } catch (e) {
+      console.log('create error: ', e);
       return false;
     }
   }
 
   async getFollowUpFilterResult(payload: AdultFollowUpFilterDto) {
-    const backgroundAdultMetadata = await this.backgroundAdultMetadataService.find();
+    const backgroundAdultMetadata =
+      await this.backgroundAdultMetadataService.find();
 
     // filter codeNumbers
     let codeNumbers = backgroundAdultMetadata.map(d => d.codeNumber);
@@ -126,142 +143,160 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
       const ids = payload.idsByEntityName[entityName];
       if (ids.length === 0) continue;
       switch (entityName) {
-        case "genderAdult":
+        case 'genderAdult':
           const genderAdultResult = await this.selectedGenderAdultService.find({
             where: {
               codeNumber: In(codeNumbers),
-              genderAdult: { id: In(ids) }
+              genderAdult: { id: In(ids) },
             },
-            relations: ["genderAdult"],
-            select: ["codeNumber"]
+            relations: ['genderAdult'],
+            select: ['codeNumber'],
           });
           codeNumbers = genderAdultResult.map(r => r.codeNumber);
           break;
-        case "actionAssignment":
-          const actionAssignmentResult = await this.selectedActionAssignmentService.find({
-            where: {
-              codeNumber: In(codeNumbers),
-              actionAssignment: { id: In(ids) }
-            },
-            relations: ["actionAssignment"],
-            select: ["codeNumber"]
-          });
+        case 'actionAssignment':
+          const actionAssignmentResult =
+            await this.selectedActionAssignmentService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                actionAssignment: { id: In(ids) },
+              },
+              relations: ['actionAssignment'],
+              select: ['codeNumber'],
+            });
           codeNumbers = actionAssignmentResult.map(r => r.codeNumber);
           break;
-          case "duringOperation":
-          const duringOperationResult = await this.selectedDuringOperationService.find({
-            where: {
-              codeNumber: In(codeNumbers),
-              duringOperation: { id: In(ids) }
-            },
-            relations: ["duringOperation"],
-            select: ["codeNumber"]
-          });
+        case 'duringOperation':
+          const duringOperationResult =
+            await this.selectedDuringOperationService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                duringOperation: { id: In(ids) },
+              },
+              relations: ['duringOperation'],
+              select: ['codeNumber'],
+            });
           codeNumbers = duringOperationResult.map(r => r.codeNumber);
           break;
-          case "educationLevel":
-          const educationLevelResult = await this.selectedEducationLevelService.find({
-            where: {
-              codeNumber: In(codeNumbers),
-              educationLevel: { id: In(ids) }
-            },
-            relations: ["educationLevel"],
-            select: ["codeNumber"]
-          });
+        case 'educationLevel':
+          const educationLevelResult =
+            await this.selectedEducationLevelService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                educationLevel: { id: In(ids) },
+              },
+              relations: ['educationLevel'],
+              select: ['codeNumber'],
+            });
           codeNumbers = educationLevelResult.map(r => r.codeNumber);
           break;
-          case "employment":
+        case 'employment':
           const employmentResult = await this.selectedEmploymentService.find({
             where: {
               codeNumber: In(codeNumbers),
-              employment: { id: In(ids) }
+              employment: { id: In(ids) },
             },
-            relations: ["employment"],
-            select: ["codeNumber"]
+            relations: ['employment'],
+            select: ['codeNumber'],
           });
           codeNumbers = employmentResult.map(r => r.codeNumber);
           break;
-          case "establishDiagnose":
-          const establishDiagnoseResult = await this.selectedEstablishDiagnoseService.find({
-            where: {
-              codeNumber: In(codeNumbers),
-              establishDiagnose: { id: In(ids) }
-            },
-            relations: ["establishDiagnose"],
-            select: ["codeNumber"]
-          });
+        case 'establishDiagnose':
+          const establishDiagnoseResult =
+            await this.selectedEstablishDiagnoseService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                establishDiagnose: { id: In(ids) },
+              },
+              relations: ['establishDiagnose'],
+              select: ['codeNumber'],
+            });
           codeNumbers = establishDiagnoseResult.map(r => r.codeNumber);
           break;
-          case "familyConstellation":
-          const familyConstellationAdultResult = await this.selectedFamilyConstellationAdultService.find({
-            where: {
-              codeNumber: In(codeNumbers),
-              familyConstellationAdult: { id: In(ids) }
-            },
-            relations: ["familyConstellationAdult"],
-            select: ["codeNumber"]
-          });
+        case 'familyConstellation':
+          const familyConstellationAdultResult =
+            await this.selectedFamilyConstellationAdultService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                familyConstellationAdult: { id: In(ids) },
+              },
+              relations: ['familyConstellationAdult'],
+              select: ['codeNumber'],
+            });
           codeNumbers = familyConstellationAdultResult.map(r => r.codeNumber);
           break;
-          case "otherOngoingEffort":
-          const otherOngoingEffortResult = await this.selectedOtherOngoingEffortService.find({
-            where: {
-              codeNumber: In(codeNumbers),
-              otherOngoingEffort: { id: In(ids) }
-            },
-            relations: ["otherOngoingEffort"],
-            select: ["codeNumber"]
-          });
+        case 'otherOngoingEffort':
+          const otherOngoingEffortResult =
+            await this.selectedOtherOngoingEffortService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                otherOngoingEffort: { id: In(ids) },
+              },
+              relations: ['otherOngoingEffort'],
+              select: ['codeNumber'],
+            });
           codeNumbers = otherOngoingEffortResult.map(r => r.codeNumber);
           break;
-          case "previousEffort":
-          const previousEffortResult = await this.selectedPreviousEffortService.find({
-            where: {
-              codeNumber: In(codeNumbers),
-              previousEffort: { id: In(ids) }
-            },
-            relations: ["previousEffort"],
-            select: ["codeNumber"]
-          });
+        case 'previousEffort':
+          const previousEffortResult =
+            await this.selectedPreviousEffortService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                previousEffort: { id: In(ids) },
+              },
+              relations: ['previousEffort'],
+              select: ['codeNumber'],
+            });
           codeNumbers = previousEffortResult.map(r => r.codeNumber);
           break;
-          case "problemAreaAdult":
-          const problemAreaAdultResult = await this.selectedProblemAreaAdultService.find({
-            where: {
-              codeNumber: In(codeNumbers),
-              problemAreaAdult: { id: In(ids) }
-            },
-            relations: ["problemAreaAdult"],
-            select: ["codeNumber"]
-          });
+        case 'problemAreaAdult':
+          const problemAreaAdultResult =
+            await this.selectedProblemAreaAdultService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                problemAreaAdult: { id: In(ids) },
+              },
+              relations: ['problemAreaAdult'],
+              select: ['codeNumber'],
+            });
           codeNumbers = problemAreaAdultResult.map(r => r.codeNumber);
           break;
       }
     }
 
     // filter score table with codeNumbers and date ranges
-    const scoreEntities = await this.numOfClients(codeNumbers, payload.startDate, payload.endDate, payload.occasions) || [];
+    const scoreEntities =
+      (await this.numOfClients(
+        codeNumbers,
+        payload.startDate,
+        payload.endDate,
+        payload.occasions,
+      )) || [];
     const numOfClients = scoreEntities.length;
     const numOfCodeNumbers = backgroundAdultMetadata.length;
-    const percentage = ((numOfCodeNumbers === 0) ? 0 : (+numOfClients / numOfCodeNumbers)) * 100;
-    const { ors, score15 } = await this.avgOfOrsAndScore15(codeNumbers, payload.occasions);
+    const percentage =
+      (numOfCodeNumbers === 0 ? 0 : +numOfClients / numOfCodeNumbers) * 100;
+    const { ors, score15 } = await this.avgOfOrsAndScore15(
+      codeNumbers,
+      payload.occasions,
+    );
 
     return {
       numOfClients,
       ors,
       percentage: percentage,
-      score15
+      score15,
     };
   }
 
   async getScoresByCodeNumberAndOccasion(codeNumber: string) {
-    return await this.repo.createQueryBuilder("score")
-      .select("AVG(ors)", "ors")
-      .addSelect("AVG(score15)", "score15")
-      .addSelect("occasion")
-      .where("score.codeNumber = :codeNumber", { codeNumber })
-      .groupBy("score.occasion")
+    console.log('codeNumber', codeNumber);
+    return await this.repo
+      .createQueryBuilder('score')
+      .select('ors')
+      .addSelect('score15')
+      .addSelect('occasion')
+      .where('score.codeNumber = :codeNumber', { codeNumber })
       .getRawMany();
   }
-
 }

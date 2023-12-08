@@ -30,7 +30,11 @@ export class UserService {
   }
 
   async findAll(): Promise<User[]> {
-    const [users, count] = await this.userRepository.findAndCount();
+    const [users, count] = await this.userRepository.findAndCount({
+      order: {
+        name: 'ASC',
+      },
+    });
     return users;
   }
 
