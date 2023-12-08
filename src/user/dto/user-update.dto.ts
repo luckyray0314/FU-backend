@@ -36,7 +36,13 @@ export class UpdateUserDto {
 
   @ApiProperty()
   @IsDefined()
-  @IsNotEmpty()
+  @IsOptional()
   @IsBoolean()
   readonly isAdmin: boolean;
+
+  @ApiProperty()
+  @IsDefined()
+  @IsOptional()
+  @IsString()
+  readonly password: string;
 }
