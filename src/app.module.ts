@@ -96,8 +96,8 @@ import { SelectedProblemAreaAdultModule } from './background-adult-data/problem-
 import { BackgroundAdultDataModule } from './background-adult-data/background-adult-data.module';
 import { BackgroundAdultMetadataModule } from './background-adult-data/background-adult-metadata.module';
 import { AdultScoreModule } from './adult-score/adult-score.module';
-import { CloseStatusModule } from './close-status/close.status.module';
-import { CloseStatusAdultModule } from './close-status-adult/close.status.adult.module';
+import { CloseStatusModule } from './close-status/child/close.status.child.module';
+import { CloseStatusAdultModule } from './close-status/adult/close.status.adult.module';
 import { ChangeLiveModule } from './important-events-vux/change-live/change-live.module';
 import { ChangeOverModule } from './important-events-vux/change-over/change-over.module';
 import { InvestigationOutModule } from './important-events-vux/investigation-out/investigation-out.module';
@@ -203,8 +203,6 @@ import { SelectedOtherInitiativeModule } from './important-events-vux/other-init
     SelectedReasonForTerminationModule,
     SelectedTimeConsumptionModule,
 
-
-
     ImportantEventsModule,
     ImportantEventsVuxModule,
 
@@ -221,12 +219,9 @@ import { SelectedOtherInitiativeModule } from './important-events-vux/other-init
     SelectedChangeLiveModule,
     SelectedChangeOverModule,
     SelectedInvestigationOutModule,
-    SelectedOtherInitiativeModule
-
+    SelectedOtherInitiativeModule,
   ],
   controllers: [AppController, HealthController],
-  providers: [
-    AppService
-  ],
+  providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}

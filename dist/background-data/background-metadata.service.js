@@ -28,6 +28,17 @@ let BackgroundMetadataService = class BackgroundMetadataService extends crud_typ
     async update(entity) {
         return this.repo.update(entity.codeNumber, entity);
     }
+    async findAll() {
+        return this.repo
+            .createQueryBuilder('background_metadata_entity')
+            .select('background_metadata_entity.codeNumber', 'codeNumber')
+            .addSelect('background_metadata_entity.date', 'date')
+            .addSelect('background_metadata_entity.country', 'country')
+            .addSelect('close-status.processor', 'processor')
+            .addSelect('close-status.isClosed', 'isClosed')
+            .innerJoin('close-status', 'close-status', 'background_metadata_entity.codeNumber = close-status.codeNumber')
+            .getRawMany();
+    }
 };
 BackgroundMetadataService = __decorate([
     (0, common_1.Injectable)(),

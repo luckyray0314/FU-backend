@@ -1,7 +1,12 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, FindOneOptions, DeleteResult } from 'typeorm';
 import { User } from './user.entity';
+import * as bcrypt from 'bcryptjs';
 import { CreateUserDto } from './dto/user-create.dto';
 import { UpdateUserDto } from './dto/user-update.dto';
 
@@ -13,9 +18,19 @@ export class UserService {
   ) {}
 
   async create(data: CreateUserDto): Promise<User> {
-    const createdUser = await this.userRepository.save(data);
-    delete createdUser?.password;
-    return createdUser;
+    try {
+      const { password } = data;
+      const salt = await bcrypt.genSalt();
+      const hashedPassword = await bcrypt.hash(password, salt);
+      const createdUser = await this.userRepository.save({
+        ...data,
+        password: hashedPassword,
+      });
+      delete createdUser?.password;
+      return createdUser;
+    } catch (error) {
+      throw new InternalServerErrorException(error);
+    }
   }
 
   async findOne(where: FindOneOptions<User>): Promise<User> {
@@ -31,6 +46,18 @@ export class UserService {
 
   async findAll(): Promise<User[]> {
     const [users, count] = await this.userRepository.findAndCount({
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        isAdmin: true,
+        title: true,
+        department: true,
+        address: true,
+        phone: true,
+        createdAt: true,
+        updatedAt: true,
+      },
       order: {
         name: 'ASC',
       },

@@ -74,7 +74,9 @@ export declare class BackgroundDataService {
     create(payload: BackgroundDataDto): Promise<boolean>;
     get(codeNumber: string): Promise<BackgroundDataDto>;
     getCaseList(): Promise<{
-        codeNumber: string;
+        codeNumber: any;
+        processor: any;
+        isClosed: any;
         status: SurveyStatus;
         signal: string;
         missedFields: string;

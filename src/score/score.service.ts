@@ -359,7 +359,6 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
   }
 
   async getScoresByCodeNumberAndOccasion(codeNumber: string) {
-    console.log('codeNumber', codeNumber);
     return await this.repo
       .createQueryBuilder('score')
       .select('AVG(ors)', 'ors')
