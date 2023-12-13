@@ -503,7 +503,7 @@ export class BackgroundDataService {
   }
 
   async getCaseList() {
-    const backgroundMetadata = await this.backgroundMetadataService.find();
+    const backgroundMetadata = await this.backgroundMetadataService.findAll();
     const result = await Promise.all(
       backgroundMetadata.map(async (backgroundMetadataEntity, bgIndex) => {
         const scoreEntities = await this.scoreService.find({
@@ -647,6 +647,8 @@ export class BackgroundDataService {
 
         const surveyEntity = {
           codeNumber: backgroundMetadataEntity.codeNumber,
+          processor: backgroundMetadataEntity?.processor,
+          isClosed: backgroundMetadataEntity?.isClosed,
           status: !isAllClear
             ? SurveyStatus.Clear
             : !isAllComing

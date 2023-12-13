@@ -290,7 +290,6 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
   }
 
   async getScoresByCodeNumberAndOccasion(codeNumber: string) {
-    console.log('codeNumber', codeNumber);
     return await this.repo
       .createQueryBuilder('score')
       .select('ors')

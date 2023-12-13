@@ -6,7 +6,10 @@ import { BackgroundMetadataEntity } from './background-metadata.entity';
 
 @Injectable()
 export class BackgroundMetadataService extends TypeOrmCrudService<BackgroundMetadataEntity> {
-  constructor(@InjectRepository(BackgroundMetadataEntity) repo: Repository<BackgroundMetadataEntity>) {
+  constructor(
+    @InjectRepository(BackgroundMetadataEntity)
+    repo: Repository<BackgroundMetadataEntity>,
+  ) {
     super(repo);
   }
 
@@ -16,5 +19,21 @@ export class BackgroundMetadataService extends TypeOrmCrudService<BackgroundMeta
 
   async update(entity: BackgroundMetadataEntity) {
     return this.repo.update(entity.codeNumber, entity);
+  }
+
+  async findAll() {
+    return this.repo
+      .createQueryBuilder('background_metadata_entity')
+      .select('background_metadata_entity.codeNumber', 'codeNumber')
+      .addSelect('background_metadata_entity.date', 'date')
+      .addSelect('background_metadata_entity.country', 'country')
+      .addSelect('close-status.processor', 'processor')
+      .addSelect('close-status.isClosed', 'isClosed')
+      .innerJoin(
+        'close-status',
+        'close-status',
+        'background_metadata_entity.codeNumber = close-status.codeNumber',
+      )
+      .getRawMany();
   }
 }

@@ -12,6 +12,6 @@ import { CloseStatusAdultService } from './close.status.adult.service';
   ],
   providers: [CloseStatusAdultService],
   controllers: [CloseStatusAdultController],
-  exports: [CloseStatusAdultService]
+  exports: [CloseStatusAdultService],
 })
-export class CloseStatusAdultModule { }
+export class CloseStatusAdultModule {}

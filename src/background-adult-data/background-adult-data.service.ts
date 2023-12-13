@@ -328,7 +328,7 @@ export class BackgroundAdultDataService {
 
   async getCaseList() {
     const backgroundAdultMetadata =
-      await this.backgroundAdultMetadataService.find();
+      await this.backgroundAdultMetadataService.findAll();
     const result = await Promise.all(
       backgroundAdultMetadata.map(
         async (backgroundAdultMetadataEntity, bgIndex) => {
@@ -337,31 +337,6 @@ export class BackgroundAdultDataService {
           });
 
           let prevOccasionDate = dayjs();
-
-          // const details = await Promise.all([...Array(3)].map(async (_it, arrIndex) => {
-          //   const entities = scoreEntities.find(s => s.occasion === arrIndex + 1);
-          //   const today = dayjs();
-          //   const date = entities ? new Date(entities.date)
-          //     : (
-          //       arrIndex === 0 ? today
-          //         : arrIndex === 1 ? prevOccasionDate.add(6, "month")
-          //           : prevOccasionDate.add(12, "month")
-          //     ).toDate();
-
-          //   if (entities) {
-          //     prevOccasionDate = dayjs(entities.date);
-          //   }
-
-          //   const statuses = [...Array(3)].map((_it2, personIndex) => {
-          //     const scoreEntity = entities.find(entity => entity.person === (personIndex + 1));
-          //     const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
-          //       : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
-          //         : SurveyStatus.Loss;
-          //     return status;
-          //   });
-
-          //   return { date, statuses };
-          // }));
           const details = await Promise.all(
             [...Array(3)].map(async (_it, arrIndex) => {
               const entities = scoreEntities.filter(
@@ -387,9 +362,6 @@ export class BackgroundAdultDataService {
                 const scoreEntity = entities
                   .filter(entity => entity.person === personIndex + 1)
                   .at(0);
-                // const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
-                //   : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
-                //     : SurveyStatus.Loss;
 
                 const status =
                   scoreEntity?.score15 && scoreEntity?.ors
@@ -462,6 +434,8 @@ export class BackgroundAdultDataService {
 
           const surveyEntity = {
             codeNumber: backgroundAdultMetadataEntity.codeNumber,
+            processor: backgroundAdultMetadataEntity?.processor,
+            isClosed: backgroundAdultMetadataEntity?.isClosed,
             status: isAllClear
               ? SurveyStatus.Clear
               : isAllLoss
