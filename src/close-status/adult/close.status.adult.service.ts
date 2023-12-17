@@ -90,7 +90,7 @@ export class CloseStatusAdultService extends TypeOrmCrudService<CloseStatusAdult
     if (closeStatus?.codeNumber) {
       const number = Number(closeStatus?.codeNumber?.split('-')[1]);
       if (number < 200) {
-        return { codeNumber: `Vux${dayjs().format('YYYY')}-200` };
+        return { codeNumber: `Vux${dayjs().format('YYYY')}-199` };
       } else {
         return closeStatus;
       }
