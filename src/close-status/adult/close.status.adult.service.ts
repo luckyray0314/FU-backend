@@ -1,12 +1,8 @@
-<<<<<<< HEAD
-import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
-=======
 import {
   Injectable,
   InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
->>>>>>> origin/bug-codegen
 import { InjectRepository } from '@nestjs/typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { BackgroundAdultMetadataService } from 'src/background-adult-data/background-adult-metadata.service';
