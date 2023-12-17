@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 import { Injectable, InternalServerErrorException, NotFoundException } from '@nestjs/common';
+=======
+import {
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
+>>>>>>> origin/bug-codegen
 import { InjectRepository } from '@nestjs/typeorm';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { BackgroundAdultMetadataService } from 'src/background-adult-data/background-adult-metadata.service';
@@ -84,9 +92,14 @@ export class CloseStatusAdultService extends TypeOrmCrudService<CloseStatusAdult
       .limit(1)
       .getRawOne();
     if (closeStatus?.codeNumber) {
-      return closeStatus;
+      const number = Number(closeStatus?.codeNumber?.split('-')[1]);
+      if (number < 200) {
+        return { codeNumber: `Vux${dayjs().format('YYYY')}-200` };
+      } else {
+        return closeStatus;
+      }
     } else {
-      return { codeNumber: `Bof${dayjs().format('YYYY')}-0000` };
+      return { codeNumber: `Vux${dayjs().format('YYYY')}-0000` };
     }
   }
 

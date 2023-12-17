@@ -101,7 +101,12 @@ export class CloseStatusService extends TypeOrmCrudService<CloseStatusEntity> {
       .limit(1)
       .getRawOne();
     if (closeStatus?.codeNumber) {
-      return closeStatus;
+      const number = Number(closeStatus?.codeNumber?.split('-')[1]);
+      if (number < 200) {
+        return { codeNumber: `Bof${dayjs().format('YYYY')}-200` };
+      } else {
+        return closeStatus;
+      }
     } else {
       return { codeNumber: `Bof${dayjs().format('YYYY')}-0000` };
     }
