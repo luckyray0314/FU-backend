@@ -40,6 +40,7 @@ import { TypeOfEffortService } from './type-of-effort/type-of-effort.service';
 import { SelectedWhoParticipatesService } from './who-participates/selected-who-participates.service';
 import { WhoParticipatesService } from './who-participates/who-participates.service';
 import ImageModule from 'docxtemplater-image-module-free';
+import { generate } from 'rand-token';
 import * as qrcode from 'qrcode';
 
 import dayjs = require('dayjs');
@@ -50,6 +51,11 @@ import path = require('path');
 import PizZip = require('pizzip');
 import { join } from 'path';
 import { base64Parser } from 'src/core/functions/base64-parser.function';
+import { CloseStatusService } from 'src/close-status/child/close.status.child.service';
+import {
+  codeGeneratorChars,
+  codeGeneratorSize,
+} from 'src/core/constants/generator.const';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Docxtemplater = require('docxtemplater');
@@ -65,6 +71,7 @@ const destPath = `${__dirname}/survey.docx`;
 export class BackgroundDataService {
   constructor(
     public backgroundMetadataService: BackgroundMetadataService,
+    public closeStatusService: CloseStatusService,
     public scoreService: ScoreService,
     public followUpService: FollowUpDataService,
 
@@ -122,6 +129,7 @@ export class BackgroundDataService {
     const schoolUniformEntities = await this.schoolUniformService.find();
     const typeOfEffortEntities = await this.typeOfEffortService.find();
     const whoParticipatesEntities = await this.whoParticipatesService.find();
+    const importantEventsEntities = [{ id: 1, description: 'Word.Self' }];
 
     return {
       genderEntities,
@@ -139,6 +147,7 @@ export class BackgroundDataService {
       schoolUniformEntities,
       typeOfEffortEntities,
       whoParticipatesEntities,
+      importantEventsEntities,
     };
   }
 
@@ -148,15 +157,13 @@ export class BackgroundDataService {
 
   async create(payload: BackgroundDataDto): Promise<boolean> {
     try {
-      const codeNumber = payload.codeNumber;
+      const codeNumber = payload?.codeNumber;
 
       await this.backgroundMetadataService.create({
         codeNumber,
-        date: payload.date,
-        yearOfBirth: payload.yearOfBirth,
-        country: payload.country,
-        // isClosed: "false",
-        // processor: null
+        date: payload?.date,
+        yearOfBirth: payload?.yearOfBirth,
+        country: payload?.country,
       });
 
       await this.selectedGenderService.deleteByCodeNumber(codeNumber);
@@ -185,14 +192,14 @@ export class BackgroundDataService {
       await this.selectedTypeOfEffortService.deleteByCodeNumber(codeNumber);
       await this.selectedWhoParticipatesService.deleteByCodeNumber(codeNumber);
 
-      for (const id of payload.formDataByEntityName['gender']) {
+      for (const id of payload?.formDataByEntityName['gender']) {
         await this.selectedGenderService.create({
           codeNumber,
           gender: await this.genderService.findOne({ where: { id: +id } }),
         });
       }
 
-      for (const id of payload.formDataByEntityName['educationVh1']) {
+      for (const id of payload?.formDataByEntityName['educationVh1']) {
         await this.selectedEducationVh1Service.create({
           codeNumber,
           educationVh1: await this.educationVh1Service.findOne({
@@ -201,7 +208,7 @@ export class BackgroundDataService {
         });
       }
 
-      for (const id of payload.formDataByEntityName['educationVh2']) {
+      for (const id of payload?.formDataByEntityName['educationVh2']) {
         await this.selectedEducationVh2Service.create({
           codeNumber,
           educationVh2: await this.educationVh2Service.findOne({
@@ -210,7 +217,7 @@ export class BackgroundDataService {
         });
       }
 
-      for (const id of payload.formDataByEntityName['employmentVh1']) {
+      for (const id of payload?.formDataByEntityName['employmentVh1']) {
         await this.selectedEmploymentVh1Service.create({
           codeNumber,
           employmentVh1: await this.employmentVh1Service.findOne({
@@ -219,7 +226,7 @@ export class BackgroundDataService {
         });
       }
 
-      for (const id of payload.formDataByEntityName['employmentVh2']) {
+      for (const id of payload?.formDataByEntityName['employmentVh2']) {
         await this.selectedEmploymentVh2Service.create({
           codeNumber,
           employmentVh2: await this.employmentVh2Service.findOne({
@@ -228,7 +235,7 @@ export class BackgroundDataService {
         });
       }
 
-      for (const id of payload.formDataByEntityName['establishedDiagnoses']) {
+      for (const id of payload?.formDataByEntityName['establishedDiagnoses']) {
         await this.selectedEstablishedDiagnosesService.create(
           typeof id === 'number'
             ? {
@@ -245,7 +252,7 @@ export class BackgroundDataService {
         );
       }
 
-      for (const id of payload.formDataByEntityName['familyConstellation']) {
+      for (const id of payload?.formDataByEntityName['familyConstellation']) {
         await this.selectedFamilyConstellationService.create(
           typeof id === 'number'
             ? {
@@ -262,7 +269,7 @@ export class BackgroundDataService {
         );
       }
 
-      for (const id of payload.formDataByEntityName['interpreterRequired']) {
+      for (const id of payload?.formDataByEntityName['interpreterRequired']) {
         await this.selectedInterpreterRequiredService.create({
           codeNumber,
           interpreterRequired: await this.interpreterRequiredService.findOne({
@@ -271,7 +278,7 @@ export class BackgroundDataService {
         });
       }
 
-      for (const id of payload.formDataByEntityName['otherInterventions']) {
+      for (const id of payload?.formDataByEntityName['otherInterventions']) {
         await this.selectedOtherInterventionsService.create(
           typeof id === 'number'
             ? {
@@ -288,7 +295,7 @@ export class BackgroundDataService {
         );
       }
 
-      for (const id of payload.formDataByEntityName['previousIntervention']) {
+      for (const id of payload?.formDataByEntityName['previousIntervention']) {
         await this.selectedPreviousInterventionService.create(
           typeof id === 'number'
             ? {
@@ -305,7 +312,7 @@ export class BackgroundDataService {
         );
       }
 
-      for (const id of payload.formDataByEntityName['problemArea']) {
+      for (const id of payload?.formDataByEntityName['problemArea']) {
         await await this.selectedProblemAreaService.create(
           typeof id === 'number'
             ? {
@@ -321,7 +328,7 @@ export class BackgroundDataService {
         );
       }
 
-      for (const id of payload.formDataByEntityName['reasonForUpdate']) {
+      for (const id of payload?.formDataByEntityName['reasonForUpdate']) {
         await this.selectedReasonForUpdateService.create({
           codeNumber,
           reasonForUpdate: await this.reasonForUpdateService.findOne({
@@ -330,7 +337,7 @@ export class BackgroundDataService {
         });
       }
 
-      for (const id of payload.formDataByEntityName['schoolUniform']) {
+      for (const id of payload?.formDataByEntityName['schoolUniform']) {
         await this.selectedSchoolUniformService.create({
           codeNumber,
           schoolUniform: await this.schoolUniformService.findOne({
@@ -339,7 +346,7 @@ export class BackgroundDataService {
         });
       }
 
-      for (const id of payload.formDataByEntityName['typeOfEffort']) {
+      for (const id of payload?.formDataByEntityName['typeOfEffort']) {
         await this.selectedTypeOfEffortService.create({
           codeNumber,
           typeOfEffort: await this.typeOfEffortService.findOne({
@@ -348,7 +355,7 @@ export class BackgroundDataService {
         });
       }
 
-      for (const id of payload.formDataByEntityName['whoParticipates']) {
+      for (const id of payload?.formDataByEntityName['whoParticipates']) {
         await this.selectedWhoParticipatesService.create(
           typeof id === 'number'
             ? {
@@ -503,158 +510,164 @@ export class BackgroundDataService {
   }
 
   async getCaseList() {
-    const backgroundMetadata = await this.backgroundMetadataService.find();
+    const closeStatus = await this.closeStatusService.findAll();
+    const backgroundMetadata = await this.backgroundMetadataService.findAll();
     const result = await Promise.all(
-      backgroundMetadata.map(async (backgroundMetadataEntity, bgIndex) => {
-        const scoreEntities = await this.scoreService.find({
-          where: { codeNumber: backgroundMetadataEntity.codeNumber },
-        });
-
-        let prevOccasionDate = dayjs();
-
-        const details = await Promise.all(
-          [...Array(3)].map(async (_it, arrIndex) => {
-            const entities = scoreEntities.filter(
-              s => s.occasion === arrIndex + 1,
-            );
-            const today = dayjs();
-            const date = entities.at(0)
-              ? new Date(entities[0].date)
-              : (arrIndex === 0
-                  ? today
-                  : arrIndex === 1
-                  ? prevOccasionDate.add(6, 'month')
-                  : prevOccasionDate.add(12, 'month')
-                ).toDate();
-
-            if (entities.at(0)) {
-              prevOccasionDate = dayjs(entities[0].date);
-            }
-
-            const isScanLocked = Math.abs(dayjs().diff(date, 'week')) > 0;
-            const statuses = [...Array(3)].map((_it2, personIndex) => {
-              const scoreEntity = entities
-                .filter(entity => entity.person === personIndex + 1)
-                .at(0);
-              const status =
-                scoreEntity?.score15 && scoreEntity?.ors
-                  ? SurveyStatus.Clear
-                  : !isScanLocked
-                  ? SurveyStatus.Coming
-                  : SurveyStatus.Loss;
-              // const status = (scoreEntity?.score15 && scoreEntity?.ors) ? SurveyStatus.Clear
-              //   : (scoreEntity?.score15 || scoreEntity?.ors) ? SurveyStatus.Coming
-              //     : SurveyStatus.Loss;
-              return status;
-            });
-
-            return { date, statuses };
-          }),
+      closeStatus.map(async (closeStatusEntity, bgIndex) => {
+        const existBackgroundMetadata = backgroundMetadata?.find(
+          item => item?.codeNumber == closeStatusEntity?.codeNumber,
         );
-        let isAllClear = true;
-        let isAllLoss = true;
-        let isAllComing = true;
-        for (let i = 0; i < details.length; ++i) {
-          for (let j = 0; j < details[i].statuses.length; ++j) {
-            if (details[i].statuses[j] === SurveyStatus.Clear) {
-              isAllClear = false;
-            } else if (details[i].statuses[j] === SurveyStatus.Loss) {
-              isAllLoss = false;
-            } else {
-              isAllComing = false;
+        let surveyEntity: any = {
+          processor: closeStatusEntity?.processor,
+        };
+        if (closeStatusEntity?.isAbsent) {
+          surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
+          surveyEntity['status'] = SurveyStatus.Cancelled;
+        } else if (
+          existBackgroundMetadata?.codeNumber &&
+          dayjs().diff(existBackgroundMetadata?.date, 'year') <= 1
+        ) {
+          surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
+          const scoreEntities = await this.scoreService.find({
+            where: { codeNumber: closeStatusEntity.codeNumber },
+          });
+          let prevOccasionDate = dayjs();
+          const details = await Promise.all(
+            [...Array(3)].map(async (_it, arrIndex) => {
+              const entities = scoreEntities.filter(
+                s => s.occasion === arrIndex + 1,
+              );
+              const today = dayjs();
+              const date = entities.at(0)
+                ? new Date(entities[0].date)
+                : (arrIndex === 0
+                    ? today
+                    : arrIndex === 1
+                    ? prevOccasionDate.add(6, 'month')
+                    : prevOccasionDate.add(12, 'month')
+                  ).toDate();
+
+              if (entities.at(0)) {
+                prevOccasionDate = dayjs(entities[0].date);
+              }
+
+              const isScanLocked = Math.abs(dayjs().diff(date, 'week')) > 0;
+              const statuses = [...Array(3)].map((_it2, personIndex) => {
+                const scoreEntity = entities
+                  .filter(entity => entity.person === personIndex + 1)
+                  .at(0);
+                const status =
+                  scoreEntity?.score15 && scoreEntity?.ors
+                    ? SurveyStatus.Clear
+                    : !isScanLocked
+                    ? SurveyStatus.Coming
+                    : SurveyStatus.Loss;
+                return status;
+              });
+
+              return { date, statuses };
+            }),
+          );
+          let isAllClear = true;
+          let isAllLoss = true;
+          let isAllComing = true;
+          for (let i = 0; i < details.length; ++i) {
+            for (let j = 0; j < details[i].statuses.length; ++j) {
+              if (details[i].statuses[j] === SurveyStatus.Clear) {
+                isAllClear = false;
+              } else if (details[i].statuses[j] === SurveyStatus.Loss) {
+                isAllLoss = false;
+              } else {
+                isAllComing = false;
+              }
             }
           }
-        }
-
-        // const closeStatus = "true";
-
-        let nextSurvey = dayjs().format('YYYY-MM-DD');
-        let signal = 'BackgroundSurvey';
-        if (
-          details[0].statuses.filter(status => status === SurveyStatus.Clear)
-            .length !== 1 &&
-          details[0].statuses.filter(status => status === SurveyStatus.Clear)
-            .length !== 2 &&
-          details[0].statuses.filter(status => status === SurveyStatus.Clear)
-            .length !== 3
-        ) {
-          signal = 'BackgroundSurvey';
-          nextSurvey = `${dayjs(details[1].date).format('YYYY-MM-DD')}`;
-        }
-        if (
-          details[0].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 1 ||
-          details[0].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 2
-        ) {
-          signal = '0MonthSurvey';
-          nextSurvey = `${dayjs(details[1].date).format('YYYY-MM-DD')}`;
-        }
-        if (
-          details[0].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 3 &&
-          !details[1].statuses.filter(status => status === SurveyStatus.Clear)
-            .length
-        ) {
-          signal = '6MonthSurvey';
-          nextSurvey = `${dayjs(details[1].date).format('YYYY-MM-DD')}`;
-        }
-        if (
-          details[1].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 1 ||
-          details[1].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 2
-        ) {
-          signal = '6MonthSurvey';
-          nextSurvey = `${dayjs(details[1].date).format('YYYY-MM-DD')}`;
-        }
-        if (
-          details[1].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 3 &&
-          !details[2].statuses.filter(status => status === SurveyStatus.Clear)
-            .length
-        ) {
-          signal = '12MonthSurvey';
-          nextSurvey = `${dayjs(details[2].date).format('YYYY-MM-DD')}`;
-        }
-        if (
-          details[2].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 1 ||
-          details[2].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 2
-        ) {
-          signal = '12MonthSurvey';
-          nextSurvey = `${dayjs(details[2].date).format('YYYY-MM-DD')}`;
-        }
-        if (
-          details[2].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 3
-        ) {
-          signal = 'PostSurvey';
-          nextSurvey = `${dayjs(details[2].date).format('YYYY-MM-DD')}`;
-        }
-        if (
-          details[0].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 3 &&
-          details[1].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 3 &&
-          details[2].statuses.filter(status => status === SurveyStatus.Clear)
-            .length === 3
-        ) {
-          signal = 'ImportantHappeningsDuring12Months';
-          nextSurvey = `${dayjs(details[2].date).format('YYYY-MM-DD')}`;
-        }
-
-        const surveyEntity = {
-          codeNumber: backgroundMetadataEntity.codeNumber,
-          status: !isAllClear
+          let nextSurvey = dayjs().format('YYYY-MM-DD');
+          let signal = 'BackgroundSurvey';
+          if (
+            details[0].statuses.filter(status => status === SurveyStatus.Clear)
+              .length !== 1 &&
+            details[0].statuses.filter(status => status === SurveyStatus.Clear)
+              .length !== 2 &&
+            details[0].statuses.filter(status => status === SurveyStatus.Clear)
+              .length !== 3
+          ) {
+            signal = 'BackgroundSurvey';
+            nextSurvey = `${dayjs(details[1].date).format('YYYY-MM-DD')}`;
+          }
+          if (
+            details[0].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 1 ||
+            details[0].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 2
+          ) {
+            signal = '0MonthSurvey';
+            nextSurvey = `${dayjs(details[1].date).format('YYYY-MM-DD')}`;
+          }
+          if (
+            details[0].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 3 &&
+            !details[1].statuses.filter(status => status === SurveyStatus.Clear)
+              .length
+          ) {
+            signal = '6MonthSurvey';
+            nextSurvey = `${dayjs(details[1].date).format('YYYY-MM-DD')}`;
+          }
+          if (
+            details[1].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 1 ||
+            details[1].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 2
+          ) {
+            signal = '6MonthSurvey';
+            nextSurvey = `${dayjs(details[1].date).format('YYYY-MM-DD')}`;
+          }
+          if (
+            details[1].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 3 &&
+            !details[2].statuses.filter(status => status === SurveyStatus.Clear)
+              .length
+          ) {
+            signal = '12MonthSurvey';
+            nextSurvey = `${dayjs(details[2].date).format('YYYY-MM-DD')}`;
+          }
+          if (
+            details[2].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 1 ||
+            details[2].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 2
+          ) {
+            signal = '12MonthSurvey';
+            nextSurvey = `${dayjs(details[2].date).format('YYYY-MM-DD')}`;
+          }
+          if (
+            details[2].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 3
+          ) {
+            signal = 'PostSurvey';
+            nextSurvey = `${dayjs(details[2].date).format('YYYY-MM-DD')}`;
+          }
+          if (
+            details[0].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 3 &&
+            details[1].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 3 &&
+            details[2].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === 3
+          ) {
+            signal = 'ImportantHappeningsDuring12Months';
+            nextSurvey = `${dayjs(details[2].date).format('YYYY-MM-DD')}`;
+          }
+          surveyEntity['status'] = !isAllClear
             ? SurveyStatus.Clear
             : !isAllComing
             ? SurveyStatus.Coming
-            : SurveyStatus.Loss,
-          signal,
-          missedFields: '',
-          history: {
+            : SurveyStatus.Loss;
+          surveyEntity['isClosed'] =
+            closeStatusEntity?.isClosed === 'true' ? true : false;
+          surveyEntity['signal'] = signal;
+          surveyEntity['missedFields'] = '';
+          surveyEntity['history'] = {
             zeroMonth: {
               date: details[0].date,
               statusInDetail: {
@@ -679,10 +692,100 @@ export class BackgroundDataService {
                 careGiver2: details[2].statuses[2],
               },
             },
-          },
-          nextSurvey,
-          // closeStatus: backgroundMetadataEntity.isClosed
-        };
+          };
+          surveyEntity['nextSurvey'] = nextSurvey;
+        } else if (
+          existBackgroundMetadata?.codeNumber &&
+          dayjs().diff(existBackgroundMetadata?.date, 'year') > 1
+        ) {
+          let archivedCodeNumber: string = '';
+          if (!closeStatusEntity?.archivedCodeNumber) {
+            archivedCodeNumber = `Ark-${generate(
+              codeGeneratorSize,
+              codeGeneratorChars,
+            )}`;
+            await this.closeStatusService.update(closeStatusEntity?.id, {
+              ...closeStatusEntity,
+              archivedCodeNumber,
+            });
+          } else {
+            archivedCodeNumber = closeStatusEntity?.archivedCodeNumber;
+          }
+          const scoreEntities = await this.scoreService.find({
+            where: { codeNumber: closeStatusEntity?.codeNumber },
+          });
+          let prevOccasionDate = dayjs();
+          const details = await Promise.all(
+            [...Array(3)].map(async (_it, arrIndex) => {
+              const entities = scoreEntities.filter(
+                s => s.occasion === arrIndex + 1,
+              );
+              const today = dayjs();
+              const date = entities.at(0)
+                ? new Date(entities[0].date)
+                : (arrIndex === 0
+                    ? today
+                    : arrIndex === 1
+                    ? prevOccasionDate.add(6, 'month')
+                    : prevOccasionDate.add(12, 'month')
+                  ).toDate();
+
+              if (entities.at(0)) {
+                prevOccasionDate = dayjs(entities[0].date);
+              }
+              const isScanLocked = Math.abs(dayjs().diff(date, 'week')) > 0;
+              const statuses = [...Array(3)].map((_it2, personIndex) => {
+                const scoreEntity = entities
+                  .filter(entity => entity.person === personIndex + 1)
+                  .at(0);
+                const status =
+                  scoreEntity?.score15 && scoreEntity?.ors
+                    ? SurveyStatus.Clear
+                    : !isScanLocked
+                    ? SurveyStatus.Coming
+                    : SurveyStatus.Loss;
+                return status;
+              });
+
+              return { date, statuses };
+            }),
+          );
+          surveyEntity['codeNumber'] = archivedCodeNumber;
+          surveyEntity['status'] = SurveyStatus.Archived;
+          surveyEntity['isClosed'] = true;
+          surveyEntity['signal'] = '';
+          surveyEntity['missedFields'] = '';
+          surveyEntity['history'] = {
+            zeroMonth: {
+              date: details[0].date,
+              statusInDetail: {
+                child: details[0].statuses[0],
+                careGiver1: details[0].statuses[1],
+                careGiver2: details[0].statuses[2],
+              },
+            },
+            sixMonths: {
+              date: details[1].date,
+              statusInDetail: {
+                child: details[1].statuses[0],
+                careGiver1: details[1].statuses[1],
+                careGiver2: details[1].statuses[2],
+              },
+            },
+            twelveMonths: {
+              date: details[2].date,
+              statusInDetail: {
+                child: details[2].statuses[0],
+                careGiver1: details[2].statuses[1],
+                careGiver2: details[2].statuses[2],
+              },
+            },
+          };
+          surveyEntity['nextSurvey'] = '';
+        } else {
+          surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
+          surveyEntity['status'] = SurveyStatus.NoBackgroundData;
+        }
         return surveyEntity;
       }),
     );

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AdultScoreModule } from 'src/adult-score/adult-score.module';
-import { FollowUpDataModule } from "src/follow-up-survey/follow-up-data.module";
+import { FollowUpDataModule } from 'src/follow-up-survey/follow-up-data.module';
 import { ActionAssignmentModule } from './action-assignment/action-assignment.module';
 import { SelectedActionAssignmentModule } from './action-assignment/selected-action-assignment.module';
 import { BackgroundAdultDataController } from './background-adult-data.controller';
@@ -24,6 +24,7 @@ import { PreviousEffortModule } from './previous-effort/previous-effort.module';
 import { SelectedPreviousEffortModule } from './previous-effort/selected-previous-effort.module';
 import { ProblemAreaAdultModule } from './problem-area/problem-area.module';
 import { SelectedProblemAreaAdultModule } from './problem-area/selected-problem-area.module';
+import { CloseStatusAdultModule } from 'src/close-status/adult/close.status.adult.module';
 
 @Module({
   imports: [
@@ -50,9 +51,9 @@ import { SelectedProblemAreaAdultModule } from './problem-area/selected-problem-
     SelectedProblemAreaAdultModule,
     AdultScoreModule,
     FollowUpDataModule,
-    
+    CloseStatusAdultModule,
   ],
   providers: [BackgroundAdultDataService],
   controllers: [BackgroundAdultDataController],
 })
-export class BackgroundAdultDataModule { }
+export class BackgroundAdultDataModule {}

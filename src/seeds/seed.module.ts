@@ -230,12 +230,12 @@ import { BackgroundAdultMetadataRepository } from 'src/background-adult-data/bac
 import { AdultScoreRepository } from 'src/adult-score/adult-score.repository';
 import { AdultScoreEntity } from 'src/adult-score/entities/adult-score.entity';
 import { AdultScoreModule } from 'src/adult-score/adult-score.module';
-import { CloseStatusModule } from 'src/close-status/close.status.module';
-import { CloseStatusRepository } from 'src/close-status/close.status.repository';
-import { CloseStatusEntity } from 'src/close-status/entities/close.status.entity';
-import { CloseStatusAdultModule } from 'src/close-status-adult/close.status.adult.module';
-import { CloseStatusAdultRepository } from 'src/close-status-adult/close.status.adult.repository';
-import { CloseStatusAdultEntity } from 'src/close-status-adult/entities/close.status.adult.entity';
+import { CloseStatusModule } from 'src/close-status/child/close.status.child.module';
+import { CloseStatusRepository } from 'src/close-status/child/close.status.child.repository';
+import { CloseStatusEntity } from 'src/close-status/child/entities/close.status.child.entity';
+import { CloseStatusAdultModule } from 'src/close-status/adult/close.status.adult.module';
+import { CloseStatusAdultRepository } from 'src/close-status/adult/close.status.adult.repository';
+import { CloseStatusAdultEntity } from 'src/close-status/adult/entities/close.status.adult.entity';
 import { ChangeLiveModule } from 'src/important-events-vux/change-live/change-live.module';
 import { ChangeLiveRepository } from 'src/important-events-vux/change-live/change-live.repository';
 import { ChangeLiveEntity } from 'src/important-events-vux/change-live/entities/change-live.entity';
@@ -264,136 +264,420 @@ import { SelectedChangeLiveRepository } from 'src/important-events-vux/change-li
 @Module({
   imports: [
     //Close Status
-    CloseStatusModule, TypeOrmModule.forFeature([CloseStatusEntity, CloseStatusRepository]),
+    CloseStatusModule,
+    TypeOrmModule.forFeature([CloseStatusEntity, CloseStatusRepository]),
 
-    CloseStatusAdultModule, TypeOrmModule.forFeature([CloseStatusAdultEntity, CloseStatusAdultRepository]),
+    CloseStatusAdultModule,
+    TypeOrmModule.forFeature([
+      CloseStatusAdultEntity,
+      CloseStatusAdultRepository,
+    ]),
 
-    BackgroundMetadataModule, TypeOrmModule.forFeature([BackgroundMetadataEntity, BackgroundMetadataRepository]),
-    ScoreModule, TypeOrmModule.forFeature([ScoreEntity, ScoreRepository]),
+    BackgroundMetadataModule,
+    TypeOrmModule.forFeature([
+      BackgroundMetadataEntity,
+      BackgroundMetadataRepository,
+    ]),
+    ScoreModule,
+    TypeOrmModule.forFeature([ScoreEntity, ScoreRepository]),
 
-    GenderModule, TypeOrmModule.forFeature([GenderEntity, GenderRepository]),
-    SelectedGenderModule, TypeOrmModule.forFeature([SelectedGenderEntity, SelectedGenderRepository]),
+    GenderModule,
+    TypeOrmModule.forFeature([GenderEntity, GenderRepository]),
+    SelectedGenderModule,
+    TypeOrmModule.forFeature([SelectedGenderEntity, SelectedGenderRepository]),
 
-    EducationVh1Module, TypeOrmModule.forFeature([EducationVh1Entity, EducationVh1Repository]),
-    SelectedEducationVh1Module, TypeOrmModule.forFeature([SelectedEducationVh1Entity, SelectedEducationVh1Repository]),
+    EducationVh1Module,
+    TypeOrmModule.forFeature([EducationVh1Entity, EducationVh1Repository]),
+    SelectedEducationVh1Module,
+    TypeOrmModule.forFeature([
+      SelectedEducationVh1Entity,
+      SelectedEducationVh1Repository,
+    ]),
 
-    EducationVh2Module, TypeOrmModule.forFeature([EducationVh2Entity, EducationVh2Repository]),
-    SelectedEducationVh2Module, TypeOrmModule.forFeature([SelectedEducationVh2Entity, SelectedEducationVh2Repository]),
+    EducationVh2Module,
+    TypeOrmModule.forFeature([EducationVh2Entity, EducationVh2Repository]),
+    SelectedEducationVh2Module,
+    TypeOrmModule.forFeature([
+      SelectedEducationVh2Entity,
+      SelectedEducationVh2Repository,
+    ]),
 
-    EmploymentVh1Module, TypeOrmModule.forFeature([EmploymentVh1Entity, EmploymentVh1Repository]),
-    SelectedEmploymentVh1Module, TypeOrmModule.forFeature([SelectedEmploymentVh1Entity, SelectedEmploymentVh1Repository]),
+    EmploymentVh1Module,
+    TypeOrmModule.forFeature([EmploymentVh1Entity, EmploymentVh1Repository]),
+    SelectedEmploymentVh1Module,
+    TypeOrmModule.forFeature([
+      SelectedEmploymentVh1Entity,
+      SelectedEmploymentVh1Repository,
+    ]),
 
-    EmploymentVh2Module, TypeOrmModule.forFeature([EmploymentVh2Entity, EmploymentVh2Repository]),
-    SelectedEmploymentVh2Module, TypeOrmModule.forFeature([SelectedEmploymentVh2Entity, SelectedEmploymentVh2Repository]),
+    EmploymentVh2Module,
+    TypeOrmModule.forFeature([EmploymentVh2Entity, EmploymentVh2Repository]),
+    SelectedEmploymentVh2Module,
+    TypeOrmModule.forFeature([
+      SelectedEmploymentVh2Entity,
+      SelectedEmploymentVh2Repository,
+    ]),
 
-    EstablishedDiagnosesModule, TypeOrmModule.forFeature([EstablishedDiagnosesEntity, EstablishedDiagnosesRepository]),
-    SelectedEstablishedDiagnosesModule, TypeOrmModule.forFeature([SelectedEstablishedDiagnosesEntity, SelectedEstablishedDiagnosesRepository]),
+    EstablishedDiagnosesModule,
+    TypeOrmModule.forFeature([
+      EstablishedDiagnosesEntity,
+      EstablishedDiagnosesRepository,
+    ]),
+    SelectedEstablishedDiagnosesModule,
+    TypeOrmModule.forFeature([
+      SelectedEstablishedDiagnosesEntity,
+      SelectedEstablishedDiagnosesRepository,
+    ]),
 
-    FamilyConstellationModule, TypeOrmModule.forFeature([FamilyConstellationEntity, FamilyConstellationRepository]),
-    SelectedFamilyConstellationModule, TypeOrmModule.forFeature([SelectedFamilyConstellationEntity, SelectedFamilyConstellationRepository]),
+    FamilyConstellationModule,
+    TypeOrmModule.forFeature([
+      FamilyConstellationEntity,
+      FamilyConstellationRepository,
+    ]),
+    SelectedFamilyConstellationModule,
+    TypeOrmModule.forFeature([
+      SelectedFamilyConstellationEntity,
+      SelectedFamilyConstellationRepository,
+    ]),
 
-    InterpreterRequiredModule, TypeOrmModule.forFeature([InterpreterRequiredEntity, InterpreterRequiredRepository]),
-    SelectedInterpreterRequiredModule, TypeOrmModule.forFeature([SelectedInterpreterRequiredEntity, SelectedInterpreterRequiredRepository]),
+    InterpreterRequiredModule,
+    TypeOrmModule.forFeature([
+      InterpreterRequiredEntity,
+      InterpreterRequiredRepository,
+    ]),
+    SelectedInterpreterRequiredModule,
+    TypeOrmModule.forFeature([
+      SelectedInterpreterRequiredEntity,
+      SelectedInterpreterRequiredRepository,
+    ]),
 
-    OtherInterventionsModule, TypeOrmModule.forFeature([OtherInterventionsEntity, OtherInterventionsRepository]),
-    SelectedOtherInterventionsModule, TypeOrmModule.forFeature([SelectedOtherInterventionsEntity, SelectedOtherInterventionsRepository]),
+    OtherInterventionsModule,
+    TypeOrmModule.forFeature([
+      OtherInterventionsEntity,
+      OtherInterventionsRepository,
+    ]),
+    SelectedOtherInterventionsModule,
+    TypeOrmModule.forFeature([
+      SelectedOtherInterventionsEntity,
+      SelectedOtherInterventionsRepository,
+    ]),
 
-    PreviousInterventionModule, TypeOrmModule.forFeature([PreviousInterventionEntity, PreviousInterventionRepository]),
-    SelectedPreviousInterventionModule, TypeOrmModule.forFeature([SelectedPreviousInterventionEntity, SelectedPreviousInterventionRepository]),
+    PreviousInterventionModule,
+    TypeOrmModule.forFeature([
+      PreviousInterventionEntity,
+      PreviousInterventionRepository,
+    ]),
+    SelectedPreviousInterventionModule,
+    TypeOrmModule.forFeature([
+      SelectedPreviousInterventionEntity,
+      SelectedPreviousInterventionRepository,
+    ]),
 
-    ProblemAreaModule, TypeOrmModule.forFeature([ProblemAreaEntity, ProblemAreaRepository]),
-    SelectedProblemAreaModule, TypeOrmModule.forFeature([SelectedProblemAreaEntity, SelectedProblemAreaRepository]),
+    ProblemAreaModule,
+    TypeOrmModule.forFeature([ProblemAreaEntity, ProblemAreaRepository]),
+    SelectedProblemAreaModule,
+    TypeOrmModule.forFeature([
+      SelectedProblemAreaEntity,
+      SelectedProblemAreaRepository,
+    ]),
 
-    OtherInterventionsStartedModule, TypeOrmModule.forFeature([OtherInterventionsStartedEntity, OtherInterventionsStartedRepository]),
-    SelectedOtherInterventionsStartedModule, TypeOrmModule.forFeature([SelectedOtherInterventionsStartedEntity, SelectedOtherInterventionsStartedRepository]),
+    OtherInterventionsStartedModule,
+    TypeOrmModule.forFeature([
+      OtherInterventionsStartedEntity,
+      OtherInterventionsStartedRepository,
+    ]),
+    SelectedOtherInterventionsStartedModule,
+    TypeOrmModule.forFeature([
+      SelectedOtherInterventionsStartedEntity,
+      SelectedOtherInterventionsStartedRepository,
+    ]),
 
-    DuringInterventionModule, TypeOrmModule.forFeature([DuringInterventionEntity, DuringInterventionRepository]),
-    SelectedDuringInterventionModule, TypeOrmModule.forFeature([SelectedDuringInterventionEntity, SelectedDuringInterventionRepository]),
+    DuringInterventionModule,
+    TypeOrmModule.forFeature([
+      DuringInterventionEntity,
+      DuringInterventionRepository,
+    ]),
+    SelectedDuringInterventionModule,
+    TypeOrmModule.forFeature([
+      SelectedDuringInterventionEntity,
+      SelectedDuringInterventionRepository,
+    ]),
 
-    DuringPastModule, TypeOrmModule.forFeature([DuringPastEntity, DuringPastRepository]),
-    SelectedDuringPastModule, TypeOrmModule.forFeature([SelectedDuringPastEntity, SelectedDuringPastRepository]),
+    DuringPastModule,
+    TypeOrmModule.forFeature([DuringPastEntity, DuringPastRepository]),
+    SelectedDuringPastModule,
+    TypeOrmModule.forFeature([
+      SelectedDuringPastEntity,
+      SelectedDuringPastRepository,
+    ]),
 
-    ChildSchoolModule, TypeOrmModule.forFeature([ChildSchoolEntity, ChildSchoolRepository]),
-    SelectedChildSchoolModule, TypeOrmModule.forFeature([SelectedChildSchoolEntity, SelectedChildSchoolRepository]),
+    ChildSchoolModule,
+    TypeOrmModule.forFeature([ChildSchoolEntity, ChildSchoolRepository]),
+    SelectedChildSchoolModule,
+    TypeOrmModule.forFeature([
+      SelectedChildSchoolEntity,
+      SelectedChildSchoolRepository,
+    ]),
 
-    ReasonForUpdateModule, TypeOrmModule.forFeature([ReasonForUpdateEntity, ReasonForUpdateRepository]),
-    SelectedReasonForUpdateModule, TypeOrmModule.forFeature([SelectedReasonForUpdateEntity, SelectedReasonForUpdateRepository]),
+    ReasonForUpdateModule,
+    TypeOrmModule.forFeature([
+      ReasonForUpdateEntity,
+      ReasonForUpdateRepository,
+    ]),
+    SelectedReasonForUpdateModule,
+    TypeOrmModule.forFeature([
+      SelectedReasonForUpdateEntity,
+      SelectedReasonForUpdateRepository,
+    ]),
 
-    SchoolUniformModule, TypeOrmModule.forFeature([SchoolUniformEntity, SchoolUniformRepository]),
-    SelectedSchoolUniformModule, TypeOrmModule.forFeature([SelectedSchoolUniformEntity, SelectedSchoolUniformRepository]),
+    SchoolUniformModule,
+    TypeOrmModule.forFeature([SchoolUniformEntity, SchoolUniformRepository]),
+    SelectedSchoolUniformModule,
+    TypeOrmModule.forFeature([
+      SelectedSchoolUniformEntity,
+      SelectedSchoolUniformRepository,
+    ]),
 
-    TypeOfEffortModule, TypeOrmModule.forFeature([TypeOfEffortEntity, TypeOfEffortRepository]),
-    SelectedTypeOfEffortModule, TypeOrmModule.forFeature([SelectedTypeOfEffortEntity, SelectedTypeOfEffortRepository]),
+    TypeOfEffortModule,
+    TypeOrmModule.forFeature([TypeOfEffortEntity, TypeOfEffortRepository]),
+    SelectedTypeOfEffortModule,
+    TypeOrmModule.forFeature([
+      SelectedTypeOfEffortEntity,
+      SelectedTypeOfEffortRepository,
+    ]),
 
-    WhoParticipatesModule, TypeOrmModule.forFeature([WhoParticipatesEntity, WhoParticipatesRepository]),
-    SelectedWhoParticipatesModule, TypeOrmModule.forFeature([SelectedWhoParticipatesEntity, SelectedWhoParticipatesRepository]),
+    WhoParticipatesModule,
+    TypeOrmModule.forFeature([
+      WhoParticipatesEntity,
+      WhoParticipatesRepository,
+    ]),
+    SelectedWhoParticipatesModule,
+    TypeOrmModule.forFeature([
+      SelectedWhoParticipatesEntity,
+      SelectedWhoParticipatesRepository,
+    ]),
 
-    InterventionPeriodModule, TypeOrmModule.forFeature([InterventionPeriodEntity, InterventionPeriodRepository]),
-    SelectedInterventionPeriodModule, TypeOrmModule.forFeature([SelectedInterventionPeriodEntity, SelectedInterventionPeriodRepository]),
+    InterventionPeriodModule,
+    TypeOrmModule.forFeature([
+      InterventionPeriodEntity,
+      InterventionPeriodRepository,
+    ]),
+    SelectedInterventionPeriodModule,
+    TypeOrmModule.forFeature([
+      SelectedInterventionPeriodEntity,
+      SelectedInterventionPeriodRepository,
+    ]),
 
-    InterventionProgressModule, TypeOrmModule.forFeature([InterventionProgressEntity, InterventionProgressRepository]),
-    SelectedInterventionProgressModule, TypeOrmModule.forFeature([SelectedInterventionProgressEntity, SelectedInterventionProgressRepository]),
+    InterventionProgressModule,
+    TypeOrmModule.forFeature([
+      InterventionProgressEntity,
+      InterventionProgressRepository,
+    ]),
+    SelectedInterventionProgressModule,
+    TypeOrmModule.forFeature([
+      SelectedInterventionProgressEntity,
+      SelectedInterventionProgressRepository,
+    ]),
 
-    ReasonForTerminationModule, TypeOrmModule.forFeature([ReasonForTerminationEntity, ReasonForTerminationRepository]),
-    SelectedReasonForTerminationModule, TypeOrmModule.forFeature([SelectedReasonForTerminationEntity, SelectedReasonForTerminationRepository]),
+    ReasonForTerminationModule,
+    TypeOrmModule.forFeature([
+      ReasonForTerminationEntity,
+      ReasonForTerminationRepository,
+    ]),
+    SelectedReasonForTerminationModule,
+    TypeOrmModule.forFeature([
+      SelectedReasonForTerminationEntity,
+      SelectedReasonForTerminationRepository,
+    ]),
 
-    TimeConsumptionModule, TypeOrmModule.forFeature([TimeConsumptionEntity, TimeConsumptionRepository]),
-    SelectedTimeConsumptionModule, TypeOrmModule.forFeature([SelectedTimeConsumptionEntity, SelectedTimeConsumptionRepository]),
+    TimeConsumptionModule,
+    TypeOrmModule.forFeature([
+      TimeConsumptionEntity,
+      TimeConsumptionRepository,
+    ]),
+    SelectedTimeConsumptionModule,
+    TypeOrmModule.forFeature([
+      SelectedTimeConsumptionEntity,
+      SelectedTimeConsumptionRepository,
+    ]),
 
-    ChangeAccomodationModule, TypeOrmModule.forFeature([ChangeAccomodationEntity, ChangeAccomodationRepository]),
-    SelectedChangeAccomodationModule, TypeOrmModule.forFeature([SelectedChangeAccomodationEntity, SelectedChangeAccomodationRepository]),
+    ChangeAccomodationModule,
+    TypeOrmModule.forFeature([
+      ChangeAccomodationEntity,
+      ChangeAccomodationRepository,
+    ]),
+    SelectedChangeAccomodationModule,
+    TypeOrmModule.forFeature([
+      SelectedChangeAccomodationEntity,
+      SelectedChangeAccomodationRepository,
+    ]),
 
-    ChangeEmploymentVh1Module, TypeOrmModule.forFeature([ChangeEmploymentVh1Entity, ChangeEmploymentVh1Repository]),
-    SelectedChangeEmploymentVh1Module, TypeOrmModule.forFeature([SelectedChangeEmploymentVh1Entity, SelectedChangeEmploymentVh1Repository]),
+    ChangeEmploymentVh1Module,
+    TypeOrmModule.forFeature([
+      ChangeEmploymentVh1Entity,
+      ChangeEmploymentVh1Repository,
+    ]),
+    SelectedChangeEmploymentVh1Module,
+    TypeOrmModule.forFeature([
+      SelectedChangeEmploymentVh1Entity,
+      SelectedChangeEmploymentVh1Repository,
+    ]),
 
-    ChangeEmploymentVh2Module, TypeOrmModule.forFeature([ChangeEmploymentVh2Entity, ChangeEmploymentVh2Repository]),
-    SelectedChangeEmploymentVh2Module, TypeOrmModule.forFeature([SelectedChangeEmploymentVh2Entity, SelectedChangeEmploymentVh2Repository]),
+    ChangeEmploymentVh2Module,
+    TypeOrmModule.forFeature([
+      ChangeEmploymentVh2Entity,
+      ChangeEmploymentVh2Repository,
+    ]),
+    SelectedChangeEmploymentVh2Module,
+    TypeOrmModule.forFeature([
+      SelectedChangeEmploymentVh2Entity,
+      SelectedChangeEmploymentVh2Repository,
+    ]),
 
-    ActionAssignmentModule, TypeOrmModule.forFeature([ActionAssignmentEntity, ActionAssignmentRepository]),
-    SelectedActionAssignmentModule, TypeOrmModule.forFeature([SelectedActionAssignmentEntity, SelectedActionAssignmentRepository]),
+    ActionAssignmentModule,
+    TypeOrmModule.forFeature([
+      ActionAssignmentEntity,
+      ActionAssignmentRepository,
+    ]),
+    SelectedActionAssignmentModule,
+    TypeOrmModule.forFeature([
+      SelectedActionAssignmentEntity,
+      SelectedActionAssignmentRepository,
+    ]),
 
-    DuringOperationModule, TypeOrmModule.forFeature([DuringOperationEntity, DuringOperationRepository]),
-    SelectedDuringOperationModule, TypeOrmModule.forFeature([SelectedDuringOperationEntity, SelectedDuringOperationRepository]),
+    DuringOperationModule,
+    TypeOrmModule.forFeature([
+      DuringOperationEntity,
+      DuringOperationRepository,
+    ]),
+    SelectedDuringOperationModule,
+    TypeOrmModule.forFeature([
+      SelectedDuringOperationEntity,
+      SelectedDuringOperationRepository,
+    ]),
 
-    EducationLevelModule, TypeOrmModule.forFeature([EducationLevelEntity, EducationLevelRepository]),
-    SelectedEducationLevelModule, TypeOrmModule.forFeature([SelectedEducationLevelEntity, SelectedEducationLevelRepository]),
+    EducationLevelModule,
+    TypeOrmModule.forFeature([EducationLevelEntity, EducationLevelRepository]),
+    SelectedEducationLevelModule,
+    TypeOrmModule.forFeature([
+      SelectedEducationLevelEntity,
+      SelectedEducationLevelRepository,
+    ]),
 
-    EmploymentModule, TypeOrmModule.forFeature([EmploymentEntity, EmploymentRepository]),
-    SelectedEmploymentModule, TypeOrmModule.forFeature([SelectedEmploymentEntity, SelectedEmploymentRepository]),
+    EmploymentModule,
+    TypeOrmModule.forFeature([EmploymentEntity, EmploymentRepository]),
+    SelectedEmploymentModule,
+    TypeOrmModule.forFeature([
+      SelectedEmploymentEntity,
+      SelectedEmploymentRepository,
+    ]),
 
-    EstablishDiagnoseModule, TypeOrmModule.forFeature([EstablishDiagnoseEntity, EstablishDiagnoseRepository]),
-    SelectedEstablishDiagnoseModule, TypeOrmModule.forFeature([SelectedEstablishDiagnoseEntity, SelectedEstablishDiagnoseRepository]),
+    EstablishDiagnoseModule,
+    TypeOrmModule.forFeature([
+      EstablishDiagnoseEntity,
+      EstablishDiagnoseRepository,
+    ]),
+    SelectedEstablishDiagnoseModule,
+    TypeOrmModule.forFeature([
+      SelectedEstablishDiagnoseEntity,
+      SelectedEstablishDiagnoseRepository,
+    ]),
 
-    FamilyConstellationAdultModule, TypeOrmModule.forFeature([FamilyConstellationAdultEntity, FamilyConstellationAdultRepository]),
-    SelectedFamilyConstellationAdultModule, TypeOrmModule.forFeature([SelectedFamilyConstellationAdultEntity, SelectedFamilyConstellationAdultRepository]),
+    FamilyConstellationAdultModule,
+    TypeOrmModule.forFeature([
+      FamilyConstellationAdultEntity,
+      FamilyConstellationAdultRepository,
+    ]),
+    SelectedFamilyConstellationAdultModule,
+    TypeOrmModule.forFeature([
+      SelectedFamilyConstellationAdultEntity,
+      SelectedFamilyConstellationAdultRepository,
+    ]),
 
-    GenderAdultModule, TypeOrmModule.forFeature([GenderAdultEntity, GenderAdultRepository]),
-    SelectedGenderAdultModule, TypeOrmModule.forFeature([SelectedGenderAdultEntity, SelectedGenderAdultRepository]),
+    GenderAdultModule,
+    TypeOrmModule.forFeature([GenderAdultEntity, GenderAdultRepository]),
+    SelectedGenderAdultModule,
+    TypeOrmModule.forFeature([
+      SelectedGenderAdultEntity,
+      SelectedGenderAdultRepository,
+    ]),
 
-    OtherOngoingEffortModule, TypeOrmModule.forFeature([OtherOngoingEffortEntity, OtherOngoingEffortRepository]),
-    SelectedOtherOngoingEffortModule, TypeOrmModule.forFeature([SelectedOtherOngoingEffortEntity, SelectedOtherOngoingEffortRepository]),
+    OtherOngoingEffortModule,
+    TypeOrmModule.forFeature([
+      OtherOngoingEffortEntity,
+      OtherOngoingEffortRepository,
+    ]),
+    SelectedOtherOngoingEffortModule,
+    TypeOrmModule.forFeature([
+      SelectedOtherOngoingEffortEntity,
+      SelectedOtherOngoingEffortRepository,
+    ]),
 
-    PreviousEffortModule, TypeOrmModule.forFeature([PreviousEffortEntity, PreviousEffortRepository]),
-    SelectedPreviousEffortModule, TypeOrmModule.forFeature([SelectedPreviousEffortEntity, SelectedPreviousEffortRepository]),
+    PreviousEffortModule,
+    TypeOrmModule.forFeature([PreviousEffortEntity, PreviousEffortRepository]),
+    SelectedPreviousEffortModule,
+    TypeOrmModule.forFeature([
+      SelectedPreviousEffortEntity,
+      SelectedPreviousEffortRepository,
+    ]),
 
-    ProblemAreaAdultModule, TypeOrmModule.forFeature([ProblemAreaAdultEntity, ProblemAreaAdultRepository]),
-    SelectedProblemAreaAdultModule, TypeOrmModule.forFeature([SelectedProblemAreaAdultEntity, SelectedProblemAreaAdultRepository]),
+    ProblemAreaAdultModule,
+    TypeOrmModule.forFeature([
+      ProblemAreaAdultEntity,
+      ProblemAreaAdultRepository,
+    ]),
+    SelectedProblemAreaAdultModule,
+    TypeOrmModule.forFeature([
+      SelectedProblemAreaAdultEntity,
+      SelectedProblemAreaAdultRepository,
+    ]),
 
-    BackgroundAdultMetadataModule, TypeOrmModule.forFeature([BackgroundAdultMetadataEntity, BackgroundAdultMetadataRepository]),
-    AdultScoreModule, TypeOrmModule.forFeature([AdultScoreEntity, AdultScoreRepository]),
+    BackgroundAdultMetadataModule,
+    TypeOrmModule.forFeature([
+      BackgroundAdultMetadataEntity,
+      BackgroundAdultMetadataRepository,
+    ]),
+    AdultScoreModule,
+    TypeOrmModule.forFeature([AdultScoreEntity, AdultScoreRepository]),
 
-    ChangeLiveModule, TypeOrmModule.forFeature([ChangeLiveEntity, ChangeLiveRepository]),
-    SelectedChangeLiveModule, TypeOrmModule.forFeature([SelectedChangeLiveEntity, SelectedChangeLiveRepository]),
+    ChangeLiveModule,
+    TypeOrmModule.forFeature([ChangeLiveEntity, ChangeLiveRepository]),
+    SelectedChangeLiveModule,
+    TypeOrmModule.forFeature([
+      SelectedChangeLiveEntity,
+      SelectedChangeLiveRepository,
+    ]),
 
-    ChangeOverModule, TypeOrmModule.forFeature([ChangeOverEntity, ChangeOverRepository]),
-    SelectedChangeOverModule, TypeOrmModule.forFeature([SelectedChangeOverEntity, SelectedChangeOverRepository]),
+    ChangeOverModule,
+    TypeOrmModule.forFeature([ChangeOverEntity, ChangeOverRepository]),
+    SelectedChangeOverModule,
+    TypeOrmModule.forFeature([
+      SelectedChangeOverEntity,
+      SelectedChangeOverRepository,
+    ]),
 
-    InvestigationOutModule, TypeOrmModule.forFeature([InvestigationOutEntity, InvestigationOutRepository]),
-    SelectedInvestigationOutModule, TypeOrmModule.forFeature([SelectedInvestigationOutEntity, SelectedInvestigationOutRepository]),
+    InvestigationOutModule,
+    TypeOrmModule.forFeature([
+      InvestigationOutEntity,
+      InvestigationOutRepository,
+    ]),
+    SelectedInvestigationOutModule,
+    TypeOrmModule.forFeature([
+      SelectedInvestigationOutEntity,
+      SelectedInvestigationOutRepository,
+    ]),
 
-    OtherInitiativeModule, TypeOrmModule.forFeature([OtherInitiativeEntity, OtherInitiativeRepository]),
-    SelectedOtherInitiativeModule, TypeOrmModule.forFeature([SelectedOtherInitiativeEntity, SelectedOtherInitiativeRepository]),
+    OtherInitiativeModule,
+    TypeOrmModule.forFeature([
+      OtherInitiativeEntity,
+      OtherInitiativeRepository,
+    ]),
+    SelectedOtherInitiativeModule,
+    TypeOrmModule.forFeature([
+      SelectedOtherInitiativeEntity,
+      SelectedOtherInitiativeRepository,
+    ]),
   ],
   providers: [SeedService],
 })
-export class SeedModule { }
+export class SeedModule {}

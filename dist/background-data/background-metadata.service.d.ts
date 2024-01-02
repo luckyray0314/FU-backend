@@ -5,4 +5,5 @@ export declare class BackgroundMetadataService extends TypeOrmCrudService<Backgr
     constructor(repo: Repository<BackgroundMetadataEntity>);
     create(entity: BackgroundMetadataEntity): Promise<BackgroundMetadataEntity>;
     update(entity: BackgroundMetadataEntity): Promise<import("typeorm").UpdateResult>;
+    findAll(): Promise<any[]>;
 }

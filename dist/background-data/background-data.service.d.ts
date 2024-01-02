@@ -1,4 +1,3 @@
-import { SurveyStatus } from 'src/core/enums/survey-status';
 import { OccasionIndex } from 'src/core/models/occasion.modal';
 import { FollowUpDataService } from 'src/follow-up-survey/follow-up-data.service';
 import { ScoreService } from 'src/score/score.service';
@@ -34,8 +33,10 @@ import { SelectedTypeOfEffortService } from './type-of-effort/selected-type-of-e
 import { TypeOfEffortService } from './type-of-effort/type-of-effort.service';
 import { SelectedWhoParticipatesService } from './who-participates/selected-who-participates.service';
 import { WhoParticipatesService } from './who-participates/who-participates.service';
+import { CloseStatusService } from 'src/close-status/child/close.status.child.service';
 export declare class BackgroundDataService {
     backgroundMetadataService: BackgroundMetadataService;
+    closeStatusService: CloseStatusService;
     scoreService: ScoreService;
     followUpService: FollowUpDataService;
     genderService: GenderService;
@@ -68,43 +69,11 @@ export declare class BackgroundDataService {
     selectedSchoolUniformService: SelectedSchoolUniformService;
     selectedTypeOfEffortService: SelectedTypeOfEffortService;
     selectedWhoParticipatesService: SelectedWhoParticipatesService;
-    constructor(backgroundMetadataService: BackgroundMetadataService, scoreService: ScoreService, followUpService: FollowUpDataService, genderService: GenderService, educationVh1Service: EducationVh1Service, educationVh2Service: EducationVh2Service, employmentVh1Service: EmploymentVh1Service, employmentVh2Service: EmploymentVh2Service, establishedDiagnosesService: EstablishedDiagnosesService, familyConstellationService: FamilyConstellationService, interpreterRequiredService: InterpreterRequiredService, otherInterventionsService: OtherInterventionsService, previousInterventionService: PreviousInterventionService, problemAreaService: ProblemAreaService, reasonForUpdateService: ReasonForUpdateService, schoolUniformService: SchoolUniformService, typeOfEffortService: TypeOfEffortService, whoParticipatesService: WhoParticipatesService, selectedGenderService: SelectedGenderService, selectedEducationVh1Service: SelectedEducationVh1Service, selectedEducationVh2Service: SelectedEducationVh2Service, selectedEmploymentVh1Service: SelectedEmploymentVh1Service, selectedEmploymentVh2Service: SelectedEmploymentVh2Service, selectedEstablishedDiagnosesService: SelectedEstablishedDiagnosesService, selectedFamilyConstellationService: SelectedFamilyConstellationService, selectedInterpreterRequiredService: SelectedInterpreterRequiredService, selectedOtherInterventionsService: SelectedOtherInterventionsService, selectedPreviousInterventionService: SelectedPreviousInterventionService, selectedProblemAreaService: SelectedProblemAreaService, selectedReasonForUpdateService: SelectedReasonForUpdateService, selectedSchoolUniformService: SelectedSchoolUniformService, selectedTypeOfEffortService: SelectedTypeOfEffortService, selectedWhoParticipatesService: SelectedWhoParticipatesService);
+    constructor(backgroundMetadataService: BackgroundMetadataService, closeStatusService: CloseStatusService, scoreService: ScoreService, followUpService: FollowUpDataService, genderService: GenderService, educationVh1Service: EducationVh1Service, educationVh2Service: EducationVh2Service, employmentVh1Service: EmploymentVh1Service, employmentVh2Service: EmploymentVh2Service, establishedDiagnosesService: EstablishedDiagnosesService, familyConstellationService: FamilyConstellationService, interpreterRequiredService: InterpreterRequiredService, otherInterventionsService: OtherInterventionsService, previousInterventionService: PreviousInterventionService, problemAreaService: ProblemAreaService, reasonForUpdateService: ReasonForUpdateService, schoolUniformService: SchoolUniformService, typeOfEffortService: TypeOfEffortService, whoParticipatesService: WhoParticipatesService, selectedGenderService: SelectedGenderService, selectedEducationVh1Service: SelectedEducationVh1Service, selectedEducationVh2Service: SelectedEducationVh2Service, selectedEmploymentVh1Service: SelectedEmploymentVh1Service, selectedEmploymentVh2Service: SelectedEmploymentVh2Service, selectedEstablishedDiagnosesService: SelectedEstablishedDiagnosesService, selectedFamilyConstellationService: SelectedFamilyConstellationService, selectedInterpreterRequiredService: SelectedInterpreterRequiredService, selectedOtherInterventionsService: SelectedOtherInterventionsService, selectedPreviousInterventionService: SelectedPreviousInterventionService, selectedProblemAreaService: SelectedProblemAreaService, selectedReasonForUpdateService: SelectedReasonForUpdateService, selectedSchoolUniformService: SelectedSchoolUniformService, selectedTypeOfEffortService: SelectedTypeOfEffortService, selectedWhoParticipatesService: SelectedWhoParticipatesService);
     basicData(): Promise<BackgroundSurveyBasicDataDto>;
     metadata(): Promise<BackgroundMetadataDto[]>;
     create(payload: BackgroundDataDto): Promise<boolean>;
     get(codeNumber: string): Promise<BackgroundDataDto>;
-    getCaseList(): Promise<{
-        codeNumber: string;
-        status: SurveyStatus;
-        signal: string;
-        missedFields: string;
-        history: {
-            zeroMonth: {
-                date: Date;
-                statusInDetail: {
-                    child: SurveyStatus;
-                    careGiver1: SurveyStatus;
-                    careGiver2: SurveyStatus;
-                };
-            };
-            sixMonths: {
-                date: Date;
-                statusInDetail: {
-                    child: SurveyStatus;
-                    careGiver1: SurveyStatus;
-                    careGiver2: SurveyStatus;
-                };
-            };
-            twelveMonths: {
-                date: Date;
-                statusInDetail: {
-                    child: SurveyStatus;
-                    careGiver1: SurveyStatus;
-                    careGiver2: SurveyStatus;
-                };
-            };
-        };
-        nextSurvey: string;
-    }[]>;
+    getCaseList(): Promise<any[]>;
     downloadDocx(codeNumber: string, occasion: OccasionIndex | 0, appDomain: string, childUri: string, firstGuardianUri: string, secondGuardianUri: string, importantEventsUri: string): Promise<string>;
 }

@@ -2,17 +2,23 @@ import {
     Column, Entity, PrimaryGeneratedColumn
   } from "typeorm";
   
-  @Entity("close-status-adult")
+  @Entity('close-status-adult')
   export class CloseStatusAdultEntity {
     @PrimaryGeneratedColumn()
     id?: number;
-  
+
     @Column()
     codeNumber: string;
-  
+
+    @Column({ nullable: true })
+    archivedCodeNumber?: string;
+
+    @Column({ nullable: true })
+    isAbsent?: string;
+
     @Column()
-    processor: string; 
-  
+    processor: string;
+
     @Column()
-    isClosed: string; 
+    isClosed: string;
   }

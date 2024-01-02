@@ -34,6 +34,7 @@ import { SelectedTypeOfEffortModule } from './type-of-effort/selected-type-of-ef
 import { TypeOfEffortModule } from './type-of-effort/type-of-effort.module';
 import { SelectedWhoParticipatesModule } from './who-participates/selected-who-participates.module';
 import { WhoParticipatesModule } from './who-participates/who-participates.module';
+import { CloseStatusModule } from 'src/close-status/child/close.status.child.module';
 
 @Module({
   imports: [
@@ -68,6 +69,7 @@ import { WhoParticipatesModule } from './who-participates/who-participates.modul
     SelectedTypeOfEffortModule,
     SelectedWhoParticipatesModule,
     BackgroundMetadataModule,
+    CloseStatusModule,
     ScoreModule,
     FollowUpDataModule
   ],

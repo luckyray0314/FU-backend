@@ -36,7 +36,6 @@ export class BackgroundDataController {
   @Get('/basicData')
   @ApiOkResponse({ type: BackgroundSurveyBasicDataDto })
   async basicData(@Request() req: any): Promise<BackgroundSurveyBasicDataDto> {
-    console.log('req', req);
     return await this.service.basicData();
   }
 
@@ -47,7 +46,6 @@ export class BackgroundDataController {
     @Body() payload: BackgroundDataDto,
     @Request() req: any,
   ): Promise<boolean> {
-    console.log(req);
     return await this.service.create(payload);
   }
 
