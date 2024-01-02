@@ -30,6 +30,7 @@ export declare class BackgroundSurveyBasicDataDto {
     schoolUniformEntities: SchoolUniformEntity[];
     typeOfEffortEntities: TypeOfEffortEntity[];
     whoParticipatesEntities: WhoParticipatesEntity[];
+    importantEventsEntities: GenderEntity[];
 }
 export type FormDataByEntityName = {
     [entityName: string]: (number | string)[];

@@ -74,6 +74,9 @@ export class BackgroundSurveyBasicDataDto {
 
   @ApiProperty()
   whoParticipatesEntities: WhoParticipatesEntity[];
+
+  @ApiProperty()
+  importantEventsEntities: GenderEntity[];
 }
 
 export type FormDataByEntityName = {

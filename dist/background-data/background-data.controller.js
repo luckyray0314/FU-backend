@@ -24,11 +24,9 @@ let BackgroundDataController = class BackgroundDataController {
         this.service = service;
     }
     async basicData(req) {
-        console.log('req', req);
         return await this.service.basicData();
     }
     async create(payload, req) {
-        console.log(req);
         return await this.service.create(payload);
     }
     async get(codeNumber) {

@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   Injectable,
   InternalServerErrorException,
   NotFoundException,
@@ -20,6 +21,11 @@ export class UserService {
   async create(data: CreateUserDto): Promise<User> {
     try {
       const { password } = data;
+      if (password?.length < 8) {
+        throw new BadRequestException(
+          'Password must be longer than or equal to 8 characters',
+        );
+      }
       const salt = await bcrypt.genSalt();
       const hashedPassword = await bcrypt.hash(password, salt);
       const createdUser = await this.userRepository.save({
@@ -80,6 +86,12 @@ export class UserService {
 
     if (!user) {
       throw new NotFoundException(`There isn't any user with id: ${id}`);
+    }
+
+    if (data?.password?.length < 8) {
+      throw new BadRequestException(
+        'Password must be longer than or equal to 8 characters',
+      );
     }
 
     this.userRepository.merge(user, data);

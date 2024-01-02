@@ -27,13 +27,10 @@ export class BackgroundMetadataService extends TypeOrmCrudService<BackgroundMeta
       .select('background_metadata_entity.codeNumber', 'codeNumber')
       .addSelect('background_metadata_entity.date', 'date')
       .addSelect('background_metadata_entity.country', 'country')
-      .addSelect('close-status.processor', 'processor')
-      .addSelect('close-status.isClosed', 'isClosed')
-      .innerJoin(
-        'close-status',
-        'close-status',
-        'background_metadata_entity.codeNumber = close-status.codeNumber',
-      )
+      /* .where(
+        `date_part('year', current_date :: DATE) - date_part('year', background_metadata_entity.date :: DATE) <= 1`,
+      ) */
+      .orderBy('background_metadata_entity.date', 'DESC')
       .getRawMany();
   }
 }

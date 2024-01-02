@@ -43,6 +43,7 @@ const selected_type_of_effort_module_1 = require("./type-of-effort/selected-type
 const type_of_effort_module_1 = require("./type-of-effort/type-of-effort.module");
 const selected_who_participates_module_1 = require("./who-participates/selected-who-participates.module");
 const who_participates_module_1 = require("./who-participates/who-participates.module");
+const close_status_child_module_1 = require("../close-status/child/close.status.child.module");
 let BackgroundDataModule = class BackgroundDataModule {
 };
 BackgroundDataModule = __decorate([
@@ -79,6 +80,7 @@ BackgroundDataModule = __decorate([
             selected_type_of_effort_module_1.SelectedTypeOfEffortModule,
             selected_who_participates_module_1.SelectedWhoParticipatesModule,
             background_metadata_module_1.BackgroundMetadataModule,
+            close_status_child_module_1.CloseStatusModule,
             score_module_1.ScoreModule,
             follow_up_data_module_1.FollowUpDataModule
         ],

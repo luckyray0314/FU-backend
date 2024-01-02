@@ -22,18 +22,17 @@ export class BackgroundAdultMetadataService extends TypeOrmCrudService<Backgroun
   }
 
   async findAll() {
-    return this.repo
-      .createQueryBuilder('background_adult_metadata_entity')
-      .select('background_adult_metadata_entity.codeNumber', 'codeNumber')
-      .addSelect('background_adult_metadata_entity.date', 'date')
-      .addSelect('background_adult_metadata_entity.country', 'country')
-      .addSelect('close-status-adult.processor', 'processor')
-      .addSelect('close-status-adult.isClosed', 'isClosed')
-      .innerJoin(
-        'close-status-adult',
-        'close-status-adult',
-        'background_adult_metadata_entity.codeNumber = close-status-adult.codeNumber',
-      )
-      .getRawMany();
+    return (
+      this.repo
+        .createQueryBuilder('background_adult_metadata_entity')
+        .select('background_adult_metadata_entity.codeNumber', 'codeNumber')
+        .addSelect('background_adult_metadata_entity.date', 'date')
+        .addSelect('background_adult_metadata_entity.country', 'country')
+        /* .where(
+        `date_part('year', current_date :: DATE) - date_part('year', background_adult_metadata_entity.date :: DATE) <= 1`,
+      ) */
+        .orderBy('background_adult_metadata_entity.date', 'DESC')
+        .getRawMany()
+    );
   }
 }
