@@ -19,6 +19,7 @@ import { SelectedWhoParticipatesModule } from 'src/background-data/who-participa
 import { ScoreEntity } from './entities/score.entity';
 import { ScoreController } from './score.controller';
 import { ScoreService } from './score.service';
+import { CloseStatusModule } from 'src/close-status/child/close.status.child.module';
 
 @Module({
   imports: [
@@ -39,9 +40,10 @@ import { ScoreService } from './score.service';
     SelectedTypeOfEffortModule,
     SelectedWhoParticipatesModule,
     BackgroundMetadataModule,
+    CloseStatusModule,
   ],
   providers: [ScoreService],
   controllers: [ScoreController],
-  exports: [ScoreService]
+  exports: [ScoreService],
 })
-export class ScoreModule { }
+export class ScoreModule {}

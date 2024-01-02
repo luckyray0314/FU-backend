@@ -1,4 +1,13 @@
-import { Body, Controller, Get, Param, Patch, Post, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Patch,
+  Post,
+  UseGuards,
+} from '@nestjs/common';
 import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CodeNumberDto } from '../dto/codeNumber.dto';
 import { CloseStatusDto } from '../dto/close-status.dto';
@@ -58,7 +67,7 @@ export class CloseStatusController {
   @Get('/getAll')
   @ApiOkResponse({ type: Array<CloseStatusDto> })
   async getAll(): Promise<CloseStatusDto[]> {
-    return await this.service.getAll();
+    return await this.service.findAll();
   }
 
   @Get('/getLast')
@@ -75,5 +84,13 @@ export class CloseStatusController {
     @Body() payload: ProcessorDto,
   ): Promise<CloseStatusDto> {
     return this.service.updateProcessor(codeNumber, payload);
+  }
+
+  @Delete(':codeNumber')
+  @ApiOkResponse({ type: CodeNumberDto })
+  async delete(
+    @Param('codeNumber') codeNumber: string,
+  ): Promise<CodeNumberDto> {
+    return await this.service.delete(codeNumber);
   }
 }

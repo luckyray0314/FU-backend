@@ -66,7 +66,6 @@ export class User {
   @BeforeUpdate()
   async hashPassword(): Promise<void> {
     const salt = await bcrypt.genSalt();
-    console.log('gen', salt);
     if (!/^\$2[abxy]?\$\d+\$/.test(this.password)) {
       this.password = await bcrypt.hash(this.password, salt);
     }

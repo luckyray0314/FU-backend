@@ -23,6 +23,7 @@ import { FollowUpFilterDto } from './dto/followUpFilter.dto';
 import { ScoreFilterDto } from './dto/score-filter.dto';
 import { ScoreDto } from './dto/score.dto';
 import { ScoreEntity } from './entities/score.entity';
+import { CloseStatusService } from 'src/close-status/child/close.status.child.service';
 
 @Injectable()
 export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
@@ -44,6 +45,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
     public selectedTypeOfEffortService: SelectedTypeOfEffortService,
     public selectedWhoParticipatesService: SelectedWhoParticipatesService,
     public backgroundMetadataService: BackgroundMetadataService,
+    public closeStatusService: CloseStatusService,
   ) {
     super(repo);
   }
@@ -80,6 +82,7 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
   }
 
   async avgOfOrsAndScore15(codeNumbers: string[], occasions: OccasionIndex[]) {
+    console.log('occasions', occasions);
     return codeNumbers.length === 0 || occasions.length === 0
       ? {
           ors: 0,
@@ -330,6 +333,11 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
             });
           codeNumbers = whoParticipatesResult.map(r => r.codeNumber);
           break;
+        case 'importantEvents':
+          const importantEventsResult =
+            await this.backgroundMetadataService.find();
+          codeNumbers = importantEventsResult.map(r => r.codeNumber);
+          break;
       }
     }
 
@@ -359,12 +367,23 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
   }
 
   async getScoresByCodeNumberAndOccasion(codeNumber: string) {
+    let codeOrArk: string = codeNumber;
+    if (codeNumber.includes('Ark')) {
+      const closeStatusEntity = await this.closeStatusService.find({
+        where: {
+          archivedCodeNumber: codeNumber,
+        },
+      });
+      if (closeStatusEntity?.length > 0) {
+        codeOrArk = closeStatusEntity[0]?.codeNumber;
+      }
+    }
     return await this.repo
       .createQueryBuilder('score')
       .select('AVG(ors)', 'ors')
       .addSelect('AVG(score15)', 'score15')
       .addSelect('occasion')
-      .where('score.codeNumber = :codeNumber', { codeNumber })
+      .where('score.codeNumber = :codeOrArk', { codeOrArk })
       .groupBy('score.occasion')
       .getRawMany();
   }

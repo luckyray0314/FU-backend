@@ -18,6 +18,7 @@ import { SelectedFamilyConstellationAdultService } from 'src/background-adult-da
 import { SelectedOtherOngoingEffortService } from 'src/background-adult-data/other-ongoing-effort/selected-other-ongoing-effort.service';
 import { SelectedPreviousEffortService } from 'src/background-adult-data/previous-effort/selected-previous-effort.service';
 import { SelectedProblemAreaAdultService } from 'src/background-adult-data/problem-area/selected-problem-area.service';
+import { CloseStatusAdultService } from 'src/close-status/adult/close.status.adult.service';
 
 @Injectable()
 export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
@@ -34,6 +35,7 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
     public selectedPreviousEffortService: SelectedPreviousEffortService,
     public selectedProblemAreaAdultService: SelectedProblemAreaAdultService,
     public backgroundAdultMetadataService: BackgroundAdultMetadataService,
+    public closeStatusAdultService: CloseStatusAdultService,
   ) {
     super(repo);
   }
@@ -290,12 +292,23 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
   }
 
   async getScoresByCodeNumberAndOccasion(codeNumber: string) {
+    let codeOrArk: string = codeNumber;
+    if (codeNumber.includes('Ark')) {
+      const closeStatusAdultEntity = await this.closeStatusAdultService.find({
+        where: {
+          archivedCodeNumber: codeNumber,
+        },
+      });
+      if (closeStatusAdultEntity?.length > 0) {
+        codeOrArk = closeStatusAdultEntity[0]?.codeNumber;
+      }
+    }
     return await this.repo
       .createQueryBuilder('score')
       .select('ors')
       .addSelect('score15')
       .addSelect('occasion')
-      .where('score.codeNumber = :codeNumber', { codeNumber })
+      .where('score.codeNumber = :codeOrArk', { codeOrArk })
       .getRawMany();
   }
 }

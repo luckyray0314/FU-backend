@@ -34,9 +34,7 @@ let BackgroundMetadataService = class BackgroundMetadataService extends crud_typ
             .select('background_metadata_entity.codeNumber', 'codeNumber')
             .addSelect('background_metadata_entity.date', 'date')
             .addSelect('background_metadata_entity.country', 'country')
-            .addSelect('close-status.processor', 'processor')
-            .addSelect('close-status.isClosed', 'isClosed')
-            .innerJoin('close-status', 'close-status', 'background_metadata_entity.codeNumber = close-status.codeNumber')
+            .orderBy('background_metadata_entity.date', 'DESC')
             .getRawMany();
     }
 };

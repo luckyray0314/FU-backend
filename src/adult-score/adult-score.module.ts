@@ -14,6 +14,7 @@ import { SelectedProblemAreaAdultModule } from 'src/background-adult-data/proble
 import { AdultScoreController } from './adult-score.controller';
 import { AdultScoreService } from './adult-score.service';
 import { AdultScoreEntity } from './entities/adult-score.entity';
+import { CloseStatusAdultModule } from 'src/close-status/adult/close.status.adult.module';
 
 @Module({
   imports: [
@@ -29,9 +30,10 @@ import { AdultScoreEntity } from './entities/adult-score.entity';
     SelectedPreviousEffortModule,
     SelectedProblemAreaAdultModule,
     BackgroundAdultMetadataModule,
+    CloseStatusAdultModule,
   ],
   providers: [AdultScoreService],
   controllers: [AdultScoreController],
-  exports: [AdultScoreService]
+  exports: [AdultScoreService],
 })
-export class AdultScoreModule { }
+export class AdultScoreModule {}
