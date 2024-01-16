@@ -1,5 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsEmpty, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
+import { IsBoolean, IsEmpty, IsNotEmpty, IsNumber, IsOptional, IsString } from "class-validator";
 
 export class CloseStatusDto {
   @ApiProperty()
@@ -31,4 +31,19 @@ export class CloseStatusDto {
   @IsString()
   @IsNotEmpty()
   isClosed: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsOptional()
+  isGuardianOne?: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsOptional()
+  isGuardianTwo?: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsOptional()
+  isChild?: string;
 }

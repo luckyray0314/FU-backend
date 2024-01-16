@@ -347,12 +347,18 @@ export class BackgroundAdultDataService {
         };
         if (adulCloseStatusEntity?.isAbsent) {
           surveyEntity['codeNumber'] = adulCloseStatusEntity?.codeNumber;
+          surveyEntity['isGuardianOne'] = adulCloseStatusEntity?.isGuardianOne;
+          surveyEntity['isGuardianTwo'] = adulCloseStatusEntity?.isGuardianTwo;
+          surveyEntity['isChild'] = adulCloseStatusEntity?.isChild;
           surveyEntity['status'] = SurveyStatus.Cancelled;
         } else if (
           existBackgroundMetadata &&
-          dayjs().diff(existBackgroundMetadata?.date, 'year') <= 1
+          dayjs().diff(existBackgroundMetadata?.date, 'month') <= 12
         ) {
           surveyEntity['codeNumber'] = adulCloseStatusEntity?.codeNumber;
+          surveyEntity['isGuardianOne'] = adulCloseStatusEntity?.isGuardianOne;
+          surveyEntity['isGuardianTwo'] = adulCloseStatusEntity?.isGuardianTwo;
+          surveyEntity['isChild'] = adulCloseStatusEntity?.isChild;
           const scoreEntities = await this.adultScoreService.find({
             where: { codeNumber: existBackgroundMetadata.codeNumber },
           });
@@ -481,7 +487,7 @@ export class BackgroundAdultDataService {
           };
         } else if (
           existBackgroundMetadata &&
-          dayjs().diff(existBackgroundMetadata?.date, 'year') > 1
+          dayjs().diff(existBackgroundMetadata?.date, 'month') > 12
         ) {
           let archivedCodeNumber: string = '';
           if (!adulCloseStatusEntity?.archivedCodeNumber) {
@@ -542,6 +548,9 @@ export class BackgroundAdultDataService {
               return { date, statuses };
             }),
           );
+          surveyEntity['isGuardianOne'] = adulCloseStatusEntity?.isGuardianOne;
+          surveyEntity['isGuardianTwo'] = adulCloseStatusEntity?.isGuardianTwo;
+          surveyEntity['isChild'] = adulCloseStatusEntity?.isChild;
           surveyEntity['signal'] = '';
           surveyEntity['missedFields'] = '';
           surveyEntity['nextSurvey'] = '';
@@ -568,6 +577,9 @@ export class BackgroundAdultDataService {
           surveyEntity['status'] = SurveyStatus.Archived;
         } else {
           surveyEntity['codeNumber'] = adulCloseStatusEntity?.codeNumber;
+          surveyEntity['isGuardianOne'] = adulCloseStatusEntity?.isGuardianOne;
+          surveyEntity['isGuardianTwo'] = adulCloseStatusEntity?.isGuardianTwo;
+          surveyEntity['isChild'] = adulCloseStatusEntity?.isChild;
           surveyEntity['status'] = SurveyStatus.NoBackgroundData;
         }
         return surveyEntity;

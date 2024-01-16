@@ -333,11 +333,6 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
             });
           codeNumbers = whoParticipatesResult.map(r => r.codeNumber);
           break;
-        case 'importantEvents':
-          const importantEventsResult =
-            await this.backgroundMetadataService.find();
-          codeNumbers = importantEventsResult.map(r => r.codeNumber);
-          break;
       }
     }
 

@@ -26,13 +26,13 @@ export class AuthService {
     let user: User;
 
     try {
+      const users = await this.userService.findAll();
       user = await this.userService.findOne({ where: { email } });
     } catch (err) {
       throw new UnauthorizedException(
         `There isn't any user with email: ${email}`,
       );
     }
-
     if (!(await user.checkPassword(password))) {
       throw new UnauthorizedException(
         `Wrong password for user with email: ${email}`,
@@ -41,7 +41,6 @@ export class AuthService {
     delete user.password;
 
     this.signToken(user);
-
     return user;
   }
 
