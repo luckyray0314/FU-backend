@@ -540,6 +540,161 @@ let BackgroundDataService = class BackgroundDataService {
                         return { date: surveyDate === null || surveyDate === void 0 ? void 0 : surveyDate.toDate(), statuses };
                     }
                 }));
+                if ((surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isChild) &&
+                    !(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianOne) &&
+                    !(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianTwo)) {
+                    surveyEntity['history'] = {
+                        zeroMonth: {
+                            date: details[0].date,
+                            statusInDetail: {
+                                child: details[0].statuses[0],
+                            },
+                        },
+                        sixMonths: {
+                            date: details[1].date,
+                            statusInDetail: {
+                                child: details[1].statuses[0],
+                            },
+                        },
+                        twelveMonths: {
+                            date: details[2].date,
+                            statusInDetail: {
+                                child: details[2].statuses[0],
+                            },
+                        },
+                    };
+                }
+                else if ((surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isChild) &&
+                    (surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianOne) &&
+                    !(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianTwo)) {
+                    surveyEntity['history'] = {
+                        zeroMonth: {
+                            date: details[0].date,
+                            statusInDetail: {
+                                child: details[0].statuses[0],
+                                careGiver1: details[0].statuses[1],
+                            },
+                        },
+                        sixMonths: {
+                            date: details[1].date,
+                            statusInDetail: {
+                                child: details[1].statuses[0],
+                                careGiver1: details[1].statuses[1],
+                            },
+                        },
+                        twelveMonths: {
+                            date: details[2].date,
+                            statusInDetail: {
+                                child: details[2].statuses[0],
+                                careGiver1: details[2].statuses[1],
+                            },
+                        },
+                    };
+                }
+                else if ((surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isChild) &&
+                    !(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianOne) &&
+                    (surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianTwo)) {
+                    surveyEntity['history'] = {
+                        zeroMonth: {
+                            date: details[0].date,
+                            statusInDetail: {
+                                child: details[0].statuses[0],
+                                careGiver2: details[0].statuses[2],
+                            },
+                        },
+                        sixMonths: {
+                            date: details[1].date,
+                            statusInDetail: {
+                                child: details[1].statuses[0],
+                                careGiver2: details[1].statuses[2],
+                            },
+                        },
+                        twelveMonths: {
+                            date: details[2].date,
+                            statusInDetail: {
+                                child: details[2].statuses[0],
+                                careGiver2: details[2].statuses[2],
+                            },
+                        },
+                    };
+                }
+                else if (!(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isChild) &&
+                    (surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianOne) &&
+                    (surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianTwo)) {
+                    surveyEntity['history'] = {
+                        zeroMonth: {
+                            date: details[0].date,
+                            statusInDetail: {
+                                careGiver1: details[0].statuses[1],
+                                careGiver2: details[0].statuses[2],
+                            },
+                        },
+                        sixMonths: {
+                            date: details[1].date,
+                            statusInDetail: {
+                                careGiver1: details[1].statuses[1],
+                                careGiver2: details[1].statuses[2],
+                            },
+                        },
+                        twelveMonths: {
+                            date: details[2].date,
+                            statusInDetail: {
+                                careGiver1: details[2].statuses[1],
+                                careGiver2: details[2].statuses[2],
+                            },
+                        },
+                    };
+                }
+                else if (!(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isChild) &&
+                    (surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianOne) &&
+                    !(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianTwo)) {
+                    surveyEntity['history'] = {
+                        zeroMonth: {
+                            date: details[0].date,
+                            statusInDetail: {
+                                careGiver1: details[0].statuses[1],
+                            },
+                        },
+                        sixMonths: {
+                            date: details[1].date,
+                            statusInDetail: {
+                                careGiver1: details[1].statuses[1],
+                            },
+                        },
+                        twelveMonths: {
+                            date: details[2].date,
+                            statusInDetail: {
+                                careGiver1: details[2].statuses[1],
+                            },
+                        },
+                    };
+                }
+                else if (!(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isChild) &&
+                    !(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianOne) &&
+                    (surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianTwo)) {
+                    surveyEntity['history'] = {
+                        zeroMonth: {
+                            date: details[0].date,
+                            statusInDetail: {
+                                careGiver2: details[0].statuses[2],
+                            },
+                        },
+                        sixMonths: {
+                            date: details[1].date,
+                            statusInDetail: {
+                                child: details[1].statuses[0],
+                                careGiver2: details[1].statuses[2],
+                            },
+                        },
+                        twelveMonths: {
+                            date: details[2].date,
+                            statusInDetail: {
+                                child: details[2].statuses[0],
+                                careGiver2: details[2].statuses[2],
+                            },
+                        },
+                    };
+                }
                 let nextSurvey = dayjs().format('YYYY-MM-DD');
                 let signal = 'BackgroundSurvey';
                 if (details[0].statuses.filter(status => status === survey_status_1.SurveyStatus.Coming)
@@ -607,32 +762,6 @@ let BackgroundDataService = class BackgroundDataService {
                 surveyEntity['signal'] = signal;
                 surveyEntity['nextSurvey'] = nextSurvey;
                 surveyEntity['missedFields'] = '';
-                surveyEntity['history'] = {
-                    zeroMonth: {
-                        date: details[0].date,
-                        statusInDetail: {
-                            child: details[0].statuses[0],
-                            careGiver1: details[0].statuses[1],
-                            careGiver2: details[0].statuses[2],
-                        },
-                    },
-                    sixMonths: {
-                        date: details[1].date,
-                        statusInDetail: {
-                            child: details[1].statuses[0],
-                            careGiver1: details[1].statuses[1],
-                            careGiver2: details[1].statuses[2],
-                        },
-                    },
-                    twelveMonths: {
-                        date: details[2].date,
-                        statusInDetail: {
-                            child: details[2].statuses[0],
-                            careGiver1: details[2].statuses[1],
-                            careGiver2: details[2].statuses[2],
-                        },
-                    },
-                };
             }
             else if ((existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.codeNumber) &&
                 dayjs().diff(existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date, 'month') > 12) {
