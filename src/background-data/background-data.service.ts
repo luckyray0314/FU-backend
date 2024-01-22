@@ -637,6 +637,38 @@ export class BackgroundDataService {
           */
           if (
             surveyEntity?.isChild &&
+            surveyEntity?.isGuardianOne &&
+            surveyEntity?.isGuardianTwo
+          ) {
+            // Only Child
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  child: details[0].statuses[0],
+                  careGiver1: details[0].statuses[1],
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver1: details[1].statuses[1],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver1: details[2].statuses[1],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
+          } else if (
+            surveyEntity?.isChild &&
             !surveyEntity?.isGuardianOne &&
             !surveyEntity?.isGuardianTwo
           ) {
@@ -975,33 +1007,218 @@ export class BackgroundDataService {
           surveyEntity['isClosed'] = true;
           surveyEntity['signal'] = '';
           surveyEntity['missedFields'] = '';
-          surveyEntity['history'] = {
-            zeroMonth: {
-              date: details[0].date,
-              statusInDetail: {
-                child: details[0].statuses[0],
-                careGiver1: details[0].statuses[1],
-                careGiver2: details[0].statuses[2],
-              },
-            },
-            sixMonths: {
-              date: details[1].date,
-              statusInDetail: {
-                child: details[1].statuses[0],
-                careGiver1: details[1].statuses[1],
-                careGiver2: details[1].statuses[2],
-              },
-            },
-            twelveMonths: {
-              date: details[2].date,
-              statusInDetail: {
-                child: details[2].statuses[0],
-                careGiver1: details[2].statuses[1],
-                careGiver2: details[2].statuses[2],
-              },
-            },
-          };
           surveyEntity['nextSurvey'] = '';
+          /*
+          Child   => Index 0
+          Adult 1 => Index 1
+          Adult 2 => Index 2
+          */
+          if (
+            surveyEntity?.isChild &&
+            surveyEntity?.isGuardianOne &&
+            surveyEntity?.isGuardianTwo
+          ) {
+            // Only Child
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  child: details[0].statuses[0],
+                  careGiver1: details[0].statuses[1],
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver1: details[1].statuses[1],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver1: details[2].statuses[1],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
+          } else if (
+            surveyEntity?.isChild &&
+            !surveyEntity?.isGuardianOne &&
+            !surveyEntity?.isGuardianTwo
+          ) {
+            // Only Child
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  child: details[0].statuses[0],
+                  /* careGiver1: details[0].statuses[1],
+                  careGiver2: details[0].statuses[2], */
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  /* careGiver1: details[1].statuses[1],
+                  careGiver2: details[1].statuses[2], */
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  /* careGiver1: details[2].statuses[1],
+                  careGiver2: details[2].statuses[2], */
+                },
+              },
+            };
+          } else if (
+            surveyEntity?.isChild &&
+            surveyEntity?.isGuardianOne &&
+            !surveyEntity?.isGuardianTwo
+          ) {
+            // Only Child and Guardian One
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  child: details[0].statuses[0],
+                  careGiver1: details[0].statuses[1],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver1: details[1].statuses[1],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver1: details[2].statuses[1],
+                },
+              },
+            };
+          } else if (
+            surveyEntity?.isChild &&
+            !surveyEntity?.isGuardianOne &&
+            surveyEntity?.isGuardianTwo
+          ) {
+            // Only Child and Guardian Two
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  child: details[0].statuses[0],
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
+          } else if (
+            !surveyEntity?.isChild &&
+            surveyEntity?.isGuardianOne &&
+            surveyEntity?.isGuardianTwo
+          ) {
+            // Only Guardian One and Guardian Two
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  careGiver1: details[0].statuses[1],
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  careGiver1: details[1].statuses[1],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  careGiver1: details[2].statuses[1],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
+          } else if (
+            !surveyEntity?.isChild &&
+            surveyEntity?.isGuardianOne &&
+            !surveyEntity?.isGuardianTwo
+          ) {
+            // Only Guardian One
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  careGiver1: details[0].statuses[1],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  careGiver1: details[1].statuses[1],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  careGiver1: details[2].statuses[1],
+                },
+              },
+            };
+          } else if (
+            !surveyEntity?.isChild &&
+            !surveyEntity?.isGuardianOne &&
+            surveyEntity?.isGuardianTwo
+          ) {
+            // Only Guardian Two
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
+          }
         } else {
           surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           surveyEntity['isGuardianOne'] =
