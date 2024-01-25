@@ -50,9 +50,6 @@ export class CloseStatusAdultService extends TypeOrmCrudService<CloseStatusAdult
         closeStatusAdultEntity.isClosed = payload.isClosed;
         this.repo.update(closeStatusAdultEntity.id, {
           ...closeStatusAdultEntity,
-          isGuardianOne: payload?.isGuardianOne,
-          isGuardianTwo: payload?.isGuardianTwo,
-          isChild: payload?.isChild,
         });
       } else {
         this.repo.insert(payload);

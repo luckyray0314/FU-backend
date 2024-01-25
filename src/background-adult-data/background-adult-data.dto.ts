@@ -46,9 +46,6 @@ export class BackgroundAdultSurveyBasicDataDto {
 
   @ApiProperty()
   problemAreaAdultEntities: ProblemAreaAdultEntity[];
-
-  @ApiProperty()
-  importantEventsEntities: GenderAdultEntity[];
 }
 
 export type FormDataByEntityName = {
