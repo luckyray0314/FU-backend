@@ -21,13 +21,4 @@ import {
 
     @Column()
     isClosed: string;
-
-    @Column({ nullable: true })
-    isGuardianOne?: string;
-
-    @Column({ nullable: true })
-    isGuardianTwo?: string;
-
-    @Column({ nullable: true })
-    isChild?: string;
   }

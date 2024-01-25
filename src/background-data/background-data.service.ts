@@ -635,11 +635,13 @@ export class BackgroundDataService {
           Adult 1 => Index 1
           Adult 2 => Index 2
           */
+          let maxParticipates: number;
           if (
             surveyEntity?.isChild &&
             !surveyEntity?.isGuardianOne &&
             !surveyEntity?.isGuardianTwo
           ) {
+            maxParticipates = 1;
             // Only Child
             surveyEntity['history'] = {
               zeroMonth: {
@@ -673,6 +675,7 @@ export class BackgroundDataService {
             !surveyEntity?.isGuardianTwo
           ) {
             // Only Child and Guardian One
+            maxParticipates = 2;
             surveyEntity['history'] = {
               zeroMonth: {
                 date: details[0].date,
@@ -702,6 +705,7 @@ export class BackgroundDataService {
             surveyEntity?.isGuardianTwo
           ) {
             // Only Child and Guardian Two
+            maxParticipates = 2;
             surveyEntity['history'] = {
               zeroMonth: {
                 date: details[0].date,
@@ -731,6 +735,7 @@ export class BackgroundDataService {
             surveyEntity?.isGuardianTwo
           ) {
             // Only Guardian One and Guardian Two
+            maxParticipates = 2;
             surveyEntity['history'] = {
               zeroMonth: {
                 date: details[0].date,
@@ -760,6 +765,7 @@ export class BackgroundDataService {
             !surveyEntity?.isGuardianTwo
           ) {
             // Only Guardian One
+            maxParticipates = 1;
             surveyEntity['history'] = {
               zeroMonth: {
                 date: details[0].date,
@@ -786,6 +792,7 @@ export class BackgroundDataService {
             surveyEntity?.isGuardianTwo
           ) {
             // Only Guardian Two
+            maxParticipates = 1;
             surveyEntity['history'] = {
               zeroMonth: {
                 date: details[0].date,
@@ -808,51 +815,90 @@ export class BackgroundDataService {
                 },
               },
             };
+          } else {
+            maxParticipates = 3;
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  child: details[0].statuses[0],
+                  careGiver1: details[0].statuses[1],
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver1: details[1].statuses[1],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver1: details[2].statuses[1],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
           }
-          let nextSurvey = dayjs().format('YYYY-MM-DD');
-          let signal = 'BackgroundSurvey';
+          let nextSurvey = '';
+          let signal = '';
           if (
             details[0].statuses.filter(status => status === SurveyStatus.Coming)
-              .length === 3
+              .length >= maxParticipates
           ) {
             signal = '0MonthSurvey';
             nextSurvey = `${dayjs(details[0].date)
               .add(2, 'week')
               .format('YYYY-MM-DD')}`;
-          } else {
+          } else if (
+            details[0].statuses.filter(status => status === SurveyStatus.Clear)
+              .length >= maxParticipates
+          ) {
             // Mean there's not 3 person with Comming status => Clear or Loss status inside occasion 0
             if (
               details[1].statuses.filter(
                 status => status === SurveyStatus.Coming,
-              ).length === 3
+              ).length >= maxParticipates
             ) {
               signal = '6MonthSurvey';
               nextSurvey = `${dayjs(details[1].date)
                 .add(2, 'week')
                 .format('YYYY-MM-DD')}`;
-            } else {
+            } else if (
+              details[1].statuses.filter(
+                status => status === SurveyStatus.Clear,
+              ).length >= maxParticipates
+            ) {
               // Mean there's not 3 person with Comming status => Clear or Loss status inside occasion 1
               if (
                 details[2].statuses.filter(
                   status => status === SurveyStatus.Coming,
-                ).length === 3
+                ).length >= maxParticipates
               ) {
                 signal = '12MonthSurvey';
                 nextSurvey = `${dayjs(details[2].date)
                   .add(2, 'week')
                   .format('YYYY-MM-DD')}`;
-              } else {
+              } else if (
+                details[2].statuses.filter(
+                  status => status === SurveyStatus.Clear,
+                ).length >= maxParticipates
+              ) {
                 // Mean there's not 3 person with Comming status => Clear or Loss status inside occasion 2
                 if (
                   details[0].statuses.filter(
                     status => status === SurveyStatus.Clear,
-                  ).length === 3 &&
+                  ).length >= maxParticipates &&
                   details[1].statuses.filter(
                     status => status === SurveyStatus.Clear,
-                  ).length === 3 &&
+                  ).length >= maxParticipates &&
                   details[2].statuses.filter(
                     status => status === SurveyStatus.Clear,
-                  ).length === 3
+                  ).length >= maxParticipates
                 ) {
                   signal = 'ImportantHappeningsDuring12Months';
                   nextSurvey = `${dayjs(details[2].date)
@@ -861,7 +907,7 @@ export class BackgroundDataService {
                 } else if (
                   details[2].statuses.filter(
                     status => status === SurveyStatus.Clear,
-                  ).length === 3
+                  ).length >= maxParticipates
                 ) {
                   signal = 'PostSurvey';
                   nextSurvey = `${dayjs(details[2].date)
@@ -874,23 +920,30 @@ export class BackgroundDataService {
           let caseStatus: string = '';
           if (
             details[0].statuses.filter(status => status === SurveyStatus.Clear)
-              .length === 3 &&
+              .length >= maxParticipates &&
             details[1].statuses.filter(status => status === SurveyStatus.Clear)
-              .length === 3 &&
+              .length >= maxParticipates &&
             details[2].statuses.filter(status => status === SurveyStatus.Clear)
-              .length === 3
+              .length >= maxParticipates
           ) {
             caseStatus = SurveyStatus.Clear;
           } else if (
             details[0].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0 &&
+              .length > 0 ||
             details[1].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0 &&
+              .length > 0 ||
             details[2].statuses.filter(status => status === SurveyStatus.Loss)
               .length > 0
           ) {
             caseStatus = SurveyStatus.Loss;
-          } else {
+          } else if (
+            details[0].statuses.filter(status => status === SurveyStatus.Coming)
+              .length >= maxParticipates ||
+            details[1].statuses.filter(status => status === SurveyStatus.Coming)
+              .length >= maxParticipates ||
+            details[2].statuses.filter(status => status === SurveyStatus.Coming)
+              .length >= maxParticipates
+          ) {
             caseStatus = SurveyStatus.Coming;
           }
           surveyEntity['status'] = caseStatus;
@@ -904,6 +957,7 @@ export class BackgroundDataService {
           dayjs().diff(existBackgroundMetadata?.date, 'month') > 12
         ) {
           // Archived
+          surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           let archivedCodeNumber: string = '';
           if (!closeStatusEntity?.archivedCodeNumber) {
             archivedCodeNumber = `Ark-${generate(
@@ -918,90 +972,373 @@ export class BackgroundDataService {
             archivedCodeNumber = closeStatusEntity?.archivedCodeNumber;
           }
           const scoreEntities = await this.scoreService.find({
-            where: { codeNumber: closeStatusEntity?.codeNumber },
+            where: { codeNumber: closeStatusEntity.codeNumber },
           });
-          let prevOccasionDate = dayjs();
+          let prevOccasionDate = existBackgroundMetadata?.date
+            ? dayjs(existBackgroundMetadata?.date)
+            : dayjs();
+          const today = dayjs();
           const details = await Promise.all(
-            [...Array(3)].map(async (_it, arrIndex) => {
-              const entities = scoreEntities.filter(
-                s => s.occasion === arrIndex + 1,
-              );
-              if (entities.at(0)) {
-                prevOccasionDate = dayjs(entities[0].date);
-              }
-              const today = dayjs();
-              const date = entities.at(0)
-                ? new Date(entities[0].date)
-                : (arrIndex === 0
-                    ? today
-                    : arrIndex === 1
-                    ? prevOccasionDate.add(6, 'month')
-                    : prevOccasionDate.add(12, 'month')
-                  ).toDate();
-              const isScanLocked = Math.abs(dayjs().diff(date, 'week')) > 2;
-              const statuses = [...Array(3)].map((_it2, personIndex) => {
-                const scoreEntity = entities
-                  .filter(entity => entity.person === personIndex + 1)
-                  .at(0);
-                const status =
-                  scoreEntity?.score15 && scoreEntity?.ors
-                    ? SurveyStatus.Clear
-                    : !isScanLocked
-                    ? SurveyStatus.Coming
-                    : SurveyStatus.Loss;
-                return status;
-              });
+            [...Array(3)].map(async (_it, occasionIndex) => {
+              if (scoreEntities?.length > 0) {
+                // Exist score for this index
+                const entities = scoreEntities.filter(
+                  s => s.occasion === occasionIndex + 1,
+                );
 
-              return { date, statuses };
+                const surveyDate =
+                  occasionIndex === 0
+                    ? prevOccasionDate
+                    : occasionIndex === 1
+                    ? prevOccasionDate.add(6, 'month')
+                    : prevOccasionDate.add(12, 'month');
+
+                const isScanLocked = dayjs().diff(surveyDate, 'week') >= 2;
+                const statuses = [...Array(3)].map((_it2, personIndex) => {
+                  const scoreEntity = entities
+                    .filter(entity => entity.person === personIndex + 1)
+                    .at(0);
+                  const status =
+                    scoreEntity?.score15 && scoreEntity?.ors
+                      ? SurveyStatus.Clear
+                      : !isScanLocked
+                      ? SurveyStatus.Coming
+                      : SurveyStatus.Loss;
+                  return status;
+                });
+
+                return { date: surveyDate, statuses };
+              } else {
+                // Not exist score for this index
+                const surveyDate =
+                  occasionIndex === 0
+                    ? prevOccasionDate
+                    : occasionIndex === 1
+                    ? prevOccasionDate.add(6, 'month')
+                    : prevOccasionDate.add(12, 'month');
+                const isScanLocked = dayjs().diff(surveyDate, 'week') >= 2;
+                const statuses = [...Array(3)].map((_it2, personIndex) => {
+                  const status = isScanLocked
+                    ? SurveyStatus.Loss
+                    : SurveyStatus.Coming;
+                  return status;
+                });
+                return { date: surveyDate?.toDate(), statuses };
+              }
             }),
           );
-          surveyEntity['codeNumber'] = archivedCodeNumber;
-          surveyEntity['isGuardianOne'] =
-            closeStatusEntity?.isGuardianOne == null ||
-            closeStatusEntity?.isGuardianOne === 'true'
-              ? true
-              : false;
-          surveyEntity['isGuardianTwo'] =
-            closeStatusEntity?.isGuardianTwo == null ||
-            closeStatusEntity?.isGuardianTwo === 'true'
-              ? true
-              : false;
-          surveyEntity['isChild'] =
-            closeStatusEntity?.isChild == null ||
-            closeStatusEntity?.isChild === 'true'
-              ? true
-              : false;
-          surveyEntity['status'] = SurveyStatus.Archived;
-          surveyEntity['isClosed'] = true;
-          surveyEntity['signal'] = '';
+          /*
+          Child   => Index 0
+          Adult 1 => Index 1
+          Adult 2 => Index 2
+          */
+          let maxParticipates: number;
+          if (
+            surveyEntity?.isChild &&
+            !surveyEntity?.isGuardianOne &&
+            !surveyEntity?.isGuardianTwo
+          ) {
+            maxParticipates = 1;
+            // Only Child
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  child: details[0].statuses[0],
+                  /* careGiver1: details[0].statuses[1],
+                  careGiver2: details[0].statuses[2], */
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  /* careGiver1: details[1].statuses[1],
+                  careGiver2: details[1].statuses[2], */
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  /* careGiver1: details[2].statuses[1],
+                  careGiver2: details[2].statuses[2], */
+                },
+              },
+            };
+          } else if (
+            surveyEntity?.isChild &&
+            surveyEntity?.isGuardianOne &&
+            !surveyEntity?.isGuardianTwo
+          ) {
+            // Only Child and Guardian One
+            maxParticipates = 2;
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  child: details[0].statuses[0],
+                  careGiver1: details[0].statuses[1],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver1: details[1].statuses[1],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver1: details[2].statuses[1],
+                },
+              },
+            };
+          } else if (
+            surveyEntity?.isChild &&
+            !surveyEntity?.isGuardianOne &&
+            surveyEntity?.isGuardianTwo
+          ) {
+            // Only Child and Guardian Two
+            maxParticipates = 2;
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  child: details[0].statuses[0],
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
+          } else if (
+            !surveyEntity?.isChild &&
+            surveyEntity?.isGuardianOne &&
+            surveyEntity?.isGuardianTwo
+          ) {
+            // Only Guardian One and Guardian Two
+            maxParticipates = 2;
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  careGiver1: details[0].statuses[1],
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  careGiver1: details[1].statuses[1],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  careGiver1: details[2].statuses[1],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
+          } else if (
+            !surveyEntity?.isChild &&
+            surveyEntity?.isGuardianOne &&
+            !surveyEntity?.isGuardianTwo
+          ) {
+            // Only Guardian One
+            maxParticipates = 1;
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  careGiver1: details[0].statuses[1],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  careGiver1: details[1].statuses[1],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  careGiver1: details[2].statuses[1],
+                },
+              },
+            };
+          } else if (
+            !surveyEntity?.isChild &&
+            !surveyEntity?.isGuardianOne &&
+            surveyEntity?.isGuardianTwo
+          ) {
+            // Only Guardian Two
+            maxParticipates = 1;
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
+          } else {
+            maxParticipates = 3;
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  child: details[0].statuses[0],
+                  careGiver1: details[0].statuses[1],
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver1: details[1].statuses[1],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver1: details[2].statuses[1],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
+          }
+          let nextSurvey = '';
+          let signal = '';
+          if (
+            details[0].statuses.filter(status => status === SurveyStatus.Coming)
+              .length === maxParticipates
+          ) {
+            signal = '0MonthSurvey';
+            nextSurvey = `${dayjs(details[0].date)
+              .add(2, 'week')
+              .format('YYYY-MM-DD')}`;
+          } else if (
+            details[0].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === maxParticipates
+          ) {
+            // Mean there's not 3 person with Comming status => Clear or Loss status inside occasion 0
+            if (
+              details[1].statuses.filter(
+                status => status === SurveyStatus.Coming,
+              ).length === maxParticipates
+            ) {
+              signal = '6MonthSurvey';
+              nextSurvey = `${dayjs(details[1].date)
+                .add(2, 'week')
+                .format('YYYY-MM-DD')}`;
+            } else if (
+              details[1].statuses.filter(
+                status => status === SurveyStatus.Clear,
+              ).length === maxParticipates
+            ) {
+              // Mean there's not 3 person with Comming status => Clear or Loss status inside occasion 1
+              if (
+                details[2].statuses.filter(
+                  status => status === SurveyStatus.Coming,
+                ).length === maxParticipates
+              ) {
+                signal = '12MonthSurvey';
+                nextSurvey = `${dayjs(details[2].date)
+                  .add(2, 'week')
+                  .format('YYYY-MM-DD')}`;
+              } else if (
+                details[2].statuses.filter(
+                  status => status === SurveyStatus.Clear,
+                ).length === maxParticipates
+              ) {
+                // Mean there's not 3 person with Comming status => Clear or Loss status inside occasion 2
+                if (
+                  details[0].statuses.filter(
+                    status => status === SurveyStatus.Clear,
+                  ).length === maxParticipates &&
+                  details[1].statuses.filter(
+                    status => status === SurveyStatus.Clear,
+                  ).length === maxParticipates &&
+                  details[2].statuses.filter(
+                    status => status === SurveyStatus.Clear,
+                  ).length === maxParticipates
+                ) {
+                  signal = 'ImportantHappeningsDuring12Months';
+                  nextSurvey = `${dayjs(details[2].date)
+                    .add(4, 'week')
+                    .format('YYYY-MM-DD')}`;
+                } else if (
+                  details[2].statuses.filter(
+                    status => status === SurveyStatus.Clear,
+                  ).length === maxParticipates
+                ) {
+                  signal = 'PostSurvey';
+                  nextSurvey = `${dayjs(details[2].date)
+                    .add(4, 'week')
+                    .format('YYYY-MM-DD')}`;
+                }
+              }
+            }
+          }
+          let caseStatus: string = '';
+          if (
+            details[0].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === maxParticipates &&
+            details[1].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === maxParticipates &&
+            details[2].statuses.filter(status => status === SurveyStatus.Clear)
+              .length === maxParticipates
+          ) {
+            caseStatus = SurveyStatus.Clear;
+          } else if (
+            details[0].statuses.filter(status => status === SurveyStatus.Loss)
+              .length > 0
+          ) {
+            caseStatus = SurveyStatus.Loss;
+          } else {
+            caseStatus = SurveyStatus.Coming;
+          }
+          surveyEntity['status'] = caseStatus;
+          surveyEntity['isClosed'] =
+            closeStatusEntity?.isClosed === 'true' ? true : false;
+          surveyEntity['signal'] = signal;
+          surveyEntity['nextSurvey'] = nextSurvey;
           surveyEntity['missedFields'] = '';
-          surveyEntity['history'] = {
-            zeroMonth: {
-              date: details[0].date,
-              statusInDetail: {
-                child: details[0].statuses[0],
-                careGiver1: details[0].statuses[1],
-                careGiver2: details[0].statuses[2],
-              },
-            },
-            sixMonths: {
-              date: details[1].date,
-              statusInDetail: {
-                child: details[1].statuses[0],
-                careGiver1: details[1].statuses[1],
-                careGiver2: details[1].statuses[2],
-              },
-            },
-            twelveMonths: {
-              date: details[2].date,
-              statusInDetail: {
-                child: details[2].statuses[0],
-                careGiver1: details[2].statuses[1],
-                careGiver2: details[2].statuses[2],
-              },
-            },
-          };
-          surveyEntity['nextSurvey'] = '';
+          surveyEntity['status'] = SurveyStatus.Archived;
         } else {
           surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           surveyEntity['isGuardianOne'] =
