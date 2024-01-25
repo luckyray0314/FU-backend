@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common';
 import { ApiBody, ApiOkResponse, ApiTags } from '@nestjs/swagger';
 import { CodeNumberDto } from '../dto/codeNumber.dto';
-import { CloseStatusDto } from '../dto/close-status.dto';
+import { CloseStatusDto } from './close-status.dto';
 import { CloseStatusService } from './close.status.child.service';
 import { ProcessorDto } from '../dto/processor.dto';
 import { SessionAuthGuard } from 'src/auth/guards/session-auth.guard';

@@ -10,7 +10,7 @@ import { Repository } from 'typeorm';
 import { CloseStatusAdultEntity } from './entities/close.status.adult.entity';
 import dayjs from 'dayjs';
 import { ProcessorDto } from '../dto/processor.dto';
-import { CloseStatusDto } from '../dto/close-status.dto';
+import { CloseStatusDto } from '../child/close-status.dto';
 import { CodeNumberDto } from '../dto/codeNumber.dto';
 
 @Injectable()

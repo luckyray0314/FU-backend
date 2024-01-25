@@ -8,7 +8,7 @@ import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { BackgroundMetadataService } from 'src/background-data/background-metadata.service';
 import { Repository } from 'typeorm';
 // import { ScoreFilterDto } from "./dto/score-filter.dto";
-import { CloseStatusDto } from '../dto/close-status.dto';
+import { CloseStatusDto } from './close-status.dto';
 import { CloseStatusEntity } from './entities/close.status.child.entity';
 import dayjs from 'dayjs';
 import { CodeNumberDto } from '../dto/codeNumber.dto';
