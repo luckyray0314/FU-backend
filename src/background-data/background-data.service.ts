@@ -928,16 +928,32 @@ export class BackgroundDataService {
           ) {
             caseStatus = SurveyStatus.Clear;
           } else if (
-            details[0].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0 ||
-            details[1].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0 ||
-            details[2].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0
+            (details[0].statuses.filter(status => status === SurveyStatus.Loss)
+              .length > 0 &&
+              details[0].statuses.filter(status => status === SurveyStatus.Loss)
+                .length <= maxParticipates) ||
+            (details[1].statuses.filter(status => status === SurveyStatus.Loss)
+              .length > 0 &&
+              details[1].statuses.filter(status => status === SurveyStatus.Loss)
+                .length <= maxParticipates) ||
+            (details[2].statuses.filter(status => status === SurveyStatus.Loss)
+              .length > 0 &&
+              details[2].statuses.filter(status => status === SurveyStatus.Loss)
+                .length <= maxParticipates)
           ) {
             caseStatus = SurveyStatus.Loss;
           } else {
             caseStatus = SurveyStatus.Coming;
+          }
+          if (closeStatusEntity?.codeNumber?.includes('2024-213')) {
+            console.log(
+              'closeStatusEntity?.codeNumber',
+              closeStatusEntity?.codeNumber,
+              details,
+              caseStatus,
+              details[0].statuses.filter(status => status === SurveyStatus.Loss)
+                .length > 0,
+            );
           }
           surveyEntity['status'] = caseStatus;
           surveyEntity['isClosed'] =
@@ -950,7 +966,6 @@ export class BackgroundDataService {
           dayjs().diff(existBackgroundMetadata?.date, 'month') > 12
         ) {
           // Archived
-          surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           let archivedCodeNumber: string = '';
           if (!closeStatusEntity?.archivedCodeNumber) {
             archivedCodeNumber = `Ark-${generate(
@@ -964,6 +979,7 @@ export class BackgroundDataService {
           } else {
             archivedCodeNumber = closeStatusEntity?.archivedCodeNumber;
           }
+          surveyEntity['codeNumber'] = archivedCodeNumber;
           const scoreEntities = await this.scoreService.find({
             where: { codeNumber: closeStatusEntity.codeNumber },
           });

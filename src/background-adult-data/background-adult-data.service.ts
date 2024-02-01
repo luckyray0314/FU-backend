@@ -493,12 +493,18 @@ export class BackgroundAdultDataService {
           ) {
             caseStatus = SurveyStatus.Clear;
           } else if (
-            details[0].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0 ||
-            details[1].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0 ||
-            details[2].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0
+            (details[0].statuses.filter(status => status === SurveyStatus.Loss)
+              .length > 0 &&
+              details[0].statuses.filter(status => status === SurveyStatus.Loss)
+                .length <= maxParticipates) ||
+            (details[1].statuses.filter(status => status === SurveyStatus.Loss)
+              .length > 0 &&
+              details[1].statuses.filter(status => status === SurveyStatus.Loss)
+                .length <= maxParticipates) ||
+            (details[2].statuses.filter(status => status === SurveyStatus.Loss)
+              .length > 0 &&
+              details[2].statuses.filter(status => status === SurveyStatus.Loss)
+                .length <= maxParticipates)
           ) {
             caseStatus = SurveyStatus.Loss;
           } else {
@@ -534,7 +540,6 @@ export class BackgroundAdultDataService {
           existBackgroundMetadata &&
           dayjs().diff(existBackgroundMetadata?.date, 'month') > 12
         ) {
-          surveyEntity['codeNumber'] = adulCloseStatusEntity?.codeNumber;
           let archivedCodeNumber: string = '';
           if (!adulCloseStatusEntity?.archivedCodeNumber) {
             archivedCodeNumber = `Ark-${generate(
@@ -551,6 +556,7 @@ export class BackgroundAdultDataService {
           } else {
             archivedCodeNumber = adulCloseStatusEntity?.archivedCodeNumber;
           }
+          surveyEntity['codeNumber'] = archivedCodeNumber;
           const scoreEntities = await this.adultScoreService.find({
             where: { codeNumber: existBackgroundMetadata.codeNumber },
           });

@@ -454,6 +454,7 @@ let BackgroundDataService = class BackgroundDataService {
         const closeStatus = await this.closeStatusService.findAll();
         const backgroundMetadata = await this.backgroundMetadataService.findAll();
         const result = await Promise.all(closeStatus.map(async (closeStatusEntity, bgIndex) => {
+            var _a;
             const existBackgroundMetadata = backgroundMetadata === null || backgroundMetadata === void 0 ? void 0 : backgroundMetadata.find(item => (item === null || item === void 0 ? void 0 : item.codeNumber) == (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber));
             let surveyEntity = {
                 processor: closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.processor,
@@ -782,16 +783,26 @@ let BackgroundDataService = class BackgroundDataService {
                         .length >= maxParticipates) {
                     caseStatus = survey_status_1.SurveyStatus.Clear;
                 }
-                else if (details[0].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
-                    .length > 0 ||
-                    details[1].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
-                        .length > 0 ||
-                    details[2].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
-                        .length > 0) {
+                else if ((details[0].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
+                    .length > 0 &&
+                    details[0].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
+                        .length <= maxParticipates) ||
+                    (details[1].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
+                        .length > 0 &&
+                        details[1].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
+                            .length <= maxParticipates) ||
+                    (details[2].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
+                        .length > 0 &&
+                        details[2].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
+                            .length <= maxParticipates)) {
                     caseStatus = survey_status_1.SurveyStatus.Loss;
                 }
                 else {
                     caseStatus = survey_status_1.SurveyStatus.Coming;
+                }
+                if ((_a = closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber) === null || _a === void 0 ? void 0 : _a.includes('2024-213')) {
+                    console.log('closeStatusEntity?.codeNumber', closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber, details, caseStatus, details[0].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
+                        .length > 0);
                 }
                 surveyEntity['status'] = caseStatus;
                 surveyEntity['isClosed'] =
@@ -802,7 +813,6 @@ let BackgroundDataService = class BackgroundDataService {
             }
             else if ((existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.codeNumber) &&
                 dayjs().diff(existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date, 'month') > 12) {
-                surveyEntity['codeNumber'] = closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber;
                 let archivedCodeNumber = '';
                 if (!(closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.archivedCodeNumber)) {
                     archivedCodeNumber = `Ark-${(0, rand_token_1.generate)(generator_const_1.codeGeneratorSize, generator_const_1.codeGeneratorChars)}`;
@@ -811,6 +821,7 @@ let BackgroundDataService = class BackgroundDataService {
                 else {
                     archivedCodeNumber = closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.archivedCodeNumber;
                 }
+                surveyEntity['codeNumber'] = archivedCodeNumber;
                 const scoreEntities = await this.scoreService.find({
                     where: { codeNumber: closeStatusEntity.codeNumber },
                 });
