@@ -98,7 +98,7 @@ export class CloseStatusAdultService extends TypeOrmCrudService<CloseStatusAdult
         return closeStatus;
       }
     } else {
-      return { codeNumber: `Vux${dayjs().format('YYYY')}-0000` };
+      return { codeNumber: `Vux${dayjs().format('YYYY')}-199` };
     }
   }
 

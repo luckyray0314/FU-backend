@@ -91,49 +91,6 @@ import {
   otherInitiativeSeedData,
 } from '../core/constants/seed.constant';
 
-import { BackgroundMetadataEntity } from 'src/background-data/background-metadata.entity';
-//Close Status
-import * as closeStatusRealData from 'src/core/constants/close-status.json';
-import * as closeStatusAdultRealData from 'src/core/constants/close-status-adult.json';
-
-import * as backgroundMetadata from 'src/core/constants/background_metadata.json';
-import * as backgroundAdultMetadata from 'src/core/constants/background_adult_metadata.json';
-import * as scoreRealData from 'src/core/constants/score.json';
-import * as adultScoreRealData from 'src/core/constants/adult-score.json';
-import * as educationVh1RealData from 'src/core/constants/selected_education_vh1.json';
-import * as educationVh2RealData from 'src/core/constants/selected_education_vh2.json';
-import * as employmentVh1RealData from 'src/core/constants/selected_employment_vh1.json';
-import * as employmentVh2RealData from 'src/core/constants/selected_employment_vh2.json';
-import * as establishedDiagnosesRealData from 'src/core/constants/selected_established_diagnoses.json';
-import * as familyConstellationRealData from 'src/core/constants/selected_family_constellation.json';
-import * as genderRealData from 'src/core/constants/selected_gender.json';
-import * as interpreterRequiredRealData from 'src/core/constants/selected_interpreter_required.json';
-import * as interventionPeriodRealData from 'src/core/constants/selected_intervention_period.json';
-import * as interventionProgressRealData from 'src/core/constants/selected_intervention_progress.json';
-import * as otherInterventionsRealData from 'src/core/constants/selected_other_interventions.json';
-import * as previousInterventionRealData from 'src/core/constants/selected_previous_intervention.json';
-import * as problemAreaRealData from 'src/core/constants/selected_problem_area.json';
-import * as reasonForTerminationRealData from 'src/core/constants/selected_reason_for_termination.json';
-import * as reasonForUpdateRealData from 'src/core/constants/selected_reason_for_update.json';
-import * as schoolUniformRealData from 'src/core/constants/selected_school_uniform.json';
-import * as timeConsumptionRealData from 'src/core/constants/selected_time_consumption.json';
-import * as typeOfEffortRealData from 'src/core/constants/selected_type_of_effort.json';
-import * as whoParticipatesRealData from 'src/core/constants/selected_who_partifipates.json';
-import * as genderAdultRealData from 'src/core/constants/selected_gender_adult.json';
-import * as actionAssignmentRealData from 'src/core/constants/selected_action_assignment.json';
-import * as duringOperationRealData from 'src/core/constants/selected_during_operation.json';
-import * as educationLevelRealData from 'src/core/constants/selected_education_level.json';
-import * as employmentRealData from 'src/core/constants/selected_employment.json';
-import * as establishDiagnoseRealData from 'src/core/constants/selected_establish_diagonose.json';
-import * as familyConstellationAdultRealData from 'src/core/constants/selected_family_constellation_adult.json';
-import * as otherOngoingEffortRealData from 'src/core/constants/selected_other_ongoing_effort.json';
-import * as previousEffortRealData from 'src/core/constants/selected_previous_effort.json';
-import * as problemAreaAdultRealData from 'src/core/constants/selected_problem_area_adult.json';
-import * as changeLiveRealData from 'src/core/constants/change_live.json';
-import * as changeOverRealData from 'src/core/constants/change_over.json';
-import * as investigationOutRealData from 'src/core/constants/investigation_out.json';
-import * as otherInitiativeRealData from 'src/core/constants/other_initiative.json';
-
 import { ScoreEntity } from 'src/score/entities/score.entity';
 import { ChangeAccomodationEntity } from 'src/important-events/change-accomodation/entities/change-accomodation.entity';
 import { SelectedChangeAccomodationEntity } from 'src/important-events/change-accomodation/entities/selected-change-accomodation.entity';
@@ -174,20 +131,37 @@ import { SelectedInvestigationOutEntity } from 'src/important-events-vux/investi
 import { OtherInitiativeEntity } from 'src/important-events-vux/other-initiative/entities/other-initiative.entity';
 import { SelectedOtherInitiativeEntity } from 'src/important-events-vux/other-initiative/entities/selected-other-initiative.entity';
 
+import { BackgroundMetadataEntity } from 'src/background-data/background-metadata.entity';
+//JSON Files
+/* Bof Files */
+import backgroundMetadata from 'src/core/constants/json/bof/background_metadata.json';
+import closeStatusRealData from 'src/core/constants/json/bof/close-status.json';
+import scoreRealData from 'src/core/constants/json/bof/score.json';
+import educationVh1RealData from 'src/core/constants/json/bof/selected_education_vh1.json';
+import educationVh2RealData from 'src/core/constants/json/bof/selected_education_vh2.json';
+import employmentVh1RealData from 'src/core/constants/json/bof/selected_employment_vh1.json';
+import employmentVh2RealData from 'src/core/constants/json/bof/selected_employment_vh2.json';
+import establishedDiagnosesRealData from 'src/core/constants/json/bof/selected_established_diagnoses.json';
+import familyConstellationRealData from 'src/core/constants/json/bof/selected_family_constellation.json';
+import genderRealData from 'src/core/constants/json/bof/selected_gender.json';
+import interventionPeriodRealData from 'src/core/constants/json/bof/selected_intervention_period.json';
+import interventionProgressRealData from 'src/core/constants/json/bof/selected_intervention_progress.json';
+import otherInterventionsRealData from 'src/core/constants/json/bof/selected_other_interventions.json';
+import previousInterventionRealData from 'src/core/constants/json/bof/selected_previous_intervention.json';
+import problemAreaRealData from 'src/core/constants/json/bof/selected_problem_area.json';
+import reasonForTerminationRealData from 'src/core/constants/json/bof/selected_reason_for_termination.json';
+import reasonForUpdateRealData from 'src/core/constants/json/bof/selected_reason_for_update.json';
+import schoolUniformRealData from 'src/core/constants/json/bof/selected_school_uniform.json';
+import timeConsumptionRealData from 'src/core/constants/json/bof/selected_time_consumption.json';
+import typeOfEffortRealData from 'src/core/constants/json/bof/selected_type_of_effort.json';
+import whoParticipatesRealData from 'src/core/constants/json/bof/selected_who_partifipates.json';
+/* Vux Files */
+import vuxData from 'src/core/constants/json/vux/vux.json';
+import dayjs from 'dayjs';
+import { SurveyStatus } from 'src/core/enums/survey-status';
+
 @Injectable()
 export class SeedService {
-  // seedChangeLive() {
-  //   throw new Error('Method not implemented.');
-  // }
-  // seedChangeOver() {
-  //   throw new Error('Method not implemented.');
-  // }
-  // seedInvestigationOut() {
-  //   throw new Error('Method not implemented.');
-  // }
-  // seedOtherInitiative() {
-  //   throw new Error('Method not implemented.');
-  // }
   constructor(
     @InjectRepository(ScoreEntity)
     private readonly scoreRepository: Repository<ScoreEntity>,
@@ -409,62 +383,27 @@ export class SeedService {
     private readonly selectedOtherInitiativeRepository: Repository<SelectedOtherInitiativeEntity>,
   ) {}
 
-  async seedBackgroundMetadata(): Promise<void> {
-    const numRecords = await this.backgroundMetadataRepository.count();
-    if (numRecords > 0) return;
-    await this.backgroundMetadataRepository.save(backgroundMetadata);
-  }
-
-  async seedScoreData(): Promise<void> {
-    const numRecords = await this.scoreRepository.count();
-    if (numRecords > 0) return;
-    await this.scoreRepository.save(scoreRealData);
-  }
-
-  async seedCloseStatusData(): Promise<void> {
-    const numRecords = await this.closeStatusRepository.count();
-    if (numRecords > 0) return;
+  //Bof
+  async seedBofData(): Promise<void> {}
+  /* async seedCloseStatusData(): Promise<void> {
+    for (let index = 0; index < closeStatusRealData.length; index++) {
+      const element = closeStatusRealData[index];
+      await this.closeStatusRepository
+        .createQueryBuilder('close-status')
+        .delete()
+        .where('codeNumber = :codeNumber', { codeNumber: element?.codeNumber })
+        .execute();
+    }
     await this.closeStatusRepository.save(closeStatusRealData);
   }
-
-  async seedCloseStatusAdultData(): Promise<void> {
-    const numRecords = await this.closeStatusAdultRepository.count();
-    if (numRecords > 0) return;
-    await this.closeStatusAdultRepository.save(closeStatusAdultRealData);
+  async seedBackgroundMetadata(): Promise<void> {
+    await this.backgroundMetadataRepository.save(backgroundMetadata);
   }
-
-  async seedAdultScoreData(): Promise<void> {
-    const numRecords = await this.adultScoreRepository.count();
-    if (numRecords > 0) return;
-    await this.adultScoreRepository.save(adultScoreRealData);
-  }
-
-  async seedGenders(): Promise<void> {
-    const numRecords = await this.genderRepository.count();
-    if (numRecords > 0) return;
-    await this.genderRepository.save(genderSeedData);
-
-    const numRecordsOfRealData = await this.selectedGenderRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      genderRealData.map(async data => {
-        const entity = new SelectedGenderEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.gender = await this.genderRepository.findOneBy({
-          id: data.genderId || 1,
-        });
-        await this.selectedGenderRepository.save(entity);
-      }),
-    );
+  async seedScoreData(): Promise<void> {
+    await this.scoreRepository.save(scoreRealData);
   }
   async seedEducationVh1s(): Promise<void> {
-    const numRecords = await this.educationVh1Repository.count();
-    if (numRecords > 0) return;
     await this.educationVh1Repository.save(educationVh1SeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedEducationVh1Repository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       educationVh1RealData.map(async data => {
         const entity = new SelectedEducationVh1Entity();
@@ -476,14 +415,21 @@ export class SeedService {
       }),
     );
   }
+  async seedGenders(): Promise<void> {
+    await this.genderRepository.save(genderSeedData);
+    await Promise.all(
+      genderRealData.map(async data => {
+        const entity = new SelectedGenderEntity();
+        entity.codeNumber = data.codeNumber;
+        entity.gender = await this.genderRepository.findOneBy({
+          id: data.genderId || 1,
+        });
+        await this.selectedGenderRepository.save(entity);
+      }),
+    );
+  }
   async seedEducationVh2s(): Promise<void> {
-    const numRecords = await this.educationVh2Repository.count();
-    if (numRecords > 0) return;
     await this.educationVh2Repository.save(educationVh2SeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedEducationVh2Repository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       educationVh2RealData.map(async data => {
         const entity = new SelectedEducationVh2Entity();
@@ -496,13 +442,7 @@ export class SeedService {
     );
   }
   async seedEmploymentVh1s(): Promise<void> {
-    const numRecords = await this.employmentVh1Repository.count();
-    if (numRecords > 0) return;
     await this.employmentVh1Repository.save(employmentVh1SeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedEmploymentVh1Repository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       employmentVh1RealData.map(async data => {
         const entity = new SelectedEmploymentVh1Entity();
@@ -515,13 +455,7 @@ export class SeedService {
     );
   }
   async seedEmploymentVh2s(): Promise<void> {
-    const numRecords = await this.employmentVh2Repository.count();
-    if (numRecords > 0) return;
     await this.employmentVh2Repository.save(employmentVh2SeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedEmploymentVh2Repository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       employmentVh2RealData.map(async data => {
         const entity = new SelectedEmploymentVh2Entity();
@@ -534,15 +468,9 @@ export class SeedService {
     );
   }
   async seedEstablishedDiagnosess(): Promise<void> {
-    const numRecords = await this.establishedDiagnosesRepository.count();
-    if (numRecords > 0) return;
     await this.establishedDiagnosesRepository.save(
       establishedDiagnosesSeedData,
     );
-
-    const numRecordsOfRealData =
-      await this.selectedEstablishedDiagnosesRepository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       establishedDiagnosesRealData.map(async data => {
         const entity = new SelectedEstablishedDiagnosesEntity();
@@ -556,13 +484,7 @@ export class SeedService {
     );
   }
   async seedFamilyConstellations(): Promise<void> {
-    const numRecords = await this.familyConstellationRepository.count();
-    if (numRecords > 0) return;
     await this.familyConstellationRepository.save(familyConstellationSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedFamilyConstellationRepository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       familyConstellationRealData.map(async data => {
         const entity = new SelectedFamilyConstellationEntity();
@@ -576,13 +498,7 @@ export class SeedService {
     );
   }
   async seedInterpreterRequireds(): Promise<void> {
-    const numRecords = await this.interpreterRequiredRepository.count();
-    if (numRecords > 0) return;
     await this.interpreterRequiredRepository.save(interpreterRequiredSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedInterpreterRequiredRepository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       interpreterRequiredRealData.map(async data => {
         const entity = new SelectedInterpreterRequiredEntity();
@@ -596,13 +512,7 @@ export class SeedService {
     );
   }
   async seedOtherInterventionss(): Promise<void> {
-    const numRecords = await this.otherInterventionsRepository.count();
-    if (numRecords > 0) return;
     await this.otherInterventionsRepository.save(otherInterventionsSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedOtherInterventionsRepository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       otherInterventionsRealData.map(async data => {
         const entity = new SelectedOtherInterventionsEntity();
@@ -616,15 +526,9 @@ export class SeedService {
     );
   }
   async seedPreviousInterventions(): Promise<void> {
-    const numRecords = await this.previousInterventionRepository.count();
-    if (numRecords > 0) return;
     await this.previousInterventionRepository.save(
       previousInterventionSeedData,
     );
-
-    const numRecordsOfRealData =
-      await this.selectedPreviousInterventionRepository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       previousInterventionRealData.map(async data => {
         const entity = new SelectedPreviousInterventionEntity();
@@ -638,13 +542,7 @@ export class SeedService {
     );
   }
   async seedProblemAreas(): Promise<void> {
-    const numRecords = await this.problemAreaRepository.count();
-    if (numRecords > 0) return;
     await this.problemAreaRepository.save(problemAreaSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedProblemAreaRepository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       problemAreaRealData.map(async data => {
         const entity = new SelectedProblemAreaEntity();
@@ -657,20 +555,12 @@ export class SeedService {
     );
   }
   async seedOtherInterventionsStarted(): Promise<void> {
-    const numRecords = await this.otherInterventionsStartedRepository.count();
-    if (numRecords > 0) return;
     await this.otherInterventionsStartedRepository.save(
       otherInterventionsStartedSeedData,
     );
   }
   async seedReasonForUpdates(): Promise<void> {
-    const numRecords = await this.reasonForUpdateRepository.count();
-    if (numRecords > 0) return;
     await this.reasonForUpdateRepository.save(reasonForUpdateSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedReasonForUpdateRepository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       reasonForUpdateRealData.map(async data => {
         const entity = new SelectedReasonForUpdateEntity();
@@ -683,13 +573,7 @@ export class SeedService {
     );
   }
   async seedSchoolUniforms(): Promise<void> {
-    const numRecords = await this.schoolUniformRepository.count();
-    if (numRecords > 0) return;
     await this.schoolUniformRepository.save(schoolUniformSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedSchoolUniformRepository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       schoolUniformRealData.map(async data => {
         const entity = new SelectedSchoolUniformEntity();
@@ -702,13 +586,7 @@ export class SeedService {
     );
   }
   async seedTypeOfEfforts(): Promise<void> {
-    const numRecords = await this.typeOfEffortRepository.count();
-    if (numRecords > 0) return;
     await this.typeOfEffortRepository.save(typeOfEffortSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedTypeOfEffortRepository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       typeOfEffortRealData.map(async data => {
         const entity = new SelectedTypeOfEffortEntity();
@@ -721,13 +599,7 @@ export class SeedService {
     );
   }
   async seedWhoParticipatess(): Promise<void> {
-    const numRecords = await this.whoParticipatesRepository.count();
-    if (numRecords > 0) return;
     await this.whoParticipatesRepository.save(whoParticipatesSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedWhoParticipatesRepository.count();
-    if (numRecordsOfRealData > 0) return;
     await Promise.all(
       whoParticipatesRealData.map(async data => {
         const entity = new SelectedWhoParticipatesEntity();
@@ -738,425 +610,662 @@ export class SeedService {
         await this.selectedWhoParticipatesRepository.save(entity);
       }),
     );
-  }
+  } */
   // follow up data
-  async seedInterventionPeriods(): Promise<void> {
-    const numRecords = await this.interventionPeriodRepository.count();
-    if (numRecords > 0) return;
+  async seedFollowUpData(): Promise<void> {
+    console.log(' Intervention Period...');
+    await this.selectedInterventionPeriodRepository.delete({});
+    await this.interventionPeriodRepository.delete({});
     await this.interventionPeriodRepository.save(interventionPeriodSeedData);
 
-    const numRecordsOfRealData =
-      await this.selectedInterventionPeriodRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      interventionPeriodRealData.map(async data => {
-        const entity = new SelectedInterventionPeriodEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.interventionPeriod =
-          await this.interventionPeriodRepository.findOneBy({
-            id: +data.interventionPeriodId || 1,
-          });
-        await this.selectedInterventionPeriodRepository.save(entity);
-      }),
-    );
-  }
-  async seedInterventionProgresss(): Promise<void> {
-    const numRecords = await this.interventionProgressRepository.count();
-    if (numRecords > 0) return;
+    console.log(' Intervention Progress...');
+    await this.selectedInterventionProgressRepository.delete({});
+    await this.interventionProgressRepository.delete({});
     await this.interventionProgressRepository.save(
       interventionProgressSeedData,
     );
 
-    const numRecordsOfRealData =
-      await this.selectedInterventionProgressRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      interventionProgressRealData.map(async data => {
-        const entity = new SelectedInterventionProgressEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.interventionProgress =
-          await this.interventionProgressRepository.findOneBy({
-            id: +data.interventionProgressId || 1,
-          });
-        await this.selectedInterventionProgressRepository.save(entity);
-      }),
-    );
-  }
-  async seedReasonForTerminations(): Promise<void> {
-    const numRecords = await this.reasonForTerminationRepository.count();
-    if (numRecords > 0) return;
+    console.log(' Reason For Termination...');
+    await this.selectedReasonForTerminationRepository.delete({});
+    await this.reasonForTerminationRepository.delete({});
     await this.reasonForTerminationRepository.save(
       reasonForTerminationSeedData,
     );
 
-    const numRecordsOfRealData =
-      await this.selectedReasonForTerminationRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      reasonForTerminationRealData.map(async data => {
-        const entity = new SelectedReasonForTerminationEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.reasonForTermination =
-          await this.reasonForTerminationRepository.findOneBy({
-            id: +data.reasonForTerminationId || 1,
-          });
-        await this.selectedReasonForTerminationRepository.save(entity);
-      }),
-    );
-  }
-  async seedTimeConsumptions(): Promise<void> {
-    const numRecords = await this.timeConsumptionRepository.count();
-    if (numRecords > 0) return;
+    console.log(' Time Consumption...');
+    await this.selectedTimeConsumptionRepository.delete({});
+    await this.timeConsumptionRepository.delete({});
     await this.timeConsumptionRepository.save(timeConsumptionSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedTimeConsumptionRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      timeConsumptionRealData.map(async data => {
-        const entity = new SelectedTimeConsumptionEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.timeConsumption = await this.timeConsumptionRepository.findOneBy(
-          { id: +data.timeConsumptionId || 1 },
-        );
-        await this.selectedTimeConsumptionRepository.save(entity);
-      }),
-    );
   }
-
-  // Important Events
-  async seedDuringIntervention(): Promise<void> {
-    const numRecords = await this.duringInterventionRepository.count();
-    if (numRecords > 0) return;
+  // Important Events Bof
+  async seedImportantEventBof(): Promise<void> {
+    console.log(' During Intervention...');
+    await this.selectedDuringInterventionRepository.delete({});
+    await this.duringInterventionRepository.delete({});
     await this.duringInterventionRepository.save(duringInterventionSeedData);
-  }
-  async seedDuringPast(): Promise<void> {
-    console.log('seeding duringpast data');
-    const numRecords = await this.duringPastRepository.count();
-    if (numRecords > 0) return;
+
+    console.log(' During Past...');
+    await this.selectedDuringPastRepository.delete({});
+    await this.duringPastRepository.delete({});
     await this.duringPastRepository.save(duringPastSeedData);
-  }
-  async seedChildSchool(): Promise<void> {
-    console.log('seeding childschool data');
-    const numRecords = await this.childSchoolRepository.count();
-    if (numRecords > 0) return;
+
+    console.log(' School Repository...');
+    await this.selectedChildSchoolRepository.delete({});
+    await this.childSchoolRepository.delete({});
     await this.childSchoolRepository.save(childSchoolSeedData);
-  }
 
-  async seedChangeAccomodation(): Promise<void> {
-    console.log('seeding changeAccomodation data');
-    const numRecords = await this.changeAccomodationRepository.count();
-    if (numRecords > 0) return;
+    console.log(' Change Accomodation...');
+    await this.selectedChangeAccomodationRepository.delete({});
+    await this.changeAccomodationRepository.delete({});
     await this.changeAccomodationRepository.save(changeAccomodationSeedData);
-  }
 
-  async seedChangeEmploymentVh1(): Promise<void> {
-    console.log('seeding changeEmploymentVh1 data');
-    const numRecords = await this.changeEmploymentVh1Repository.count();
-    if (numRecords > 0) return;
+    console.log(' Change Employment Vh1...');
+    await this.selectedChangeEmploymentsVh1Repository.delete({});
+    await this.changeEmploymentVh1Repository.delete({});
     await this.changeEmploymentVh1Repository.save(changeEmploymentVh1SeedData);
-  }
 
-  async seedChangeEmploymentVh2(): Promise<void> {
-    console.log('seeding changeEmploymentVh2 data');
-    const numRecords = await this.changeEmploymentVh2Repository.count();
-    if (numRecords > 0) return;
+    console.log(' Change Employment Vh1...');
+    await this.selectedChangeEmploymentsVh2Repository.delete({});
+    await this.changeEmploymentVh2Repository.delete({});
     await this.changeEmploymentVh2Repository.save(changeEmploymentVh2SeedData);
   }
-
   //Adult Data
-  async seedAdultGenders(): Promise<void> {
-    const numRecords = await this.genderAdultRepository.count();
-    if (numRecords > 0) return;
+  async seedVuxData(): Promise<void> {
+    await this.closeStatusAdultRepository.delete({});
+    await this.backgroundAdultMetadataRepository.delete({});
+    await this.selectedGenderAdultRepository.delete({});
+    await this.selectedProblemAreaAdultRepository.delete({});
+    await this.selectedPreviousEffortRepository.delete({});
+    await this.selectedOtherOngoingEffortRepository.delete({});
+    await this.selectedFamilyConstellationAdultRepository.delete({});
+    await this.selectedEducationLevelRepository.delete({});
+    await this.selectedEmploymentRepository.delete({});
+    await this.selectedDuringOperationRepository.delete({});
+    await this.selectedActionAssignmentRepository.delete({});
+    await this.selectedEstablishDiagnoseRepository.delete({});
+    await this.adultScoreRepository.delete({});
+
+    let isMissingBackgroundData: boolean = false;
+    for (let index = 0; index < vuxData.length; index++) {
+      const element = vuxData[index];
+      console.log(` ${element.CodeNumber}...`);
+      console.log('  Close Status...');
+      const closeStatus = await this.closeStatusAdultRepository.save({
+        codeNumber: element.CodeNumber,
+        processor: 'v1admin',
+        isClosed: 'false',
+      });
+      console.log('  Background Metadata...');
+      const backgroundData = await this.backgroundAdultMetadataRepository.save({
+        codeNumber: element.CodeNumber,
+        date: element.Date,
+        yearOfBirth: Number(element.YearOfBirth),
+        country: element.CountryOfBirth,
+      });
+      console.log('  Gender...');
+      const gender = await this.genderAdultRepository.findOne({
+        where: {
+          description: element.Gender,
+        },
+      });
+      if (gender?.id) {
+        await this.selectedGenderAdultRepository.save({
+          codeNumber: element.CodeNumber,
+          genderAdult: gender,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      console.log('  Problem Area...');
+      let problemArea = await this.problemAreaAdultRepository.findOne({
+        where: {
+          description: element.ProblemArea1,
+        },
+      });
+      if (problemArea?.id) {
+        await this.selectedProblemAreaAdultRepository.save({
+          codeNumber: element.CodeNumber,
+          problemAreaAdult: problemArea,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      problemArea = await this.problemAreaAdultRepository.findOne({
+        where: {
+          description: element.ProblemArea2,
+        },
+      });
+      if (problemArea?.id) {
+        await this.selectedProblemAreaAdultRepository.save({
+          codeNumber: element.CodeNumber,
+          problemAreaAdult: problemArea,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      problemArea = await this.problemAreaAdultRepository.findOne({
+        where: {
+          description: element.ProblemArea3,
+        },
+      });
+      if (problemArea?.id) {
+        await this.selectedProblemAreaAdultRepository.save({
+          codeNumber: element.CodeNumber,
+          problemAreaAdult: problemArea,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      problemArea = await this.problemAreaAdultRepository.findOne({
+        where: {
+          description: element.ProblemArea4,
+        },
+      });
+      if (problemArea?.id) {
+        await this.selectedProblemAreaAdultRepository.save({
+          codeNumber: element.CodeNumber,
+          problemAreaAdult: problemArea,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      problemArea = await this.problemAreaAdultRepository.findOne({
+        where: {
+          description: element.ProblemArea5,
+        },
+      });
+      if (problemArea?.id) {
+        await this.selectedProblemAreaAdultRepository.save({
+          codeNumber: element.CodeNumber,
+          problemAreaAdult: problemArea,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      problemArea = await this.problemAreaAdultRepository.findOne({
+        where: {
+          description: element.ProblemArea6,
+        },
+      });
+      if (problemArea?.id) {
+        await this.selectedProblemAreaAdultRepository.save({
+          codeNumber: element.CodeNumber,
+          problemAreaAdult: problemArea,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      console.log('  Previous Effort...');
+      let previousEffort = await this.previousEffortRepository.findOne({
+        where: {
+          description: element.PreviousEffort1,
+        },
+      });
+      if (previousEffort?.id) {
+        await this.selectedPreviousEffortRepository.save({
+          codeNumber: element.CodeNumber,
+          previousEffort,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      previousEffort = await this.previousEffortRepository.findOne({
+        where: {
+          description: element.PreviousEffort2,
+        },
+      });
+      if (previousEffort?.id) {
+        await this.selectedPreviousEffortRepository.save({
+          codeNumber: element.CodeNumber,
+          previousEffort,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      previousEffort = await this.previousEffortRepository.findOne({
+        where: {
+          description: element.PreviousEffort3,
+        },
+      });
+      if (previousEffort?.id) {
+        await this.selectedPreviousEffortRepository.save({
+          codeNumber: element.CodeNumber,
+          previousEffort,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      previousEffort = await this.previousEffortRepository.findOne({
+        where: {
+          description: element.PreviousEffort4,
+        },
+      });
+      if (previousEffort?.id) {
+        await this.selectedPreviousEffortRepository.save({
+          codeNumber: element.CodeNumber,
+          previousEffort,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      console.log('  Other Ongoing Effort...');
+      let otherOngoingEffort = await this.otherOngoingEffortRepository.findOne({
+        where: {
+          description: element.OtherOngoingEffort1,
+        },
+      });
+      if (otherOngoingEffort?.id) {
+        await this.selectedOtherOngoingEffortRepository.save({
+          codeNumber: element.CodeNumber,
+          otherOngoingEffort,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      otherOngoingEffort = await this.otherOngoingEffortRepository.findOne({
+        where: {
+          description: element.OtherOngoingEffort2,
+        },
+      });
+      if (otherOngoingEffort?.id) {
+        await this.selectedOtherOngoingEffortRepository.save({
+          codeNumber: element.CodeNumber,
+          otherOngoingEffort,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      otherOngoingEffort = await this.otherOngoingEffortRepository.findOne({
+        where: {
+          description: element.OtherOngoingEffort3,
+        },
+      });
+      if (otherOngoingEffort?.id) {
+        await this.selectedOtherOngoingEffortRepository.save({
+          codeNumber: element.CodeNumber,
+          otherOngoingEffort,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      otherOngoingEffort = await this.otherOngoingEffortRepository.findOne({
+        where: {
+          description: element.OtherOngoingEffort4,
+        },
+      });
+      if (otherOngoingEffort?.id) {
+        await this.selectedOtherOngoingEffortRepository.save({
+          codeNumber: element.CodeNumber,
+          otherOngoingEffort,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      console.log('  Family Constellation...');
+      let familyConstellationAdult =
+        await this.familyConstellationAdultRepository.findOne({
+          where: {
+            description: element.FamilyConstellation,
+          },
+        });
+      if (familyConstellationAdult?.id) {
+        await this.selectedFamilyConstellationAdultRepository.save({
+          codeNumber: element.CodeNumber,
+          familyConstellationAdult,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      console.log('  Education Level...');
+      let educationLevel = await this.educationLevelRepository.findOne({
+        where: {
+          description: element.EducationLevel,
+        },
+      });
+      if (educationLevel?.id) {
+        await this.selectedEducationLevelRepository.save({
+          codeNumber: element.CodeNumber,
+          educationLevel,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      console.log('  Employment...');
+      let employment = await this.employmentRepository.findOne({
+        where: {
+          description: element.Employment,
+        },
+      });
+      if (employment?.id) {
+        await this.selectedEmploymentRepository.save({
+          codeNumber: element.CodeNumber,
+          employment,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      console.log('  During Operation...');
+      let duringOperation = await this.duringOperationRepository.findOne({
+        where: {
+          description: element.DuringOperation,
+        },
+      });
+      if (duringOperation?.id) {
+        await this.selectedDuringOperationRepository.save({
+          codeNumber: element.CodeNumber,
+          duringOperation,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      console.log('  Action Assignment...');
+      let actionAssignment = await this.actionAssignmentRepository.findOne({
+        where: {
+          description: element.ActionAssignment1,
+        },
+      });
+      if (actionAssignment?.id) {
+        await this.selectedActionAssignmentRepository.save({
+          codeNumber: element.CodeNumber,
+          actionAssignment,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      actionAssignment = await this.actionAssignmentRepository.findOne({
+        where: {
+          description: element.ActionAssignment2,
+        },
+      });
+      if (actionAssignment?.id) {
+        await this.selectedActionAssignmentRepository.save({
+          codeNumber: element.CodeNumber,
+          actionAssignment,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      actionAssignment = await this.actionAssignmentRepository.findOne({
+        where: {
+          description: element.ActionAssignment3,
+        },
+      });
+      if (actionAssignment?.id) {
+        await this.selectedActionAssignmentRepository.save({
+          codeNumber: element.CodeNumber,
+          actionAssignment,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      console.log('  Establish Diagnose...');
+      let establishDiagnose = await this.establishDiagnoseRepository.findOne({
+        where: {
+          description: element.EstablishDiagnose1,
+        },
+      });
+      if (establishDiagnose?.id) {
+        await this.selectedEstablishDiagnoseRepository.save({
+          codeNumber: element.CodeNumber,
+          establishDiagnose,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      establishDiagnose = await this.establishDiagnoseRepository.findOne({
+        where: {
+          description: element.EstablishDiagnose2,
+        },
+      });
+      if (establishDiagnose?.id) {
+        await this.selectedEstablishDiagnoseRepository.save({
+          codeNumber: element.CodeNumber,
+          establishDiagnose,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      establishDiagnose = await this.establishDiagnoseRepository.findOne({
+        where: {
+          description: element.EstablishDiagnose3,
+        },
+      });
+      if (establishDiagnose?.id) {
+        await this.selectedEstablishDiagnoseRepository.save({
+          codeNumber: element.CodeNumber,
+          establishDiagnose,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      establishDiagnose = await this.establishDiagnoseRepository.findOne({
+        where: {
+          description: element.EstablishDiagnose4,
+        },
+      });
+      if (establishDiagnose?.id) {
+        await this.selectedEstablishDiagnoseRepository.save({
+          codeNumber: element.CodeNumber,
+          establishDiagnose,
+        });
+      } else {
+        isMissingBackgroundData = true;
+        this.closeStatusAdultRepository.save({
+          status: SurveyStatus.Incomplete,
+          id: closeStatus.id,
+        });
+      }
+      console.log('  TFS & ORS 0 Month...');
+      if (Number(element.TFS0Month) > 0 && Number(element.VAS0Month)) {
+        await this.adultScoreRepository.save({
+          codeNumber: element.CodeNumber,
+          person: 1,
+          occasion: 1,
+          date: dayjs(backgroundData.date).format('YYYY-MM-DD'),
+          score15: Number(element.TFS0Month),
+          ors: Number(element.VAS0Month),
+        });
+      }
+      console.log('  TFS & ORS 6 Month...');
+      if (Number(element.TFS6Month) > 0 && Number(element.VAS6Month)) {
+        await this.adultScoreRepository.save({
+          codeNumber: element.CodeNumber,
+          person: 1,
+          occasion: 2,
+          date: dayjs(backgroundData.date).add(6, 'month').format('YYYY-MM-DD'),
+          score15: Number(element.TFS6Month),
+          ors: Number(element.VAS6Month),
+        });
+      }
+      console.log('  TFS & ORS 12 Month...');
+      if (Number(element.TFS12Month) > 0 && Number(element.VAS12Month)) {
+        await this.adultScoreRepository.save({
+          codeNumber: element.CodeNumber,
+          person: 1,
+          occasion: 3,
+          date: dayjs(backgroundData.date)
+            .add(12, 'month')
+            .format('YYYY-MM-DD'),
+          score15: Number(element.TFS12Month),
+          ors: Number(element.VAS12Month),
+        });
+      }
+    }
+  }
+  //Important Events Vux
+  async seedImportantEventVux(): Promise<void> {
+    console.log(' Change Over...');
+    await this.selectedChangeOverRepository.delete({});
+    await this.changeOverRepository.delete({});
+    await this.changeOverRepository.save(changeOverSeedData);
+
+    console.log(' Change Live...');
+    await this.selectedChangeLiveRepository.delete({});
+    await this.changeLiveRepository.delete({});
+    await this.changeLiveRepository.save(changeLiveSeedData);
+
+    console.log(' Investigation Out...');
+    await this.selectedInvestigationOutRepository.delete({});
+    await this.investigationOutRepository.delete({});
+    await this.investigationOutRepository.save(investigationOutSeedData);
+
+    console.log(' Other Initiative...');
+    await this.selectedOtherInitiativeRepository.delete({});
+    await this.otherInitiativeRepository.delete({});
+    await this.otherInitiativeRepository.save(otherInitiativeSeedData);
+  }
+  //Background Data Vux
+  async seedBackgroundDataVux(): Promise<void> {
+    console.log(' Gender...');
+    await this.selectedGenderAdultRepository.delete({});
+    await this.genderAdultRepository.delete({});
     await this.genderAdultRepository.save(genderAdultSeedData);
 
-    const numRecordsOfRealData =
-      await this.selectedGenderAdultRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      genderAdultRealData.map(async data => {
-        const entity = new SelectedGenderAdultEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.genderAdult = await this.genderAdultRepository.findOneBy({
-          id: data.genderId || 1,
-        });
-        await this.selectedGenderAdultRepository.save(entity);
-      }),
-    );
-  }
+    console.log(' Problem Area...');
+    await this.selectedProblemAreaAdultRepository.delete({});
+    await this.problemAreaAdultRepository.delete({});
+    await this.problemAreaAdultRepository.save(problemAreaAdultSeedData);
 
-  async seedBackgroundAdultMetadata(): Promise<void> {
-    const numRecords = await this.backgroundAdultMetadataRepository.count();
-    if (numRecords > 0) return;
-    await this.backgroundAdultMetadataRepository.save(backgroundAdultMetadata);
-  }
+    console.log(' Previous Effort...');
+    await this.selectedPreviousEffortRepository.delete({});
+    await this.previousEffortRepository.delete({});
+    await this.previousEffortRepository.save(previousEffortSeedData);
 
-  async seedActionAssignment(): Promise<void> {
-    const numRecords = await this.actionAssignmentRepository.count();
-    if (numRecords > 0) return;
-    await this.actionAssignmentRepository.save(actionAssignmentSeedData);
+    console.log(' Other Ongoing Effort...');
+    await this.selectedOtherOngoingEffortRepository.delete({});
+    await this.otherOngoingEffortRepository.delete({});
+    await this.otherOngoingEffortRepository.save(otherOngoingEffortSeedData);
 
-    const numRecordsOfRealData =
-      await this.selectedActionAssignmentRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      actionAssignmentRealData.map(async data => {
-        const entity = new SelectedActionAssignmentEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.actionAssignment =
-          await this.actionAssignmentRepository.findOneBy({
-            id: +data.actionAssignmentId || 1,
-          });
-        await this.selectedActionAssignmentRepository.save(entity);
-      }),
-    );
-  }
-
-  async seedDuringOperation(): Promise<void> {
-    const numRecords = await this.duringOperationRepository.count();
-    if (numRecords > 0) return;
-    await this.duringOperationRepository.save(duringOperationSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedDuringOperationRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      duringOperationRealData.map(async data => {
-        const entity = new SelectedDuringOperationEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.duringOperation = await this.duringOperationRepository.findOneBy(
-          { id: +data.duringOperationId || 1 },
-        );
-        await this.selectedDuringOperationRepository.save(entity);
-      }),
-    );
-  }
-
-  async seedEducationLevel(): Promise<void> {
-    const numRecords = await this.educationLevelRepository.count();
-    if (numRecords > 0) return;
-    await this.educationLevelRepository.save(educationLevelSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedEducationLevelRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      educationLevelRealData.map(async data => {
-        const entity = new SelectedEducationLevelEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.educationLevel = await this.educationLevelRepository.findOneBy({
-          id: +data.educationLevelId || 1,
-        });
-        await this.selectedEducationLevelRepository.save(entity);
-      }),
-    );
-  }
-
-  async seedEmployment(): Promise<void> {
-    const numRecords = await this.employmentRepository.count();
-    if (numRecords > 0) return;
-    await this.employmentRepository.save(employmentSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedEmploymentRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      employmentRealData.map(async data => {
-        const entity = new SelectedEmploymentEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.employment = await this.employmentRepository.findOneBy({
-          id: +data.employmentId || 1,
-        });
-        await this.selectedEmploymentRepository.save(entity);
-      }),
-    );
-  }
-
-  async seedEstablishDiagnose(): Promise<void> {
-    const numRecords = await this.establishDiagnoseRepository.count();
-    if (numRecords > 0) return;
-    await this.establishDiagnoseRepository.save(establishDiagnoseSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedEstablishDiagnoseRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      establishDiagnoseRealData.map(async data => {
-        const entity = new SelectedEstablishDiagnoseEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.establishDiagnose =
-          await this.establishDiagnoseRepository.findOneBy({
-            id: +data.establishDiagnoseId || 1,
-          });
-        await this.selectedEstablishDiagnoseRepository.save(entity);
-      }),
-    );
-  }
-
-  async seedFamilyConstellationAdult(): Promise<void> {
-    const numRecords = await this.familyConstellationAdultRepository.count();
-    if (numRecords > 0) return;
+    console.log(' Family Constellation Adult...');
+    await this.selectedFamilyConstellationAdultRepository.delete({});
+    await this.familyConstellationAdultRepository.delete({});
     await this.familyConstellationAdultRepository.save(
       familyConstellationAdultSeedData,
     );
 
-    const numRecordsOfRealData =
-      await this.selectedFamilyConstellationAdultRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      familyConstellationAdultRealData.map(async data => {
-        const entity = new SelectedFamilyConstellationAdultEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.familyConstellationAdult =
-          await this.familyConstellationAdultRepository.findOneBy({
-            id: +data.familyConstellationAdultId || 1,
-          });
-        await this.selectedFamilyConstellationAdultRepository.save(entity);
-      }),
-    );
-  }
+    console.log(' Education Level...');
+    await this.selectedEducationLevelRepository.delete({});
+    await this.educationLevelRepository.delete({});
+    await this.educationLevelRepository.save(educationLevelSeedData);
 
-  async seedOtherOngoingEffort(): Promise<void> {
-    const numRecords = await this.otherOngoingEffortRepository.count();
-    if (numRecords > 0) return;
-    await this.otherOngoingEffortRepository.save(otherOngoingEffortSeedData);
+    console.log(' Employment...');
+    await this.selectedEmploymentRepository.delete({});
+    await this.employmentRepository.delete({});
+    await this.employmentRepository.save(employmentSeedData);
 
-    const numRecordsOfRealData =
-      await this.selectedOtherOngoingEffortRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      otherOngoingEffortRealData.map(async data => {
-        const entity = new SelectedOtherOngoingEffortEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.otherOngoingEffort =
-          await this.otherOngoingEffortRepository.findOneBy({
-            id: +data.otherOngoingEffortId || 1,
-          });
-        await this.selectedOtherOngoingEffortRepository.save(entity);
-      }),
-    );
-  }
+    console.log(' During Operation...');
+    await this.selectedDuringOperationRepository.delete({});
+    await this.duringOperationRepository.delete({});
+    await this.duringOperationRepository.save(duringOperationSeedData);
 
-  async seedPreviousEffort(): Promise<void> {
-    const numRecords = await this.previousEffortRepository.count();
-    if (numRecords > 0) return;
-    await this.previousEffortRepository.save(previousEffortSeedData);
+    console.log(' Action Assignment...');
+    await this.selectedActionAssignmentRepository.delete({});
+    await this.actionAssignmentRepository.delete({});
+    await this.actionAssignmentRepository.save(actionAssignmentSeedData);
 
-    const numRecordsOfRealData =
-      await this.selectedPreviousEffortRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      previousEffortRealData.map(async data => {
-        const entity = new SelectedPreviousEffortEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.previousEffort = await this.previousEffortRepository.findOneBy({
-          id: +data.previousEffortId || 1,
-        });
-        await this.selectedPreviousEffortRepository.save(entity);
-      }),
-    );
-  }
-
-  async seedProblemAreaAdult(): Promise<void> {
-    const numRecords = await this.problemAreaAdultRepository.count();
-    if (numRecords > 0) return;
-    await this.problemAreaAdultRepository.save(problemAreaAdultSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedProblemAreaAdultRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      problemAreaAdultRealData.map(async data => {
-        const entity = new SelectedProblemAreaAdultEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.problemAreaAdult =
-          await this.problemAreaAdultRepository.findOneBy({
-            id: +data.problemAreaAdultId || 1,
-          });
-        await this.selectedProblemAreaAdultRepository.save(entity);
-      }),
-    );
-  }
-
-  //Important Events Vux
-  async seedChangeLive(): Promise<void> {
-    const numRecords = await this.changeLiveRepository.count();
-    if (numRecords > 0) return;
-    await this.changeLiveRepository.save(changeLiveSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedChangeLiveRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      changeLiveRealData.map(async data => {
-        const entity = new SelectedChangeLiveEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.changeLive = await this.changeLiveRepository.findOneBy({
-          id: data.changeLive || 1,
-        });
-        await this.selectedChangeLiveRepository.save(entity);
-      }),
-    );
-  }
-
-  async seedChangeOver(): Promise<void> {
-    const numRecords = await this.changeOverRepository.count();
-    if (numRecords > 0) return;
-    await this.changeOverRepository.save(changeOverSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedChangeOverRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      changeOverRealData.map(async data => {
-        const entity = new SelectedChangeOverEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.changeOver = await this.changeOverRepository.findOneBy({
-          id: data.changeOver || 1,
-        });
-        await this.selectedChangeOverRepository.save(entity);
-      }),
-    );
-  }
-
-  async seedInvestigationOut(): Promise<void> {
-    const numRecords = await this.investigationOutRepository.count();
-    if (numRecords > 0) return;
-    await this.investigationOutRepository.save(investigationOutSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedInvestigationOutRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      investigationOutRealData.map(async data => {
-        const entity = new SelectedInvestigationOutEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.investigationOut =
-          await this.investigationOutRepository.findOneBy({
-            id: data.investigationOut || 1,
-          });
-        await this.selectedInvestigationOutRepository.save(entity);
-      }),
-    );
-  }
-
-  async seedOtherInitiative(): Promise<void> {
-    const numRecords = await this.otherInitiativeRepository.count();
-    if (numRecords > 0) return;
-    await this.otherInitiativeRepository.save(otherInitiativeSeedData);
-
-    const numRecordsOfRealData =
-      await this.selectedOtherInitiativeRepository.count();
-    if (numRecordsOfRealData > 0) return;
-    await Promise.all(
-      otherInitiativeRealData.map(async data => {
-        const entity = new SelectedOtherInitiativeEntity();
-        entity.codeNumber = data.codeNumber;
-        entity.otherInitiative = await this.otherInitiativeRepository.findOneBy(
-          { id: data.otherInitiative || 1 },
-        );
-        await this.selectedOtherInitiativeRepository.save(entity);
-      }),
-    );
+    console.log(' Establish Diagnoses...');
+    await this.selectedEstablishDiagnoseRepository.delete({});
+    await this.establishDiagnoseRepository.delete({});
+    await this.establishDiagnoseRepository.save(establishDiagnoseSeedData);
   }
 }

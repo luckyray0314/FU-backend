@@ -945,16 +945,6 @@ export class BackgroundDataService {
           } else {
             caseStatus = SurveyStatus.Coming;
           }
-          if (closeStatusEntity?.codeNumber?.includes('2024-213')) {
-            console.log(
-              'closeStatusEntity?.codeNumber',
-              closeStatusEntity?.codeNumber,
-              details,
-              caseStatus,
-              details[0].statuses.filter(status => status === SurveyStatus.Loss)
-                .length > 0,
-            );
-          }
           surveyEntity['status'] = caseStatus;
           surveyEntity['isClosed'] =
             closeStatusEntity?.isClosed === 'true' ? true : false;

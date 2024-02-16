@@ -16,6 +16,9 @@ import {
     @Column({ nullable: true })
     isAbsent?: string;
 
+    @Column({ nullable: true })
+    status?: string;
+
     @Column()
     processor: string;
 

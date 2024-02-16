@@ -121,7 +121,7 @@ export class CloseStatusService extends TypeOrmCrudService<CloseStatusEntity> {
         return closeStatus;
       }
     } else {
-      return { codeNumber: `Bof${dayjs().format('YYYY')}-0000` };
+      return { codeNumber: `Bof${dayjs().format('YYYY')}-199` };
     }
   }
 

@@ -1,9 +1,8 @@
 // Background Survey Seed Data
 
-export const genderSeedData = [
-  'Gender.Girl',
-  'Gender.Boy',
-].map(data => ({ description: data }));
+export const genderSeedData = ['Gender.Girl', 'Gender.Boy'].map(data => ({
+  description: data,
+}));
 
 export const reasonForUpdateSeedData = [
   'ReasonForUpdate.OwnApplication',
@@ -20,7 +19,7 @@ export const problemAreaSeedData = [
   'ProblemArea.ViolenceInTheFamily',
   'ProblemArea.Crime',
   'Other',
-  'OtherText'
+  'OtherText',
 ].map(data => ({ description: data }));
 
 export const previousInterventionSeedData = [
@@ -29,7 +28,7 @@ export const previousInterventionSeedData = [
   'PreviousIntervention.YesOtherSocial',
   'PreviousIntervention.YesOtherHealth',
   'Other',
-  'OtherText'
+  'OtherText',
 ].map(data => ({ description: data }));
 
 export const otherInterventionsSeedData = [
@@ -41,7 +40,7 @@ export const otherInterventionsSeedData = [
   'OtherInterventions.YesMariaUngdom',
   'OtherInterventions.YesGroupActivities',
   'Other',
-  'OtherText'
+  'OtherText',
 ].map(data => ({ description: data }));
 
 export const familyConstellationSeedData = [
@@ -51,7 +50,7 @@ export const familyConstellationSeedData = [
   'FamilyConstellation.LivesWithVH',
   'FamilyConstellation.LivesInAnotherFamily',
   'Other',
-  'OtherText'
+  'OtherText',
 ].map(data => ({ description: data }));
 
 export const whoParticipatesSeedData = [
@@ -96,10 +95,9 @@ export const employmentVh2SeedData = [
   'EmploymentVh.ParentalLeave',
 ].map(data => ({ description: data }));
 
-export const interpreterRequiredSeedData = [
-  'Yes',
-  'No',
-].map(data => ({ description: data }));
+export const interpreterRequiredSeedData = ['Yes', 'No'].map(data => ({
+  description: data,
+}));
 
 export const typeOfEffortSeedData = [
   'TypeOfEffort.FamilyTreatment',
@@ -123,7 +121,7 @@ export const establishedDiagnosesSeedData = [
   'EstablishedDiagnoses.LanguageDisorder',
   'EstablishedDiagnoses.DefianceSyndrome',
   'Other',
-  'OtherText'
+  'OtherText',
 ].map(data => ({ description: data }));
 
 export const schoolUniformSeedData = [
@@ -135,38 +133,38 @@ export const schoolUniformSeedData = [
 ].map(data => ({ description: data }));
 
 export const interventionPeriodSeedData = [
-  "InterventionPeriod.0-3",
-  "InterventionPeriod.3-6",
-  "InterventionPeriod.6-9",
-  "InterventionPeriod.9-12",
-  "InterventionPeriod.StillOngoing",
+  'InterventionPeriod.0-3',
+  'InterventionPeriod.3-6',
+  'InterventionPeriod.6-9',
+  'InterventionPeriod.9-12',
+  'InterventionPeriod.StillOngoing',
 ].map(data => ({ description: data }));
 
 export const timeConsumptionSeedData = [
-  "TimeConsumption.0-20",
-  "TimeConsumption.20-40",
-  "TimeConsumption.40-60",
-  "TimeConsumption.60-80",
-  "TimeConsumption.80-100",
-  "TimeConsumption.MoreThan100Hours",
+  'TimeConsumption.0-20',
+  'TimeConsumption.20-40',
+  'TimeConsumption.40-60',
+  'TimeConsumption.60-80',
+  'TimeConsumption.80-100',
+  'TimeConsumption.MoreThan100Hours',
 ].map(data => ({ description: data }));
 
 export const reasonForTerminationSeedData = [
-  "ReasonForTermination.TheGoals",
-  "ReasonForTermination.TheFamily",
-  "ReasonForTermination.MoveTo",
-  "ReasonForTermination.Investment",
-  "ReasonForTermination.SocialServices",
-  "Other",
-  "OtherText",
+  'ReasonForTermination.TheGoals',
+  'ReasonForTermination.TheFamily',
+  'ReasonForTermination.MoveTo',
+  'ReasonForTermination.Investment',
+  'ReasonForTermination.SocialServices',
+  'Other',
+  'OtherText',
 ].map(data => ({ description: data }));
 
 export const interventionProgressSeedData = [
-  "InterventionProgress.NotAchievedAtAll",
-  "InterventionProgress.ASmallPartAchieved",
-  "InterventionProgress.AboutHalfAchieved",
-  "InterventionProgress.ALargePartAchieved",
-  "InterventionProgress.FullyAchieved",
+  'InterventionProgress.NotAchievedAtAll',
+  'InterventionProgress.ASmallPartAchieved',
+  'InterventionProgress.AboutHalfAchieved',
+  'InterventionProgress.ALargePartAchieved',
+  'InterventionProgress.FullyAchieved',
 ].map(data => ({ description: data }));
 
 // Questions seed data after 12 months
@@ -176,7 +174,7 @@ export const otherInterventionsStartedSeedData = [
   'OtherInterventionsStarted.YesOtherIntervention',
   'OtherInterventionsStarted.YesOtherContribution',
   'OtherInterventionsStarted.Medication',
-  'OtherInterventionsStarted.OtherEffort'
+  'OtherInterventionsStarted.OtherEffort',
 ].map(data => ({ description: data }));
 
 export const duringInterventionSeedData = [
@@ -186,7 +184,7 @@ export const duringInterventionSeedData = [
   'DuringIntervention.SchoolStaff',
   'DuringIntervention.StudentHealth',
   'DuringIntervention.MariaYouth',
-  'DuringIntervention.OtherPartWithinSocial'
+  'DuringIntervention.OtherPartWithinSocial',
 ].map(data => ({ description: data }));
 
 export const duringPastSeedData = [
@@ -198,7 +196,7 @@ export const duringPastSeedData = [
   'DuringPast.PsychiatricDiagnosis',
   'DuringPast.GiftedFunctionalVariation',
   'DuringPast.LanguageDisorder',
-  'Other'
+  'Other',
 ].map(data => ({ description: data }));
 
 export const childSchoolSeedData = [
@@ -234,7 +232,6 @@ export const changeEmploymentVh2SeedData = [
   'ChangeEmploymentVh2.BeenOnParentalLeave',
 ].map(data => ({ description: data }));
 
-
 // Background Adult Survey Seed Data
 
 export const problemAreaAdultSeedData = [
@@ -246,8 +243,8 @@ export const problemAreaAdultSeedData = [
   'ProblemAreaAdult.Crime',
   'ProblemAreaAdult.Gambling',
   'ProblemAreaAdult.Emotion',
-  'Other',
-  'OtherText',
+  'ProblemAreaAdult.Other',
+  /* 'OtherText', */
 ].map(data => ({ description: data }));
 
 export const duringOperationSeedData = [
@@ -277,7 +274,7 @@ export const establishDiagnoseSeedData = [
   'EstablishDiagnose.ADHD',
   'EstablishDiagnose.ADD',
   'EstablishDiagnose.AST',
-  'EstablishDiagnose.Psychiatric',
+  'EstablishDiagnose.PTSD/trauma',
   'EstablishDiagnose.Gifted',
   'EstablishDiagnose.Eating',
   'EstablishDiagnose.SelfInjurious',
@@ -286,6 +283,7 @@ export const establishDiagnoseSeedData = [
   'EstablishDiagnose.Somatic',
   'EstablishDiagnose.Alcohol',
   'EstablishDiagnose.Dyslexia',
+  'EstablishDiagnose.Psychiatric',
   'Other',
   'OtherText',
 ].map(data => ({ description: data }));
@@ -297,10 +295,9 @@ export const familyConstellationAdultSeedData = [
   'FamilyConstellationAdult.OtherConstellation',
 ].map(data => ({ description: data }));
 
-export const genderAdultSeedData = [
-  'GenderAdult.Man',
-  'GenderAdult.Woman',
-].map(data => ({ description: data }));
+export const genderAdultSeedData = ['GenderAdult.Man', 'GenderAdult.Woman'].map(
+  data => ({ description: data }),
+);
 
 export const otherOngoingEffortSeedData = [
   'OtherOngoingEffort.No',
@@ -309,11 +306,13 @@ export const otherOngoingEffortSeedData = [
   'OtherOngoingEffort.YesAddiction',
   'OtherOngoingEffort.YesProbation',
   'OtherOngoingEffort.YesGroup',
+  'OtherOngoingEffort.OtherSocialServices',
   'OtherOngoingEffort.HealthCenter',
   'OtherOngoingEffort.Healthcare',
+  'OtherOngoingEffort.AnotherEffortGroupHousing',
+  'OtherOngoingEffort.AnotherEffortCounselo',
   'Other',
   'OtherText',
-
 ].map(data => ({ description: data }));
 
 export const previousEffortSeedData = [
@@ -329,7 +328,6 @@ export const previousEffortSeedData = [
   'PreviousEffort.VAC',
   'Other',
   'OtherText',
-
 ].map(data => ({ description: data }));
 
 export const actionAssignmentSeedData = [
@@ -341,9 +339,9 @@ export const actionAssignmentSeedData = [
   'ActionAssignment.Gambling',
   'ActionAssignment.Structured',
   'ActionAssignment.MI',
+  'ActionAssignment.OutpatientIntervention',
   'Other',
   'OtherText',
-
 ].map(data => ({ description: data }));
 
 export const changeLiveSeedData = [
@@ -352,7 +350,6 @@ export const changeLiveSeedData = [
   'ChangeLive.Cohabitant',
   'ChangeLive.Special',
   'ChangeLive.Consellation',
-
 ].map(data => ({ description: data }));
 
 export const changeOverSeedData = [
@@ -361,10 +358,9 @@ export const changeOverSeedData = [
   'ChangeOver.PartTime',
   'ChangeOver.JobSeeker',
   'ChangeOver.SickLeave',
-  'ChangeOver.ParentalLeave'
-
+  'ChangeOver.ParentalLeave',
 ].map(data => ({ description: data }));
- 
+
 export const investigationOutSeedData = [
   'InvestigationOut.NoInvest',
   'InvestigationOut.Received',
@@ -374,7 +370,6 @@ export const investigationOutSeedData = [
   'InvestigationOut.Psychiatric',
   'InvestigationOut.Conducted',
   'Other',
-
 ].map(data => ({ description: data }));
 
 export const otherInitiativeSeedData = [
@@ -385,5 +380,4 @@ export const otherInitiativeSeedData = [
   'OtherInitiative.Probation',
   'OtherInitiative.Medication',
   'Other',
-
 ].map(data => ({ description: data }));

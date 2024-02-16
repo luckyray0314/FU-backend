@@ -1,9 +1,12 @@
 import { NestFactory } from '@nestjs/core';
-
 import { AppModule } from './app.module';
 import { VALLENTUNA_SURVEY_BACKEND_PORT } from './core/constants/environment.const';
-import { SeedService } from './seeds/seed.service';
 import { setup } from './setup';
+import { seedVux } from './seed-vux';
+import { seedFollowUp } from './seed-follow-up';
+import { seedImportantEventVux } from './seed-important-event-vux';
+import { seedBackgroundDataVux } from './seed-background-data-vux';
+import { seedImportantEventBof } from './seed-important-event-bof';
 // import { createClient } from '@supabase/supabase-js';
 // import { Pool } from 'pg';
 
@@ -45,57 +48,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   setup(app);
-
-  const seedService = app.get<SeedService>(SeedService);
-  await seedService.seedBackgroundMetadata();
-  await seedService.seedScoreData();
-  await seedService.seedCloseStatusData();
-  await seedService.seedCloseStatusAdultData();
-  await seedService.seedAdultScoreData();
-  await seedService.seedGenders();
-  await seedService.seedEducationVh1s();
-  await seedService.seedEducationVh2s();
-  await seedService.seedEmploymentVh1s();
-  await seedService.seedEmploymentVh2s();
-  await seedService.seedEstablishedDiagnosess();
-  await seedService.seedFamilyConstellations();
-  await seedService.seedInterpreterRequireds();
-  await seedService.seedOtherInterventionss();
-  await seedService.seedPreviousInterventions();
-  await seedService.seedProblemAreas();
-  await seedService.seedReasonForUpdates();
-  await seedService.seedSchoolUniforms();
-  await seedService.seedTypeOfEfforts();
-  await seedService.seedWhoParticipatess();
-  await seedService.seedInterventionPeriods();
-  await seedService.seedInterventionProgresss();
-  await seedService.seedReasonForTerminations();
-  await seedService.seedTimeConsumptions();
-  await seedService.seedOtherInterventionsStarted();
-  await seedService.seedDuringIntervention();
-  await seedService.seedDuringPast();
-  await seedService.seedChildSchool();
-  await seedService.seedChangeAccomodation();
-  await seedService.seedChangeEmploymentVh1();
-  await seedService.seedChangeEmploymentVh2();
-
-  await seedService.seedBackgroundAdultMetadata();
-  await seedService.seedActionAssignment();
-  await seedService.seedDuringOperation();
-  await seedService.seedEducationLevel();
-  await seedService.seedEmployment();
-  await seedService.seedEstablishDiagnose();
-  await seedService.seedFamilyConstellationAdult();
-  await seedService.seedAdultGenders();
-  await seedService.seedOtherOngoingEffort();
-  await seedService.seedPreviousEffort();
-  await seedService.seedProblemAreaAdult();
-
-  await seedService.seedChangeLive();
-  await seedService.seedChangeOver();
-  await seedService.seedInvestigationOut();
-  await seedService.seedOtherInitiative();
-
+  await seedBackgroundDataVux(app);
+  await seedImportantEventVux(app);
+  await seedFollowUp(app);
+  await seedVux(app);
 
   await app.listen(VALLENTUNA_SURVEY_BACKEND_PORT);
 }

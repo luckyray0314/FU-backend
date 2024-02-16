@@ -454,7 +454,6 @@ let BackgroundDataService = class BackgroundDataService {
         const closeStatus = await this.closeStatusService.findAll();
         const backgroundMetadata = await this.backgroundMetadataService.findAll();
         const result = await Promise.all(closeStatus.map(async (closeStatusEntity, bgIndex) => {
-            var _a;
             const existBackgroundMetadata = backgroundMetadata === null || backgroundMetadata === void 0 ? void 0 : backgroundMetadata.find(item => (item === null || item === void 0 ? void 0 : item.codeNumber) == (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber));
             let surveyEntity = {
                 processor: closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.processor,
@@ -799,10 +798,6 @@ let BackgroundDataService = class BackgroundDataService {
                 }
                 else {
                     caseStatus = survey_status_1.SurveyStatus.Coming;
-                }
-                if ((_a = closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber) === null || _a === void 0 ? void 0 : _a.includes('2024-213')) {
-                    console.log('closeStatusEntity?.codeNumber', closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber, details, caseStatus, details[0].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
-                        .length > 0);
                 }
                 surveyEntity['status'] = caseStatus;
                 surveyEntity['isClosed'] =

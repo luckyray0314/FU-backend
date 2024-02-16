@@ -1,33 +1,31 @@
-import {
-    Column, Entity, PrimaryGeneratedColumn
-  } from "typeorm";
-  
-  @Entity('close-status')
-  export class CloseStatusEntity {
-    @PrimaryGeneratedColumn()
-    id?: number;
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-    @Column()
-    codeNumber: string;
+@Entity('close-status')
+export class CloseStatusEntity {
+  @PrimaryGeneratedColumn()
+  id?: number;
 
-    @Column({ nullable: true })
-    archivedCodeNumber?: string;
+  @Column()
+  codeNumber: string;
 
-    @Column({ nullable: true })
-    isAbsent?: string;
+  @Column({ nullable: true })
+  archivedCodeNumber?: string;
 
-    @Column()
-    processor: string;
+  @Column({ nullable: true })
+  isAbsent?: string;
 
-    @Column()
-    isClosed: string;
+  @Column()
+  processor: string;
 
-    @Column({ nullable: true })
-    isGuardianOne?: string;
+  @Column()
+  isClosed: string;
 
-    @Column({ nullable: true })
-    isGuardianTwo?: string;
+  @Column({ nullable: true })
+  isGuardianOne?: string;
 
-    @Column({ nullable: true })
-    isChild?: string;
-  }
+  @Column({ nullable: true })
+  isGuardianTwo?: string;
+
+  @Column({ nullable: true })
+  isChild?: string;
+}

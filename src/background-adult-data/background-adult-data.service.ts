@@ -301,7 +301,9 @@ export class BackgroundAdultDataService {
     const result: BackgroundAdultDataDto = {
       ...metadata,
       formDataByEntityName: {
-        gender: selectedGenderAdultEntities.map(data => data.genderAdult.id),
+        genderAdult: selectedGenderAdultEntities.map(
+          data => data.genderAdult.id,
+        ),
         actionAssignment: selectedActionAssignmentEntities.map(
           data => data.actionAssignment.id,
         ),
