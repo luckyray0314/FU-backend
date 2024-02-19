@@ -48,10 +48,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   setup(app);
-  await seedBackgroundDataVux(app);
+  /* await seedBackgroundDataVux(app);
   await seedImportantEventVux(app);
   await seedFollowUp(app);
-  await seedVux(app);
+  await seedVux(app); */
 
   await app.listen(VALLENTUNA_SURVEY_BACKEND_PORT);
 }
