@@ -1,9 +1,9 @@
 export enum SurveyStatus {
-  Clear = 'Clear',
-  Loss = 'Loss',
-  Coming = 'Coming',
-  Incomplete = 'Incomplete',
-  NoBackgroundData = 'NoBackgroundData',
-  Archived = 'Archived',
-  Cancelled = 'Cancelled',
+  Clear = 'SurveyStatus.Clear',
+  Loss = 'SurveyStatus.Loss',
+  Coming = 'SurveyStatus.Coming',
+  Incomplete = 'SurveyStatus.Incomplete',
+  NoBackgroundData = 'SurveyStatus.NoBackgroundData',
+  Archived = 'SurveyStatus.Archived',
+  Cancelled = 'SurveyStatus.Cancelled',
 }

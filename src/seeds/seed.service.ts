@@ -721,6 +721,7 @@ export class SeedService {
         });
       }
       console.log('  Problem Area...');
+      let problemAreaMissingCounter = 0;
       let problemArea = await this.problemAreaAdultRepository.findOne({
         where: {
           description: element.ProblemArea1,
@@ -732,11 +733,7 @@ export class SeedService {
           problemAreaAdult: problemArea,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        problemAreaMissingCounter++;
       }
       problemArea = await this.problemAreaAdultRepository.findOne({
         where: {
@@ -749,11 +746,7 @@ export class SeedService {
           problemAreaAdult: problemArea,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        problemAreaMissingCounter++;
       }
       problemArea = await this.problemAreaAdultRepository.findOne({
         where: {
@@ -766,11 +759,7 @@ export class SeedService {
           problemAreaAdult: problemArea,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        problemAreaMissingCounter++;
       }
       problemArea = await this.problemAreaAdultRepository.findOne({
         where: {
@@ -783,11 +772,7 @@ export class SeedService {
           problemAreaAdult: problemArea,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        problemAreaMissingCounter++;
       }
       problemArea = await this.problemAreaAdultRepository.findOne({
         where: {
@@ -800,11 +785,7 @@ export class SeedService {
           problemAreaAdult: problemArea,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        problemAreaMissingCounter++;
       }
       problemArea = await this.problemAreaAdultRepository.findOne({
         where: {
@@ -817,6 +798,9 @@ export class SeedService {
           problemAreaAdult: problemArea,
         });
       } else {
+        problemAreaMissingCounter++;
+      }
+      if (problemAreaMissingCounter === 6) {
         isMissingBackgroundData = true;
         this.closeStatusAdultRepository.save({
           status: SurveyStatus.Incomplete,
@@ -824,6 +808,7 @@ export class SeedService {
         });
       }
       console.log('  Previous Effort...');
+      let previousEffortMissingCounter = 0;
       let previousEffort = await this.previousEffortRepository.findOne({
         where: {
           description: element.PreviousEffort1,
@@ -835,11 +820,7 @@ export class SeedService {
           previousEffort,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        previousEffortMissingCounter++;
       }
       previousEffort = await this.previousEffortRepository.findOne({
         where: {
@@ -852,11 +833,7 @@ export class SeedService {
           previousEffort,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        previousEffortMissingCounter++;
       }
       previousEffort = await this.previousEffortRepository.findOne({
         where: {
@@ -869,11 +846,7 @@ export class SeedService {
           previousEffort,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        previousEffortMissingCounter++;
       }
       previousEffort = await this.previousEffortRepository.findOne({
         where: {
@@ -886,6 +859,9 @@ export class SeedService {
           previousEffort,
         });
       } else {
+        previousEffortMissingCounter++;
+      }
+      if (previousEffortMissingCounter === 4) {
         isMissingBackgroundData = true;
         this.closeStatusAdultRepository.save({
           status: SurveyStatus.Incomplete,
@@ -893,6 +869,7 @@ export class SeedService {
         });
       }
       console.log('  Other Ongoing Effort...');
+      let otherOngoingEffortMissingCounter = 0;
       let otherOngoingEffort = await this.otherOngoingEffortRepository.findOne({
         where: {
           description: element.OtherOngoingEffort1,
@@ -904,11 +881,7 @@ export class SeedService {
           otherOngoingEffort,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        otherOngoingEffortMissingCounter++;
       }
       otherOngoingEffort = await this.otherOngoingEffortRepository.findOne({
         where: {
@@ -921,11 +894,7 @@ export class SeedService {
           otherOngoingEffort,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        otherOngoingEffortMissingCounter++;
       }
       otherOngoingEffort = await this.otherOngoingEffortRepository.findOne({
         where: {
@@ -938,11 +907,7 @@ export class SeedService {
           otherOngoingEffort,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        otherOngoingEffortMissingCounter++;
       }
       otherOngoingEffort = await this.otherOngoingEffortRepository.findOne({
         where: {
@@ -955,6 +920,9 @@ export class SeedService {
           otherOngoingEffort,
         });
       } else {
+        otherOngoingEffortMissingCounter++;
+      }
+      if (otherOngoingEffortMissingCounter === 4) {
         isMissingBackgroundData = true;
         this.closeStatusAdultRepository.save({
           status: SurveyStatus.Incomplete,
@@ -1035,6 +1003,7 @@ export class SeedService {
         });
       }
       console.log('  Action Assignment...');
+      let actionAssignmentMissingCounter = 0;
       let actionAssignment = await this.actionAssignmentRepository.findOne({
         where: {
           description: element.ActionAssignment1,
@@ -1046,11 +1015,7 @@ export class SeedService {
           actionAssignment,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        actionAssignmentMissingCounter++;
       }
       actionAssignment = await this.actionAssignmentRepository.findOne({
         where: {
@@ -1063,11 +1028,7 @@ export class SeedService {
           actionAssignment,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        actionAssignmentMissingCounter++;
       }
       actionAssignment = await this.actionAssignmentRepository.findOne({
         where: {
@@ -1080,6 +1041,9 @@ export class SeedService {
           actionAssignment,
         });
       } else {
+        actionAssignmentMissingCounter++;
+      }
+      if (actionAssignmentMissingCounter === 3) {
         isMissingBackgroundData = true;
         this.closeStatusAdultRepository.save({
           status: SurveyStatus.Incomplete,
@@ -1087,6 +1051,7 @@ export class SeedService {
         });
       }
       console.log('  Establish Diagnose...');
+      let establishDiagnoseMissingCounter = 0;
       let establishDiagnose = await this.establishDiagnoseRepository.findOne({
         where: {
           description: element.EstablishDiagnose1,
@@ -1098,11 +1063,7 @@ export class SeedService {
           establishDiagnose,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        establishDiagnoseMissingCounter++;
       }
       establishDiagnose = await this.establishDiagnoseRepository.findOne({
         where: {
@@ -1115,11 +1076,7 @@ export class SeedService {
           establishDiagnose,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        establishDiagnoseMissingCounter++;
       }
       establishDiagnose = await this.establishDiagnoseRepository.findOne({
         where: {
@@ -1132,11 +1089,7 @@ export class SeedService {
           establishDiagnose,
         });
       } else {
-        isMissingBackgroundData = true;
-        this.closeStatusAdultRepository.save({
-          status: SurveyStatus.Incomplete,
-          id: closeStatus.id,
-        });
+        establishDiagnoseMissingCounter++;
       }
       establishDiagnose = await this.establishDiagnoseRepository.findOne({
         where: {
@@ -1149,6 +1102,9 @@ export class SeedService {
           establishDiagnose,
         });
       } else {
+        establishDiagnoseMissingCounter++;
+      }
+      if (establishDiagnoseMissingCounter === 4) {
         isMissingBackgroundData = true;
         this.closeStatusAdultRepository.save({
           status: SurveyStatus.Incomplete,

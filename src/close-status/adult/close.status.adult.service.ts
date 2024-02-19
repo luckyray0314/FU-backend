@@ -12,6 +12,7 @@ import dayjs from 'dayjs';
 import { ProcessorDto } from '../dto/processor.dto';
 import { CloseStatusDto } from '../child/close-status.dto';
 import { CodeNumberDto } from '../dto/codeNumber.dto';
+import { CloseStatusAdultDto } from './close-status.adult.dto';
 
 @Injectable()
 export class CloseStatusAdultService extends TypeOrmCrudService<CloseStatusAdultEntity> {
@@ -61,7 +62,7 @@ export class CloseStatusAdultService extends TypeOrmCrudService<CloseStatusAdult
     }
   }
 
-  async getOneCloseStatus(payload: CloseStatusDto) {
+  async getOneCloseStatus(payload: CloseStatusAdultDto) {
     try {
       const closeStatusAdultEntity = await this.repo.findOne({
         where: {

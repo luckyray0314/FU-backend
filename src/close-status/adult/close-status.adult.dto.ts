@@ -31,4 +31,9 @@ export class CloseStatusAdultDto {
   @IsString()
   @IsNotEmpty()
   isClosed: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsOptional()
+  status?: string;
 }

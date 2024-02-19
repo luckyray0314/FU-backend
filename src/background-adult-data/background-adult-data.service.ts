@@ -46,6 +46,7 @@ import {
   codeGeneratorChars,
   codeGeneratorSize,
 } from 'src/core/constants/generator.const';
+import { CloseStatusAdultDto } from 'src/close-status/adult/close-status.adult.dto';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Docxtemplater = require('docxtemplater');
@@ -340,7 +341,7 @@ export class BackgroundAdultDataService {
     const backgroundAdultMetadata =
       await this.backgroundAdultMetadataService.findAll();
     const result = await Promise.all(
-      closeStatus.map(async (adulCloseStatusEntity, bgIndex) => {
+      closeStatus.map(async (adulCloseStatusEntity: any, bgIndex) => {
         const existBackgroundMetadata = backgroundAdultMetadata?.find(
           item => item?.codeNumber == adulCloseStatusEntity?.codeNumber,
         );
@@ -512,7 +513,9 @@ export class BackgroundAdultDataService {
           } else {
             caseStatus = SurveyStatus.Coming;
           }
-          surveyEntity['status'] = caseStatus;
+          surveyEntity['status'] = adulCloseStatusEntity?.status
+            ? `${caseStatus} (${SurveyStatus.Incomplete})`
+            : caseStatus;
           surveyEntity['isClosed'] =
             adulCloseStatusEntity?.isClosed === 'true' ? true : false;
           surveyEntity['signal'] = signal;

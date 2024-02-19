@@ -46,4 +46,9 @@ export class CloseStatusDto {
   @IsString()
   @IsOptional()
   isChild?: string;
+
+  @ApiProperty()
+  @IsString()
+  @IsOptional()
+  status?: string;
 }
