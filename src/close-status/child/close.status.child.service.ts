@@ -109,7 +109,7 @@ export class CloseStatusService extends TypeOrmCrudService<CloseStatusEntity> {
     const closeStatus = await this.repo
       .createQueryBuilder('close-status')
       .select('close-status.codeNumber', 'codeNumber')
-      .orderBy('close-status.id', 'DESC')
+      .orderBy('close-status.codeNumber', 'DESC')
       .addOrderBy('close-status.codeNumber', 'DESC')
       .limit(1)
       .getRawOne();
@@ -127,11 +127,20 @@ export class CloseStatusService extends TypeOrmCrudService<CloseStatusEntity> {
 
   async updateProcessor(codeNumber: string, payload: ProcessorDto) {
     try {
-      const closeStatusFound = await this.repo.findOne({
-        where: {
-          codeNumber: codeNumber,
-        },
-      });
+      let closeStatusFound;
+      if (codeNumber?.includes('Ark-')) {
+        closeStatusFound = await this.repo.findOne({
+          where: {
+            archivedCodeNumber: codeNumber,
+          },
+        });
+      } else {
+        closeStatusFound = await this.repo.findOne({
+          where: {
+            codeNumber: codeNumber,
+          },
+        });
+      }
       if (closeStatusFound) {
         closeStatusFound.processor = payload.processor;
         this.repo.update(closeStatusFound?.id, closeStatusFound);
