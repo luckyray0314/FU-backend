@@ -87,8 +87,7 @@ export class CloseStatusAdultService extends TypeOrmCrudService<CloseStatusAdult
     const closeStatus = await this.repo
       .createQueryBuilder('close-status-adult')
       .select('close-status-adult.codeNumber', 'codeNumber')
-      .orderBy('close-status-adult.codeNumber', 'DESC')
-      .addOrderBy('close-status-adult.codeNumber', 'DESC')
+      .orderBy('close-status-adult.id', 'DESC')
       .limit(1)
       .getRawOne();
     if (closeStatus?.codeNumber) {

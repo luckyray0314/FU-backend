@@ -110,7 +110,7 @@ export class CloseStatusService extends TypeOrmCrudService<CloseStatusEntity> {
       .createQueryBuilder('close-status')
       .select('close-status.codeNumber', 'codeNumber')
       .orderBy('close-status.codeNumber', 'DESC')
-      .addOrderBy('close-status.codeNumber', 'DESC')
+      .addOrderBy('close-status.id', 'DESC')
       .limit(1)
       .getRawOne();
     if (closeStatus?.codeNumber) {
