@@ -300,7 +300,7 @@ export class SeedBofService {
             codeNumber: element.codeNumber,
           },
         });
-        if (closeStatus.codeNumber) {
+        if (closeStatus?.codeNumber) {
           closeStatus = await this.closeStatusRepository.save({
             isChild: element.person == '1' ? 'true' : 'false',
             isGuardianOne: element.person == '2' ? 'true' : 'false',
@@ -1434,7 +1434,7 @@ export class SeedBofService {
             codeNumber: element.codeNumber,
           },
         });
-        if (closeStatus.codeNumber) {
+        if (closeStatus?.codeNumber) {
           closeStatus = await this.closeStatusRepository.save({
             isChild: element.isChild,
             isGuardianOne: element.isGuardianOne,
