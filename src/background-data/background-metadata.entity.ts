@@ -8,7 +8,7 @@ export class BackgroundMetadataEntity {
   @PrimaryColumn()
   codeNumber: string;
 
-  @Column()
+  @Column({ nullable: true })
   date: string;
 
   @Column({ nullable: true })

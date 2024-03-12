@@ -18,7 +18,7 @@ export const problemAreaSeedData = [
   'ProblemArea.ProblematicRelationships',
   'ProblemArea.ViolenceInTheFamily',
   'ProblemArea.Crime',
-  'Other',
+  'ProblemArea.Other',
   'OtherText',
 ].map(data => ({ description: data }));
 
@@ -27,7 +27,7 @@ export const previousInterventionSeedData = [
   'PreviousIntervention.YesOutpatientCare',
   'PreviousIntervention.YesOtherSocial',
   'PreviousIntervention.YesOtherHealth',
-  'Other',
+  'PreviousIntervention.Other',
   'OtherText',
 ].map(data => ({ description: data }));
 
@@ -49,7 +49,7 @@ export const familyConstellationSeedData = [
   'FamilyConstellation.LivingAlternately',
   'FamilyConstellation.LivesWithVH',
   'FamilyConstellation.LivesInAnotherFamily',
-  'Other',
+  'FamilyConstellation.Other',
   'OtherText',
 ].map(data => ({ description: data }));
 
