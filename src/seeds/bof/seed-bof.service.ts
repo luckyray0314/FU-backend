@@ -303,7 +303,7 @@ export class SeedBofService {
           isGuardianOne: element.person == '2' ? 'true' : 'false',
           isGuardianTwo: element.person == '3' ? 'true' : 'false',
         });
-        //console.log('  Background Metadata...');
+        console.log('  Background Metadata...');
         let backgroundMetadata;
         if (element.yearofbirth) {
           backgroundMetadata = await this.backgroundMetadataRepository.save({
@@ -320,7 +320,7 @@ export class SeedBofService {
             country: element.countryOfBirth,
           });
         }
-        //console.log('  Gender...');
+        console.log('  Gender...');
         const gender = await this.genderRepository.findOne({
           where: {
             description: element.gender,
@@ -339,7 +339,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Reason For Update...');
+        console.log('  Reason For Update...');
         const reasonForUpdate = await this.reasonForUpdateRepository.findOne({
           where: {
             description: element.reasonForUpdate,
@@ -360,7 +360,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Problem Area...');
+        console.log('  Problem Area...');
         let problemAreaMissingCounter = 0;
         let problemArea = await this.problemAreaRepository.findOne({
           where: {
@@ -425,7 +425,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Previous Intervention...');
+        console.log('  Previous Intervention...');
         let previousInterventionMissingCounter = 0;
         let previousIntervention =
           await this.previousInterventionRepository.findOne({
@@ -485,7 +485,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Other Intervention...');
+        console.log('  Other Intervention...');
         let otherInterventionMissingCounter = 0;
         let otherIntervention = await this.otherInterventionsRepository.findOne(
           {
@@ -544,7 +544,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Family Constellation...');
+        console.log('  Family Constellation...');
         const familyConstellation =
           await this.familyConstellationRepository.findOne({
             where: {
@@ -566,7 +566,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Who Participates...');
+        console.log('  Who Participates...');
         let whoParticipatesMissingCounter = 0;
         let whoParticipates = await this.whoParticipatesRepository.findOne({
           where: {
@@ -639,7 +639,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Education VH...');
+        console.log('  Education VH...');
         let educationVhMissingCounter = 0;
         let educationVh = await this.educationVh1Repository.findOne({
           where: {
@@ -676,7 +676,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Employment VH...');
+        console.log('  Employment VH...');
         let employmentVhMissingCounter = 0;
         let employmentVh = await this.employmentVh1Repository.findOne({
           where: {
@@ -713,7 +713,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Interpreter Required...');
+        console.log('  Interpreter Required...');
         const interpreterRequired =
           await this.interpreterRequiredRepository.findOne({
             where: {
@@ -735,7 +735,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Type Of Effort...');
+        console.log('  Type Of Effort...');
         let typeOfEffortMissingCounter = 0;
         let typeOfEffort = await this.typeOfEffortRepository.findOne({
           where: {
@@ -808,7 +808,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Established Diagnoses...');
+        console.log('  Established Diagnoses...');
         let establishedDiagnosesMissingCounter = 0;
         let establishedDiagnoses =
           await this.establishedDiagnosesRepository.findOne({
@@ -868,7 +868,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  School Uniform...');
+        console.log('  School Uniform...');
         const schoolUniform = await this.schoolUniformRepository.findOne({
           where: {
             description: element.schoolUniform,
@@ -887,7 +887,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Other Intervention Started...');
+        console.log('  Other Intervention Started...');
         let otherinterventionstartedMissingCounter = 0;
         let otherInterventionstarted =
           await this.otherInterventionsStartedRepository.findOne({
@@ -964,7 +964,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  During Intervention...');
+        console.log('  During Intervention...');
         let duringinterventionMissingCounter = 0;
         let duringintervention =
           await this.duringInterventionRepository.findOne({
@@ -1086,7 +1086,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  During Past...');
+        console.log('  During Past...');
         let duringpastMissingCounter = 0;
         let duringpast = await this.duringPastRepository.findOne({
           where: {
@@ -1193,7 +1193,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Child School...');
+        console.log('  Child School...');
         const childschool = await this.childSchoolRepository.findOne({
           where: {
             description: element.childschool,
@@ -1212,7 +1212,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Change Accomodation...');
+        console.log('  Change Accomodation...');
         const changeaccomodation =
           await this.changeAccomodationRepository.findOne({
             where: {
@@ -1234,7 +1234,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Change Employment Vh1...');
+        console.log('  Change Employment Vh1...');
         const changeemploymentvh1 =
           await this.changeEmploymentVh1Repository.findOne({
             where: {
@@ -1256,7 +1256,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Change Employment Vh2...');
+        console.log('  Change Employment Vh2...');
         const changeemploymentvh2 =
           await this.changeEmploymentVh2Repository.findOne({
             where: {
@@ -1278,7 +1278,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Intervention Period...');
+        console.log('  Intervention Period...');
         const interventionperiod =
           await this.interventionPeriodRepository.findOne({
             where: {
@@ -1300,7 +1300,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Time Consumption...');
+        console.log('  Time Consumption...');
         const timeconsumption = await this.timeConsumptionRepository.findOne({
           where: {
             description: element.timeconsumption,
@@ -1321,7 +1321,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Reason For Termination...');
+        console.log('  Reason For Termination...');
         const reasonfortermination =
           await this.reasonForTerminationRepository.findOne({
             where: {
@@ -1343,7 +1343,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Intervention Progress...');
+        console.log('  Intervention Progress...');
         const interventionprogress =
           await this.interventionProgressRepository.findOne({
             where: {
@@ -1365,7 +1365,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Score15 0 Month...');
+        console.log('  Score15 0 Month...');
         if (Number(element.Score15ZeroMonth) > 0 && Number(element.ORS1)) {
           await this.scoreRepository.save({
             codeNumber: element.codeNumber,
@@ -1376,7 +1376,7 @@ export class SeedBofService {
             ors: Number(element.ORS1),
           });
         }
-        //console.log('  Score15 6 Months...');
+        console.log('  Score15 6 Months...');
         if (Number(element.Score15SixMonth) > 0 && Number(element.ORS2)) {
           await this.scoreRepository.save({
             codeNumber: element.codeNumber,
@@ -1389,7 +1389,7 @@ export class SeedBofService {
             ors: Number(element.ORS2),
           });
         }
-        //console.log('  Score15 12 Months...');
+        console.log('  Score15 12 Months...');
         if (Number(element.Score15TwelveMonth) > 0 && Number(element.ORS3)) {
           await this.scoreRepository.save({
             codeNumber: element.codeNumber,
@@ -1425,7 +1425,7 @@ export class SeedBofService {
           isGuardianOne: element.isGuardianOne || 'false',
           isGuardianTwo: element.isGuardianTwo || 'false',
         });
-        //console.log('  Background Metadata...');
+        console.log('  Background Metadata...');
         if (element.yearOfBirth) {
           await this.backgroundMetadataRepository.save({
             codeNumber: element.codeNumber,
@@ -1441,7 +1441,7 @@ export class SeedBofService {
             country: element.country,
           });
         }
-        //console.log('  Gender...');
+        console.log('  Gender...');
         const gender = await this.genderRepository.findOne({
           where: {
             description: element.gender,
@@ -1460,7 +1460,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Reason For Update...');
+        console.log('  Reason For Update...');
         const reasonForUpdate = await this.reasonForUpdateRepository.findOne({
           where: {
             description: element.reasonforupdate,
@@ -1481,7 +1481,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Problem Area...');
+        console.log('  Problem Area...');
         let problemAreaMissingCounter = 0;
         const problemAreaList = element.problemarea?.split(', ');
         for (
@@ -1509,14 +1509,14 @@ export class SeedBofService {
             problemAreaMissingCounter++;
           }
         }
-        if (problemAreaMissingCounter === 4) {
+        if (problemAreaMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Previous Intervention...');
+        console.log('  Previous Intervention...');
         let previousInterventionMissingCounter = 0;
         const previousInterventionList =
           element.previousintervention?.split(', ');
@@ -1547,14 +1547,14 @@ export class SeedBofService {
             previousInterventionMissingCounter++;
           }
         }
-        if (previousInterventionMissingCounter === 3) {
+        if (previousInterventionMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Other Intervention...');
+        console.log('  Other Intervention...');
         let otherInterventionMissingCounter = 0;
         const otherInterventionList = element.otherinterventions?.split(', ');
         for (
@@ -1584,36 +1584,52 @@ export class SeedBofService {
             otherInterventionMissingCounter++;
           }
         }
-        if (otherInterventionMissingCounter === 3) {
+        if (otherInterventionMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Family Constellation...');
-        const familyConstellation =
-          await this.familyConstellationRepository.findOne({
-            where: {
-              description: element.familyconstellation,
-            },
-          });
-        if (familyConstellation?.id) {
-          await this.selectedFamilyConstellationRepository.save({
-            codeNumber: element.codeNumber,
-            familyConstellation: familyConstellation,
-          });
-        } else {
-          console.log(
-            `   Missing Family Constellation... ${element.familyconstellation}`,
-          );
+        console.log('  Family Constellation...');
+        let familyConstellationMissingCounter = 0;
+        const familyConstellationList =
+          element.familyconstellation?.split(', ');
+        for (
+          let familyConstellationIndex = 0;
+          familyConstellationIndex < familyConstellationList.length;
+          familyConstellationIndex++
+        ) {
+          const familyConstellationElement =
+            familyConstellationList[familyConstellationIndex];
+          let familyConstellation =
+            await this.familyConstellationRepository.findOne({
+              where: {
+                description: familyConstellationElement,
+              },
+            });
+          if (familyConstellation?.id) {
+            await this.selectedFamilyConstellationRepository.save({
+              codeNumber: element.codeNumber,
+              familyConstellation: familyConstellation,
+            });
+          } else {
+            console.log(
+              `   Missing Family Constellation ${
+                familyConstellationIndex + 1
+              }... ${familyConstellationElement}`,
+            );
+            familyConstellationMissingCounter++;
+          }
+        }
+        if (familyConstellationMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Who Participates...');
+        console.log('  Who Participates...');
         let whoParticipatesMissingCounter = 0;
         const whoParticipatesList = element.whoparticipates?.split(', ');
         for (
@@ -1642,14 +1658,14 @@ export class SeedBofService {
             whoParticipatesMissingCounter++;
           }
         }
-        if (whoParticipatesMissingCounter === 4) {
+        if (whoParticipatesMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Education VH 1...');
+        console.log('  Education VH 1...');
         let educationVh1MissingCounter = 0;
         const educationVh1List = element.educationvh1?.split(', ');
         for (
@@ -1677,13 +1693,14 @@ export class SeedBofService {
             educationVh1MissingCounter++;
           }
         }
-        if (educationVh1MissingCounter === 2) {
+        if (educationVh1MissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
-        } //console.log('  Education VH 2...');
+        } 
+        console.log('  Education VH 2...');
         let educationVh2MissingCounter = 0;
         const educationVh2List = element.educationvh2?.split(', ');
         for (
@@ -1711,14 +1728,14 @@ export class SeedBofService {
             educationVh2MissingCounter++;
           }
         }
-        if (educationVh2MissingCounter === 2) {
+        if (educationVh2MissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Employment VH 1...');
+        console.log('  Employment VH 1...');
         let employmentVh1MissingCounter = 0;
         const employmentVh1List = element.employmentvh1?.split(', ');
         for (
@@ -1746,14 +1763,14 @@ export class SeedBofService {
             employmentVh1MissingCounter++;
           }
         }
-        if (employmentVh1MissingCounter === 2) {
+        if (employmentVh1MissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Employment VH 2...');
+        console.log('  Employment VH 2...');
         let employmentVh2MissingCounter = 0;
         const employmentVh2List = element.employmentvh2?.split(', ');
         for (
@@ -1781,14 +1798,14 @@ export class SeedBofService {
             employmentVh2MissingCounter++;
           }
         }
-        if (employmentVh2MissingCounter === 2) {
+        if (employmentVh2MissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Interpreter Required...');
+        console.log('  Interpreter Required...');
         const interpreterRequired =
           await this.interpreterRequiredRepository.findOne({
             where: {
@@ -1810,7 +1827,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Type Of Effort...');
+        console.log('  Type Of Effort...');
         let typeOfEffortMissingCounter = 0;
         const typeOfEffortList = element.typeofeffort?.split(', ');
         for (
@@ -1838,14 +1855,14 @@ export class SeedBofService {
             typeOfEffortMissingCounter++;
           }
         }
-        if (typeOfEffortMissingCounter === 4) {
+        if (typeOfEffortMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Established Diagnoses...');
+        console.log('  Established Diagnoses...');
         let establishedDiagnosesMissingCounter = 0;
         const establishedDiagnosesList =
           element.establisheddiagnoses?.split(', ');
@@ -1876,33 +1893,49 @@ export class SeedBofService {
             establishedDiagnosesMissingCounter++;
           }
         }
-        if (establishedDiagnosesMissingCounter === 3) {
+        if (establishedDiagnosesMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  School Uniform...');
-        const schoolUniform = await this.schoolUniformRepository.findOne({
-          where: {
-            description: element.schooluniform,
-          },
-        });
-        if (schoolUniform?.id) {
-          await this.selectedSchoolUniformRepository.save({
-            codeNumber: element.codeNumber,
-            schoolUniform: schoolUniform,
+        console.log('  School Uniform...');
+        let schoolUniformMissingCounter = 0;
+        const schoolUniformList = element.schooluniform?.split(', ');
+        for (
+          let schoolUniformIndex = 0;
+          schoolUniformIndex < schoolUniformList.length;
+          schoolUniformIndex++
+        ) {
+          const schoolUniformElement = schoolUniformList[schoolUniformIndex];
+          let schoolUniform = await this.schoolUniformRepository.findOne({
+            where: {
+              description: schoolUniformElement,
+            },
           });
-        } else {
-          console.log(`   Missing School Uniform... ${element.schooluniform}`);
+          if (schoolUniform?.id) {
+            await this.selectedSchoolUniformRepository.save({
+              codeNumber: element.codeNumber,
+              schoolUniform: schoolUniform,
+            });
+          } else {
+            console.log(
+              `   Missing School Uniform ${
+                schoolUniformIndex + 1
+              }... ${schoolUniformElement}`,
+            );
+            schoolUniformMissingCounter++;
+          }
+        }
+        if (schoolUniformMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Other Intervention Started...');
+        console.log('  Other Intervention Started...');
         let otherInterventionStartedMissingCounter = 0;
         const otherInterventionStartedList =
           element.otherinterventionsstarted?.split(', ');
@@ -1940,7 +1973,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  During Intervention...');
+        console.log('  During Intervention...');
         let duringInterventionMissingCounter = 0;
         const duringInterventionList = element.duringintervention?.split(', ');
         for (
@@ -1970,14 +2003,14 @@ export class SeedBofService {
             duringInterventionMissingCounter++;
           }
         }
-        if (duringInterventionMissingCounter === 7) {
+        if (duringInterventionMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  During Past...');
+        console.log('  During Past...');
         let duringPastMissingCounter = 0;
         const duringPastList = element.duringpast?.split(', ');
         for (
@@ -2005,14 +2038,14 @@ export class SeedBofService {
             duringPastMissingCounter++;
           }
         }
-        if (duringPastMissingCounter === 7) {
+        if (duringPastMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
         }
-        //console.log('  Child School...');
+        console.log('  Child School...');
         const childschool = await this.childSchoolRepository.findOne({
           where: {
             description: element.childschool,
@@ -2031,7 +2064,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Change Accomodation...');
+        console.log('  Change Accomodation...');
         const changeaccomodation =
           await this.changeAccomodationRepository.findOne({
             where: {
@@ -2053,7 +2086,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Change Employment Vh1...');
+        console.log('  Change Employment Vh1...');
         const changeemploymentvh1 =
           await this.changeEmploymentVh1Repository.findOne({
             where: {
@@ -2075,7 +2108,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Change Employment Vh2...');
+        console.log('  Change Employment Vh2...');
         const changeemploymentvh2 =
           await this.changeEmploymentVh2Repository.findOne({
             where: {
@@ -2097,7 +2130,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Intervention Period...');
+        console.log('  Intervention Period...');
         const interventionperiod =
           await this.interventionPeriodRepository.findOne({
             where: {
@@ -2119,7 +2152,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Time Consumption...');
+        console.log('  Time Consumption...');
         const timeconsumption = await this.timeConsumptionRepository.findOne({
           where: {
             description: element.timeconsumption,
@@ -2140,7 +2173,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Reason For Termination...');
+        console.log('  Reason For Termination...');
         const reasonfortermination =
           await this.reasonForTerminationRepository.findOne({
             where: {
@@ -2162,7 +2195,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Intervention Progress...');
+        console.log('  Intervention Progress...');
         const interventionprogress =
           await this.interventionProgressRepository.findOne({
             where: {
@@ -2184,7 +2217,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        //console.log('  Score15 0, 6 and 12 Month...');
+        console.log('  Score15 0, 6 and 12 Month...');
         if (Number(element.score15) > 0 && Number(element.ors)) {
           await this.scoreRepository.save({
             codeNumber: element.codeNumber,
@@ -2250,7 +2283,7 @@ export class SeedBofService {
     const tmp = await this.changeAccomodationRepository.save(
       changeAccomodationSeedData,
     );
-    
+
     console.log(' Change Employment Vh1...');
     await this.changeEmploymentVh1Repository.delete({});
     await this.changeEmploymentVh1Repository.save(changeEmploymentVh1SeedData);

@@ -120,7 +120,7 @@ export const establishedDiagnosesSeedData = [
   'EstablishedDiagnoses.SelfInjuriousBehavior',
   'EstablishedDiagnoses.LanguageDisorder',
   'EstablishedDiagnoses.DefianceSyndrome',
-  'Other',
+  'EstablishedDiagnoses.Other',
   'OtherText',
 ].map(data => ({ description: data }));
 
