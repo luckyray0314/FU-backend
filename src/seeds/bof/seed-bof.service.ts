@@ -295,14 +295,27 @@ export class SeedBofService {
       try {
         let isMissingBackgroundData: boolean = false;
         console.log(`  ${element.codeNumber}...`);
-        const closeStatus = await this.closeStatusRepository.save({
-          codeNumber: element.codeNumber,
-          processor: element.processor || 'v1admin',
-          isClosed: 'false',
-          isChild: element.person == '1' ? 'true' : 'false',
-          isGuardianOne: element.person == '2' ? 'true' : 'false',
-          isGuardianTwo: element.person == '3' ? 'true' : 'false',
+        let closeStatus = await this.closeStatusRepository.findOne({
+          where: {
+            codeNumber: element.codeNumber,
+          },
         });
+        if (closeStatus.codeNumber) {
+          closeStatus = await this.closeStatusRepository.save({
+            isChild: element.person == '1' ? 'true' : 'false',
+            isGuardianOne: element.person == '2' ? 'true' : 'false',
+            isGuardianTwo: element.person == '3' ? 'true' : 'false',
+          });
+        } else {
+          closeStatus = await this.closeStatusRepository.save({
+            codeNumber: element.codeNumber,
+            processor: element.processor || 'v1admin',
+            isClosed: 'false',
+            isChild: element.person == '1' ? 'true' : 'false',
+            isGuardianOne: element.person == '2' ? 'true' : 'false',
+            isGuardianTwo: element.person == '3' ? 'true' : 'false',
+          });
+        }
         //console.log('  Background Metadata...');
         let backgroundMetadata;
         if (element.yearofbirth) {
@@ -1416,14 +1429,27 @@ export class SeedBofService {
         let isMissingBackgroundData: boolean = false;
         console.log(`  ${element.codeNumber}...`);
         //console.log('  Close Status Exported from DB...');
-        const closeStatus = await this.closeStatusRepository.save({
-          codeNumber: element.codeNumber,
-          processor: element.processor || 'v1admin',
-          isClosed: element.isClosed,
-          isChild: element.isChild,
-          isGuardianOne: element.isGuardianOne,
-          isGuardianTwo: element.isGuardianTwo,
+        let closeStatus = await this.closeStatusRepository.findOne({
+          where: {
+            codeNumber: element.codeNumber,
+          },
         });
+        if (closeStatus.codeNumber) {
+          closeStatus = await this.closeStatusRepository.save({
+            isChild: element.isChild,
+            isGuardianOne: element.isGuardianOne,
+            isGuardianTwo: element.isGuardianTwo,
+          });
+        } else {
+          closeStatus = await this.closeStatusRepository.save({
+            codeNumber: element.codeNumber,
+            processor: element.processor || 'v1admin',
+            isClosed: element.isClosed,
+            isChild: element.isChild,
+            isGuardianOne: element.isGuardianOne,
+            isGuardianTwo: element.isGuardianTwo,
+          });
+        }
         //console.log('  Background Metadata...');
         if (element.yearOfBirth) {
           await this.backgroundMetadataRepository.save({
@@ -1698,7 +1724,7 @@ export class SeedBofService {
             status: SurveyStatus.Incomplete,
             id: closeStatus.id,
           });
-        } 
+        }
         //console.log('  Education VH 2...');
         let educationVh2MissingCounter = 0;
         const educationVh2List = element.educationvh2?.split(', ');

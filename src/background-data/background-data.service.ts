@@ -541,11 +541,6 @@ export class BackgroundDataService {
           closeStatusEntity?.isAbsent ||
           closeStatusEntity?.isAbsent == 'true'
         ) {
-          console.log(
-            'Absent',
-            closeStatusEntity?.codeNumber,
-            closeStatusEntity?.isAbsent,
-          );
           surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           surveyEntity['isGuardianOne'] =
             closeStatusEntity?.isGuardianOne == null ||
