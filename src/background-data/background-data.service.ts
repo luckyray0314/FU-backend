@@ -537,10 +537,7 @@ export class BackgroundDataService {
           processor: closeStatusEntity?.processor,
         };
 
-        if (
-          closeStatusEntity?.isAbsent ||
-          closeStatusEntity?.isAbsent == 'true'
-        ) {
+        if (closeStatusEntity?.isAbsent) {
           surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           surveyEntity['isGuardianOne'] =
             closeStatusEntity?.isGuardianOne == null ||
@@ -560,7 +557,7 @@ export class BackgroundDataService {
           surveyEntity['status'] = SurveyStatus.Cancelled;
         } else if (
           existBackgroundMetadata?.codeNumber &&
-          dayjs().diff(dayjs(existBackgroundMetadata?.date), 'month') <= 12
+          dayjs().diff(existBackgroundMetadata?.date, 'month') <= 12
         ) {
           surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           surveyEntity['isGuardianOne'] =
@@ -584,7 +581,6 @@ export class BackgroundDataService {
           let prevOccasionDate = existBackgroundMetadata?.date
             ? dayjs(existBackgroundMetadata?.date)
             : dayjs();
-          const today = dayjs();
           const details = await Promise.all(
             [...Array(3)].map(async (_it, occasionIndex) => {
               if (scoreEntities?.length > 0) {
@@ -614,7 +610,25 @@ export class BackgroundDataService {
                   return status;
                 });
 
-                return { date: surveyDate, statuses };
+                const newStatuses = statuses?.map(
+                  (newState: SurveyStatus, sIndex: number) => {
+                    if (closeStatusEntity.isChild === 'true' && sIndex == 0)
+                      return newState;
+                    else if (
+                      closeStatusEntity.isGuardianOne === 'true' &&
+                      sIndex === 1
+                    )
+                      return newState;
+                    else if (
+                      closeStatusEntity.isGuardianTwo === 'true' &&
+                      sIndex === 2
+                    )
+                      return newState;
+                    else return null;
+                  },
+                );
+
+                return { date: surveyDate, statuses: newStatuses };
               } else {
                 // Not exist score for this index
                 const surveyDate =
@@ -949,7 +963,10 @@ export class BackgroundDataService {
           } else {
             caseStatus = SurveyStatus.Coming;
           }
-          surveyEntity['status'] = caseStatus;
+          surveyEntity['status'] = closeStatusEntity?.status
+            ? `${caseStatus} (${SurveyStatus.Incomplete})`
+            : caseStatus;
+          //surveyEntity['status'] = caseStatus;
           surveyEntity['isClosed'] =
             closeStatusEntity?.isClosed === 'true' ? true : false;
           surveyEntity['signal'] = signal;
@@ -957,7 +974,7 @@ export class BackgroundDataService {
           surveyEntity['missedFields'] = '';
         } else if (
           existBackgroundMetadata?.codeNumber &&
-          dayjs().diff(dayjs(existBackgroundMetadata?.date), 'month') > 12
+          dayjs().diff(existBackgroundMetadata?.date, 'month') > 12
         ) {
           // Archived
           let archivedCodeNumber: string = '';
@@ -980,7 +997,6 @@ export class BackgroundDataService {
           let prevOccasionDate = existBackgroundMetadata?.date
             ? dayjs(existBackgroundMetadata?.date)
             : dayjs();
-          const today = dayjs();
           const details = await Promise.all(
             [...Array(3)].map(async (_it, occasionIndex) => {
               if (scoreEntities?.length > 0) {

@@ -458,8 +458,7 @@ let BackgroundDataService = class BackgroundDataService {
             let surveyEntity = {
                 processor: closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.processor,
             };
-            if ((closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isAbsent) ||
-                (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isAbsent) == 'true') {
+            if (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isAbsent) {
                 surveyEntity['codeNumber'] = closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber;
                 surveyEntity['isGuardianOne'] =
                     (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isGuardianOne) == null ||
@@ -479,7 +478,7 @@ let BackgroundDataService = class BackgroundDataService {
                 surveyEntity['status'] = survey_status_1.SurveyStatus.Cancelled;
             }
             else if ((existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.codeNumber) &&
-                dayjs().diff(dayjs(existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date), 'month') <= 12) {
+                dayjs().diff(existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date, 'month') <= 12) {
                 surveyEntity['codeNumber'] = closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber;
                 surveyEntity['isGuardianOne'] =
                     (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isGuardianOne) == null ||
@@ -502,7 +501,6 @@ let BackgroundDataService = class BackgroundDataService {
                 let prevOccasionDate = (existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date)
                     ? dayjs(existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date)
                     : dayjs();
-                const today = dayjs();
                 const details = await Promise.all([...Array(3)].map(async (_it, occasionIndex) => {
                     if ((scoreEntities === null || scoreEntities === void 0 ? void 0 : scoreEntities.length) > 0) {
                         const entities = scoreEntities.filter(s => s.occasion === occasionIndex + 1);
@@ -523,7 +521,19 @@ let BackgroundDataService = class BackgroundDataService {
                                     : survey_status_1.SurveyStatus.Loss;
                             return status;
                         });
-                        return { date: surveyDate, statuses };
+                        const newStatuses = statuses === null || statuses === void 0 ? void 0 : statuses.map((newState, sIndex) => {
+                            if (closeStatusEntity.isChild === 'true' && sIndex == 0)
+                                return newState;
+                            else if (closeStatusEntity.isGuardianOne === 'true' &&
+                                sIndex === 1)
+                                return newState;
+                            else if (closeStatusEntity.isGuardianTwo === 'true' &&
+                                sIndex === 2)
+                                return newState;
+                            else
+                                return null;
+                        });
+                        return { date: surveyDate, statuses: newStatuses };
                     }
                     else {
                         const surveyDate = occasionIndex === 0
@@ -800,7 +810,9 @@ let BackgroundDataService = class BackgroundDataService {
                 else {
                     caseStatus = survey_status_1.SurveyStatus.Coming;
                 }
-                surveyEntity['status'] = caseStatus;
+                surveyEntity['status'] = (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.status)
+                    ? `${caseStatus} (${survey_status_1.SurveyStatus.Incomplete})`
+                    : caseStatus;
                 surveyEntity['isClosed'] =
                     (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isClosed) === 'true' ? true : false;
                 surveyEntity['signal'] = signal;
@@ -808,7 +820,7 @@ let BackgroundDataService = class BackgroundDataService {
                 surveyEntity['missedFields'] = '';
             }
             else if ((existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.codeNumber) &&
-                dayjs().diff(dayjs(existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date), 'month') > 12) {
+                dayjs().diff(existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date, 'month') > 12) {
                 let archivedCodeNumber = '';
                 if (!(closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.archivedCodeNumber)) {
                     archivedCodeNumber = `Ark-${(0, rand_token_1.generate)(generator_const_1.codeGeneratorSize, generator_const_1.codeGeneratorChars)}`;
@@ -824,7 +836,6 @@ let BackgroundDataService = class BackgroundDataService {
                 let prevOccasionDate = (existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date)
                     ? dayjs(existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date)
                     : dayjs();
-                const today = dayjs();
                 const details = await Promise.all([...Array(3)].map(async (_it, occasionIndex) => {
                     if ((scoreEntities === null || scoreEntities === void 0 ? void 0 : scoreEntities.length) > 0) {
                         const entities = scoreEntities.filter(s => s.occasion === occasionIndex + 1);
