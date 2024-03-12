@@ -145,7 +145,8 @@ import { SelectedTimeConsumptionRepository } from 'src/follow-up-survey/time-con
 import { ScoreEntity } from 'src/score/entities/score.entity';
 import { ScoreModule } from 'src/score/score.module';
 import { ScoreRepository } from 'src/score/score.repository';
-import { SeedService } from './seed.service';
+import { SeedBofService } from './bof/seed-bof.service';
+import { SeedVuxService } from './vux/seed-vux.service';
 import { ChangeAccomodationModule } from 'src/important-events/change-accomodation/change-accomodation.module';
 import { ChangeAccomodationRepository } from 'src/important-events/change-accomodation/change-accomodation.repository';
 import { ChangeAccomodationEntity } from 'src/important-events/change-accomodation/entities/change-accomodation.entity';
@@ -678,6 +679,6 @@ import { SelectedChangeLiveRepository } from 'src/important-events-vux/change-li
       SelectedOtherInitiativeRepository,
     ]),
   ],
-  providers: [SeedService],
+  providers: [SeedBofService, SeedVuxService],
 })
 export class SeedModule {}

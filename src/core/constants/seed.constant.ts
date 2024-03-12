@@ -59,7 +59,7 @@ export const whoParticipatesSeedData = [
   'WhoParticipates.AParent',
   'WhoParticipates.BothParents',
   'WhoParticipates.Parent',
-  'Other',
+  'WhoParticipates.Other',
   'OtherText',
 ].map(data => ({ description: data }));
 

@@ -3,10 +3,8 @@ import { AppModule } from './app.module';
 import { VALLENTUNA_SURVEY_BACKEND_PORT } from './core/constants/environment.const';
 import { setup } from './setup';
 import { seedVux } from './seed-vux';
-import { seedFollowUp } from './seed-follow-up';
-import { seedImportantEventVux } from './seed-important-event-vux';
-import { seedBackgroundDataVux } from './seed-background-data-vux';
-import { seedImportantEventBof } from './seed-important-event-bof';
+import { seedBof } from './seed-bof';
+
 // import { createClient } from '@supabase/supabase-js';
 // import { Pool } from 'pg';
 
@@ -48,10 +46,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   setup(app);
-  /* await seedBackgroundDataVux(app);
-  await seedImportantEventVux(app);
-  await seedFollowUp(app);
-  await seedVux(app); */
+  await seedBof(app);
+  //await seedVux(app);
 
   await app.listen(VALLENTUNA_SURVEY_BACKEND_PORT);
 }

@@ -3,7 +3,7 @@ import {
   Column, Entity, JoinColumn, ManyToOne, PrimaryColumn
 } from "typeorm";
 
-@Entity("background_metadata_entity")
+@Entity('background_metadata_entity')
 export class BackgroundMetadataEntity {
   @PrimaryColumn()
   codeNumber: string;
@@ -11,7 +11,7 @@ export class BackgroundMetadataEntity {
   @Column()
   date: string;
 
-  @Column()
+  @Column({ nullable: true })
   yearOfBirth: number;
 
   @Column({ nullable: true })
