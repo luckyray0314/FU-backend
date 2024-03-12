@@ -50,6 +50,7 @@ export const familyConstellationSeedData = [
   'FamilyConstellation.LivesWithVH',
   'FamilyConstellation.LivesInAnotherFamily',
   'FamilyConstellation.Other',
+  'Other',
   'OtherText',
 ].map(data => ({ description: data }));
 
