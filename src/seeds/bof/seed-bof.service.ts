@@ -304,6 +304,7 @@ export class SeedBofService {
           closeStatus = await this.closeStatusRepository.save({
             codeNumber: element.codeNumber,
             processor: element.processor || 'v1admin',
+            isClosed: 'false',
             isChild: element.person == '1' ? 'true' : 'false',
             isGuardianOne: element.person == '2' ? 'true' : 'false',
             isGuardianTwo: element.person == '3' ? 'true' : 'false',
@@ -1440,6 +1441,7 @@ export class SeedBofService {
           closeStatus = await this.closeStatusRepository.save({
             codeNumber: element.codeNumber,
             processor: element.processor || 'v1admin',
+            isClosed: element.isClosed || 'false',
             isChild: element.isChild,
             isGuardianOne: element.isGuardianOne,
             isGuardianTwo: element.isGuardianTwo,
@@ -1448,7 +1450,7 @@ export class SeedBofService {
           closeStatus = await this.closeStatusRepository.save({
             codeNumber: element.codeNumber,
             processor: element.processor || 'v1admin',
-            isClosed: element.isClosed,
+            isClosed: element.isClosed || 'false',
             isChild: element.isChild,
             isGuardianOne: element.isGuardianOne,
             isGuardianTwo: element.isGuardianTwo,
