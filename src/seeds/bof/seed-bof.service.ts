@@ -349,8 +349,8 @@ export class SeedBofService {
           console.log(`   Missing gender... ${element.gender}`);
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Reason For Update...');
@@ -370,8 +370,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Problem Area...');
@@ -435,8 +435,8 @@ export class SeedBofService {
         if (problemAreaMissingCounter === 4) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Previous Intervention...');
@@ -495,8 +495,8 @@ export class SeedBofService {
         if (previousInterventionMissingCounter === 3) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Other Intervention...');
@@ -554,8 +554,8 @@ export class SeedBofService {
         if (otherInterventionMissingCounter === 3) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Family Constellation...');
@@ -576,8 +576,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Who Participates...');
@@ -649,8 +649,8 @@ export class SeedBofService {
         if (whoParticipatesMissingCounter === 4) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Education VH...');
@@ -686,8 +686,8 @@ export class SeedBofService {
         if (educationVhMissingCounter === 2) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Employment VH...');
@@ -723,8 +723,8 @@ export class SeedBofService {
         if (employmentVhMissingCounter === 2) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Interpreter Required...');
@@ -818,8 +818,8 @@ export class SeedBofService {
         if (typeOfEffortMissingCounter === 4) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Established Diagnoses...');
@@ -878,8 +878,8 @@ export class SeedBofService {
         if (establishedDiagnosesMissingCounter === 3) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  School Uniform...');
@@ -897,8 +897,8 @@ export class SeedBofService {
           console.log(`   Missing School Uniform... ${element.schoolUniform}`);
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Other Intervention Started...');
@@ -974,8 +974,8 @@ export class SeedBofService {
         if (otherinterventionstartedMissingCounter === 4) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  During Intervention...');
@@ -1096,8 +1096,8 @@ export class SeedBofService {
         if (duringinterventionMissingCounter === 7) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  During Past...');
@@ -1203,8 +1203,8 @@ export class SeedBofService {
         if (duringpastMissingCounter === 7) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Child School...');
@@ -1222,8 +1222,8 @@ export class SeedBofService {
           console.log(`   Missing Child School... ${element.childschool}`);
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Change Accomodation...');
@@ -1244,8 +1244,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Change Employment Vh1...');
@@ -1266,8 +1266,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Change Employment Vh2...');
@@ -1288,8 +1288,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Intervention Period...');
@@ -1310,8 +1310,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Time Consumption...');
@@ -1331,8 +1331,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Reason For Termination...');
@@ -1353,8 +1353,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Intervention Progress...');
@@ -1375,8 +1375,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Score15 0 Month...');
@@ -1483,8 +1483,8 @@ export class SeedBofService {
           console.log(`   Missing gender... ${element.gender}`);
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Reason For Update...');
@@ -1504,8 +1504,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Problem Area...');
@@ -1539,8 +1539,8 @@ export class SeedBofService {
         if (problemAreaMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Previous Intervention...');
@@ -1577,8 +1577,8 @@ export class SeedBofService {
         if (previousInterventionMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Other Intervention...');
@@ -1614,8 +1614,8 @@ export class SeedBofService {
         if (otherInterventionMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Family Constellation...');
@@ -1652,8 +1652,8 @@ export class SeedBofService {
         if (familyConstellationMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Who Participates...');
@@ -1688,8 +1688,8 @@ export class SeedBofService {
         if (whoParticipatesMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Education VH 1...');
@@ -1723,8 +1723,8 @@ export class SeedBofService {
         if (educationVh1MissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Education VH 2...');
@@ -1758,8 +1758,8 @@ export class SeedBofService {
         if (educationVh2MissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Employment VH 1...');
@@ -1793,8 +1793,8 @@ export class SeedBofService {
         if (employmentVh1MissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Employment VH 2...');
@@ -1828,8 +1828,8 @@ export class SeedBofService {
         if (employmentVh2MissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Interpreter Required...');
@@ -1850,8 +1850,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Type Of Effort...');
@@ -1885,8 +1885,8 @@ export class SeedBofService {
         if (typeOfEffortMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Established Diagnoses...');
@@ -1923,8 +1923,8 @@ export class SeedBofService {
         if (establishedDiagnosesMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  School Uniform...');
@@ -1958,8 +1958,8 @@ export class SeedBofService {
         if (schoolUniformMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Other Intervention Started...');
@@ -1996,8 +1996,8 @@ export class SeedBofService {
         if (otherInterventionStartedMissingCounter === 4) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  During Intervention...');
@@ -2033,8 +2033,8 @@ export class SeedBofService {
         if (duringInterventionMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  During Past...');
@@ -2068,8 +2068,8 @@ export class SeedBofService {
         if (duringPastMissingCounter === 0) {
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Child School...');
@@ -2087,8 +2087,8 @@ export class SeedBofService {
           console.log(`   Missing Child School... ${element.childschool}`);
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Change Accomodation...');
@@ -2109,8 +2109,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Change Employment Vh1...');
@@ -2131,8 +2131,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Change Employment Vh2...');
@@ -2153,8 +2153,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Intervention Period...');
@@ -2175,8 +2175,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Time Consumption...');
@@ -2196,8 +2196,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Reason For Termination...');
@@ -2218,8 +2218,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Intervention Progress...');
@@ -2240,8 +2240,8 @@ export class SeedBofService {
           );
           isMissingBackgroundData = true;
           this.closeStatusRepository.save({
+            ...closeStatus,
             status: SurveyStatus.Incomplete,
-            id: closeStatus.id,
           });
         }
         //console.log('  Score15 0, 6 and 12 Month...');
