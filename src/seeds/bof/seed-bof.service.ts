@@ -302,6 +302,8 @@ export class SeedBofService {
         });
         if (closeStatus?.codeNumber) {
           closeStatus = await this.closeStatusRepository.save({
+            codeNumber: element.codeNumber,
+            processor: element.processor || 'v1admin',
             isChild: element.person == '1' ? 'true' : 'false',
             isGuardianOne: element.person == '2' ? 'true' : 'false',
             isGuardianTwo: element.person == '3' ? 'true' : 'false',
@@ -1436,6 +1438,8 @@ export class SeedBofService {
         });
         if (closeStatus?.codeNumber) {
           closeStatus = await this.closeStatusRepository.save({
+            codeNumber: element.codeNumber,
+            processor: element.processor || 'v1admin',
             isChild: element.isChild,
             isGuardianOne: element.isGuardianOne,
             isGuardianTwo: element.isGuardianTwo,

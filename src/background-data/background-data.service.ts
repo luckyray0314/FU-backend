@@ -562,7 +562,6 @@ export class BackgroundDataService {
           existBackgroundMetadata?.codeNumber &&
           dayjs().diff(dayjs(existBackgroundMetadata?.date), 'month') <= 12
         ) {
-          console.log('< 12', closeStatusEntity?.codeNumber);
           surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           surveyEntity['isGuardianOne'] =
             closeStatusEntity?.isGuardianOne == null ||
@@ -960,7 +959,6 @@ export class BackgroundDataService {
           existBackgroundMetadata?.codeNumber &&
           dayjs().diff(dayjs(existBackgroundMetadata?.date), 'month') > 12
         ) {
-          console.log('> 12', closeStatusEntity?.codeNumber);
           // Archived
           let archivedCodeNumber: string = '';
           if (!closeStatusEntity?.archivedCodeNumber) {
