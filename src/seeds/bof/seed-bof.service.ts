@@ -239,8 +239,11 @@ export class SeedBofService {
 
   //Bof
   async seedBofData(): Promise<void> {
+    console.log(' Seed Bortfall...');
     await this.seedBofBortfallData();
+    console.log(' Seed Excel...');
     await this.seedBofExcelData();
+    console.log(' Seed Exported from DB...');
     await this.seedBofExportedData();
   }
   async clearBofData(): Promise<void> {
@@ -277,13 +280,12 @@ export class SeedBofService {
   async seedBofBortfallData(): Promise<void> {
     for (let index = 0; index < bofBortfallData.length; index++) {
       const element = bofBortfallData[index];
-      console.log(` ${element.CodeNumber}...`);
-      console.log('  Close Status Bortfall...');
-      const closeStatus = await this.closeStatusRepository.save({
+      console.log(`  ${element.CodeNumber}...`);
+      await this.closeStatusRepository.save({
         codeNumber: element.CodeNumber,
         processor: 'v1admin',
         isClosed: 'true',
-        isAbsent: element.isAbsent,
+        isAbsent: 'true',
       });
     }
   }
@@ -292,18 +294,16 @@ export class SeedBofService {
       const element = bofExcelData[index];
       try {
         let isMissingBackgroundData: boolean = false;
-        console.log(` ${element.codeNumber}...`);
-        console.log('  Close Status Excel...');
+        console.log(`  ${element.codeNumber}...`);
         const closeStatus = await this.closeStatusRepository.save({
           codeNumber: element.codeNumber,
           processor: element.processor || 'v1admin',
           isClosed: 'false',
-          isAbsent: 'false',
           isChild: element.person == '1' ? 'true' : 'false',
           isGuardianOne: element.person == '2' ? 'true' : 'false',
           isGuardianTwo: element.person == '3' ? 'true' : 'false',
         });
-        console.log('  Background Metadata...');
+        //console.log('  Background Metadata...');
         let backgroundMetadata;
         if (element.yearofbirth) {
           backgroundMetadata = await this.backgroundMetadataRepository.save({
@@ -320,7 +320,7 @@ export class SeedBofService {
             country: element.countryOfBirth,
           });
         }
-        console.log('  Gender...');
+        //console.log('  Gender...');
         const gender = await this.genderRepository.findOne({
           where: {
             description: element.gender,
@@ -339,7 +339,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Reason For Update...');
+        //console.log('  Reason For Update...');
         const reasonForUpdate = await this.reasonForUpdateRepository.findOne({
           where: {
             description: element.reasonForUpdate,
@@ -360,7 +360,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Problem Area...');
+        //console.log('  Problem Area...');
         let problemAreaMissingCounter = 0;
         let problemArea = await this.problemAreaRepository.findOne({
           where: {
@@ -425,7 +425,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Previous Intervention...');
+        //console.log('  Previous Intervention...');
         let previousInterventionMissingCounter = 0;
         let previousIntervention =
           await this.previousInterventionRepository.findOne({
@@ -485,7 +485,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Other Intervention...');
+        //console.log('  Other Intervention...');
         let otherInterventionMissingCounter = 0;
         let otherIntervention = await this.otherInterventionsRepository.findOne(
           {
@@ -544,7 +544,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Family Constellation...');
+        //console.log('  Family Constellation...');
         const familyConstellation =
           await this.familyConstellationRepository.findOne({
             where: {
@@ -566,7 +566,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Who Participates...');
+        //console.log('  Who Participates...');
         let whoParticipatesMissingCounter = 0;
         let whoParticipates = await this.whoParticipatesRepository.findOne({
           where: {
@@ -639,7 +639,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Education VH...');
+        //console.log('  Education VH...');
         let educationVhMissingCounter = 0;
         let educationVh = await this.educationVh1Repository.findOne({
           where: {
@@ -676,7 +676,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Employment VH...');
+        //console.log('  Employment VH...');
         let employmentVhMissingCounter = 0;
         let employmentVh = await this.employmentVh1Repository.findOne({
           where: {
@@ -713,7 +713,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Interpreter Required...');
+        //console.log('  Interpreter Required...');
         const interpreterRequired =
           await this.interpreterRequiredRepository.findOne({
             where: {
@@ -735,7 +735,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Type Of Effort...');
+        //console.log('  Type Of Effort...');
         let typeOfEffortMissingCounter = 0;
         let typeOfEffort = await this.typeOfEffortRepository.findOne({
           where: {
@@ -808,7 +808,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Established Diagnoses...');
+        //console.log('  Established Diagnoses...');
         let establishedDiagnosesMissingCounter = 0;
         let establishedDiagnoses =
           await this.establishedDiagnosesRepository.findOne({
@@ -868,7 +868,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  School Uniform...');
+        //console.log('  School Uniform...');
         const schoolUniform = await this.schoolUniformRepository.findOne({
           where: {
             description: element.schoolUniform,
@@ -887,7 +887,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Other Intervention Started...');
+        //console.log('  Other Intervention Started...');
         let otherinterventionstartedMissingCounter = 0;
         let otherInterventionstarted =
           await this.otherInterventionsStartedRepository.findOne({
@@ -964,7 +964,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  During Intervention...');
+        //console.log('  During Intervention...');
         let duringinterventionMissingCounter = 0;
         let duringintervention =
           await this.duringInterventionRepository.findOne({
@@ -1086,7 +1086,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  During Past...');
+        //console.log('  During Past...');
         let duringpastMissingCounter = 0;
         let duringpast = await this.duringPastRepository.findOne({
           where: {
@@ -1193,7 +1193,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Child School...');
+        //console.log('  Child School...');
         const childschool = await this.childSchoolRepository.findOne({
           where: {
             description: element.childschool,
@@ -1212,7 +1212,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Change Accomodation...');
+        //console.log('  Change Accomodation...');
         const changeaccomodation =
           await this.changeAccomodationRepository.findOne({
             where: {
@@ -1234,7 +1234,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Change Employment Vh1...');
+        //console.log('  Change Employment Vh1...');
         const changeemploymentvh1 =
           await this.changeEmploymentVh1Repository.findOne({
             where: {
@@ -1256,7 +1256,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Change Employment Vh2...');
+        //console.log('  Change Employment Vh2...');
         const changeemploymentvh2 =
           await this.changeEmploymentVh2Repository.findOne({
             where: {
@@ -1278,7 +1278,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Intervention Period...');
+        //console.log('  Intervention Period...');
         const interventionperiod =
           await this.interventionPeriodRepository.findOne({
             where: {
@@ -1300,7 +1300,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Time Consumption...');
+        //console.log('  Time Consumption...');
         const timeconsumption = await this.timeConsumptionRepository.findOne({
           where: {
             description: element.timeconsumption,
@@ -1321,7 +1321,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Reason For Termination...');
+        //console.log('  Reason For Termination...');
         const reasonfortermination =
           await this.reasonForTerminationRepository.findOne({
             where: {
@@ -1343,7 +1343,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Intervention Progress...');
+        //console.log('  Intervention Progress...');
         const interventionprogress =
           await this.interventionProgressRepository.findOne({
             where: {
@@ -1365,7 +1365,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Score15 0 Month...');
+        //console.log('  Score15 0 Month...');
         if (Number(element.Score15ZeroMonth) > 0 && Number(element.ORS1)) {
           await this.scoreRepository.save({
             codeNumber: element.codeNumber,
@@ -1376,7 +1376,7 @@ export class SeedBofService {
             ors: Number(element.ORS1),
           });
         }
-        console.log('  Score15 6 Months...');
+        //console.log('  Score15 6 Months...');
         if (Number(element.Score15SixMonth) > 0 && Number(element.ORS2)) {
           await this.scoreRepository.save({
             codeNumber: element.codeNumber,
@@ -1389,7 +1389,7 @@ export class SeedBofService {
             ors: Number(element.ORS2),
           });
         }
-        console.log('  Score15 12 Months...');
+        //console.log('  Score15 12 Months...');
         if (Number(element.Score15TwelveMonth) > 0 && Number(element.ORS3)) {
           await this.scoreRepository.save({
             codeNumber: element.codeNumber,
@@ -1414,18 +1414,17 @@ export class SeedBofService {
       const element = bofExportedData[index];
       try {
         let isMissingBackgroundData: boolean = false;
-        console.log(` ${element.codeNumber}...`);
-        console.log('  Close Status Exported from DB...');
+        console.log(`  ${element.codeNumber}...`);
+        //console.log('  Close Status Exported from DB...');
         const closeStatus = await this.closeStatusRepository.save({
           codeNumber: element.codeNumber,
           processor: element.processor || 'v1admin',
-          isClosed: element.isClosed || 'false',
-          isAbsent: element.isAbsent || 'false',
-          isChild: element.isChild || 'false',
-          isGuardianOne: element.isGuardianOne || 'false',
-          isGuardianTwo: element.isGuardianTwo || 'false',
+          isClosed: element.isClosed,
+          isChild: element.isChild,
+          isGuardianOne: element.isGuardianOne,
+          isGuardianTwo: element.isGuardianTwo,
         });
-        console.log('  Background Metadata...');
+        //console.log('  Background Metadata...');
         if (element.yearOfBirth) {
           await this.backgroundMetadataRepository.save({
             codeNumber: element.codeNumber,
@@ -1441,7 +1440,7 @@ export class SeedBofService {
             country: element.country,
           });
         }
-        console.log('  Gender...');
+        //console.log('  Gender...');
         const gender = await this.genderRepository.findOne({
           where: {
             description: element.gender,
@@ -1460,7 +1459,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Reason For Update...');
+        //console.log('  Reason For Update...');
         const reasonForUpdate = await this.reasonForUpdateRepository.findOne({
           where: {
             description: element.reasonforupdate,
@@ -1481,7 +1480,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Problem Area...');
+        //console.log('  Problem Area...');
         let problemAreaMissingCounter = 0;
         const problemAreaList = element.problemarea?.split(', ');
         for (
@@ -1516,7 +1515,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Previous Intervention...');
+        //console.log('  Previous Intervention...');
         let previousInterventionMissingCounter = 0;
         const previousInterventionList =
           element.previousintervention?.split(', ');
@@ -1554,7 +1553,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Other Intervention...');
+        //console.log('  Other Intervention...');
         let otherInterventionMissingCounter = 0;
         const otherInterventionList = element.otherinterventions?.split(', ');
         for (
@@ -1591,7 +1590,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Family Constellation...');
+        //console.log('  Family Constellation...');
         let familyConstellationMissingCounter = 0;
         const familyConstellationList =
           element.familyconstellation?.split(', ');
@@ -1629,7 +1628,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Who Participates...');
+        //console.log('  Who Participates...');
         let whoParticipatesMissingCounter = 0;
         const whoParticipatesList = element.whoparticipates?.split(', ');
         for (
@@ -1665,7 +1664,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Education VH 1...');
+        //console.log('  Education VH 1...');
         let educationVh1MissingCounter = 0;
         const educationVh1List = element.educationvh1?.split(', ');
         for (
@@ -1700,7 +1699,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         } 
-        console.log('  Education VH 2...');
+        //console.log('  Education VH 2...');
         let educationVh2MissingCounter = 0;
         const educationVh2List = element.educationvh2?.split(', ');
         for (
@@ -1735,7 +1734,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Employment VH 1...');
+        //console.log('  Employment VH 1...');
         let employmentVh1MissingCounter = 0;
         const employmentVh1List = element.employmentvh1?.split(', ');
         for (
@@ -1770,7 +1769,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Employment VH 2...');
+        //console.log('  Employment VH 2...');
         let employmentVh2MissingCounter = 0;
         const employmentVh2List = element.employmentvh2?.split(', ');
         for (
@@ -1805,7 +1804,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Interpreter Required...');
+        //console.log('  Interpreter Required...');
         const interpreterRequired =
           await this.interpreterRequiredRepository.findOne({
             where: {
@@ -1827,7 +1826,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Type Of Effort...');
+        //console.log('  Type Of Effort...');
         let typeOfEffortMissingCounter = 0;
         const typeOfEffortList = element.typeofeffort?.split(', ');
         for (
@@ -1862,7 +1861,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Established Diagnoses...');
+        //console.log('  Established Diagnoses...');
         let establishedDiagnosesMissingCounter = 0;
         const establishedDiagnosesList =
           element.establisheddiagnoses?.split(', ');
@@ -1900,7 +1899,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  School Uniform...');
+        //console.log('  School Uniform...');
         let schoolUniformMissingCounter = 0;
         const schoolUniformList = element.schooluniform?.split(', ');
         for (
@@ -1935,7 +1934,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Other Intervention Started...');
+        //console.log('  Other Intervention Started...');
         let otherInterventionStartedMissingCounter = 0;
         const otherInterventionStartedList =
           element.otherinterventionsstarted?.split(', ');
@@ -1973,7 +1972,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  During Intervention...');
+        //console.log('  During Intervention...');
         let duringInterventionMissingCounter = 0;
         const duringInterventionList = element.duringintervention?.split(', ');
         for (
@@ -2010,7 +2009,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  During Past...');
+        //console.log('  During Past...');
         let duringPastMissingCounter = 0;
         const duringPastList = element.duringpast?.split(', ');
         for (
@@ -2045,7 +2044,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Child School...');
+        //console.log('  Child School...');
         const childschool = await this.childSchoolRepository.findOne({
           where: {
             description: element.childschool,
@@ -2064,7 +2063,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Change Accomodation...');
+        //console.log('  Change Accomodation...');
         const changeaccomodation =
           await this.changeAccomodationRepository.findOne({
             where: {
@@ -2086,7 +2085,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Change Employment Vh1...');
+        //console.log('  Change Employment Vh1...');
         const changeemploymentvh1 =
           await this.changeEmploymentVh1Repository.findOne({
             where: {
@@ -2108,7 +2107,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Change Employment Vh2...');
+        //console.log('  Change Employment Vh2...');
         const changeemploymentvh2 =
           await this.changeEmploymentVh2Repository.findOne({
             where: {
@@ -2130,7 +2129,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Intervention Period...');
+        //console.log('  Intervention Period...');
         const interventionperiod =
           await this.interventionPeriodRepository.findOne({
             where: {
@@ -2152,7 +2151,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Time Consumption...');
+        //console.log('  Time Consumption...');
         const timeconsumption = await this.timeConsumptionRepository.findOne({
           where: {
             description: element.timeconsumption,
@@ -2173,7 +2172,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Reason For Termination...');
+        //console.log('  Reason For Termination...');
         const reasonfortermination =
           await this.reasonForTerminationRepository.findOne({
             where: {
@@ -2195,7 +2194,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Intervention Progress...');
+        //console.log('  Intervention Progress...');
         const interventionprogress =
           await this.interventionProgressRepository.findOne({
             where: {
@@ -2217,7 +2216,7 @@ export class SeedBofService {
             id: closeStatus.id,
           });
         }
-        console.log('  Score15 0, 6 and 12 Month...');
+        //console.log('  Score15 0, 6 and 12 Month...');
         if (Number(element.score15) > 0 && Number(element.ors)) {
           await this.scoreRepository.save({
             codeNumber: element.codeNumber,

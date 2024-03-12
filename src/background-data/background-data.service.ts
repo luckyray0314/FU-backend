@@ -536,7 +536,16 @@ export class BackgroundDataService {
         let surveyEntity: any = {
           processor: closeStatusEntity?.processor,
         };
-        if (closeStatusEntity?.isAbsent) {
+
+        if (
+          closeStatusEntity?.isAbsent ||
+          closeStatusEntity?.isAbsent == 'true'
+        ) {
+          console.log(
+            'Absent',
+            closeStatusEntity?.codeNumber,
+            closeStatusEntity?.isAbsent,
+          );
           surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           surveyEntity['isGuardianOne'] =
             closeStatusEntity?.isGuardianOne == null ||
@@ -556,8 +565,9 @@ export class BackgroundDataService {
           surveyEntity['status'] = SurveyStatus.Cancelled;
         } else if (
           existBackgroundMetadata?.codeNumber &&
-          dayjs().diff(existBackgroundMetadata?.date, 'month') <= 12
+          dayjs().diff(dayjs(existBackgroundMetadata?.date), 'month') <= 12
         ) {
+          console.log('< 12', closeStatusEntity?.codeNumber);
           surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           surveyEntity['isGuardianOne'] =
             closeStatusEntity?.isGuardianOne == null ||
@@ -953,8 +963,9 @@ export class BackgroundDataService {
           surveyEntity['missedFields'] = '';
         } else if (
           existBackgroundMetadata?.codeNumber &&
-          dayjs().diff(existBackgroundMetadata?.date, 'month') > 12
+          dayjs().diff(dayjs(existBackgroundMetadata?.date), 'month') > 12
         ) {
+          console.log('> 12', closeStatusEntity?.codeNumber);
           // Archived
           let archivedCodeNumber: string = '';
           if (!closeStatusEntity?.archivedCodeNumber) {

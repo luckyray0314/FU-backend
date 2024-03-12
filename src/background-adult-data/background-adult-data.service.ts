@@ -362,7 +362,6 @@ export class BackgroundAdultDataService {
           let prevOccasionDate = existBackgroundMetadata?.date
             ? dayjs(existBackgroundMetadata?.date)
             : dayjs();
-          const today = dayjs();
           const details = await Promise.all(
             [...Array(3)].map(async (_it, occasionIndex) => {
               if (scoreEntities?.length > 0) {
