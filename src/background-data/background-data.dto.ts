@@ -26,6 +26,7 @@ import { TypeOfEffortEntity } from './type-of-effort/entities/type-of-effort.ent
 import { WhoParticipatesEntity } from './who-participates/entities/who-participates.entity';
 import { getNames } from 'country-list';
 import { OccasionIndex } from 'src/core/models/occasion.modal';
+import { ParticipantsDto } from './participants/dto';
 
 const countryNames = getNames();
 
@@ -74,6 +75,9 @@ export class BackgroundSurveyBasicDataDto {
 
   @ApiProperty()
   whoParticipatesEntities: WhoParticipatesEntity[];
+
+  @ApiProperty()
+  participantsEntities: ParticipantsDto[];
 }
 
 export type FormDataByEntityName = {

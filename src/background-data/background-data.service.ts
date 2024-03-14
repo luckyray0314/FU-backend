@@ -146,6 +146,11 @@ export class BackgroundDataService {
       schoolUniformEntities,
       typeOfEffortEntities,
       whoParticipatesEntities,
+      participantsEntities: [
+        { id: 0, description: 'NewClientModal.Child' },
+        { id: 1, description: 'NewClientModal.GuardianOne' },
+        { id: 2, description: 'NewClientModal.GuardianTwo' },
+      ],
     };
   }
 

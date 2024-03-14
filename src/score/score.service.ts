@@ -82,7 +82,6 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
   }
 
   async avgOfOrsAndScore15(codeNumbers: string[], occasions: OccasionIndex[]) {
-    console.log('occasions', occasions);
     return codeNumbers.length === 0 || occasions.length === 0
       ? {
           ors: 0,
@@ -332,6 +331,30 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
               select: ['codeNumber'],
             });
           codeNumbers = whoParticipatesResult.map(r => r.codeNumber);
+          break;
+        case 'participants':
+          const isChild = ids.includes(0);
+          const isGuardianOne = ids.includes(1);
+          const isGuardianTwo = ids.includes(2);
+          let participantsQuery: any = {
+            ...(isChild && {
+              isChild: 'true',
+            }),
+            ...(isGuardianOne && {
+              isGuardianOne: 'true',
+            }),
+            ...(isGuardianTwo && {
+              isGuardianTwo: 'true',
+            }),
+          };
+          const participants = await this.closeStatusService.find({
+            where: {
+              codeNumber: In(codeNumbers),
+              ...participantsQuery,
+            },
+            select: ['codeNumber'],
+          });
+          codeNumbers = participants.map(r => r.codeNumber);
           break;
       }
     }
