@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { ImportantEventsVuxController } from './important-events-vux.controller';
 import { ImportantEventsVuxService } from './important-events-vux.service';
 import { ChangeLiveModule } from './change-live/change-live.module';
@@ -10,6 +10,7 @@ import { SelectedInvestigationOutModule } from './investigation-out/selected-inv
 import { OtherInitiativeModule } from './other-initiative/other-initiative.module';
 import { SelectedOtherInitiativeModule } from './other-initiative/selected-other-initiative.module';
 
+Global();
 @Module({
   imports: [
     ChangeLiveModule,
@@ -24,4 +25,4 @@ import { SelectedOtherInitiativeModule } from './other-initiative/selected-other
   providers: [ImportantEventsVuxService],
   controllers: [ImportantEventsVuxController],
 })
-export class ImportantEventsVuxModule { }
+export class ImportantEventsVuxModule {}

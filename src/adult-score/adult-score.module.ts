@@ -15,6 +15,7 @@ import { AdultScoreController } from './adult-score.controller';
 import { AdultScoreService } from './adult-score.service';
 import { AdultScoreEntity } from './entities/adult-score.entity';
 import { CloseStatusAdultModule } from 'src/close-status/adult/close.status.adult.module';
+import { ImportantEventsVuxModule } from 'src/important-events-vux/important-events-vux.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { CloseStatusAdultModule } from 'src/close-status/adult/close.status.adul
     SelectedProblemAreaAdultModule,
     BackgroundAdultMetadataModule,
     CloseStatusAdultModule,
+    ImportantEventsVuxModule,
   ],
   providers: [AdultScoreService],
   controllers: [AdultScoreController],

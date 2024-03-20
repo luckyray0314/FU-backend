@@ -19,6 +19,10 @@ import { SelectedOtherOngoingEffortService } from 'src/background-adult-data/oth
 import { SelectedPreviousEffortService } from 'src/background-adult-data/previous-effort/selected-previous-effort.service';
 import { SelectedProblemAreaAdultService } from 'src/background-adult-data/problem-area/selected-problem-area.service';
 import { CloseStatusAdultService } from 'src/close-status/adult/close.status.adult.service';
+import { SelectedChangeLiveService } from 'src/important-events-vux/change-live/selected-change-live.service';
+import { SelectedChangeOverService } from 'src/important-events-vux/change-over/selected-change-over.service';
+import { SelectedInvestigationOutService } from 'src/important-events-vux/investigation-out/selected-investigation-out.service';
+import { SelectedOtherInitiativeService } from 'src/important-events-vux/other-initiative/selected-other-initiative.service';
 
 @Injectable()
 export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
@@ -36,6 +40,10 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
     public selectedProblemAreaAdultService: SelectedProblemAreaAdultService,
     public backgroundAdultMetadataService: BackgroundAdultMetadataService,
     public closeStatusAdultService: CloseStatusAdultService,
+    public selectedChangeLiveService: SelectedChangeLiveService,
+    public selectedChangeOverService: SelectedChangeOverService,
+    public selectedInvestigationOutService: SelectedInvestigationOutService,
+    public selectedOtherInitiativeService: SelectedOtherInitiativeService,
   ) {
     super(repo);
   }
@@ -262,6 +270,52 @@ export class AdultScoreService extends TypeOrmCrudService<AdultScoreEntity> {
               select: ['codeNumber'],
             });
           codeNumbers = problemAreaAdultResult.map(r => r.codeNumber);
+          break;
+        case 'changeLive':
+          const changeLiveResult = await this.selectedChangeLiveService.find({
+            where: {
+              codeNumber: In(codeNumbers),
+              changeLive: { id: In(ids) },
+            },
+            relations: ['changeLive'],
+            select: ['codeNumber'],
+          });
+          codeNumbers = changeLiveResult.map(r => r.codeNumber);
+          break;
+        case 'changeOver':
+          const changeOverResult = await this.selectedChangeOverService.find({
+            where: {
+              codeNumber: In(codeNumbers),
+              changeOver: { id: In(ids) },
+            },
+            relations: ['changeOver'],
+            select: ['codeNumber'],
+          });
+          codeNumbers = changeOverResult.map(r => r.codeNumber);
+          break;
+        case 'investigationOut':
+          const investigationOutResult =
+            await this.selectedInvestigationOutService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                investigationOut: { id: In(ids) },
+              },
+              relations: ['investigationOut'],
+              select: ['codeNumber'],
+            });
+          codeNumbers = investigationOutResult.map(r => r.codeNumber);
+          break;
+        case 'otherInitiative':
+          const otherInitiativeResult =
+            await this.selectedOtherInitiativeService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                otherInitiative: { id: In(ids) },
+              },
+              relations: ['otherInitiative'],
+              select: ['codeNumber'],
+            });
+          codeNumbers = otherInitiativeResult.map(r => r.codeNumber);
           break;
       }
     }
