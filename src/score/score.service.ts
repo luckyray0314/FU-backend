@@ -24,6 +24,13 @@ import { ScoreFilterDto } from './dto/score-filter.dto';
 import { ScoreDto } from './dto/score.dto';
 import { ScoreEntity } from './entities/score.entity';
 import { CloseStatusService } from 'src/close-status/child/close.status.child.service';
+import { SelectedOtherInterventionsStartedService } from 'src/important-events/otherinterventions-started/selected-otherinterventions-started.service';
+import { SelectedDuringInterventionService } from 'src/important-events/during-intervention/selected-during-intervention.service';
+import { SelectedDuringPastService } from 'src/important-events/during-past/selected-during-past.service';
+import { SelectedChildSchoolService } from 'src/important-events/child-school/selected-child-school.service';
+import { SelectedChangeAccomodationService } from 'src/important-events/change-accomodation/selected-change-accomodation.service';
+import { SelectedChangeEmploymentVh1Service } from 'src/important-events/change-employment-vh1/selected-change-employment-vh1.service';
+import { SelectedChangeEmploymentVh2Service } from 'src/important-events/change-employment-vh2/selected-change-employment-vh2.service';
 
 @Injectable()
 export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
@@ -37,8 +44,8 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
     public selectedEstablishedDiagnosesService: SelectedEstablishedDiagnosesService,
     public selectedFamilyConstellationService: SelectedFamilyConstellationService,
     public selectedInterpreterRequiredService: SelectedInterpreterRequiredService,
-    public selectedOtherInterventionsService: SelectedOtherInterventionsService,
     public selectedPreviousInterventionService: SelectedPreviousInterventionService,
+    public selectedOtherInterventionsService: SelectedOtherInterventionsService,
     public selectedProblemAreaService: SelectedProblemAreaService,
     public selectedReasonForUpdateService: SelectedReasonForUpdateService,
     public selectedSchoolUniformService: SelectedSchoolUniformService,
@@ -46,6 +53,13 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
     public selectedWhoParticipatesService: SelectedWhoParticipatesService,
     public backgroundMetadataService: BackgroundMetadataService,
     public closeStatusService: CloseStatusService,
+    public selectedOtherInterventionsStartedService: SelectedOtherInterventionsStartedService,
+    public selectedDuringInterventionService: SelectedDuringInterventionService,
+    public selectedDuringPastService: SelectedDuringPastService,
+    public selectedChildSchoolService: SelectedChildSchoolService,
+    public selectedChangeAccomodationService: SelectedChangeAccomodationService,
+    public selectedChangeEmploymentVh1Service: SelectedChangeEmploymentVh1Service,
+    public selectedChangeEmploymentVh2Service: SelectedChangeEmploymentVh2Service,
   ) {
     super(repo);
   }
@@ -356,6 +370,88 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
           });
           codeNumbers = participants.map(r => r.codeNumber);
           break;
+        case 'otherInterventionsStarted':
+          const otherInterventionsStartedResult =
+            await this.selectedOtherInterventionsStartedService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                otherInterventionsStarted: { id: In(ids) },
+              },
+              relations: ['otherInterventionsStarted'],
+              select: ['codeNumber'],
+            });
+          codeNumbers = otherInterventionsStartedResult.map(r => r.codeNumber);
+          break;
+        case 'duringIntervention':
+          const duringInterventionResult =
+            await this.selectedDuringInterventionService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                duringIntervention: { id: In(ids) },
+              },
+              relations: ['duringIntervention'],
+              select: ['codeNumber'],
+            });
+          codeNumbers = duringInterventionResult.map(r => r.codeNumber);
+          break;
+        case 'duringPast':
+          const duringPastResult = await this.selectedDuringPastService.find({
+            where: {
+              codeNumber: In(codeNumbers),
+              duringPast: { id: In(ids) },
+            },
+            relations: ['duringPast'],
+            select: ['codeNumber'],
+          });
+          codeNumbers = duringPastResult.map(r => r.codeNumber);
+          break;
+        case 'childSchool':
+          const childSchoolResult = await this.selectedChildSchoolService.find({
+            where: {
+              codeNumber: In(codeNumbers),
+              childSchool: { id: In(ids) },
+            },
+            relations: ['childSchool'],
+            select: ['codeNumber'],
+          });
+          codeNumbers = childSchoolResult.map(r => r.codeNumber);
+          break;
+        case 'changeAccomodation':
+          const changeAccomodationResult =
+            await this.selectedChangeAccomodationService.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                changeAccomodation: { id: In(ids) },
+              },
+              relations: ['changeAccomodation'],
+              select: ['codeNumber'],
+            });
+          codeNumbers = changeAccomodationResult.map(r => r.codeNumber);
+          break;
+        case 'changeEmploymentVh1':
+          const changeEmploymentVh1Result =
+            await this.selectedChangeEmploymentVh1Service.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                changeEmploymentVh1: { id: In(ids) },
+              },
+              relations: ['changeEmploymentVh1'],
+              select: ['codeNumber'],
+            });
+          codeNumbers = changeEmploymentVh1Result.map(r => r.codeNumber);
+          break;
+        case 'changeEmploymentVh2':
+          const changeEmploymentVh2Result =
+            await this.selectedChangeEmploymentVh2Service.find({
+              where: {
+                codeNumber: In(codeNumbers),
+                changeEmploymentVh2: { id: In(ids) },
+              },
+              relations: ['changeEmploymentVh2'],
+              select: ['codeNumber'],
+            });
+          codeNumbers = changeEmploymentVh2Result.map(r => r.codeNumber);
+          break;
       }
     }
 
@@ -375,7 +471,6 @@ export class ScoreService extends TypeOrmCrudService<ScoreEntity> {
       codeNumbers,
       payload.occasions,
     );
-
     return {
       numOfClients,
       ors,

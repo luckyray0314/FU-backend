@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Global, Module } from '@nestjs/common';
 import { ChildSchoolModule } from '../important-events/child-school/child-school.module';
 import { SelectedChildSchoolModule } from '../important-events/child-school/selected-child-school.module';
 import { DuringInterventionModule } from '../important-events/during-intervention/during-intervention.module';
@@ -16,6 +16,7 @@ import { SelectedChangeAccomodationModule } from './change-accomodation/selected
 import { SelectedChangeEmploymentVh1Module } from './change-employment-vh1/selected-change-employment-vh1.module';
 import { SelectedChangeEmploymentVh2Module } from './change-employment-vh2/selected-change-employment-vh2.module';
 
+@Global()
 @Module({
   imports: [
     OtherInterventionsStartedModule,
@@ -36,4 +37,4 @@ import { SelectedChangeEmploymentVh2Module } from './change-employment-vh2/selec
   providers: [ImportantEventsService],
   controllers: [ImportantEventsController],
 })
-export class ImportantEventsModule { }
+export class ImportantEventsModule {}

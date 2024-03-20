@@ -20,6 +20,14 @@ import { ScoreEntity } from './entities/score.entity';
 import { ScoreController } from './score.controller';
 import { ScoreService } from './score.service';
 import { CloseStatusModule } from 'src/close-status/child/close.status.child.module';
+import { ImportantEventsModule } from 'src/important-events/important-events.module';
+import { OtherInterventionsStartedModule } from 'src/important-events/otherinterventions-started/otherinterventions-started.module';
+import { DuringInterventionModule } from 'src/important-events/during-intervention/during-intervention.module';
+import { DuringPastModule } from 'src/important-events/during-past/during-past.module';
+import { ChildSchoolModule } from 'src/important-events/child-school/child-school.module';
+import { ChangeAccomodationModule } from 'src/important-events/change-accomodation/change-accomodation.module';
+import { ChangeEmploymentVh1Module } from 'src/important-events/change-employment-vh1/change-employment-vh1.module';
+import { ChangeEmploymentVh2Module } from 'src/important-events/change-employment-vh2/change-employment-vh2.module';
 
 @Module({
   imports: [
@@ -40,6 +48,14 @@ import { CloseStatusModule } from 'src/close-status/child/close.status.child.mod
     SelectedTypeOfEffortModule,
     SelectedWhoParticipatesModule,
     BackgroundMetadataModule,
+    OtherInterventionsStartedModule,
+    DuringInterventionModule,
+    DuringPastModule,
+    ChildSchoolModule,
+    ChangeAccomodationModule,
+    ChangeEmploymentVh1Module,
+    ChangeEmploymentVh2Module,
+    ImportantEventsModule,
     CloseStatusModule,
   ],
   providers: [ScoreService],
