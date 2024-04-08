@@ -285,6 +285,10 @@ export const establishDiagnoseSeedData = [
   'EstablishDiagnose.Alcohol',
   'EstablishDiagnose.Dyslexia',
   'EstablishDiagnose.Psychiatric',
+  'EstablishDiagnose.Schizophrenia',
+  'EstablishDiagnose.Psychosis',
+  'EstablishDiagnose.EIPS',
+  'EstablishDiagnose.Bipolar',
   'Other',
   'OtherText',
 ].map(data => ({ description: data }));

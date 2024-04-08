@@ -992,6 +992,15 @@ export class BackgroundDataService {
               ...closeStatusEntity,
               archivedCodeNumber,
             });
+          } else if (closeStatusEntity?.archivedCodeNumber?.includes('#')) {
+            archivedCodeNumber = `Ark-${generate(
+              codeGeneratorSize,
+              codeGeneratorChars,
+            )}`;
+            await this.closeStatusService.update(closeStatusEntity?.id, {
+              ...closeStatusEntity,
+              archivedCodeNumber,
+            });
           } else {
             archivedCodeNumber = closeStatusEntity?.archivedCodeNumber;
           }

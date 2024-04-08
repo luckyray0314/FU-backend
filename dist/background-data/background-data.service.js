@@ -459,6 +459,7 @@ let BackgroundDataService = class BackgroundDataService {
         const closeStatus = await this.closeStatusService.findAll();
         const backgroundMetadata = await this.backgroundMetadataService.findAll();
         const result = await Promise.all(closeStatus.map(async (closeStatusEntity, bgIndex) => {
+            var _a;
             const existBackgroundMetadata = backgroundMetadata === null || backgroundMetadata === void 0 ? void 0 : backgroundMetadata.find(item => (item === null || item === void 0 ? void 0 : item.codeNumber) == (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber));
             let surveyEntity = {
                 processor: closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.processor,
@@ -828,6 +829,10 @@ let BackgroundDataService = class BackgroundDataService {
                 dayjs().diff(existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date, 'month') > 12) {
                 let archivedCodeNumber = '';
                 if (!(closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.archivedCodeNumber)) {
+                    archivedCodeNumber = `Ark-${(0, rand_token_1.generate)(generator_const_1.codeGeneratorSize, generator_const_1.codeGeneratorChars)}`;
+                    await this.closeStatusService.update(closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.id, Object.assign(Object.assign({}, closeStatusEntity), { archivedCodeNumber }));
+                }
+                else if ((_a = closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.archivedCodeNumber) === null || _a === void 0 ? void 0 : _a.includes('#')) {
                     archivedCodeNumber = `Ark-${(0, rand_token_1.generate)(generator_const_1.codeGeneratorSize, generator_const_1.codeGeneratorChars)}`;
                     await this.closeStatusService.update(closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.id, Object.assign(Object.assign({}, closeStatusEntity), { archivedCodeNumber }));
                 }
