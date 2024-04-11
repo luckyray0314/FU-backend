@@ -39,6 +39,10 @@ export const otherInterventionsSeedData = [
   'OtherInterventions.YesStudentHealth',
   'OtherInterventions.YesMariaUngdom',
   'OtherInterventions.YesGroupActivities',
+  'OtherInterventions.YesBOOM',
+  'OtherInterventions.YesYouthReception',
+  'OtherInterventions.YesOtherInputHealthCare',
+  'OtherInterventions.YesOtherSocialServiceIntervention',
   'Other',
   'OtherText',
 ].map(data => ({ description: data }));
@@ -108,6 +112,7 @@ export const typeOfEffortSeedData = [
   'TypeOfEffort.KIBB',
   'TypeOfEffort.IntensiveSupport',
   'TypeOfEffort.ONE',
+  'TypeOfEffort.TheStairs',
 ].map(data => ({ description: data }));
 
 export const establishedDiagnosesSeedData = [
@@ -122,7 +127,8 @@ export const establishedDiagnosesSeedData = [
   'EstablishedDiagnoses.LanguageDisorder',
   'EstablishedDiagnoses.DefianceSyndrome',
   'EstablishedDiagnoses.Other',
-  'OtherText',
+  'EstablishedDiagnoses.Dyslexia',
+  'EstablishedDiagnoses.AnxietyProblems',
 ].map(data => ({ description: data }));
 
 export const schoolUniformSeedData = [
@@ -176,6 +182,8 @@ export const otherInterventionsStartedSeedData = [
   'OtherInterventionsStarted.YesOtherContribution',
   'OtherInterventionsStarted.Medication',
   'OtherInterventionsStarted.OtherEffort',
+  'OtherInterventionsStarted.MariaYouth',
+  'OtherInterventionsStarted.YouthReception',
 ].map(data => ({ description: data }));
 
 export const duringInterventionSeedData = [
@@ -185,7 +193,10 @@ export const duringInterventionSeedData = [
   'DuringIntervention.SchoolStaff',
   'DuringIntervention.StudentHealth',
   'DuringIntervention.MariaYouth',
+  'DuringIntervention.BUMM',
+  'DuringIntervention.YouthReception',
   'DuringIntervention.OtherPartWithinSocial',
+  'DuringIntervention.OtherPartOfHealthCare',
 ].map(data => ({ description: data }));
 
 export const duringPastSeedData = [
@@ -205,7 +216,7 @@ export const childSchoolSeedData = [
   'ChildSchool.TheChildHasChangedSchools',
   'ChildSchool.TheChildHasChangedSchoolForm',
   'ChildSchool.ThechildHasCtartedSpecialPrimarySchool',
-  'ChildSchool.TheChildHasFinishedSchool',
+  'ChildSchool.TheChildDoesNotHaveCompulsorySchooling',
 ].map(data => ({ description: data }));
 
 export const changeAccomodationSeedData = [
@@ -244,6 +255,7 @@ export const problemAreaAdultSeedData = [
   'ProblemAreaAdult.Crime',
   'ProblemAreaAdult.Gambling',
   'ProblemAreaAdult.Emotion',
+  'ProblemAreaAdult.Finances/Debts',
   'ProblemAreaAdult.Other',
   /* 'OtherText', */
 ].map(data => ({ description: data }));
@@ -269,6 +281,7 @@ export const employmentSeedData = [
   'Employment.ParentalLeave',
   'Employment.Students',
   'Employment.Unemployed',
+  'Employment.Pensioner',
 ].map(data => ({ description: data }));
 
 export const establishDiagnoseSeedData = [
@@ -298,6 +311,8 @@ export const familyConstellationAdultSeedData = [
   'FamilyConstellationAdult.Cohabitant',
   'FamilyConstellationAdult.Serbs',
   'FamilyConstellationAdult.OtherConstellation',
+  'FamilyConstellationAdult.Married',
+  'FamilyConstellationAdult.HasChildren',
 ].map(data => ({ description: data }));
 
 export const genderAdultSeedData = ['GenderAdult.Man', 'GenderAdult.Woman'].map(
@@ -331,6 +346,8 @@ export const previousEffortSeedData = [
   'PreviousEffort.MI',
   'PreviousEffort.BUP',
   'PreviousEffort.VAC',
+  'PreviousEffort.MariaYouth',
+  'PreviousEffort.YouthReception',
   'Other',
   'OtherText',
 ].map(data => ({ description: data }));

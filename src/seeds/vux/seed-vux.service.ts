@@ -645,44 +645,158 @@ export class SeedVuxService {
   //Background Data Vux
   async seedBackgroundDataVux(): Promise<void> {
     console.log(' Gender...');
-    await this.genderAdultRepository.delete({});
-    await this.genderAdultRepository.save(genderAdultSeedData);
+    /* await this.genderAdultRepository.delete({});
+    await this.genderAdultRepository.save(genderAdultSeedData); */
+    for (let index = 0; index < genderAdultSeedData.length; index++) {
+      const element = genderAdultSeedData[index];
+      const found = await this.genderAdultRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.genderAdultRepository.save(element);
+      }
+    }
 
     console.log(' Problem Area...');
-    await this.problemAreaAdultRepository.delete({});
-    await this.problemAreaAdultRepository.save(problemAreaAdultSeedData);
+    /* await this.problemAreaAdultRepository.delete({});
+    await this.problemAreaAdultRepository.save(problemAreaAdultSeedData); */
+    for (let index = 0; index < problemAreaAdultSeedData.length; index++) {
+      const element = problemAreaAdultSeedData[index];
+      const found = await this.problemAreaAdultRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.problemAreaAdultRepository.save(element);
+      }
+    }
 
     console.log(' Previous Effort...');
-    await this.previousEffortRepository.delete({});
-    await this.previousEffortRepository.save(previousEffortSeedData);
+    /* await this.previousEffortRepository.delete({});
+    await this.previousEffortRepository.save(previousEffortSeedData); */
+    for (let index = 0; index < previousEffortSeedData.length; index++) {
+      const element = previousEffortSeedData[index];
+      const found = await this.previousEffortRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.previousEffortRepository.save(element);
+      }
+    }
 
     console.log(' Other Ongoing Effort...');
-    await this.otherOngoingEffortRepository.delete({});
-    await this.otherOngoingEffortRepository.save(otherOngoingEffortSeedData);
+    /* await this.otherOngoingEffortRepository.delete({});
+    await this.otherOngoingEffortRepository.save(otherOngoingEffortSeedData); */
+    for (let index = 0; index < otherOngoingEffortSeedData.length; index++) {
+      const element = otherOngoingEffortSeedData[index];
+      const found = await this.otherOngoingEffortRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.otherOngoingEffortRepository.save(element);
+      }
+    }
 
     console.log(' Family Constellation Adult...');
-    await this.familyConstellationAdultRepository.save(
+    /* await this.familyConstellationAdultRepository.save(
       familyConstellationAdultSeedData,
-    );
+    ); */
+    for (
+      let index = 0;
+      index < familyConstellationAdultSeedData.length;
+      index++
+    ) {
+      const element = familyConstellationAdultSeedData[index];
+      const found = await this.familyConstellationAdultRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.familyConstellationAdultRepository.save(element);
+      }
+    }
 
     console.log(' Education Level...');
-    await this.educationLevelRepository.delete({});
-    await this.educationLevelRepository.save(educationLevelSeedData);
+    /* await this.educationLevelRepository.delete({});
+    await this.educationLevelRepository.save(educationLevelSeedData); */
+    for (let index = 0; index < educationLevelSeedData.length; index++) {
+      const element = educationLevelSeedData[index];
+      const found = await this.educationLevelRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.educationLevelRepository.save(element);
+      }
+    }
 
     console.log(' Employment...');
-    await this.employmentRepository.delete({});
-    await this.employmentRepository.save(employmentSeedData);
+    /* await this.employmentRepository.delete({});
+    await this.employmentRepository.save(employmentSeedData); */
+    for (let index = 0; index < employmentSeedData.length; index++) {
+      const element = employmentSeedData[index];
+      const found = await this.employmentRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.employmentRepository.save(element);
+      }
+    }
 
     console.log(' During Operation...');
-    await this.duringOperationRepository.delete({});
-    await this.duringOperationRepository.save(duringOperationSeedData);
+    /* await this.duringOperationRepository.delete({});
+    await this.duringOperationRepository.save(duringOperationSeedData); */
+    for (let index = 0; index < duringOperationSeedData.length; index++) {
+      const element = duringOperationSeedData[index];
+      const found = await this.duringOperationRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.duringOperationRepository.save(element);
+      }
+    }
 
     console.log(' Action Assignment...');
-    await this.actionAssignmentRepository.delete({});
-    await this.actionAssignmentRepository.save(actionAssignmentSeedData);
+    /* await this.actionAssignmentRepository.delete({});
+    await this.actionAssignmentRepository.save(actionAssignmentSeedData); */
+    for (let index = 0; index < actionAssignmentSeedData.length; index++) {
+      const element = actionAssignmentSeedData[index];
+      const found = await this.actionAssignmentRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.actionAssignmentRepository.save(element);
+      }
+    }
 
     console.log(' Establish Diagnoses...');
-    await this.establishDiagnoseRepository.delete({});
-    await this.establishDiagnoseRepository.save(establishDiagnoseSeedData);
+    /* await this.establishDiagnoseRepository.delete({});
+    await this.establishDiagnoseRepository.save(establishDiagnoseSeedData); */
+    for (let index = 0; index < establishDiagnoseSeedData.length; index++) {
+      const element = establishDiagnoseSeedData[index];
+      const found = await this.establishDiagnoseRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.establishDiagnoseRepository.save(element);
+      }
+    }
   }
 }

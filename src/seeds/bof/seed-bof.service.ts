@@ -2268,110 +2268,414 @@ export class SeedBofService {
   // follow up data
   async seedFollowUpData(): Promise<void> {
     console.log(' Intervention Period...');
-    await this.interventionPeriodRepository.delete({});
-    await this.interventionPeriodRepository.save(interventionPeriodSeedData);
+    /* await this.interventionPeriodRepository.delete({});
+    await this.interventionPeriodRepository.save(interventionPeriodSeedData); */
+    for (let index = 0; index < interventionPeriodSeedData.length; index++) {
+      const element = interventionPeriodSeedData[index];
+      const found = await this.interventionPeriodRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.interventionPeriodRepository.save(element);
+      }
+    }
 
     console.log(' Intervention Progress...');
-    await this.interventionProgressRepository.delete({});
+    /* await this.interventionProgressRepository.delete({});
     await this.interventionProgressRepository.save(
       interventionProgressSeedData,
-    );
+    ); */
+    for (let index = 0; index < interventionProgressSeedData.length; index++) {
+      const element = interventionProgressSeedData[index];
+      const found = await this.interventionProgressRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.interventionProgressRepository.save(element);
+      }
+    }
 
     console.log(' Reason For Termination...');
-    await this.reasonForTerminationRepository.delete({});
+    /* await this.reasonForTerminationRepository.delete({});
     await this.reasonForTerminationRepository.save(
       reasonForTerminationSeedData,
-    );
+    ); */
+    for (let index = 0; index < reasonForTerminationSeedData.length; index++) {
+      const element = reasonForTerminationSeedData[index];
+      const found = await this.reasonForTerminationRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.reasonForTerminationRepository.save(element);
+      }
+    }
 
     console.log(' Reason For Update...');
-    await this.reasonForUpdateRepository.delete({});
-    await this.reasonForUpdateRepository.save(reasonForUpdateSeedData);
+    /* await this.reasonForUpdateRepository.delete({});
+    await this.reasonForUpdateRepository.save(reasonForUpdateSeedData); */
+    for (let index = 0; index < reasonForUpdateSeedData.length; index++) {
+      const element = reasonForUpdateSeedData[index];
+      const found = await this.reasonForUpdateRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.reasonForUpdateRepository.save(element);
+      }
+    }
 
     console.log(' Time Consumption...');
-    await this.timeConsumptionRepository.delete({});
-    await this.timeConsumptionRepository.save(timeConsumptionSeedData);
+    /* await this.timeConsumptionRepository.delete({});
+    await this.timeConsumptionRepository.save(timeConsumptionSeedData); */
+    for (let index = 0; index < timeConsumptionSeedData.length; index++) {
+      const element = timeConsumptionSeedData[index];
+      const found = await this.timeConsumptionRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.timeConsumptionRepository.save(element);
+      }
+    }
   }
   // Important Events Bof
   async seedImportantEventBof(): Promise<void> {
     console.log(' During Intervention...');
-    await this.duringInterventionRepository.delete({});
-    await this.duringInterventionRepository.save(duringInterventionSeedData);
+    /* await this.duringInterventionRepository.delete({});
+    await this.duringInterventionRepository.save(duringInterventionSeedData); */
+    for (let index = 0; index < duringInterventionSeedData.length; index++) {
+      const element = duringInterventionSeedData[index];
+      const found = await this.duringInterventionRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.duringInterventionRepository.save(element);
+      }
+    }
 
     console.log(' During Past...');
-    await this.duringPastRepository.delete({});
-    await this.duringPastRepository.save(duringPastSeedData);
+    /* await this.duringPastRepository.delete({});
+    await this.duringPastRepository.save(duringPastSeedData); */
+    for (let index = 0; index < duringPastSeedData.length; index++) {
+      const element = duringPastSeedData[index];
+      const found = await this.duringPastRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.duringPastRepository.save(element);
+      }
+    }
 
     console.log(' Child School Repository...');
-    await this.childSchoolRepository.delete({});
-    await this.childSchoolRepository.save(childSchoolSeedData);
+    /* await this.childSchoolRepository.delete({});
+    await this.childSchoolRepository.save(childSchoolSeedData); */
+    for (let index = 0; index < childSchoolSeedData.length; index++) {
+      const element = childSchoolSeedData[index];
+      const found = await this.childSchoolRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.childSchoolRepository.save(element);
+      }
+    }
 
     console.log(' Change Accomodation...');
-    await this.changeAccomodationRepository.delete({});
+    /* await this.changeAccomodationRepository.delete({});
     const tmp = await this.changeAccomodationRepository.save(
       changeAccomodationSeedData,
-    );
+    ); */
+    for (let index = 0; index < changeAccomodationSeedData.length; index++) {
+      const element = changeAccomodationSeedData[index];
+      const found = await this.changeAccomodationRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.changeAccomodationRepository.save(element);
+      }
+    }
 
     console.log(' Change Employment Vh1...');
-    await this.changeEmploymentVh1Repository.delete({});
-    await this.changeEmploymentVh1Repository.save(changeEmploymentVh1SeedData);
+    /* await this.changeEmploymentVh1Repository.delete({});
+    await this.changeEmploymentVh1Repository.save(changeEmploymentVh1SeedData); */
+    for (let index = 0; index < changeEmploymentVh1SeedData.length; index++) {
+      const element = changeEmploymentVh1SeedData[index];
+      const found = await this.changeEmploymentVh1Repository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.changeEmploymentVh1Repository.save(element);
+      }
+    }
 
     console.log(' Change Employment Vh2...');
-    await this.changeEmploymentVh2Repository.delete({});
-    await this.changeEmploymentVh2Repository.save(changeEmploymentVh2SeedData);
+    /* await this.changeEmploymentVh2Repository.delete({});
+    await this.changeEmploymentVh2Repository.save(changeEmploymentVh2SeedData); */
+    for (let index = 0; index < changeEmploymentVh2SeedData.length; index++) {
+      const element = changeEmploymentVh2SeedData[index];
+      const found = await this.changeEmploymentVh2Repository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.changeEmploymentVh2Repository.save(element);
+      }
+    }
   }
   //Background Data Bof
   async seedBackgroundDataBof(): Promise<void> {
     await this.clearBofData();
     console.log(' Gender...');
-    await this.genderRepository.delete({});
-    await this.genderRepository.save(genderSeedData);
+    /* await this.genderRepository.delete({});
+    await this.genderRepository.save(genderSeedData); */
+    for (let index = 0; index < genderSeedData.length; index++) {
+      const element = genderSeedData[index];
+      const found = await this.genderRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.genderRepository.save(element);
+      }
+    }
+
     console.log(' Problem Area...');
-    await this.problemAreaRepository.delete({});
-    await this.problemAreaRepository.save(problemAreaSeedData);
+    /* await this.problemAreaRepository.delete({});
+    await this.problemAreaRepository.save(problemAreaSeedData); */
+    for (let index = 0; index < problemAreaSeedData.length; index++) {
+      const element = problemAreaSeedData[index];
+      const found = await this.problemAreaRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.problemAreaRepository.save(element);
+      }
+    }
+    
     console.log(' Previous Intervention...');
-    await this.previousInterventionRepository.delete({});
+    /* await this.previousInterventionRepository.delete({});
     await this.previousInterventionRepository.save(
       previousInterventionSeedData,
-    );
+    ); */
+    for (let index = 0; index < previousInterventionSeedData.length; index++) {
+      const element = previousInterventionSeedData[index];
+      const found = await this.previousInterventionRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.previousInterventionRepository.save(element);
+      }
+    }
+    
     console.log(' Other Interventions...');
-    await this.otherInterventionsRepository.delete({});
-    await this.otherInterventionsRepository.save(otherInterventionsSeedData);
+    /* await this.otherInterventionsRepository.delete({});
+    await this.otherInterventionsRepository.save(otherInterventionsSeedData); */
+    for (let index = 0; index < otherInterventionsSeedData.length; index++) {
+      const element = otherInterventionsSeedData[index];
+      const found = await this.otherInterventionsRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.otherInterventionsRepository.save(element);
+      }
+    }
+    
     console.log(' Family Constellation...');
-    await this.familyConstellationRepository.delete({});
-    await this.familyConstellationRepository.save(familyConstellationSeedData);
+    /* await this.familyConstellationRepository.delete({});
+    await this.familyConstellationRepository.save(familyConstellationSeedData); */
+    for (let index = 0; index < familyConstellationSeedData.length; index++) {
+      const element = familyConstellationSeedData[index];
+      const found = await this.familyConstellationRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.familyConstellationRepository.save(element);
+      }
+    }
+    
     console.log(' Who Participates...');
-    await this.whoParticipatesRepository.delete({});
-    await this.whoParticipatesRepository.save(whoParticipatesSeedData);
+    /* await this.whoParticipatesRepository.delete({});
+    await this.whoParticipatesRepository.save(whoParticipatesSeedData); */
+    for (let index = 0; index < whoParticipatesSeedData.length; index++) {
+      const element = whoParticipatesSeedData[index];
+      const found = await this.whoParticipatesRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.whoParticipatesRepository.save(element);
+      }
+    }
+    
     console.log(' Education Vh1...');
-    await this.educationVh1Repository.delete({});
-    await this.educationVh1Repository.save(educationVh1SeedData);
+    /* await this.educationVh1Repository.delete({});
+    await this.educationVh1Repository.save(educationVh1SeedData); */
+    for (let index = 0; index < educationVh1SeedData.length; index++) {
+      const element = educationVh1SeedData[index];
+      const found = await this.educationVh1Repository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.educationVh1Repository.save(element);
+      }
+    }
+    
     console.log(' Education Vh2...');
-    await this.educationVh2Repository.delete({});
-    await this.educationVh2Repository.save(educationVh2SeedData);
+    /* await this.educationVh2Repository.delete({});
+    await this.educationVh2Repository.save(educationVh2SeedData); */
+    for (let index = 0; index < educationVh2SeedData.length; index++) {
+      const element = educationVh2SeedData[index];
+      const found = await this.educationVh2Repository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.educationVh2Repository.save(element);
+      }
+    }
+    
     console.log(' Employment Vh1...');
-    await this.employmentVh1Repository.delete({});
-    await this.employmentVh1Repository.save(employmentVh1SeedData);
+    /* await this.employmentVh1Repository.delete({});
+    await this.employmentVh1Repository.save(employmentVh1SeedData); */
+    for (let index = 0; index < employmentVh1SeedData.length; index++) {
+      const element = employmentVh1SeedData[index];
+      const found = await this.employmentVh1Repository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.employmentVh1Repository.save(element);
+      }
+    }
+    
     console.log(' Employment Vh2...');
-    await this.employmentVh2Repository.delete({});
-    await this.employmentVh2Repository.save(employmentVh2SeedData);
+    /* await this.employmentVh2Repository.delete({});
+    await this.employmentVh2Repository.save(employmentVh2SeedData); */
+    for (let index = 0; index < employmentVh2SeedData.length; index++) {
+      const element = employmentVh2SeedData[index];
+      const found = await this.employmentVh2Repository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.employmentVh2Repository.save(element);
+      }
+    }
+    
     console.log(' Interpreter Required...');
-    await this.interpreterRequiredRepository.delete({});
-    await this.interpreterRequiredRepository.save(interpreterRequiredSeedData);
+    /* await this.interpreterRequiredRepository.delete({});
+    await this.interpreterRequiredRepository.save(interpreterRequiredSeedData); */
+    for (let index = 0; index < interpreterRequiredSeedData.length; index++) {
+      const element = interpreterRequiredSeedData[index];
+      const found = await this.interpreterRequiredRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.interpreterRequiredRepository.save(element);
+      }
+    }
+    
     console.log(' Type Of Effort...');
-    await this.typeOfEffortRepository.delete({});
-    await this.typeOfEffortRepository.save(typeOfEffortSeedData);
+    /* await this.typeOfEffortRepository.delete({});
+    await this.typeOfEffortRepository.save(typeOfEffortSeedData); */
+    for (let index = 0; index < typeOfEffortSeedData.length; index++) {
+      const element = typeOfEffortSeedData[index];
+      const found = await this.typeOfEffortRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.typeOfEffortRepository.save(element);
+      }
+    }
+    
     console.log(' Established Diagnoses...');
-    await this.establishedDiagnosesRepository.delete({});
+    /* await this.establishedDiagnosesRepository.delete({});
     await this.establishedDiagnosesRepository.save(
       establishedDiagnosesSeedData,
-    );
+    ); */
+    for (let index = 0; index < establishedDiagnosesSeedData.length; index++) {
+      const element = establishedDiagnosesSeedData[index];
+      const found = await this.establishedDiagnosesRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.establishedDiagnosesRepository.save(element);
+      }
+    }
+    
     console.log(' School Uniform...');
-    await this.schoolUniformRepository.delete({});
-    await this.schoolUniformRepository.save(schoolUniformSeedData);
+    /* await this.schoolUniformRepository.delete({});
+    await this.schoolUniformRepository.save(schoolUniformSeedData); */
+    for (let index = 0; index < schoolUniformSeedData.length; index++) {
+      const element = schoolUniformSeedData[index];
+      const found = await this.schoolUniformRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.schoolUniformRepository.save(element);
+      }
+    }
+    
     console.log(' Other Interventions Started...');
-    await this.otherInterventionsStartedRepository.delete({});
+    /* await this.otherInterventionsStartedRepository.delete({});
     await this.otherInterventionsStartedRepository.save(
       otherInterventionsStartedSeedData,
-    );
+    ); */
+    for (
+      let index = 0;
+      index < otherInterventionsStartedSeedData.length;
+      index++
+    ) {
+      const element = otherInterventionsStartedSeedData[index];
+      const found = await this.otherInterventionsStartedRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.otherInterventionsStartedRepository.save(element);
+      }
+    }
   }
 }

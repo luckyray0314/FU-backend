@@ -46,8 +46,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   setup(app);
-  //await seedBof(app);
-  //await seedVux(app);
+  await seedBof(app);
+  await seedVux(app);
 
   await app.listen(VALLENTUNA_SURVEY_BACKEND_PORT);
 }
