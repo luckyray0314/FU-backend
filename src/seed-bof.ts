@@ -6,9 +6,9 @@ export async function seedBof(
 ): Promise<INestApplication> {
   const seedService = app.get<SeedBofService>(SeedBofService);
 
-  /* console.log('Start clear data bof');
+  console.log('Start clear data bof');
   await seedService.clearBofData();
-  console.log('End clear data bof'); */
+  console.log('End clear data bof');
 
   console.log('Start background data bof seed');
   await seedService.seedBackgroundDataBof();
@@ -22,9 +22,9 @@ export async function seedBof(
   await seedService.seedImportantEventBof();
   console.log('End important event bof seed');
 
-  /* console.log('Start bof seed');
+  console.log('Start bof seed');
   await seedService.seedBofData();
-  console.log('End bof seed'); */
+  console.log('End bof seed');
 
   return app;
 }
