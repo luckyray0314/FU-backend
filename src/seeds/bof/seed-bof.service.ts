@@ -2442,7 +2442,6 @@ export class SeedBofService {
   }
   //Background Data Bof
   async seedBackgroundDataBof(): Promise<void> {
-    await this.clearBofData();
     console.log(' Gender...');
     /* await this.genderRepository.delete({});
     await this.genderRepository.save(genderSeedData); */
