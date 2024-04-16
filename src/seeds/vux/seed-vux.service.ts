@@ -627,20 +627,64 @@ export class SeedVuxService {
   //Important Events Vux
   async seedImportantEventVux(): Promise<void> {
     console.log(' Change Over...');
-    await this.changeOverRepository.delete({});
-    await this.changeOverRepository.save(changeOverSeedData);
+    /* await this.changeOverRepository.delete({});
+    await this.changeOverRepository.save(changeOverSeedData); */
+    for (let index = 0; index < changeOverSeedData.length; index++) {
+      const element = changeOverSeedData[index];
+      const found = await this.changeOverRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.changeOverRepository.save(element);
+      }
+    }
 
     console.log(' Change Live...');
-    await this.changeLiveRepository.delete({});
-    await this.changeLiveRepository.save(changeLiveSeedData);
+    /* await this.changeLiveRepository.delete({});
+    await this.changeLiveRepository.save(changeLiveSeedData); */
+    for (let index = 0; index < changeLiveSeedData.length; index++) {
+      const element = changeLiveSeedData[index];
+      const found = await this.changeLiveRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.changeLiveRepository.save(element);
+      }
+    }
 
     console.log(' Investigation Out...');
-    await this.investigationOutRepository.delete({});
-    await this.investigationOutRepository.save(investigationOutSeedData);
+    /* await this.investigationOutRepository.delete({});
+    await this.investigationOutRepository.save(investigationOutSeedData); */
+    for (let index = 0; index < investigationOutSeedData.length; index++) {
+      const element = investigationOutSeedData[index];
+      const found = await this.investigationOutRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.investigationOutRepository.save(element);
+      }
+    }
 
     console.log(' Other Initiative...');
-    await this.otherInitiativeRepository.delete({});
-    await this.otherInitiativeRepository.save(otherInitiativeSeedData);
+    /* await this.otherInitiativeRepository.delete({});
+    await this.otherInitiativeRepository.save(otherInitiativeSeedData); */
+    for (let index = 0; index < otherInitiativeSeedData.length; index++) {
+      const element = otherInitiativeSeedData[index];
+      const found = await this.otherInitiativeRepository.findOne({
+        where: {
+          description: element?.description,
+        },
+      });
+      if (!found?.id) {
+        await this.otherInitiativeRepository.save(element);
+      }
+    }
   }
   //Background Data Vux
   async seedBackgroundDataVux(): Promise<void> {
