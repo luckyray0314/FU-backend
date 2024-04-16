@@ -46,6 +46,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   setup(app);
+  
   await seedBof(app);
   await seedVux(app);
 
