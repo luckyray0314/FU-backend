@@ -373,6 +373,18 @@ let BackgroundDataService = class BackgroundDataService {
         }
     }
     async get(codeNumber) {
+        var _a;
+        const closeStatus = await ((_a = this.closeStatusService) === null || _a === void 0 ? void 0 : _a.findOne({
+            where: {
+                codeNumber,
+            },
+        }));
+        const participants = [
+            (closeStatus === null || closeStatus === void 0 ? void 0 : closeStatus.isChild) == 'true' ? 0 : -1,
+            (closeStatus === null || closeStatus === void 0 ? void 0 : closeStatus.isGuardianOne) == 'true' ? 1 : -1,
+            (closeStatus === null || closeStatus === void 0 ? void 0 : closeStatus.isGuardianTwo) == 'true' ? 2 : -1,
+        ];
+        console.log('closeStatus', closeStatus);
         const metadata = await this.backgroundMetadataService.findOne({
             where: { codeNumber: codeNumber },
         });
@@ -452,7 +464,9 @@ let BackgroundDataService = class BackgroundDataService {
                 schoolUniform: selectedSchoolUniformEntities.map(data => data.schoolUniform.id),
                 typeOfEffort: selectedTypeOfEffortEntities.map(data => data.typeOfEffort.id),
                 whoParticipates: selectedWhoParticipatesEntities.map(data => data.other || data.whoParticipates.id),
+                participants,
             } });
+        console.log('result', result);
         return result;
     }
     async getCaseList() {
@@ -483,13 +497,9 @@ let BackgroundDataService = class BackgroundDataService {
                 dayjs().diff(existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.date, 'month') <= 12) {
                 surveyEntity['codeNumber'] = closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.codeNumber;
                 surveyEntity['isGuardianOne'] =
-                    (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isGuardianOne) === 'true'
-                        ? true
-                        : false;
+                    (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isGuardianOne) === 'true' ? true : false;
                 surveyEntity['isGuardianTwo'] =
-                    (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isGuardianTwo) === 'true'
-                        ? true
-                        : false;
+                    (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isGuardianTwo) === 'true' ? true : false;
                 surveyEntity['isChild'] = (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isChild) || true;
                 const scoreEntities = await this.scoreService.find({
                     where: { codeNumber: closeStatusEntity.codeNumber },

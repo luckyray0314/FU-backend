@@ -400,6 +400,22 @@ export class BackgroundDataService {
   }
 
   async get(codeNumber: string): Promise<BackgroundDataDto> {
+    const closeStatus = await this.closeStatusService?.findOne({
+      where: {
+        codeNumber,
+      },
+    });
+    /* 
+    Participants ID
+    0 => Child
+    1 => Guardian 1
+    2 => Guardian 2
+    */
+    const participants = [
+      closeStatus?.isChild == 'true' ? 0 : -1,
+      closeStatus?.isGuardianOne == 'true' ? 1 : -1,
+      closeStatus?.isGuardianTwo == 'true' ? 2 : -1,
+    ];
     const metadata = await this.backgroundMetadataService.findOne({
       where: { codeNumber: codeNumber },
     });
@@ -524,9 +540,10 @@ export class BackgroundDataService {
         whoParticipates: selectedWhoParticipatesEntities.map(
           data => data.other || data.whoParticipates.id,
         ),
+        participants,
       },
     };
-
+    
     return result;
   }
 
@@ -563,14 +580,10 @@ export class BackgroundDataService {
           surveyEntity['codeNumber'] = closeStatusEntity?.codeNumber;
           surveyEntity['isGuardianOne'] =
             /* closeStatusEntity?.isGuardianOne == null || */
-            closeStatusEntity?.isGuardianOne === 'true'
-              ? true
-              : false;
+            closeStatusEntity?.isGuardianOne === 'true' ? true : false;
           surveyEntity['isGuardianTwo'] =
             /* closeStatusEntity?.isGuardianTwo == null || */
-            closeStatusEntity?.isGuardianTwo === 'true'
-              ? true
-              : false;
+            closeStatusEntity?.isGuardianTwo === 'true' ? true : false;
           surveyEntity['isChild'] = closeStatusEntity?.isChild || true;
           const scoreEntities = await this.scoreService.find({
             where: { codeNumber: closeStatusEntity.codeNumber },
