@@ -111,7 +111,7 @@ export const typeOfEffortSeedData = [
   'TypeOfEffort.IndividualComet',
   'TypeOfEffort.KIBB',
   'TypeOfEffort.IntensiveSupport',
-  'TypeOfEffort.ONE',
+  // 'TypeOfEffort.ONE',
   'TypeOfEffort.TheStairs',
 ].map(data => ({ description: data }));
 
