@@ -1,3 +1,4 @@
+import '@suncin/dotenv'
 export const VALLENTUNA_SURVEY_BACKEND_APP_SECRET =
   process.env.VALLENTUNA_SURVEY_BACKEND_APP_SECRET;
 export const VALLENTUNA_SURVEY_BACKEND_SSL_MODE =

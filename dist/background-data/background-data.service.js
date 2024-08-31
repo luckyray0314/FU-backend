@@ -384,7 +384,6 @@ let BackgroundDataService = class BackgroundDataService {
             (closeStatus === null || closeStatus === void 0 ? void 0 : closeStatus.isGuardianOne) == 'true' ? 1 : -1,
             (closeStatus === null || closeStatus === void 0 ? void 0 : closeStatus.isGuardianTwo) == 'true' ? 2 : -1,
         ];
-        console.log('closeStatus', closeStatus);
         const metadata = await this.backgroundMetadataService.findOne({
             where: { codeNumber: codeNumber },
         });
@@ -466,7 +465,6 @@ let BackgroundDataService = class BackgroundDataService {
                 whoParticipates: selectedWhoParticipatesEntities.map(data => data.other || data.whoParticipates.id),
                 participants,
             } });
-        console.log('result', result);
         return result;
     }
     async getCaseList() {
@@ -490,7 +488,11 @@ let BackgroundDataService = class BackgroundDataService {
                         (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isGuardianTwo) === 'true'
                         ? true
                         : false;
-                surveyEntity['isChild'] = true;
+                surveyEntity['isChild'] =
+                    (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isChild) == null ||
+                        (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isChild) === 'true'
+                        ? true
+                        : false;
                 surveyEntity['status'] = survey_status_1.SurveyStatus.Cancelled;
             }
             else if ((existBackgroundMetadata === null || existBackgroundMetadata === void 0 ? void 0 : existBackgroundMetadata.codeNumber) &&
@@ -500,7 +502,8 @@ let BackgroundDataService = class BackgroundDataService {
                     (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isGuardianOne) === 'true' ? true : false;
                 surveyEntity['isGuardianTwo'] =
                     (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isGuardianTwo) === 'true' ? true : false;
-                surveyEntity['isChild'] = (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isChild) || true;
+                surveyEntity['isChild'] =
+                    (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isChild) === 'true' ? true : false;
                 const scoreEntities = await this.scoreService.find({
                     where: { codeNumber: closeStatusEntity.codeNumber },
                 });
@@ -639,6 +642,86 @@ let BackgroundDataService = class BackgroundDataService {
                         },
                     };
                 }
+                else if (!(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isChild) &&
+                    (surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianOne) &&
+                    (surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianTwo)) {
+                    maxParticipates = 2;
+                    surveyEntity['history'] = {
+                        zeroMonth: {
+                            date: details[0].date,
+                            statusInDetail: {
+                                careGiver1: details[0].statuses[1],
+                                careGiver2: details[0].statuses[2],
+                            },
+                        },
+                        sixMonths: {
+                            date: details[1].date,
+                            statusInDetail: {
+                                careGiver1: details[1].statuses[1],
+                                careGiver2: details[1].statuses[2],
+                            },
+                        },
+                        twelveMonths: {
+                            date: details[2].date,
+                            statusInDetail: {
+                                careGiver1: details[2].statuses[1],
+                                careGiver2: details[2].statuses[2],
+                            },
+                        },
+                    };
+                }
+                else if (!(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isChild) &&
+                    (surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianOne) &&
+                    !(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianTwo)) {
+                    maxParticipates = 1;
+                    surveyEntity['history'] = {
+                        zeroMonth: {
+                            date: details[0].date,
+                            statusInDetail: {
+                                careGiver1: details[0].statuses[1],
+                            },
+                        },
+                        sixMonths: {
+                            date: details[1].date,
+                            statusInDetail: {
+                                careGiver1: details[1].statuses[1],
+                            },
+                        },
+                        twelveMonths: {
+                            date: details[2].date,
+                            statusInDetail: {
+                                careGiver1: details[2].statuses[1],
+                            },
+                        },
+                    };
+                }
+                else if (!(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isChild) &&
+                    !(surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianOne) &&
+                    (surveyEntity === null || surveyEntity === void 0 ? void 0 : surveyEntity.isGuardianTwo)) {
+                    maxParticipates = 1;
+                    surveyEntity['history'] = {
+                        zeroMonth: {
+                            date: details[0].date,
+                            statusInDetail: {
+                                careGiver2: details[0].statuses[2],
+                            },
+                        },
+                        sixMonths: {
+                            date: details[1].date,
+                            statusInDetail: {
+                                child: details[1].statuses[0],
+                                careGiver2: details[1].statuses[2],
+                            },
+                        },
+                        twelveMonths: {
+                            date: details[2].date,
+                            statusInDetail: {
+                                child: details[2].statuses[0],
+                                careGiver2: details[2].statuses[2],
+                            },
+                        },
+                    };
+                }
                 else {
                     maxParticipates = 3;
                     surveyEntity['history'] = {
@@ -720,24 +803,19 @@ let BackgroundDataService = class BackgroundDataService {
                     caseStatus = survey_status_1.SurveyStatus.Clear;
                 }
                 else if (details[0].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
-                    .length > 0 ||
+                    .length >= maxParticipates ||
                     details[1].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
-                        .length > 0 ||
+                        .length >= maxParticipates ||
                     details[2].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
-                        .length > 0) {
+                        .length >= maxParticipates) {
                     caseStatus = survey_status_1.SurveyStatus.Loss;
                 }
                 else {
                     caseStatus = survey_status_1.SurveyStatus.Coming;
                 }
-                surveyEntity['status'] = (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.status)
-                    ? `${caseStatus} (${survey_status_1.SurveyStatus.Incomplete})`
-                    : caseStatus;
+                surveyEntity['status'] = (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.status) === 'false' ? survey_status_1.SurveyStatus.Coming : caseStatus;
                 surveyEntity['isClosed'] =
-                    (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isClosed) === 'true' ||
-                        caseStatus === survey_status_1.SurveyStatus.Loss
-                        ? true
-                        : false;
+                    (closeStatusEntity === null || closeStatusEntity === void 0 ? void 0 : closeStatusEntity.isClosed) === 'true' ? true : false;
                 surveyEntity['signal'] = signal;
                 surveyEntity['nextSurvey'] = nextSurvey;
                 surveyEntity['missedFields'] = '';

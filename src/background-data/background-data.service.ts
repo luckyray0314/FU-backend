@@ -56,6 +56,7 @@ import {
   codeGeneratorChars,
   codeGeneratorSize,
 } from 'src/core/constants/generator.const';
+import { log } from 'console';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Docxtemplater = require('docxtemplater');
@@ -571,7 +572,12 @@ export class BackgroundDataService {
             closeStatusEntity?.isGuardianTwo === 'true'
               ? true
               : false;
-          surveyEntity['isChild'] = true;
+          // surveyEntity['isChild'] = true;
+          surveyEntity['isChild'] =
+            closeStatusEntity?.isChild == null ||
+            closeStatusEntity?.isChild === 'true'
+              ? true
+              : false;
           surveyEntity['status'] = SurveyStatus.Cancelled;
         } else if (
           existBackgroundMetadata?.codeNumber &&
@@ -584,7 +590,10 @@ export class BackgroundDataService {
           surveyEntity['isGuardianTwo'] =
             /* closeStatusEntity?.isGuardianTwo == null || */
             closeStatusEntity?.isGuardianTwo === 'true' ? true : false;
-          surveyEntity['isChild'] = closeStatusEntity?.isChild || true;
+          // surveyEntity['isChild'] = closeStatusEntity?.isChild || true;
+          surveyEntity['isChild'] =
+            // closeStatusEntity?.isChild == null ||
+            closeStatusEntity?.isChild === 'true' ? true : false;
           const scoreEntities = await this.scoreService.find({
             where: { codeNumber: closeStatusEntity.codeNumber },
           });
@@ -757,6 +766,92 @@ export class BackgroundDataService {
                 },
               },
             };
+          } else if (
+            !surveyEntity?.isChild &&
+            surveyEntity?.isGuardianOne &&
+            surveyEntity?.isGuardianTwo
+          ) {
+            // Only Guardian One and Guardian Two
+            maxParticipates = 2;
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  careGiver1: details[0].statuses[1],
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  careGiver1: details[1].statuses[1],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  careGiver1: details[2].statuses[1],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
+          } else if (
+            !surveyEntity?.isChild &&
+            surveyEntity?.isGuardianOne &&
+            !surveyEntity?.isGuardianTwo
+          ) {
+            // Only Guardian One
+            maxParticipates = 1;
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  careGiver1: details[0].statuses[1],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  careGiver1: details[1].statuses[1],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  careGiver1: details[2].statuses[1],
+                },
+              },
+            };
+          } else if (
+            !surveyEntity?.isChild &&
+            !surveyEntity?.isGuardianOne &&
+            surveyEntity?.isGuardianTwo
+          ) {
+            // Only Guardian Two
+            maxParticipates = 1;
+            surveyEntity['history'] = {
+              zeroMonth: {
+                date: details[0].date,
+                statusInDetail: {
+                  careGiver2: details[0].statuses[2],
+                },
+              },
+              sixMonths: {
+                date: details[1].date,
+                statusInDetail: {
+                  child: details[1].statuses[0],
+                  careGiver2: details[1].statuses[2],
+                },
+              },
+              twelveMonths: {
+                date: details[2].date,
+                statusInDetail: {
+                  child: details[2].statuses[0],
+                  careGiver2: details[2].statuses[2],
+                },
+              },
+            };
           } else {
             maxParticipates = 3;
             surveyEntity['history'] = {
@@ -786,6 +881,7 @@ export class BackgroundDataService {
               },
             };
           }
+
           let nextSurvey = '';
           let signal = '';
           if (
@@ -859,6 +955,8 @@ export class BackgroundDataService {
               }
             }
           }
+          // if(existBackgroundMetadata?.codeNumber == 'Bof2024-236')
+          //   console.log("hello----------------------", details, maxParticipates);
           let caseStatus: string = '';
           if (
             details[0].statuses.filter(status => status === SurveyStatus.Clear)
@@ -871,24 +969,29 @@ export class BackgroundDataService {
             caseStatus = SurveyStatus.Clear;
           } else if (
             details[0].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0 ||
+              .length >= maxParticipates ||
             details[1].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0 ||
+              .length >= maxParticipates ||
             details[2].statuses.filter(status => status === SurveyStatus.Loss)
-              .length > 0
+              .length >= maxParticipates
           ) {
             caseStatus = SurveyStatus.Loss;
           } else {
             caseStatus = SurveyStatus.Coming;
           }
-          surveyEntity['status'] = closeStatusEntity?.status
-            ? `${caseStatus} (${SurveyStatus.Incomplete})`
-            : caseStatus;
+          
+          
+          
+          surveyEntity['status'] = closeStatusEntity?.status === 'false' ? SurveyStatus.Coming : caseStatus;
+          // surveyEntity['status'] = closeStatusEntity?.status 
+          //   ? `${caseStatus} (${SurveyStatus.Incomplete})`
+          //   : caseStatus;
           surveyEntity['isClosed'] =
-            closeStatusEntity?.isClosed === 'true' ||
-            caseStatus === SurveyStatus.Loss
-              ? true
-              : false;
+            closeStatusEntity?.isClosed === 'true' ? true : false;
+            // closeStatusEntity?.isClosed === 'true' ||
+            // caseStatus === SurveyStatus.Loss
+            //   ? true
+            //   : false;
           surveyEntity['signal'] = signal;
           surveyEntity['nextSurvey'] = nextSurvey;
           surveyEntity['missedFields'] = '';
@@ -919,6 +1022,7 @@ export class BackgroundDataService {
           } else {
             archivedCodeNumber = closeStatusEntity?.archivedCodeNumber;
           }
+
           surveyEntity['codeNumber'] = archivedCodeNumber;
           surveyEntity['isGuardianOne'] =
             closeStatusEntity?.isGuardianOne == null ||
@@ -1200,6 +1304,7 @@ export class BackgroundDataService {
               },
             };
           }
+
           let nextSurvey = '';
           let signal = '';
           surveyEntity['isClosed'] =

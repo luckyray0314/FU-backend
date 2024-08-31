@@ -24,14 +24,14 @@ export const dataSourceOptions: DataSourceOptions = {
   // ],
   migrationsRun: false,
   synchronize: true,
-  extra: {
-    ssl:
-      VALLENTUNA_SURVEY_BACKEND_SSL_MODE === 'require'
-        ? {
-            rejectUnauthorized: false,
-          }
-        : false,
-  },
+  // extra: {
+  //   ssl:
+  //     VALLENTUNA_SURVEY_BACKEND_SSL_MODE === 'require'
+  //       ? {
+  //           rejectUnauthorized: false,
+  //         }
+  //       : false,
+  // },
 };
 
 export const appDataSource = new DataSource(dataSourceOptions);
