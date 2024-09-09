@@ -68,13 +68,13 @@ export class ImportantEventsService {
     const result: ImportantEventsDataDto = {
       codeNumber,
       formDataByEntityName: {
-        otherInterventionsStarted: selectedOtherInterventionsStartedEntities.map(data => data.otherInterventionsStarted.id),
-        duringIntervention: selectedDuringInterventionEntities.map(data => data.duringIntervention.id),
-        duringPast: selectedDuringPastEntities.map(data => data.duringPast.id),
-        childSchool: selectedChildSchoolEntities.map(data => data.childSchool.id),
-        changeAccomodation: selectedChangeAccomodationEntities.map(data => data.changeAccomodation.id),
-        changeEmploymentVh1: selectedChangeEmploymentVh1Entities.map(data => data.changeEmploymentVh1.id),
-        changeEmploymentVh2: selectedChangeEmploymentVh2Entities.map(data => data.changeEmploymentVh2.id),
+        otherInterventionsStarted: selectedOtherInterventionsStartedEntities.map(data => data.otherInterventionsStarted?.id),
+        duringIntervention: selectedDuringInterventionEntities.map(data => data.duringIntervention?.id),
+        duringPast: selectedDuringPastEntities.map(data => data.duringPast?.id),
+        childSchool: selectedChildSchoolEntities.map(data => data.childSchool?.id),
+        changeAccomodation: selectedChangeAccomodationEntities.map(data => data.changeAccomodation?.id),
+        changeEmploymentVh1: selectedChangeEmploymentVh1Entities.map(data => data.changeEmploymentVh1?.id),
+        changeEmploymentVh2: selectedChangeEmploymentVh2Entities.map(data => data.changeEmploymentVh2?.id),
       }
     };
     return result;

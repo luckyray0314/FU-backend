@@ -455,14 +455,14 @@ let BackgroundDataService = class BackgroundDataService {
                 employmentVh2: selectedEmploymentVh2Entities.map(data => data.employmentVh2.id),
                 establishedDiagnoses: selectedEstablishedDiagnosesEntities.map(data => data.other || data.establishedDiagnoses.id),
                 familyConstellation: selectedFamilyConstellationEntities.map(data => data.other || data.familyConstellation.id),
-                interpreterRequired: selectedInterpreterRequiredEntities.map(data => data.interpreterRequired.id),
-                otherInterventions: selectedOtherInterventionsEntities.map(data => data.other || data.otherInterventions.id),
-                previousIntervention: selectedPreviousInterventionEntities.map(data => data.other || data.previousIntervention.id),
-                problemArea: selectedProblemAreaEntities.map(data => data.other || data.problemArea.id),
-                reasonForUpdate: selectedReasonForUpdateEntities.map(data => data.reasonForUpdate.id),
-                schoolUniform: selectedSchoolUniformEntities.map(data => data.schoolUniform.id),
-                typeOfEffort: selectedTypeOfEffortEntities.map(data => data.typeOfEffort.id),
-                whoParticipates: selectedWhoParticipatesEntities.map(data => data.other || data.whoParticipates.id),
+                interpreterRequired: selectedInterpreterRequiredEntities.map(data => { var _a; return (_a = data.interpreterRequired) === null || _a === void 0 ? void 0 : _a.id; }),
+                otherInterventions: selectedOtherInterventionsEntities.map(data => { var _a; return data.other || ((_a = data.otherInterventions) === null || _a === void 0 ? void 0 : _a.id); }),
+                previousIntervention: selectedPreviousInterventionEntities.map(data => { var _a; return data.other || ((_a = data.previousIntervention) === null || _a === void 0 ? void 0 : _a.id); }),
+                problemArea: selectedProblemAreaEntities.map(data => { var _a; return data.other || ((_a = data.problemArea) === null || _a === void 0 ? void 0 : _a.id); }),
+                reasonForUpdate: selectedReasonForUpdateEntities.map(data => { var _a; return (_a = data.reasonForUpdate) === null || _a === void 0 ? void 0 : _a.id; }),
+                schoolUniform: selectedSchoolUniformEntities.map(data => { var _a; return (_a = data.schoolUniform) === null || _a === void 0 ? void 0 : _a.id; }),
+                typeOfEffort: selectedTypeOfEffortEntities.map(data => { var _a; return (_a = data.typeOfEffort) === null || _a === void 0 ? void 0 : _a.id; }),
+                whoParticipates: selectedWhoParticipatesEntities.map(data => { var _a; return data.other || ((_a = data.whoParticipates) === null || _a === void 0 ? void 0 : _a.id); }),
                 participants,
             } });
         return result;
@@ -802,12 +802,12 @@ let BackgroundDataService = class BackgroundDataService {
                         .length >= maxParticipates) {
                     caseStatus = survey_status_1.SurveyStatus.Clear;
                 }
-                else if (details[0].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
+                else if ((details[0].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
                     .length >= maxParticipates ||
                     details[1].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
                         .length >= maxParticipates ||
                     details[2].statuses.filter(status => status === survey_status_1.SurveyStatus.Loss)
-                        .length >= maxParticipates) {
+                        .length >= maxParticipates)) {
                     caseStatus = survey_status_1.SurveyStatus.Loss;
                 }
                 else {

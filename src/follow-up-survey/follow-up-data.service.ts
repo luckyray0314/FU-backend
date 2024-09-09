@@ -110,10 +110,10 @@ export class FollowUpDataService {
     const result: FollowUpDataDto = {
       ...metadata,
       formDataByEntityName: {
-        interventionPeriod: selectedInterventionPeriodEntities.map(data => data.interventionPeriod.id),
-        interventionProgress: selectedInterventionProgressEntities.map(data => data.interventionProgress.id),
-        reasonForTermination: selectedReasonForTerminationEntities.map(data => data.other || data.reasonForTermination.id),
-        timeConsumption: selectedTimeConsumptionEntities.map(data => data.other || data.timeConsumption.id),
+        interventionPeriod: selectedInterventionPeriodEntities.map(data => data.interventionPeriod?.id),
+        interventionProgress: selectedInterventionProgressEntities.map(data => data.interventionProgress?.id),
+        reasonForTermination: selectedReasonForTerminationEntities.map(data => data.other || data.reasonForTermination?.id),
+        timeConsumption: selectedTimeConsumptionEntities.map(data => data.other || data.timeConsumption?.id),
       }
     };
 

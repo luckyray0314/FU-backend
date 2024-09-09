@@ -518,28 +518,28 @@ export class BackgroundDataService {
           data => data.other || data.familyConstellation.id,
         ),
         interpreterRequired: selectedInterpreterRequiredEntities.map(
-          data => data.interpreterRequired.id,
+          data => data.interpreterRequired?.id,
         ),
         otherInterventions: selectedOtherInterventionsEntities.map(
-          data => data.other || data.otherInterventions.id,
+          data => data.other || data.otherInterventions?.id,
         ),
         previousIntervention: selectedPreviousInterventionEntities.map(
-          data => data.other || data.previousIntervention.id,
+          data => data.other || data.previousIntervention?.id,
         ),
         problemArea: selectedProblemAreaEntities.map(
-          data => data.other || data.problemArea.id,
+          data => data.other || data.problemArea?.id,
         ),
         reasonForUpdate: selectedReasonForUpdateEntities.map(
-          data => data.reasonForUpdate.id,
+          data => data.reasonForUpdate?.id,
         ),
         schoolUniform: selectedSchoolUniformEntities.map(
-          data => data.schoolUniform.id,
+          data => data.schoolUniform?.id,
         ),
         typeOfEffort: selectedTypeOfEffortEntities.map(
-          data => data.typeOfEffort.id,
+          data => data.typeOfEffort?.id,
         ),
         whoParticipates: selectedWhoParticipatesEntities.map(
-          data => data.other || data.whoParticipates.id,
+          data => data.other || data.whoParticipates?.id,
         ),
         participants,
       },
@@ -968,12 +968,20 @@ export class BackgroundDataService {
           ) {
             caseStatus = SurveyStatus.Clear;
           } else if (
-            details[0].statuses.filter(status => status === SurveyStatus.Loss)
+            (details[0].statuses.filter(status => status === SurveyStatus.Loss)
               .length >= maxParticipates ||
             details[1].statuses.filter(status => status === SurveyStatus.Loss)
               .length >= maxParticipates ||
             details[2].statuses.filter(status => status === SurveyStatus.Loss)
-              .length >= maxParticipates
+              .length >= maxParticipates) 
+            //   && 
+            // !(details[0].statuses.filter(status => status === SurveyStatus.Clear)
+            //   .length >= maxParticipates ||
+            // details[1].statuses.filter(status => status === SurveyStatus.Clear)
+            //   .length >= maxParticipates ||
+            // details[2].statuses.filter(status => status === SurveyStatus.Clear)
+            //   .length >= maxParticipates
+            // )
           ) {
             caseStatus = SurveyStatus.Loss;
           } else {
