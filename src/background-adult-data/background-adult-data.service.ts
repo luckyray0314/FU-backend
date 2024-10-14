@@ -508,7 +508,8 @@ export class BackgroundAdultDataService {
               details[2].statuses.filter(status => status === SurveyStatus.Loss)
                 .length <= maxParticipates)
           ) {
-            caseStatus = SurveyStatus.Loss;
+            // updated part
+            caseStatus = SurveyStatus.Coming;
           } else {
             caseStatus = SurveyStatus.Coming;
           }
